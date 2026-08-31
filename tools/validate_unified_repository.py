@@ -221,24 +221,27 @@ def validate_machine_wide_tex_mutex(
     if set(value) != TEX_MUTEX_REQUIRED_KEYS:
         errors.append(f"{label} has an incomplete machine-wide TeX mutex record")
 
-    expected_scalars = {
+    expected_strings = {
         "schema": TEX_MUTEX_RECEIPT_SCHEMA,
         "status": "PASS",
         "name": TEX_MUTEX_NAME,
         "namespace": "Windows Global",
-        "acquisition_timeout_ms": TEX_MUTEX_TIMEOUT_MS,
-        "ownership_acquired": True,
         "held_scope": TEX_MUTEX_HELD_SCOPE,
         "release_result": "released_in_finally",
     }
-    for key, expected in expected_scalars.items():
-        if value.get(key) != expected:
+    for key, expected in expected_strings.items():
+        if type(value.get(key)) is not str or value.get(key) != expected:
             errors.append(f"{label} has invalid TeX mutex {key}")
+    timeout = value.get("acquisition_timeout_ms")
+    if type(timeout) is not int or timeout != TEX_MUTEX_TIMEOUT_MS:
+        errors.append(f"{label} has invalid TeX mutex acquisition_timeout_ms")
+    if value.get("ownership_acquired") is not True:
+        errors.append(f"{label} has invalid TeX mutex ownership_acquired")
 
     wait_result_code = value.get("wait_result_code")
     wait_result = value.get("wait_result")
     abandoned = value.get("abandoned_mutex_recovered")
-    if (wait_result_code, wait_result, abandoned) not in {
+    if type(abandoned) is not bool or (wait_result_code, wait_result, abandoned) not in {
         ("0x00000000", "acquired", False),
         ("0x00000080", "abandoned_recovered", True),
     }:
@@ -257,13 +260,11 @@ def validate_machine_wide_tex_mutex(
 
     for key in ("wait_duration_ms", "held_duration_ms"):
         duration = value.get(key)
-        if (
-            not isinstance(duration, (int, float))
-            or isinstance(duration, bool)
-            or not math.isfinite(duration)
-            or duration < 0
-        ):
+        if type(duration) is not float or not math.isfinite(duration) or duration < 0:
             errors.append(f"{label} has invalid TeX mutex {key}")
+    wait_duration = value.get("wait_duration_ms")
+    if type(wait_duration) is float and wait_duration > TEX_MUTEX_TIMEOUT_MS:
+        errors.append(f"{label} TeX mutex wait exceeds its acquisition timeout")
 
 
 def normalize_build_for_reproducibility(value: object) -> object:

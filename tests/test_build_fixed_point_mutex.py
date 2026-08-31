@@ -208,6 +208,30 @@ class TexMutexValidatorTests(unittest.TestCase):
                 validator.validate_machine_wide_tex_mutex(evidence, "run", errors)
                 self.assertTrue(errors)
 
+    def test_validator_rejects_json_scalar_type_coercions_and_unbounded_values(self):
+        for key, value in (
+            ("ownership_acquired", 1),
+            ("abandoned_mutex_recovered", 0),
+            ("acquisition_timeout_ms", float(validator.TEX_MUTEX_TIMEOUT_MS)),
+            ("wait_duration_ms", validator.TEX_MUTEX_TIMEOUT_MS + 0.001),
+            ("held_duration_ms", 10**10000),
+            ("held_duration_ms", float("nan")),
+        ):
+            with self.subTest(key=key, value_type=type(value).__name__):
+                evidence = self.evidence()
+                evidence[key] = value
+                errors = []
+                validator.validate_machine_wide_tex_mutex(evidence, "run", errors)
+                self.assertTrue(errors)
+
+    def test_normalization_preserves_input_and_stable_protocol_fields(self):
+        build = {"machine_wide_tex_mutex": self.evidence(), "chapter_count": 30}
+        original = copy.deepcopy(build)
+        normalized = validator.normalize_build_for_reproducibility(build)
+        self.assertEqual(build, original)
+        self.assertEqual(normalized["machine_wide_tex_mutex"]["name"], validator.TEX_MUTEX_NAME)
+        self.assertNotIn("wait_started_utc", normalized["machine_wide_tex_mutex"])
+
 
 if __name__ == "__main__":
     unittest.main()
