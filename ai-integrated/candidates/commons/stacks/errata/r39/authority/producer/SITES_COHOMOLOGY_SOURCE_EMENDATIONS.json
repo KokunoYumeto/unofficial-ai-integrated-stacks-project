@@ -1,0 +1,732 @@
+{
+  "authority_mutated": false,
+  "authority_sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
+  "chapter": 21,
+  "emendations": [
+    {
+      "id": "SITES-COHOMOLOGY-015",
+      "line": 115,
+      "new": "\\textit{Mod}(\\mathcal{O})",
+      "old": "\\textit{Mod}(\\mathcal{C})",
+      "rationale": "The source category is the category of sheaves of O-modules.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-016",
+      "line": 684,
+      "new": "a morphism of $\\mathcal{C}$",
+      "old": "a morphism of $\\mathcal{O}$",
+      "rationale": "U and V are objects of the site C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-017",
+      "line": 990,
+      "new": "\\times_U U_{i_{p + 1}}",
+      "old": "\\times_u U_{i_{p + 1}}",
+      "rationale": "The fibre product is taken over U.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-018",
+      "line": 2087,
+      "new": "$K' \\to K$",
+      "old": "$K \\to K'$",
+      "rationale": "The hypothesis and following singleton covering have direction K' to K.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-019A",
+      "line": 2161,
+      "new": "\\mathcal{F}",
+      "old": "g^{-1}\\mathcal{I}",
+      "rationale": "The lemma is about F; g and I are undefined.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-019B",
+      "line": 2164,
+      "new": "H^p(K, \\mathcal{F})",
+      "old": "H^p(K, g^{-1}\\mathcal{I})",
+      "rationale": "The lemma is about F; g and I are undefined.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-019C",
+      "line": 2164,
+      "new": "H^p(K_i, \\mathcal{F})",
+      "old": "H^p(K_i, g^{-1}\\mathcal{I})",
+      "rationale": "The lemma is about F; g and I are undefined.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-021",
+      "line": 2315,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{X}",
+      "rationale": "X is undefined; the source topos is indexed by C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-025",
+      "line": 2733,
+      "new": "S_n \\subset \\Ob(\\Sh(\\mathcal{C}/K^n))",
+      "old": "S_n \\subset \\Ob(\\Sh(\\mathcal{C}/K^n)",
+      "rationale": "The Ob(Sh(...)) expression lacks a closing parenthesis.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-027",
+      "line": 3145,
+      "new": "\\otimes_\\mathcal{O}",
+      "old": "\\otimes_R",
+      "rationale": "R is undefined; the complexes are O-modules.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-029A",
+      "line": 3549,
+      "new": "bounded above complexes",
+      "old": "bounded below complexes",
+      "rationale": "The K_n are explicitly bounded above in the same proof.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-029B",
+      "line": 3579,
+      "new": "bounded above complexes",
+      "old": "bounded below complexes",
+      "rationale": "The M_n are kernels of maps between the displayed bounded-above complexes.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-033",
+      "line": 5597,
+      "new": "H^p(U, \\mathcal{H}^{m - p})",
+      "old": "H^p(U. \\mathcal{H}^{m - p})",
+      "rationale": "The cohomology arguments require a comma.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-035",
+      "line": 6626,
+      "new": "\\epsilon^*\\mathcal{F}'_2",
+      "old": "\\epsilon^*\\mathcal{F}_2",
+      "rationale": "The exact sequence and every adjacent term use F'_0 through F'_4.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-001",
+      "line": 6823,
+      "new": "\\Sh(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "\\Sh(\\mathcal{C}_{\\tau'}/X)",
+      "rationale": "The lower-right corner is over Y; see SITES_COHOMOLOGY_C_CURSOR.json.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-002",
+      "line": 7301,
+      "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/Y)",
+      "rationale": "The direct image lies in the Y-indexed category.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-003",
+      "line": 7322,
+      "new": "H^n(K') = H^n(K')",
+      "old": "H^i(K') = H^i(K')",
+      "rationale": "The displayed computation fixes degree n; i is unbound.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-004",
+      "line": 7324,
+      "new": "H^n(K')",
+      "old": "H^i(K')",
+      "rationale": "The displayed computation fixes degree n; i is unbound.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-005",
+      "line": 7339,
+      "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/X)",
+      "rationale": "The direct image lies over Y.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-006",
+      "line": 7548,
+      "new": "X_{i_a j}",
+      "old": "X_{ij}",
+      "rationale": "The selected outer covering index is i_a.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-007",
+      "line": 7548,
+      "new": "g_{i_a j}",
+      "old": "g_{ij}",
+      "rationale": "The selected outer covering index is i_a.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-008",
+      "line": 7554,
+      "new": "g_{i_a j}",
+      "old": "g_{ij}",
+      "rationale": "The selected outer covering index is i_a.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-009",
+      "line": 7560,
+      "new": "f_{i_a}(g_{i_a j}(F_{e_k, j}))",
+      "old": "f_i(g_{ij}(F_{e_k, j}))",
+      "rationale": "Both nested covering indices must use the selected i_a.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-010",
+      "line": 7600,
+      "new": "f(X \\setminus (U_{x_1} \\cup \\ldots \\cup U_{x_n}))",
+      "old": "f(X \\setminus U_{x_1} \\cup \\ldots \\cup U_{x_n})",
+      "rationale": "The set difference applies to the whole union.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-011",
+      "line": 7948,
+      "new": "a_Y = \\pi_Y \\circ \\epsilon_Y",
+      "old": "a_Y = \\pi_X \\circ \\epsilon_X",
+      "rationale": "The Y-side composite uses the Y-indexed maps.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-012",
+      "line": 8085,
+      "new": "\\epsilon_X^{-1} \\circ \\pi_X^{-1}",
+      "old": "\\epsilon_X^{-1} \\circ a_X^{-1}",
+      "rationale": "This is the factorization of a_X inverse through pi_X inverse.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-013",
+      "line": 8117,
+      "new": "a_X = \\pi_X \\circ \\epsilon_X",
+      "old": "a_X = \\epsilon_X \\circ \\pi_X",
+      "rationale": "The defining diagram fixes the composition order.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-014",
+      "line": 8291,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-015",
+      "line": 8295,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-016",
+      "line": 8299,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-017",
+      "line": 8313,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-018",
+      "line": 8317,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-019",
+      "line": 8321,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}",
+      "rationale": "After inverse image to C, the tensor base is O_C.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-020",
+      "line": 8513,
+      "new": "L(f' \\circ f)^*R(f' \\circ f)_*L",
+      "old": "L(f' \\circ f)^*R(f' \\circ f)_*L)",
+      "rationale": "The source has an unmatched closing parenthesis.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-021",
+      "line": 8534,
+      "new": "(\\Sh(\\mathcal{C}), \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f",
+      "old": "(\\Sh(\\mathcal{C}, \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f",
+      "rationale": "The Sh(C) argument lacks its closing parenthesis.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-022",
+      "line": 8549,
+      "new": "R(f')_*L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}}^\\mathbf{L} R(f')_*L(g')^*L \\ar[r] &",
+      "old": "R(f')_*(L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}} R(f')_*(L(g')^*L \\ar[r] &",
+      "rationale": "The cup-product term has misplaced parentheses and omitted the derived tensor marker.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-023",
+      "line": 8683,
+      "new": "",
+      "old": ", \\mathcal{M}^\\bullet",
+      "rationale": "Only K and L occur and the conclusion refers to both complexes.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-024",
+      "line": 9803,
+      "new": "\\Sh(\\mathcal{C}/U), \\mathcal{O}_U",
+      "old": "\\Sh(\\mathcal{C}), \\mathcal{O}_U",
+      "rationale": "The localized upper-right topos is Sh(C/U).",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-025",
+      "line": 9819,
+      "new": "p' : \\mathcal{C}' \\to \\mathcal{D}",
+      "old": "p' : \\mathcal{C}' \\to \\mathcal{D}'",
+      "rationale": "The common base is D; D' is undefined.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-026",
+      "line": 10224,
+      "new": "left adjoint",
+      "old": "right adjoint",
+      "rationale": "The composites are left-derived left adjoints.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-027",
+      "line": 10490,
+      "new": "a map of sheaves of rings",
+      "old": "a map sheaf of rings",
+      "rationale": "The English phrase is missing 'of sheaves'.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-028",
+      "line": 10591,
+      "new": "U_{i, n}",
+      "old": "U_{i, n + 1}",
+      "rationale": "An element of K_n uses a chain starting at U_{i,n}.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-029",
+      "line": 10595,
+      "new": "occurs at most once",
+      "old": "occurs are most once",
+      "rationale": "The source phrase is a prose typo.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-030",
+      "line": 10597,
+      "new": "K_n(\\mathcal{F}^+)(V)",
+      "old": "K_\\bullet(\\mathcal{F}^+)(V)",
+      "rationale": "The proof works in the fixed degree n.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-031",
+      "line": 10625,
+      "new": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{D})",
+      "old": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{C})",
+      "rationale": "The functors produce sheaves on D.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "C-032",
+      "line": 10642,
+      "new": "\\mathcal{D}",
+      "old": "\\mathcal{D})",
+      "rationale": "The source has an unmatched closing parenthesis.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-001",
+      "line": 10957,
+      "new": "Since $\\text{Map}(-, A)$ is a contravariant functor, it follows that",
+      "old": "Since $\\text{Map}(-, A)$ is a contravariant functor, implies that",
+      "rationale": "The finite clause lacks a grammatical subject.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-002",
+      "line": 10967,
+      "new": "computes the right derived functors",
+      "old": "computes the left derived functors",
+      "rationale": "The displayed cohomology groups are right derived functors of degree-zero cohomology.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-003",
+      "line": 11047,
+      "new": "\\Hom(\\bigoplus j_{U_i!}\\mathcal{O}_{U_i}, p_{U, *}A)",
+      "old": "\\Hom(\\prod j_{U_i!}\\mathcal{O}_{U_i}, p_{U, *}A)",
+      "rationale": "The short exact sequence has middle term the direct sum.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-004",
+      "line": 11067,
+      "new": "set $\\Mor_\\mathcal{C}(U, U')$",
+      "old": "set on a singleton $\\{*\\}$",
+      "rationale": "The augmentation lands in the discrete set of morphisms U to U'.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-005",
+      "line": 11149,
+      "new": "H^b(M)(V) \\otimes_{\\mathcal{O}(V)} \\mathcal{O}(U) \\to H^b(M)(U)",
+      "old": "H^p(M)(V) \\otimes_{\\mathcal{O}(V)} \\mathcal{O}(U) \\to H^b(M)(U)",
+      "rationale": "The lemma fixes top nonzero degree b; p is unbound.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-006",
+      "line": 11278,
+      "new": "For every $U$ and $i$ let",
+      "old": "For ever $U$ and $i$ let",
+      "rationale": "The quantifier contains a typographical omission.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-007",
+      "line": 11286,
+      "new": "|\\Omega^i_U| \\leq \\max(\\kappa,|K|)",
+      "old": "|\\Omega^i_U| \\leq |K|",
+      "rationale": "The induction bounds the subcomplexes by max(kappa, |K|).",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-008",
+      "line": 11290,
+      "new": "\\mathcal{S}_n^i(U) \\cup \\Omega^i_U \\subset \\mathcal{F}^i(U)",
+      "old": "\\mathcal{S}^i(U) \\cup \\Omega^i_U \\subset \\mathcal{F}^i(U)",
+      "rationale": "The paragraph constructs S_{n+1} from the defined S_n.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-009",
+      "line": 11447,
+      "new": "containing those subsets and such that",
+      "old": "with containing those subsets and such that",
+      "rationale": "The source contains a redundant preposition.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-010",
+      "line": 11600,
+      "new": "H^i(M)(V) \\otimes_{\\mathcal{O}(V)} \\mathcal{O}(U) \\to H^i(M)(U)",
+      "old": "H^i(M)(U) \\to H^i(M)(V) \\otimes_{\\mathcal{O}(V)} \\mathcal{O}(U)",
+      "rationale": "Quasi-coherent base change gives the map from the V-side tensor product to U-side cohomology.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-011A",
+      "line": 11601,
+      "new": "R\\Gamma(V, M)",
+      "old": "R\\Gamma(V, K)",
+      "rationale": "The converse paragraph fixes M; K is unbound.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-011B",
+      "line": 11602,
+      "new": "R\\Gamma(U, M)",
+      "old": "R\\Gamma(U, K)",
+      "rationale": "The converse paragraph fixes M; K is unbound.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-012",
+      "line": 11671,
+      "new": "\\mathcal{M}^\\bullet(U) \\otimes_{\\mathcal{O}(U)} \\mathcal{O}_U",
+      "old": "M^\\bullet \\otimes_{\\mathcal{O}(U)} \\mathcal{O}_U",
+      "rationale": "The proof chose the sheaf complex M-script and applies the assumption to its sections over U.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-013",
+      "line": 11933,
+      "new": "\\SheafHom_\\mathcal{O}(\\mathcal{E}^{-q}, \\mathcal{I}^p)",
+      "old": "\\SheafHom_\\mathcal{O}(\\mathcal{L}^{-q}, \\mathcal{I}^p)",
+      "rationale": "The proof defines the strictly perfect source E-script; L-script is undefined.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-028",
+      "line": 12001,
+      "new": "\\mathcal{H}^\\bullet \\to (\\mathcal{H}')^\\bullet",
+      "old": "(\\mathcal{H}')^\\bullet \\to \\mathcal{H}^\\bullet",
+      "rationale": "Covariance in the second Hom argument fixes this direction.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-060",
+      "line": 12200,
+      "new": "H^j(\\beta_i)",
+      "old": "H^j(\\beta)",
+      "rationale": "The paragraph defines only the indexed maps beta_i.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-061",
+      "line": 12204,
+      "new": "\\gamma_i : \\mathcal{K}_i^\\bullet \\to \\mathcal{L}_i^\\bullet",
+      "old": "\\gamma_i : \\mathcal{K}^\\bullet \\to \\mathcal{L}^\\bullet",
+      "rationale": "Only the indexed local complexes K_i and L_i are defined in this proof.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-062A",
+      "line": 12258,
+      "new": "H^i(\\alpha)$ an isomorphism",
+      "old": "H^i(\\alpha)$ and isomorphism",
+      "rationale": "The indefinite article is mistyped as the conjunction.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-062B",
+      "line": 12260,
+      "new": "H^i(\\beta)$ an isomorphism",
+      "old": "H^i(\\beta)$ and isomorphism",
+      "rationale": "The indefinite article is mistyped as the conjunction.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-063",
+      "line": 12326,
+      "new": "$H^m(K)$ can be generated",
+      "old": "$H^m(K)$ is can be generated",
+      "rationale": "The clause has two incompatible finite verbs.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-064",
+      "line": 12340,
+      "new": "H^n(\\mathcal{E}^\\bullet)",
+      "old": "H^n(E^\\bullet)",
+      "rationale": "The proof defines the complex mathcal E, not E.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-065",
+      "line": 12461,
+      "new": "$\\mathcal{K}^\\bullet$ is a complex of flat",
+      "old": "$K^\\bullet$ is a complex of flat",
+      "rationale": "The resolution being truncated is mathcal K; K is the derived object.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-066",
+      "line": 12538,
+      "new": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses},",
+      "old": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses}.",
+      "rationale": "The period incorrectly splits the introductory phrase from its clause.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-067A",
+      "line": 12555,
+      "new": "represent $E$ by a complex",
+      "old": "represent $E$ by a complex of",
+      "rationale": "The source has a redundant preposition.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-067B",
+      "line": 12560,
+      "new": "the modules $f^*\\mathcal{E}^i$ are flat",
+      "old": "the module $f^*\\mathcal{E}^i$ are flat",
+      "rationale": "The subject and verb require plural agreement.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-068",
+      "line": 13066,
+      "new": "We will use without further mention",
+      "old": "We will us without further mention",
+      "rationale": "The infinitive is missing its final letter.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-069A",
+      "line": 13073,
+      "new": "K = R\\SheafHom(\\mathcal{O}, \\mathcal{O})",
+      "old": "K = R\\SheafHom(\\mathcal{O}_X, \\mathcal{O}_X)",
+      "rationale": "The lemma concerns an arbitrary ringed site and defines no final object X.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-069B",
+      "line": 13074,
+      "new": "\\otimes_{\\mathcal{O}}^\\mathbf{L} K",
+      "old": "\\otimes_{\\mathcal{O}_X}^\\mathbf{L} K",
+      "rationale": "The coefficient sheaf is the ringed-site structure sheaf mathcal O.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-069C",
+      "line": 13075,
+      "new": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}), \\mathcal{O})",
+      "old": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}_X), \\mathcal{O}_X)",
+      "rationale": "The coefficient sheaf is the ringed-site structure sheaf mathcal O.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-070",
+      "line": 13609,
+      "new": "$b \\circ a = 1$ and $a \\circ b - 1 = dh + hd$",
+      "old": "$b \\circ a = 1$ and $b \\circ a - 1 = dh + hd$",
+      "rationale": "The preceding paragraph chooses a homotopy from alpha composed with beta to the identity.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-071",
+      "line": 13857,
+      "new": "a system as in (3)",
+      "old": "a system as in (2)",
+      "rationale": "The inverse system with surjective transitions is item (3), not item (2).",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-072A",
+      "line": 13961,
+      "new": "$D^{-}(\\mathcal{A})$",
+      "old": "$D^{-}(R)$",
+      "rationale": "The lemma is stated for the Grothendieck abelian category mathcal A and defines no ring R.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-072B",
+      "line": 13976,
+      "new": "$D(\\mathcal{A})$",
+      "old": "$D(R)$",
+      "rationale": "The ambient derived category is D(mathcal A).",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-072C",
+      "line": 13998,
+      "new": "$D(\\mathcal{A})$",
+      "old": "$D(R)$",
+      "rationale": "The ambient derived category is D(mathcal A).",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-073",
+      "line": 13984,
+      "new": "that $L^i$ is a finite direct sum",
+      "old": "that $L^i$ a finite direct sum",
+      "rationale": "The relative clause lacks its finite verb.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-074A",
+      "line": 14011,
+      "new": "E_\\lambda)[-c]",
+      "old": "E_\\lambda)[-i]",
+      "rationale": "The claim fixes degree c; i is unbound in this paragraph.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-074B",
+      "line": 14014,
+      "new": "in degree $c$",
+      "old": "in degree $i$",
+      "rationale": "The projection is onto the summand of L in the fixed degree c.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-075",
+      "line": 14089,
+      "new": "for all $p > 0$",
+      "old": "for all $p$",
+      "rationale": "Injective sheaves are acyclic in positive degrees; H^0 need not vanish.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-076",
+      "line": 14102,
+      "new": "\\bigoplus \\Gamma(U, \\mathcal{I}_i^\\bullet)",
+      "old": "\\bigoplus \\Gamma(U, \\bigoplus \\mathcal{I}_i^\\bullet)",
+      "rationale": "The outer direct sum ranges over the individual complexes; the inner direct sum is duplicated.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-077A",
+      "line": 14275,
+      "new": "there exists a covering $\\{U_i \\to X\\}$ such that for every $i$ and every $j = 1, \\ldots, r$",
+      "old": "there exists a covering $\\{U_i \\to X\\}$ such that $x_i \\in H^0(X, H^b(K))$",
+      "rationale": "The cover index i cannot also index the r generators; all generators must lift on a common refinement.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-077B",
+      "line": 14276,
+      "new": "the class $x_j \\in H^0(X, H^b(K))$ lifts to an element of $H^b(U_i, K)$",
+      "old": "lifts to an element of $H^b(U_i, K)$",
+      "rationale": "Every generator x_j must lift on every member of the common refinement.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-078",
+      "line": 14297,
+      "new": "$D(\\mathcal{C}, \\Lambda)$",
+      "old": "$D(\\mathcal{C}, \\underline{\\Lambda})$",
+      "rationale": "The section defines D(C,Lambda); underlining denotes the associated sheaf, not the category parameter.",
+      "status": "corrected_in_french_target"
+    },
+    {
+      "id": "SITES-COHOMOLOGY-079",
+      "line": 14299,
+      "new": "$L \\to \\underline{\\Lambda^{\\oplus r}}[-b + 1]$",
+      "old": "$L \\to \\Lambda^{\\oplus r}[-b + 1]$",
+      "rationale": "This morphism is in the derived category of sheaves, so the constant module must carry its sheaf decoration.",
+      "status": "corrected_in_french_target"
+    }
+  ],
+  "operation_count": 89,
+  "original_private_transport_identity": {
+    "bytes": 26075,
+    "filename": "SITES_COHOMOLOGY_SOURCE_EMENDATIONS.json",
+    "sha256": "DA3BFA3A8E310D2A5426BDA63F05F4AC3AFFA212BF5DCB9CA36CD03382F186E3"
+  },
+  "schema": "stacks-fr-source-emendations-v1",
+  "scope": "In-memory source corrections needed to compare the protected TeX topology of the French Chapter 21 target against the pinned authority.",
+  "source_file": "sites-cohomology.tex",
+  "source_line_range": {
+    "end": 14428,
+    "start": 1
+  }
+}

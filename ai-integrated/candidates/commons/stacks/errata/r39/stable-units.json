@@ -1,0 +1,717 @@
+{
+  "authority_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+  "schema": "mathematics-commons-stacks-stable-units/v1",
+  "unit_count": 43,
+  "units": [
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1359",
+      "locus": "sites-cohomology.tex:6823",
+      "operation_ids": [
+        "MC-STK-ERR-1359-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-038",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-038"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1360",
+      "locus": "sites-cohomology.tex:7301,7339",
+      "operation_ids": [
+        "MC-STK-ERR-1360-OP1",
+        "MC-STK-ERR-1360-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-039",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-039"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1361",
+      "locus": "sites-cohomology.tex:7322,7324",
+      "operation_ids": [
+        "MC-STK-ERR-1361-OP1",
+        "MC-STK-ERR-1361-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-040",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-040"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1362",
+      "locus": "sites-cohomology.tex:7548,7548,7554,7560",
+      "operation_ids": [
+        "MC-STK-ERR-1362-OP1",
+        "MC-STK-ERR-1362-OP2",
+        "MC-STK-ERR-1362-OP3",
+        "MC-STK-ERR-1362-OP4"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-041",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-041"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1363",
+      "locus": "sites-cohomology.tex:7600",
+      "operation_ids": [
+        "MC-STK-ERR-1363-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-042",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-042"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1364",
+      "locus": "sites-cohomology.tex:7948",
+      "operation_ids": [
+        "MC-STK-ERR-1364-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-043",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-043"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1365",
+      "locus": "sites-cohomology.tex:8085",
+      "operation_ids": [
+        "MC-STK-ERR-1365-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-044",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-044"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1366",
+      "locus": "sites-cohomology.tex:8117",
+      "operation_ids": [
+        "MC-STK-ERR-1366-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-045",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-045"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367",
+      "locus": "sites-cohomology.tex:8291,8295,8299,8313,8317,8321",
+      "operation_ids": [
+        "MC-STK-ERR-1367-OP1",
+        "MC-STK-ERR-1367-OP2",
+        "MC-STK-ERR-1367-OP3",
+        "MC-STK-ERR-1367-OP4",
+        "MC-STK-ERR-1367-OP5",
+        "MC-STK-ERR-1367-OP6"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-046",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-046"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1368",
+      "locus": "sites-cohomology.tex:8513",
+      "operation_ids": [
+        "MC-STK-ERR-1368-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-047",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-047"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1369",
+      "locus": "sites-cohomology.tex:8534",
+      "operation_ids": [
+        "MC-STK-ERR-1369-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-048",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-048"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1370",
+      "locus": "sites-cohomology.tex:8549",
+      "operation_ids": [
+        "MC-STK-ERR-1370-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-049",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-049"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1371",
+      "locus": "sites-cohomology.tex:8683",
+      "operation_ids": [
+        "MC-STK-ERR-1371-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-050",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-050"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1372",
+      "locus": "sites-cohomology.tex:9803",
+      "operation_ids": [
+        "MC-STK-ERR-1372-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-051",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-051"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1373",
+      "locus": "sites-cohomology.tex:9819",
+      "operation_ids": [
+        "MC-STK-ERR-1373-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-052",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-052"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1374",
+      "locus": "sites-cohomology.tex:10224,10220",
+      "operation_ids": [
+        "MC-STK-ERR-1374-OP1",
+        "MC-STK-ERR-1374-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-053"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1375",
+      "locus": "sites-cohomology.tex:10490",
+      "operation_ids": [
+        "MC-STK-ERR-1375-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-054",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-054"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1376",
+      "locus": "sites-cohomology.tex:10591",
+      "operation_ids": [
+        "MC-STK-ERR-1376-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-055",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-055"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1377",
+      "locus": "sites-cohomology.tex:10595",
+      "operation_ids": [
+        "MC-STK-ERR-1377-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-056",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-056"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1378",
+      "locus": "sites-cohomology.tex:10597",
+      "operation_ids": [
+        "MC-STK-ERR-1378-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-057",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-057"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1379",
+      "locus": "sites-cohomology.tex:10625",
+      "operation_ids": [
+        "MC-STK-ERR-1379-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-058",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-058"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1380",
+      "locus": "sites-cohomology.tex:10642",
+      "operation_ids": [
+        "MC-STK-ERR-1380-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-059",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-059"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1381",
+      "locus": "sites-cohomology.tex:12200",
+      "operation_ids": [
+        "MC-STK-ERR-1381-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-060",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-060"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1382",
+      "locus": "sites-cohomology.tex:12204",
+      "operation_ids": [
+        "MC-STK-ERR-1382-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-061",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-061"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1383",
+      "locus": "sites-cohomology.tex:12258,12260",
+      "operation_ids": [
+        "MC-STK-ERR-1383-OP1",
+        "MC-STK-ERR-1383-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-062",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-062"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1384",
+      "locus": "sites-cohomology.tex:12326",
+      "operation_ids": [
+        "MC-STK-ERR-1384-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-063",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-063"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1385",
+      "locus": "sites-cohomology.tex:12340",
+      "operation_ids": [
+        "MC-STK-ERR-1385-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-064",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-064"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1386",
+      "locus": "sites-cohomology.tex:12461",
+      "operation_ids": [
+        "MC-STK-ERR-1386-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-065",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-065"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1387",
+      "locus": "sites-cohomology.tex:12538",
+      "operation_ids": [
+        "MC-STK-ERR-1387-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-066",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-066"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1388",
+      "locus": "sites-cohomology.tex:12555",
+      "operation_ids": [
+        "MC-STK-ERR-1388-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [
+        "SITES-COHOMOLOGY-067A"
+      ],
+      "producer_id": "SITES-COHOMOLOGY-067",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-067"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1389",
+      "locus": "sites-cohomology.tex:12560",
+      "operation_ids": [
+        "MC-STK-ERR-1389-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [
+        "SITES-COHOMOLOGY-067B"
+      ],
+      "producer_id": "SITES-COHOMOLOGY-067",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-067"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1390",
+      "locus": "sites-cohomology.tex:13066",
+      "operation_ids": [
+        "MC-STK-ERR-1390-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-068",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-068"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1391",
+      "locus": "sites-cohomology.tex:13073,13074,13075",
+      "operation_ids": [
+        "MC-STK-ERR-1391-OP1",
+        "MC-STK-ERR-1391-OP2",
+        "MC-STK-ERR-1391-OP3"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-069",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-069"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1392",
+      "locus": "sites-cohomology.tex:13609",
+      "operation_ids": [
+        "MC-STK-ERR-1392-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-070",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-070"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1393",
+      "locus": "sites-cohomology.tex:13857",
+      "operation_ids": [
+        "MC-STK-ERR-1393-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-071",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-071"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1394",
+      "locus": "sites-cohomology.tex:13961,13976,13998",
+      "operation_ids": [
+        "MC-STK-ERR-1394-OP1",
+        "MC-STK-ERR-1394-OP2",
+        "MC-STK-ERR-1394-OP3"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-072",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-072"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1395",
+      "locus": "sites-cohomology.tex:13984",
+      "operation_ids": [
+        "MC-STK-ERR-1395-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-073",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-073"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1396",
+      "locus": "sites-cohomology.tex:14011,14014",
+      "operation_ids": [
+        "MC-STK-ERR-1396-OP1",
+        "MC-STK-ERR-1396-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-074",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-074"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1397",
+      "locus": "sites-cohomology.tex:14089",
+      "operation_ids": [
+        "MC-STK-ERR-1397-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-075",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-075"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1398",
+      "locus": "sites-cohomology.tex:14102",
+      "operation_ids": [
+        "MC-STK-ERR-1398-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-076",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-076"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1399",
+      "locus": "sites-cohomology.tex:14275,14276",
+      "operation_ids": [
+        "MC-STK-ERR-1399-OP1",
+        "MC-STK-ERR-1399-OP2"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-077",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-077"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1400",
+      "locus": "sites-cohomology.tex:14297",
+      "operation_ids": [
+        "MC-STK-ERR-1400-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-078",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-078"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1401",
+      "locus": "sites-cohomology.tex:14299",
+      "operation_ids": [
+        "MC-STK-ERR-1401-OP1"
+      ],
+      "payload": "payload/sites-cohomology.tex",
+      "producer_aliases": [],
+      "producer_id": "SITES-COHOMOLOGY-079",
+      "producer_ids": [
+        "SITES-COHOMOLOGY-079"
+      ],
+      "source": "sites-cohomology.tex",
+      "status": "accepted_source_proposal_not_admitted"
+    }
+  ]
+}

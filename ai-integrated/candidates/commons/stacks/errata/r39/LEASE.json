@@ -1,0 +1,16 @@
+{
+  "schema": "mathematics-commons-stacks-candidate-lease/v1",
+  "lease_event": "lease-event-000082",
+  "lease_id": "stacks-lease-000043-errata-r39",
+  "namespace": "commons/stacks/errata/r39",
+  "candidate_path": "candidates/commons/stacks/errata/r39",
+  "writer_task": "01a0256d-5693-77c1-96b2-cf37101e0c6c",
+  "status": "active",
+  "issued_at_utc": "2026-08-31T13:10:07.608Z",
+  "authority_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+  "authority_tree": "3feeb703b931a6e7259782c10e7d1575adc83e5e",
+  "source": "sites-cohomology.tex",
+  "scope": "Novel SITES-COHOMOLOGY-038..079, with linked source-typing repair at line10220 if prior-registry dedup confirms novel; preserve editorial classifications and split row067's independent grammar units.",
+  "write_boundary": "Candidate subtree only; no official authority, locale, prior candidate, registry, generated-source, Git or publication mutation by candidate worker.",
+  "admission_status": "not_admitted"
+}

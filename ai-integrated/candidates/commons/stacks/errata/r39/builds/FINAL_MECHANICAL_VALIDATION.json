@@ -1,0 +1,112 @@
+{
+  "adverse_evidence": [
+    "Authority and candidate have21 overfull diagnostics each; actual visual disposition is separate.",
+    "Unresolved cross-chapter reference multisets match authority; standalone AUX set is incomplete."
+  ],
+  "bad_link_rectangles": [],
+  "build_receipt": {
+    "bytes": 44495,
+    "path": "builds/build-receipt.json",
+    "sha256": "D9ED88A0D22BA536685E589E768E842A2E75253A3F3A900091F42A122D8E6539"
+  },
+  "build_render_stage": {
+    "bytes": 3806,
+    "path": "builds/BUILD_RENDER_STAGE.json",
+    "sha256": "422A17C56711CBBE3027D809CF5147C9654172D8641639BB53F80FD7F055ACA6"
+  },
+  "candidate_pdf": {
+    "bytes": 1274274,
+    "path": "builds/sites-cohomology.pdf",
+    "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+  },
+  "deterministic_replay": {
+    "bytes": 995,
+    "path": "builds/deterministic-replay.json",
+    "sha256": "232A785E4AC7AAF0FDD5A83C0CF70A858A6A3D44A6ABFF3F1BD7AB3814E2D028"
+  },
+  "full_independent_final_review": "NOT_PERFORMED",
+  "high_resolution_pages": [
+    64,
+    68,
+    70,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    90,
+    94,
+    97,
+    98,
+    112,
+    113,
+    114,
+    115,
+    116,
+    120,
+    125,
+    128,
+    129,
+    130,
+    131,
+    132
+  ],
+  "links": 655,
+  "passed": true,
+  "pdf_pages": 134,
+  "preserved_source_stage_bindings": [
+    {
+      "bytes": 4508,
+      "path": "candidate.config.json",
+      "sha256": "AA8BDFA1510F89F6090F29C53013F10B8E53409A0F1D5521790735BC933840DD"
+    },
+    {
+      "bytes": 4508,
+      "path": "candidate.config.input.json",
+      "sha256": "AA8BDFA1510F89F6090F29C53013F10B8E53409A0F1D5521790735BC933840DD"
+    },
+    {
+      "bytes": 53100,
+      "path": "operation-spec.json",
+      "sha256": "CC437C00386E55B1978EE208245FD36B7BA59D6CAE2461DD271773242E0468F8"
+    },
+    {
+      "bytes": 21146,
+      "path": "stable-units.json",
+      "sha256": "9BFCB556DD0A9ACD68090386A7AA04730409BF236D5EE448C070DE696C34937F"
+    },
+    {
+      "bytes": 77280,
+      "path": "source-map.jsonl",
+      "sha256": "F52F9962519FCFA47C5E10FBCDC44B7A6F9227D23CE6D55BE77FA3F11E7EE453"
+    },
+    {
+      "bytes": 12644,
+      "path": "source-validation.json",
+      "sha256": "5CE221C20743B0FC225763F1864AD64762B07BD51DCCD4CDD4D37CA386809A6F"
+    },
+    {
+      "bytes": 1345,
+      "path": "REGENERATION_RECEIPT.json",
+      "sha256": "AD0645219641BAE005A8716B6170089F01A8FA05BF690B0CDFC46E64E8CA6273"
+    }
+  ],
+  "render_artifacts_rehashed": 169,
+  "schema": "stacks-r39-final-mechanical-validation-v1",
+  "scope": "Source-stage identity preservation, build binding, repeated-PDF identity, PDF link geometry, render bytes and source-page mapping. Not visual inspection.",
+  "source_independent_validation": {
+    "bytes": 4010,
+    "path": "replay/SOURCE_INDEPENDENT_VALIDATION.json",
+    "sha256": "AC10D0D9AA35B4828AFF591FC46EA392AAD8406DC82588EEF37FD08C4BD1B61F"
+  },
+  "source_operations_mapped": 61,
+  "source_page_map": {
+    "bytes": 16202,
+    "path": "builds/source-page-map.json",
+    "sha256": "DB0F6A494FD473435A0BDAE925F647F18E3A068594C238C64053DA937FB438C0"
+  },
+  "tagged_pdf": false,
+  "visual_inspection": "NOT_ASSERTED"
+}

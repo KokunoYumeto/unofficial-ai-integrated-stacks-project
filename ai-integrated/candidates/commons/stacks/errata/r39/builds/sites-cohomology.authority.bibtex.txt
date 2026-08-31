@@ -1,0 +1,4 @@
+This is BibTeX, Version 0.99e (MiKTeX 26.5)
+The top-level auxiliary file: sites-cohomology.aux
+The style file: amsalpha.bst
+Database file #1: my.bib

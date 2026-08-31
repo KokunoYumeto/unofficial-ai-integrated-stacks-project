@@ -1,0 +1,28 @@
+{
+  "candidate_id": "stacks-errata-a04446e-r39",
+  "fresh_builds_compared": 2,
+  "passed": true,
+  "pdfs": [
+    {
+      "byte_identical": true,
+      "first_bytes": 1274274,
+      "first_sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F",
+      "phase": "candidate",
+      "second_bytes": 1274274,
+      "second_path": "builds/sites-cohomology.pdf",
+      "second_sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+    },
+    {
+      "byte_identical": true,
+      "first_bytes": 1274260,
+      "first_sha256": "282E30F2D719AD9C52B0191E038CEBA4FE394BC6EE7971C77438FD1ECB83160A",
+      "phase": "authority",
+      "second_bytes": 1274260,
+      "second_path": "builds/sites-cohomology.authority.pdf",
+      "second_sha256": "282E30F2D719AD9C52B0191E038CEBA4FE394BC6EE7971C77438FD1ECB83160A"
+    }
+  ],
+  "private_paths_published": false,
+  "schema": "mathematics-commons-stacks-deterministic-pdf-replay/v1",
+  "source_date_epoch": "1788181807"
+}

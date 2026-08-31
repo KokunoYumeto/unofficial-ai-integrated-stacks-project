@@ -1,0 +1,199 @@
+{
+  "schema": "mathematics-commons-bounded-visual-review/v1",
+  "reviewer": "r38_registry_append_plan",
+  "candidate_id": "stacks-errata-a04446e-r39",
+  "status": "PASS_WITH_RECORDED_CAVEATS",
+  "scope": {
+    "page_start": 49,
+    "page_end": 96,
+    "covered_pages": 48,
+    "total_candidate_pages": 134,
+    "contact_sheets": [
+      {
+        "sheet": 4,
+        "pages": [
+          49,
+          64
+        ]
+      },
+      {
+        "sheet": 5,
+        "pages": [
+          65,
+          80
+        ]
+      },
+      {
+        "sheet": 6,
+        "pages": [
+          81,
+          96
+        ]
+      }
+    ],
+    "individual_high_resolution_pages": [
+      64,
+      68,
+      70,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      90,
+      94
+    ]
+  },
+  "candidate_pdf": {
+    "path": "builds/sites-cohomology.pdf",
+    "bytes": 1274274,
+    "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+  },
+  "render_manifest": {
+    "path": "private_evidence/errata-r39-20260831/render/render-manifest.json",
+    "bytes": 33657,
+    "sha256": "5715ADE0EC9EAF83A17D844B5112DC52CC8624D2657DA9245680171A24355F96"
+  },
+  "viewed_artifacts": [
+    {
+      "path": "private_evidence/errata-r39-20260831/render/contact_sheets/sites-cohomology_04.png",
+      "bytes": 918931,
+      "sha256": "AA3AE7826A23BBD6EA9E6CAFE5FD48820BA216286263931E3827674FE1F7369D"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/contact_sheets/sites-cohomology_05.png",
+      "bytes": 888485,
+      "sha256": "C1C5506AF68AD2760BE4DE6687BE9B2F00A469A781432A3C7851FCF5948B0271"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/contact_sheets/sites-cohomology_06.png",
+      "bytes": 873487,
+      "sha256": "9B17F35CF6C85E3C8EEE103B01FAD244E263C5A2659A4F7271EE97E3A5445F1D"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p64.png",
+      "bytes": 394248,
+      "sha256": "ACA69B5459605D580E9CF48B5445181B2A1D3B580F11863823263A89585B87CB"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p68.png",
+      "bytes": 377748,
+      "sha256": "7596B67F90172B5979C97FE5D09927FAEC9A89F79322D8C1E4A93AAE3D0CA767"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p70.png",
+      "bytes": 446029,
+      "sha256": "D0C63D21E3BF9D33E19A26698ACE9987EE35221E5B10158ADAFAE0F90135223B"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p74.png",
+      "bytes": 430870,
+      "sha256": "C5510FD32FB819FFA7356A6C34EE0BD4DAA2B6C5DD009DE2017901F59B2DBF8A"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p75.png",
+      "bytes": 408497,
+      "sha256": "1A9464C1EFB3F52C23CEA418778E62906D52C0EA8B6196BD7C3DFD5A6BBC2579"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p76.png",
+      "bytes": 289727,
+      "sha256": "AA1713DD9EC03C3B270C537C993A4B72C1A43C7BB21C3B93DFAE21CD699B5DA3"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p77.png",
+      "bytes": 248672,
+      "sha256": "55C37590CB44BFD38556F136E5EEC2283F7D83837CC4F875B608747C59D11FCC"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p78.png",
+      "bytes": 284748,
+      "sha256": "C831B87ACD48EA1D2CAF64FC84165AE17C454F51BEFAF4F01B13CE306A602EA9"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p79.png",
+      "bytes": 302277,
+      "sha256": "2CCD2184B09A5C28E73ACBDE3304096C968D5A2C988DB04D750BFF53FF149CBB"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p80.png",
+      "bytes": 335609,
+      "sha256": "1C998E32DFF9CCD00327A4633299CA95BB8EA561444D6211F39825DCEBC44A73"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p90.png",
+      "bytes": 263576,
+      "sha256": "666A41732C1A2E88D69F31D64DD76D876AD5DB608B3CC8E2C34CB3D3A394FDF3"
+    },
+    {
+      "path": "private_evidence/errata-r39-20260831/render/highres/sites-cohomology_p94.png",
+      "bytes": 387722,
+      "sha256": "4310E39EB62D1EC3F2CFC9E454872E54199A28CBD0CB9A3E95EFA6EDB811F99D"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "pass",
+      "pages": "49-96",
+      "observation": "All pages visually inspected in three contact sheets. Consistent running headings and page numbers; no blank page, displaced text block, gross overlap, cropped diagram or page-edge clipping seen."
+    },
+    {
+      "severity": "pass",
+      "pages": [
+        64,
+        68,
+        70,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        90,
+        94
+      ],
+      "observation": "Individual enlarged images inspected. Nested subscripts/superscripts, spectral-sequence formulas, union indices, arrows and cup-product/Hom diagrams are readable; no missing-glyph box or broken formula rendering observed."
+    },
+    {
+      "severity": "nonblocking_layout",
+      "pages": [
+        77,
+        78
+      ],
+      "observation": "Wide cup-product diagrams extend beyond ordinary prose measure, most noticeably on page 77. They remain wholly inside page boundaries with whitespace, legible labels and no collision with adjoining prose."
+    },
+    {
+      "severity": "adverse_reader_evidence",
+      "pages": [
+        64,
+        68,
+        70,
+        74,
+        75,
+        76,
+        79,
+        80,
+        90,
+        94
+      ],
+      "observation": "Literal ?? cross-chapter references are visibly present, including Sites, Homology, Categories and More on Algebra references. This visual review records them without claiming they resolve. Internal numeric references appear in red hyperlink rectangles."
+    }
+  ],
+  "blocking_visual_findings": 0,
+  "caveats": [
+    "Contact sheets establish page-complete visual layout coverage, not character-level reading of all 48 pages. Fine formula/diagram review is limited to the 12 listed individual enlarged images.",
+    "Image viewer downsampled 1530x1980 high-resolution files to 1376x1780 in the review display; listed hashes bind the original inspected image files.",
+    "Visual review does not certify mathematical correctness, accessibility tagging, text extraction, or hyperlink target resolution; those require separate deterministic gates.",
+    "No pages outside 49-96 are claimed reviewed by this receipt."
+  ],
+  "mutations": {
+    "source": false,
+    "registry": false,
+    "build": false,
+    "git": false,
+    "only_this_review_receipt_written": true
+  }
+}

@@ -1,0 +1,516 @@
+{
+  "schema": "stacks_r39_bounded_visual_review/v1",
+  "reviewer": "cjk_threads_status",
+  "producer_status": "producer_uncertified",
+  "scope": {
+    "pdf": "builds/sites-cohomology.pdf",
+    "pdf_bytes": 1274274,
+    "pdf_sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F",
+    "assigned_pages": [
+      1,
+      48
+    ],
+    "total_pdf_pages": 134,
+    "reviewed_pages_count": 48,
+    "unreviewed_pages_in_assignment": [],
+    "other_pages_not_reviewed": [
+      49,
+      134
+    ]
+  },
+  "method": "Direct individual full-page image inspection of every page 1-48 at existing 96-dpi native render (816x1056), followed by contact sheets 1-3 for page-sequence/layout consistency. No builds, new renders, source edits, or PDF mutation.",
+  "render_manifest": {
+    "file": "render-manifest.json",
+    "bytes": 33657,
+    "sha256": "5715ADE0EC9EAF83A17D844B5112DC52CC8624D2657DA9245680171A24355F96"
+  },
+  "result": "PASS_LAYOUT_WITH_REFERENCE_CAVEAT",
+  "blocking_layout_defects": [],
+  "checks": {
+    "page_clipping": "No visible clipped content on any reviewed page",
+    "overlap": "No observed overlapping body text, formulas, diagram labels or footnotes",
+    "glyphs": "No visible missing-glyph boxes or broken math glyphs at reviewed resolution",
+    "margins": "Consistent text area and running headers, all reviewed material inside page",
+    "formula_and_diagram_legibility": "Equations and diagrams visually legible at existing full-page resolution",
+    "sequence": "All pages 1-48 viewed; contacts agree with individual page numbering"
+  },
+  "adverse_evidence": [
+    {
+      "kind": "unresolved_cross_references",
+      "examples": [
+        2,
+        3,
+        7,
+        13,
+        25,
+        34,
+        43,
+        48
+      ],
+      "observation": "Visible double-question-mark references occur repeatedly, generally preceded by names of other Stacks chapters. Their external/local classification was not established by this visual-only review; they require the separate reference/build audit. This report does not assert reference completeness or public-reader readiness."
+    },
+    {
+      "kind": "visible_link_borders",
+      "observation": "Red internal-link and green citation boxes are visible throughout, including contents. They do not obscure text and are treated as existing hyperlink styling, not glyph failure."
+    },
+    {
+      "kind": "resolution_limit",
+      "observation": "Review uses existing 96-dpi renders; no higher-resolution new render was generated. It is layout/glyph-legibility evidence, not independent mathematical certification."
+    }
+  ],
+  "viewed_page_artifacts": [
+    {
+      "page": 1,
+      "file": "sites-cohomology/page-001.png",
+      "bytes": 124294,
+      "sha256": "06359988CD42246EC25D8061474B98EBE579F5FBC1D3CB57A274A94DD788EC33",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 2,
+      "file": "sites-cohomology/page-002.png",
+      "bytes": 149876,
+      "sha256": "2EBAFD10AFA2B75846A7FAC771C5F7C760A2DDBC572B2DB0A2520CD6AB046483",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 3,
+      "file": "sites-cohomology/page-003.png",
+      "bytes": 181078,
+      "sha256": "4577AB1AC4E170C428E16818B791DF1633273B2A3E0D4B6AF1B642713A71B9E8",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 4,
+      "file": "sites-cohomology/page-004.png",
+      "bytes": 167819,
+      "sha256": "72A0B0858BE561071740B10A5DF83AD9790C494C590A1307721D738E57FFA23B",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 5,
+      "file": "sites-cohomology/page-005.png",
+      "bytes": 143852,
+      "sha256": "9E85974A0BB62AC669B931AC642BB64F82EEBAE78E1A4D63AE72301EDB1E598C",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 6,
+      "file": "sites-cohomology/page-006.png",
+      "bytes": 153086,
+      "sha256": "7C4DF10FC038085A5B3C06CF1DE4AB162DDA1550B13E5AD26CD7B3DE1A82FE27",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 7,
+      "file": "sites-cohomology/page-007.png",
+      "bytes": 176958,
+      "sha256": "F86D18B6F8538CB24D33201DD1798A655832DAC444960A5F80791A271DB6C9C4",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 8,
+      "file": "sites-cohomology/page-008.png",
+      "bytes": 158146,
+      "sha256": "A61DAB1EBA26601F2A1E7F2C39585F54D0CB3ACD3BE5DAC053288E59E57C027B",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 9,
+      "file": "sites-cohomology/page-009.png",
+      "bytes": 157534,
+      "sha256": "264AAF16B6D2D7789D8829EC13C02BF1817440412CBAE434C71F013E1DA3F27B",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 10,
+      "file": "sites-cohomology/page-010.png",
+      "bytes": 174407,
+      "sha256": "C73F8AA9A09D57A1BE4079ECDACC292CF21C44E94A45EB043204CA02B749517A",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 11,
+      "file": "sites-cohomology/page-011.png",
+      "bytes": 95464,
+      "sha256": "F8798F9EF8DB7B411D5CCDD57421EFC24191971A619D45DD36FD55E8F8B3A6E0",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 12,
+      "file": "sites-cohomology/page-012.png",
+      "bytes": 123811,
+      "sha256": "674573BAA02D9062B3FF9DDAE9ECAEA9210307DE4FE9FD857808A4A55550012E",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 13,
+      "file": "sites-cohomology/page-013.png",
+      "bytes": 190921,
+      "sha256": "0E1375FF671F4B627E92E2E822BCFC487EC2563BCE5B7F5B2DD66DBD02158B64",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 14,
+      "file": "sites-cohomology/page-014.png",
+      "bytes": 172438,
+      "sha256": "4FB14C5D0CDDEB38A0DA7A1C5ACB54B2DE5B6F4A59E163098651405FA528AE9D",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 15,
+      "file": "sites-cohomology/page-015.png",
+      "bytes": 174167,
+      "sha256": "1FC1C4D492474BA7C5AA56BCBBEFA3E1B593AB55595881C23624BCC542C4D073",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 16,
+      "file": "sites-cohomology/page-016.png",
+      "bytes": 161184,
+      "sha256": "20A9D18474F739DB1065C908C38D78AF6DB8EC94585506DCDF0F07A82AE15157",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 17,
+      "file": "sites-cohomology/page-017.png",
+      "bytes": 204125,
+      "sha256": "61619D2217BD565B808C9F81C400B1F4B59FD1C7E1E3BCA9244049255A8FB73D",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 18,
+      "file": "sites-cohomology/page-018.png",
+      "bytes": 156359,
+      "sha256": "5BACB7F9E13FEC9BDE426CCC604B4FFBE1586D7D3746C777E507D3F2EA1C2469",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 19,
+      "file": "sites-cohomology/page-019.png",
+      "bytes": 192674,
+      "sha256": "AB1146A42A90593ED9E1E21BB7C5276AD1A9EC6808BB43761246339B8E3B54B2",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 20,
+      "file": "sites-cohomology/page-020.png",
+      "bytes": 190513,
+      "sha256": "B0143067F0EE5334696856AD4B63C2EF56DEB61DD249C5ECD4AB3707212B75D2",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 21,
+      "file": "sites-cohomology/page-021.png",
+      "bytes": 199747,
+      "sha256": "6C510573B7F2DD3725EFEBBA977C91C1D72890187D050F9C676005CBDB22ACF3",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 22,
+      "file": "sites-cohomology/page-022.png",
+      "bytes": 185258,
+      "sha256": "8FE4BEF85C04B40842F228D9619194FCCDD9B1222639089C9BACA3631154C30F",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 23,
+      "file": "sites-cohomology/page-023.png",
+      "bytes": 182306,
+      "sha256": "254E4751B786FAB4C22AE244AF8D498DC6C2151BA3A907F09D515961EED66030",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 24,
+      "file": "sites-cohomology/page-024.png",
+      "bytes": 144012,
+      "sha256": "19245C32D545AEA762C6734CB20A0EA901CFB27C4DB48D2C76EF6DB91BFE3467",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 25,
+      "file": "sites-cohomology/page-025.png",
+      "bytes": 185223,
+      "sha256": "D516D435CA32DA1A3C51675CD9CEC8EDE4082057ED947A948E0330A5C60AED4A",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 26,
+      "file": "sites-cohomology/page-026.png",
+      "bytes": 203872,
+      "sha256": "BB807F420DDE2FC9AD1608AD19F4F1215B4D1B25267875F7C1836724EA448B06",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 27,
+      "file": "sites-cohomology/page-027.png",
+      "bytes": 186149,
+      "sha256": "B8124BD3EE0C4040FBD1D140055FE78965709E741524D8923CD1CC616A10DC1E",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 28,
+      "file": "sites-cohomology/page-028.png",
+      "bytes": 156855,
+      "sha256": "1078C4714848642B0BB019AA715CC48B40EADA300915C10FC723C2CB548F6251",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 29,
+      "file": "sites-cohomology/page-029.png",
+      "bytes": 161851,
+      "sha256": "211A0F8F4C572BAD633768C9D2615B02E3B9AA69EF4B58FE4CD6FF9472FBB6BF",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 30,
+      "file": "sites-cohomology/page-030.png",
+      "bytes": 167142,
+      "sha256": "E499D088C8C687188EF5126E3D96D05B049509DAC6DCA6C43D9BA765BEBC8CE3",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 31,
+      "file": "sites-cohomology/page-031.png",
+      "bytes": 167486,
+      "sha256": "9823A3F046ABBF2488EA117C25034B62695AF78D9BDF7F263EE593ADE85F93F3",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 32,
+      "file": "sites-cohomology/page-032.png",
+      "bytes": 163574,
+      "sha256": "DFF63C1155FFF6D742786C0C8E8223A16F4790D7894AF7E3508DCB0235A3D273",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 33,
+      "file": "sites-cohomology/page-033.png",
+      "bytes": 160629,
+      "sha256": "CC1406238A17146258EDA30D333D9171A11CB8DB9C17FA8F87B9B4A4B6066DBD",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 34,
+      "file": "sites-cohomology/page-034.png",
+      "bytes": 195134,
+      "sha256": "2A4D0CEB67E3712585E338502B9EE71D4F7181ACB660E0435E4CC3D320F8C302",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 35,
+      "file": "sites-cohomology/page-035.png",
+      "bytes": 197678,
+      "sha256": "567195B847142A10503E5ECEC054E4DB00FC9527BEFDD50AE437B9C71A35E1CF",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 36,
+      "file": "sites-cohomology/page-036.png",
+      "bytes": 159594,
+      "sha256": "7551D351ED2C8A94C82CF20B994392C0670014436F701A60AEF563CF33098469",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 37,
+      "file": "sites-cohomology/page-037.png",
+      "bytes": 179112,
+      "sha256": "1C348E5C56934B0C1BD7ADBA1EA1BE793747C33427119D4B46C188642C9CE24E",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 38,
+      "file": "sites-cohomology/page-038.png",
+      "bytes": 106162,
+      "sha256": "8F24D4F603C3A342F51B32ADA0C61EFED2885557796B041347DE09B1EEADDF51",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 39,
+      "file": "sites-cohomology/page-039.png",
+      "bytes": 167606,
+      "sha256": "C159063EE359C6FC0827B4001E585F817F166DF76F692BCA8A0CD240202D1BD4",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 40,
+      "file": "sites-cohomology/page-040.png",
+      "bytes": 176916,
+      "sha256": "40BC2EC25DF95DE56D7C6781E0D88EEB359AC5E3EB90BDE2CF445B2848670F28",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 41,
+      "file": "sites-cohomology/page-041.png",
+      "bytes": 188605,
+      "sha256": "03A661D8D60F3AA0F00DB2FB6A801F69DD8DC440A46CDE6B6A5FE1917E03239B",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 42,
+      "file": "sites-cohomology/page-042.png",
+      "bytes": 179533,
+      "sha256": "FCE26D8AF6C200C5C96DEF5C7E5EB0A75215148EB7EC4EC8E0F16310C89FD355",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 43,
+      "file": "sites-cohomology/page-043.png",
+      "bytes": 158319,
+      "sha256": "98232F4219AEF60C2123FBF10A8B5415590D46DC2C22CA8CF9ED6704CF6F03B9",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 44,
+      "file": "sites-cohomology/page-044.png",
+      "bytes": 152231,
+      "sha256": "926C4498AD47B0DB33F46528ACB4801ACC06CDF8C41F0AA573B0B2305AA5200C",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 45,
+      "file": "sites-cohomology/page-045.png",
+      "bytes": 134690,
+      "sha256": "2DE13296568434A1B5AAAF4B9A5BCA6B68F7F7B88273AA43824D2EF0E4A1E728",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 46,
+      "file": "sites-cohomology/page-046.png",
+      "bytes": 195520,
+      "sha256": "138B4F5490C88D4F5851BEA15DCB3CF6BD19669A82B13C6308E854B4C9DF6F4A",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 47,
+      "file": "sites-cohomology/page-047.png",
+      "bytes": 173668,
+      "sha256": "AE271B0B68C8AFF661B9DB0F8558308AA07887526E1A7A1184DEAA5BA2237D2C",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    },
+    {
+      "page": 48,
+      "file": "sites-cohomology/page-048.png",
+      "bytes": 177315,
+      "sha256": "55C1A39859A5ECAD09348144F9FD734E1C8B5B219E4E7D8B6FFC26218FF224E1",
+      "matches_manifest": true,
+      "viewed_individually": true,
+      "layout_result": "PASS"
+    }
+  ],
+  "viewed_contact_artifacts": [
+    {
+      "file": "contact_sheets/sites-cohomology_01.png",
+      "bytes": 819140,
+      "sha256": "B35C7A88AE5AD834E58D5AF487E032ABDD57F57336A00451D2586B7A338A4645",
+      "matches_manifest": true
+    },
+    {
+      "file": "contact_sheets/sites-cohomology_02.png",
+      "bytes": 900656,
+      "sha256": "5F6057BF85FA0E70AF232925C49CFC461DF1D85FD453DC1F81688115FC886E25",
+      "matches_manifest": true
+    },
+    {
+      "file": "contact_sheets/sites-cohomology_03.png",
+      "bytes": 874001,
+      "sha256": "0F69C3D4355C67B63DF748D2EB50BF4E85030F4C146716B6CE1E59CE88A34ED3",
+      "matches_manifest": true
+    }
+  ],
+  "absolute_private_paths_in_receipt": false
+}

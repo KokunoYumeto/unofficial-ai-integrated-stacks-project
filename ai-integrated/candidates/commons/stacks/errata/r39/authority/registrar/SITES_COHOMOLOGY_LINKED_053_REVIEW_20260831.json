@@ -1,0 +1,109 @@
+{
+  "SITES-COHOMOLOGY-053": {
+    "adverse_evidence": [
+      "For the special case B=B' the coefficient types coincide, so typing alone does not expose the error; the lemma quantifies over arbitrary B -> B'.",
+      "One could instead swap the vertical labels in the diagram, but that would contradict the earlier explicit definition of pi over B and require more edits. The statement-only prime swap is the smallest coherent correction.",
+      "The equals sign is interpreted as canonical natural isomorphism, as elsewhere in the nearby source; changing equality notation is not necessary for this repair."
+    ],
+    "argument": "The diagram at 10215-10217 fixes the primes unambiguously. Pullback reverses the morphism arrows: Lh* extends coefficients from underline(B) to underline(B'), and Lf* extends B to B'. Consequently the printed Lpi! after Lh* has the wrong input coefficient ring; the printed Lpi'! before Lf* likewise has the wrong output coefficient ring. Exchanging pi and pi' in line 10220 makes both composites functors D(underline(B)) -> D(B'). The first is left adjoint to h_* composed with pi'^{-1}; the second is left adjoint to pi^{-1} composed with f_*. These right adjoints agree: both form the constant sheaf and restrict B'-scalars to B. Restriction of scalars and the constant-sheaf pullbacks here are exact. Uniqueness of left adjoints therefore proves the corrected natural isomorphism. The source's equality notation may remain as its established canonical-isomorphism convention.",
+    "derived_functor_types": {
+      "Lf_star": "D(B) -> D(B')",
+      "Lh_star": "D(underline(B)) -> D(underline(B'))",
+      "Lpi_prime_shriek": "D(underline(B')) -> D(B')",
+      "Lpi_shriek": "D(underline(B)) -> D(B)",
+      "common_right_adjoint": "h_* o pi_prime^{-1} = pi^{-1} o f_* : D(B') -> D(underline(B))"
+    },
+    "diagram_types": {
+      "f": "(*, B') -> (*, B)",
+      "h": "(Sh(C), underline(B')) -> (Sh(C), underline(B))",
+      "pi": "(Sh(C), underline(B)) -> (*, B)",
+      "pi_prime": "(Sh(C), underline(B')) -> (*, B')"
+    },
+    "disposition": "accept_with_linked_statement_correction",
+    "operations": [
+      {
+        "line": 10220,
+        "new": "Then $L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!$.",
+        "old": "Then $L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!$.",
+        "reason": "Both originally printed composites are ill-typed for the displayed coefficient-ring square."
+      },
+      {
+        "line": 10224,
+        "new": "Both functors are left adjoint to the obvious functor",
+        "old": "Both functors are right adjoint to the obvious functor",
+        "reason": "The corrected composites are left adjoints to D(B') -> D(underline(B))."
+      }
+    ],
+    "primary_support": [
+      "9828-9852: lower-shriek and derived lower-shriek are left adjoint to pullback",
+      "10015-10034: underline(B), pi, and pi! as colimit are explicitly defined",
+      "10215-10217: coefficient rings and directions of all four diagram arrows",
+      "10225: the stated common right-adjoint domain/codomain D(B') -> D(underline(B)) confirms the corrected direction"
+    ],
+    "semantic_grouping": "Keep both operations in the same linked change-of-rings adjunction unit. Correcting the proof adjective alone leaves the theorem statement ill-typed."
+  },
+  "SITES-COHOMOLOGY-067": {
+    "adverse_evidence": [
+      "A singular repair 'the module ... is flat' would also be grammatical for each i; the producer's plural modules/are naturally expresses the indexed family and is valid.",
+      "Grouping by source proof would keep the original row intact, but grouping by independent semantic/grammatical defect warrants two stable units."
+    ],
+    "argument": "The redundant preposition at 12555 and number disagreement at 12560 occur in distinct sentences and can be repaired independently. Neither repair changes the other sentence's meaning or correctness. They share a proof but not a single semantic failure. Retain the producer row identity on both registrar subunits with distinct exact loci, rather than falsely counting the producer row twice as two original allegations.",
+    "disposition": "split_into_two_independent_grammar_units_preserving_one_producer_alias",
+    "operations": [
+      {
+        "classification": "redundant_preposition",
+        "line": 12555,
+        "new": "we can represent $E$ by a complex",
+        "old": "we can represent $E$ by a complex of"
+      },
+      {
+        "classification": "number_agreement",
+        "line": 12560,
+        "new": "the modules $f^*\\mathcal{E}^i$ are flat.",
+        "old": "the module $f^*\\mathcal{E}^i$ are flat."
+      }
+    ]
+  },
+  "authority": {
+    "commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "live_hash_verified": true,
+    "reviewed_lines": [
+      [
+        9828,
+        9870
+      ],
+      [
+        10015,
+        10079
+      ],
+      [
+        10140,
+        10260
+      ],
+      [
+        12540,
+        12575
+      ]
+    ],
+    "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
+    "source_file": "sites-cohomology.tex"
+  },
+  "constraints": {
+    "candidate_mutated": false,
+    "git_mutated": false,
+    "only_output": "SITES_COHOMOLOGY_LINKED_053_REVIEW_20260831.json",
+    "producer_mutated": false,
+    "publication_performed": false,
+    "registry_mutated": false,
+    "source_mutated": false
+  },
+  "original_private_transport_identity": {
+    "bytes": 5446,
+    "filename": "SITES_COHOMOLOGY_LINKED_053_REVIEW_20260831.json",
+    "sha256": "BB7E3F8AF6A2C7A1D83976149E2BF3D754F8CFB910E9970975C138CB101C7E54"
+  },
+  "review_date": "2026-08-31",
+  "reviewer": "r38_independent_validator",
+  "schema": "stacks-registrar-bounded-independent-review/v1",
+  "status": "PASS_LINKED_EXPANSION_AND_GRAMMAR_SPLIT"
+}

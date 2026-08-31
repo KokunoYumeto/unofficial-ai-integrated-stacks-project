@@ -1,0 +1,89 @@
+{
+  "schema": "stacks-r39-final-independent-review/v1",
+  "reviewer": "r38_independent_validator",
+  "date": "2026-08-31",
+  "passed": true,
+  "status": "PASS_FINAL_CANDIDATE_REVIEW",
+  "final_stage_sha256": "D6298406F4C9D58ABA88612431CDC7D61C9D72C656FE75830167D09F315F4623",
+  "final_stage_bytes": 11000,
+  "snapshot": {"files_verified": 58, "missing_files": 0, "hash_or_size_mismatches": 0, "unexpected_files": 0},
+  "source": {
+    "authority_sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
+    "payload_bytes": 534485,
+    "payload_sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD",
+    "operations": 61,
+    "nonoverlapping_exact_preimages_and_descending_replay": true,
+    "stable_units": 43,
+    "stable_id_range": "MC-STK-ERR-1359..MC-STK-ERR-1401",
+    "classification": {"source_defect": 39, "editorial_or_notational_clarification": 4},
+    "producer_operations": 60,
+    "linked_registrar_expansion_operations": 1,
+    "grouping": "053 includes prime-swap at10220 and right-to-left adjoint at10224.067 splits independent grammar failures at12555/12560 into1388/1389 while preserving one producer identity.",
+    "source_stage_independent_receipt_sha256": "AC10D0D9AA35B4828AFF591FC46EA392AAD8406DC82588EEF37FD08C4BD1B61F",
+    "source_stage_inputs_preserved": true
+  },
+  "build": {
+    "two_private_candidate_pdfs_and_candidate_export_byte_identical": true,
+    "two_private_authority_pdfs_and_authority_export_byte_identical": true,
+    "candidate_pdf_bytes": 1274274,
+    "candidate_pdf_sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F",
+    "authority_pdf_bytes": 1274260,
+    "authority_pdf_sha256": "282E30F2D719AD9C52B0191E038CEBA4FE394BC6EE7971C77438FD1ECB83160A",
+    "pages": 134,
+    "overfull_hbox_diagnostics_each": 21,
+    "missing_glyph_markers_each": 0,
+    "undefined_reference_distinct_targets_each": 279,
+    "undefined_reference_occurrences_each": 448,
+    "undefined_reference_multisets_equal": true,
+    "undefined_citation_targets_each": 0,
+    "link_rectangles_verified": 655,
+    "bad_link_rectangles": 0,
+    "new_builds_run_by_reviewer": 0
+  },
+  "render_and_mapping": {
+    "render_manifest_sha256": "5715ADE0EC9EAF83A17D844B5112DC52CC8624D2657DA9245680171A24355F96",
+    "artifacts_rehashed": 169,
+    "page_renders": 134,
+    "contact_sheets": 9,
+    "high_resolution_pages": 26,
+    "all_hashes_and_sizes_exact": true,
+    "mapped_operation_ids_equal_all_61_source_operations": true,
+    "mapping_source_lines_and_stable_ids_match": true,
+    "mapping_source_pdf_synctex_hashes_verified": true,
+    "source_page_map_sha256": "DB0F6A494FD473435A0BDAE925F647F18E3A068594C238C64053DA937FB438C0"
+  },
+  "visual_review": {
+    "aggregate_sha256": "681F36917C3758F2B70109108F077692D1EC13B641FE6E832FF46E21BAB61259",
+    "raw_review_artifact_identities_rehashed": 118,
+    "coverage": "Disjoint scopes1-48,49-96,97-134 cover all134 pages. Their actual methods and limitations are preserved, not promoted to uniform character-level review.",
+    "methods": ["1-48:48 individual96dpi pages plus3contacts", "49-96:3contact sheets plus12enlarged sensitive pages", "97-134:38individual96dpi pages plus14enlarged pages"],
+    "aggregate_no_blocking_findings": true,
+    "additional_direct_view_by_final_reviewer": "Existing enlarged page94: corrected prime-pi statement, coefficient diagram and left-adjoint proof are visible, readable and geometrically intact. Image was displayed resized1530x1980 to1376x1780. This final reviewer did not repeat all134 visual inspections.",
+    "caveats": ["Inherited unresolved cross-chapter ?? remain; reader is bounded validation artifact, not complete cumulative edition.", "21overfull diagnostics remain in both source versions; no warning-free claim.", "Contact-sheet coverage is not character-level inspection.", "Untagged PDF; AI visual review is not independent expert certification."]
+  },
+  "transitive_closure": {
+    "named_hashed_bindings_checked": 181,
+    "unexplained_stale_hashes": 0,
+    "historical_exception": "Pre-lease dedup plan binds committed81-event lease registry, not live82-event successor. This historical identity was proved in source-stage review; source-stage NOT_PERFORMED receipts remain unchanged and do not assert current final state.",
+    "private_render_relative_paths": "Resolved against their declared logical render root and rehashed. They are not missing candidate payload files.",
+    "source_transport": "Sanitized producer copies retain explicit original_private_transport_identity; copied hashes and original named inputs are distinct provenance states, not unrecorded replacements."
+  },
+  "finalizer_readiness": {
+    "finalizer_read": true,
+    "draft_2020_12_schema_checked": true,
+    "acyclic_order": "Final stage freezes preceding files; this receipt binds that stage; top manifest is sealed afterward and binds this receipt. Snapshot is not rewritten to bind its future reviewer.",
+    "seal_not_run_by_reviewer": true,
+    "top_manifest_must_still_be_sealed_and_schema_inventory_checked": true
+  },
+  "rights_privacy": {
+    "upstream_COPYING_preserved": true,
+    "official_commit_and_source_identity_preserved": true,
+    "unofficial_AI_overlay_and_nonendorsement_stated": true,
+    "textual_absolute_account_paths_found": 0,
+    "unexpected_private_or_temporary_files": 0,
+    "credentials_not_accessed": true
+  },
+  "blockers": [],
+  "scope_limit": "Final candidate evidence validation, not registry admission, generated-source composition, complete-corpus correctness, or public publication receipt.",
+  "mutations": "Only this new receipt; no candidate input, historical receipt, source, build, registry, Git, or publication changes."
+}

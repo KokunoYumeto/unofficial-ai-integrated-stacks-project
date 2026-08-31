@@ -1,0 +1,52 @@
+{
+  "schema": "stacks-r39-independent-source-validation/v1",
+  "reviewer": "r38_independent_validator",
+  "date": "2026-08-31",
+  "status": "PASS_SOURCE_ONLY",
+  "passed": true,
+  "scope": "Independent source preparation replay only. Not build, visual, full candidate admission, composition, or publication approval.",
+  "authority": {"path": "authority/source/sites-cohomology.tex", "bytes": 534394, "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"},
+  "payload": {"path": "payload/sites-cohomology.tex", "bytes": 534485, "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"},
+  "checks": {
+    "exact_authority_hash": true,
+    "operations": 61,
+    "unique_operation_ids": 61,
+    "exact_byte_preimages_lengths_hashes_and_line_numbers": 61,
+    "exact_replacement_lengths_hashes": 61,
+    "nonoverlapping": true,
+    "descending_replay_equals_payload_byte_for_byte": true,
+    "stable_units": 43,
+    "stable_ids": "MC-STK-ERR-1359..MC-STK-ERR-1401",
+    "source_map_unit_operation_producer_identity_equality": true,
+    "source_defect_units": 39,
+    "editorial_or_notational_clarification_units": 4,
+    "producer_operations_exactly_matched_to_frozen_declaration": 60,
+    "linked_registrar_expansion_operations": 1,
+    "json_jsonl_parse": true,
+    "hashed_path_bindings_checked": 44,
+    "unexplained_stale_transitive_hashes": 0
+  },
+  "grouping": {
+    "053": "One unit: right-to-left adjoint correction at10224 plus linked pi/prime swap at10220, independently proved in the bound linked review.",
+    "067": "Two units MC-STK-ERR-1388 at12555 and MC-STK-ERR-1389 at12560 retain the same producer identity, not two original allegations."
+  },
+  "transitive_evidence_notes": [
+    "Producer transport copy26284/22B2631E7E80153D20ECA8231261872AA8FAA9D1C7F76F45A0715116A3C20AC7 explicitly preserves original_private_transport_identity26075/DA3BFA3A8E310D2A5426BDA63F05F4AC3AFFA212BF5DCB9CA36CD03382F186E3. The review binds that original private file, verified live; this is not a stale hash replacement.",
+    "Dedup plan is explicitly pre-lease historical evidence at registry_head69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c. Its leases49553/33F1D8553828A7516FC0695ABE22FC6E3659CBD32CB1C3F918D89B168A8BA648 matches committed HEAD exactly. Live lease registry adds only event82 to unchanged81-event prefix. This expected append is not an invalid historical binding.",
+    "All other44 checked hashed path references close against live named inputs. Source-validation remains an explicitly source-only stage with independent replay NOT_PERFORMED; this independent receipt is separately named and does not overwrite that hashed stage artifact. Later build/admission stages must likewise preserve source-stage files or explicitly rebind references."
+  ],
+  "observed_files": [
+    {"path":"candidate.config.json","bytes":4508,"sha256":"AA8BDFA1510F89F6090F29C53013F10B8E53409A0F1D5521790735BC933840DD"},
+    {"path":"candidate.config.input.json","bytes":4508,"sha256":"AA8BDFA1510F89F6090F29C53013F10B8E53409A0F1D5521790735BC933840DD"},
+    {"path":"operation-spec.json","bytes":53100,"sha256":"CC437C00386E55B1978EE208245FD36B7BA59D6CAE2461DD271773242E0468F8"},
+    {"path":"stable-units.json","bytes":21146,"sha256":"9BFCB556DD0A9ACD68090386A7AA04730409BF236D5EE448C070DE696C34937F"},
+    {"path":"source-map.jsonl","bytes":77280,"sha256":"F52F9962519FCFA47C5E10FBCDC44B7A6F9227D23CE6D55BE77FA3F11E7EE453"},
+    {"path":"source-validation.json","bytes":12644,"sha256":"5CE221C20743B0FC225763F1864AD64762B07BD51DCCD4CDD4D37CA386809A6F"},
+    {"path":"REGENERATION_RECEIPT.json","bytes":1345,"sha256":"AD0645219641BAE005A8716B6170089F01A8FA05BF690B0CDFC46E64E8CA6273"}
+  ],
+  "blockers": [],
+  "build": "NOT_REVIEWED_NOT_AUTHORIZED_BY_THIS_RECEIPT",
+  "visual": "NOT_REVIEWED_NOT_AUTHORIZED_BY_THIS_RECEIPT",
+  "full_admission": "NOT_PERFORMED",
+  "mutations": "Only this new review receipt; no source, code, registry, build, Git, or publication changes."
+}

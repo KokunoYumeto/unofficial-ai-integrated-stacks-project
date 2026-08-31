@@ -1,0 +1,930 @@
+{
+  "schema": "mathematics-commons-stacks-ai-visual-inspection/v1",
+  "status": "completed_bounded_ai_inspection",
+  "inspection_date": "2026-08-31",
+  "scope": {
+    "pdf": "builds/sites-cohomology.pdf",
+    "pages": [
+      97,
+      134
+    ],
+    "page_count": 38
+  },
+  "source": {
+    "bytes": 1274274,
+    "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F",
+    "identity_recomputed": true
+  },
+  "render_source": {
+    "logical_private_root": "private_evidence/errata-r39-20260831/render",
+    "manifest": "render-manifest.json",
+    "bytes": 33657,
+    "sha256": "5715ADE0EC9EAF83A17D844B5112DC52CC8624D2657DA9245680171A24355F96",
+    "identity_recomputed": true
+  },
+  "authority": "Bounded read-only AI visual inspection delegated by the parent task; parent adjudicates findings.",
+  "limitations": [
+    "AI inspection, not certification or proof validation.",
+    "No new renders, builds, source edits, Git operations, registry changes, or publication performed.",
+    "Only artifacts explicitly listed as viewed count toward coverage."
+  ],
+  "coverage": {
+    "assigned_pages": [
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134
+    ],
+    "unique_pages_viewed": 38,
+    "main_96dpi_viewed": [
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116
+    ],
+    "delegated_96dpi_viewed": [
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134
+    ],
+    "main_180dpi_viewed": [
+      97,
+      98,
+      112,
+      113,
+      114,
+      115,
+      116,
+      120,
+      125,
+      128,
+      129,
+      130,
+      131,
+      132
+    ],
+    "unviewed_assigned_pages": [],
+    "unviewed_required_highres_pages": [],
+    "contact_sheets_viewed": []
+  },
+  "observations": [
+    {
+      "kind": "layout",
+      "pages": [
+        97,
+        134
+      ],
+      "finding": "No visible clipping, unintended body-line overlap, damaged formula or diagram layout, missing-glyph boxes, or page-edge loss was observed in the assigned 38-page range. Headers, folios, margins, and section transitions appear intact in the 96-dpi review."
+    },
+    {
+      "kind": "high_resolution",
+      "pages": [
+        97,
+        98,
+        112,
+        113,
+        114,
+        115,
+        116,
+        120,
+        125,
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "finding": "The specified higher-resolution renders were all inspected. Dense superscripts/subscripts, direct sums/products, underlined constant-sheaf notation, and the p113 commutative diagram appear legible without collisions. The wide p128 exact sequences fit visibly within the body width."
+    },
+    {
+      "kind": "cross_reference_caveat",
+      "pages": [
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
+      ],
+      "finding": "Literal ?? cross-reference markers are visible. Examples include Categories Definition and Sites Theorem on p97, Homology lemmas on p113, and multiple Derived Categories references on p129. These are visible unresolved-reference content markers, not missing-glyph raster boxes. No visible ?? was reported on p126 or p134. Exact counts and authority parity were not checked by this subreview."
+    },
+    {
+      "kind": "hyperlink_appearance",
+      "pages": [
+        97,
+        134
+      ],
+      "finding": "Red rectangular hyperlink borders are visible around numbered references. They do not visibly obscure text in the inspected range; no claim about hyperlink destinations is made."
+    }
+  ],
+  "viewed_artifacts": [
+    {
+      "bytes": 171562,
+      "page": 97,
+      "sha256": "4CDBCECF094B4969921149F418335C79013C409C06AE2BCEBD7EBB091634C2C5",
+      "path": "sites-cohomology/page-097.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 207455,
+      "page": 98,
+      "sha256": "9062AFF43DD05000E6338A85ED1DD19B20B3DD9C4720F8801B096454C3D2E366",
+      "path": "sites-cohomology/page-098.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 189532,
+      "page": 99,
+      "sha256": "E1BA743D1D2B24C75F3EA585073061B65FA1ABFE60ACAC85B9B87811639501C3",
+      "path": "sites-cohomology/page-099.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 196529,
+      "page": 100,
+      "sha256": "02BA1CC006C5B719F09C60FB4EC2C74105DBA072DD7A6AD22205534ABDC7AE0D",
+      "path": "sites-cohomology/page-100.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 171018,
+      "page": 101,
+      "sha256": "ADA29191578BB06911AFEE22176E4D59B1199E79341C260FFAB1C7730EBEA277",
+      "path": "sites-cohomology/page-101.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 183993,
+      "page": 102,
+      "sha256": "65661E9FF5E61E77C6E8E336E483526B52CF581EBE8B1AEC2D1A5A1D228B6511",
+      "path": "sites-cohomology/page-102.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 173570,
+      "page": 103,
+      "sha256": "B0096E607BE759107D3228472CA8187FC8C031CE8E2F5408665E0A3B1D820D83",
+      "path": "sites-cohomology/page-103.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 197965,
+      "page": 104,
+      "sha256": "FF9CD6D420CB4E02D14BFFEC21AFE3F9C2C95F3F6775550DAD8CA5E26BCB0BAC",
+      "path": "sites-cohomology/page-104.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 168275,
+      "page": 105,
+      "sha256": "3944DE43E58D6E60A16048B64FD9C3581E1334B596F16EA31C9DF625751850B9",
+      "path": "sites-cohomology/page-105.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 189935,
+      "page": 106,
+      "sha256": "A4F4BC83F237F7C2094FD0FCDAF0A867785C1ADAA42387DA8383A65CAB70B2DF",
+      "path": "sites-cohomology/page-106.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 196254,
+      "page": 107,
+      "sha256": "A71BEF0F4C022D8FECE3989EC3A2C1879E71F245ABD61741B8141C274A6C8EEF",
+      "path": "sites-cohomology/page-107.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 154291,
+      "page": 108,
+      "sha256": "CBE247BDEA3A5D3CD7D16B30C240FEE07DB9005E2ABC1143D3D1E06C1FE27616",
+      "path": "sites-cohomology/page-108.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 185759,
+      "page": 109,
+      "sha256": "C2E021D64D15AC49D9DA0465F1F4A160B2FA2FD3E30F4F56BC4CCC7836BE6AD9",
+      "path": "sites-cohomology/page-109.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 175519,
+      "page": 110,
+      "sha256": "BA5C98B79BF9BC7035882521FBD9972EF8C52CEDF83A04989A75D77734BE0BAF",
+      "path": "sites-cohomology/page-110.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 208229,
+      "page": 111,
+      "sha256": "237AAD4B6DCC9DE9677F883024C05387A8AD1DD4298FE3B7E1502D3D46724BD2",
+      "path": "sites-cohomology/page-111.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 209605,
+      "page": 112,
+      "sha256": "92B2070F0DE2BF4FBF2ACF9481755E7382277AADC586E765B852A9756C1F35B3",
+      "path": "sites-cohomology/page-112.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 174934,
+      "page": 113,
+      "sha256": "8ED8302F48D9F4976A60733111120C58A7B861199A02E2ACB93B62B1DDC61159",
+      "path": "sites-cohomology/page-113.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 196840,
+      "page": 114,
+      "sha256": "1CDB0105B7F238A80A8CE88FEE29EC7CCF28D71FDD8B611D3ACD4BB7DABBCA5F",
+      "path": "sites-cohomology/page-114.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 188315,
+      "page": 115,
+      "sha256": "19830431F5FD7AD65E49711ED8D5E4519B1AD4B1D1C84E349344E267F6C4794D",
+      "path": "sites-cohomology/page-115.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 195197,
+      "page": 116,
+      "sha256": "DC9DBDCA869F1D8B91A84D49B7BC2DCFC810A6860A3911B48C20E433D3B175AD",
+      "path": "sites-cohomology/page-116.png",
+      "dpi": 96,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 183111,
+      "page": 117,
+      "sha256": "B0A1870B910030AFE0CFFA7BF1312D20CE981B000EA5C6BD37C6F6C871D32F13",
+      "path": "sites-cohomology/page-117.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 202330,
+      "page": 118,
+      "sha256": "338B08217D332AF07DD4362E626898B3D6A2A13941E520DAF5AB64DF99B9B22E",
+      "path": "sites-cohomology/page-118.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 206017,
+      "page": 119,
+      "sha256": "89E18ADC1FF1C44A00C0FA283D60C8FAB08B439C9CD1A7DB69341A360A41D40A",
+      "path": "sites-cohomology/page-119.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 186140,
+      "page": 120,
+      "sha256": "8FE9D8238CCF183A986A021BDE13CA709ADCC9F457F948B5FB1C43278B335D52",
+      "path": "sites-cohomology/page-120.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 171751,
+      "page": 121,
+      "sha256": "3E1441EA20870F752864A8B9638C346560283A526715AE1BBA03D3E3119F4331",
+      "path": "sites-cohomology/page-121.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 184786,
+      "page": 122,
+      "sha256": "66A1AF228F86C171621035358D9F85B8D162E8D0CB36F110A4EC2EE15927FDC4",
+      "path": "sites-cohomology/page-122.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 141072,
+      "page": 123,
+      "sha256": "31163A661601B03EC25DEF0CB8BFBDA3603678289D19BE2BEC8B4DA0CB6FAD43",
+      "path": "sites-cohomology/page-123.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 205063,
+      "page": 124,
+      "sha256": "596AEB0D42D03A8A462EB698C8A7872616B9052B1A6A049E1DBF6AFAE7DA2ACA",
+      "path": "sites-cohomology/page-124.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 203383,
+      "page": 125,
+      "sha256": "13496232AB3F21BAD6CFC453D7F7F619E33CDB298AD1ECBF073DAC498A2B38A0",
+      "path": "sites-cohomology/page-125.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 147298,
+      "page": 126,
+      "sha256": "DF5B4849F842D81E3DBCC4F611E4AD9300F5FA855A2927966C54C1B5FEB75E8B",
+      "path": "sites-cohomology/page-126.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 190778,
+      "page": 127,
+      "sha256": "61CC11A0BF7FBE34E2F34DE004F9AF34E4D741C7CFFFCA2936940FC1D0791771",
+      "path": "sites-cohomology/page-127.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 165879,
+      "page": 128,
+      "sha256": "0515E4D5F1308ADA8502832AF4516FB638E9D286C613773A99FDC8A5F0EEE87C",
+      "path": "sites-cohomology/page-128.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 200167,
+      "page": 129,
+      "sha256": "84950306B9CE677A9AD80222F160A737E54A453646FA314024AB80E1A908DFFD",
+      "path": "sites-cohomology/page-129.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 211494,
+      "page": 130,
+      "sha256": "B8F1162A186F2A4C714C3CD8B5AE936A48F35DA67E16FE8DFCE3ECEABBC37B03",
+      "path": "sites-cohomology/page-130.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 204898,
+      "page": 131,
+      "sha256": "E169A6256EFA594541DEDE689248E09A44642152A4095B73EC7C7672C7EE4F5D",
+      "path": "sites-cohomology/page-131.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 183858,
+      "page": 132,
+      "sha256": "8DE6B1202E6384AF97BC049279A37103B7FC729659147B5A1730465E112D22CC",
+      "path": "sites-cohomology/page-132.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 193481,
+      "page": 133,
+      "sha256": "F5549F8D315C984B090AF201724D6324B02ACA54DFA2DF9DA3D8BCF85807B66A",
+      "path": "sites-cohomology/page-133.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 210254,
+      "page": 134,
+      "sha256": "7C166EA3A534FEE171C86F1B0D82A615D3D65C6E82E75A64BC4CE1B835918275",
+      "path": "sites-cohomology/page-134.png",
+      "dpi": 96,
+      "inspector": "delegated",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 366690,
+      "page": 97,
+      "sha256": "090D4CA96B36EC0B708790299A54F6CB29EE55F39411DFB41A49DCE39E0C50D6",
+      "path": "highres/sites-cohomology_p97.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 445593,
+      "page": 98,
+      "sha256": "E2337128CB0B4DC9598B592270F9CEA216729BA187A790A81A858CC95C8AFB52",
+      "path": "highres/sites-cohomology_p98.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 449662,
+      "page": 112,
+      "sha256": "8E7263F2CD6E7EA3EAE4C625CD03FB6A8A3AB66CFB388D064930170886C004F7",
+      "path": "highres/sites-cohomology_p112.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 376711,
+      "page": 113,
+      "sha256": "EEFFCD5B259087DEE7B2D093FE67F7A35EA0F5DE77BD94236BF5DEA64F18F23C",
+      "path": "highres/sites-cohomology_p113.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 425127,
+      "page": 114,
+      "sha256": "374816B8341B3712187D8CF910C7C1655008AB173B8FD4D8F1A84C6E27513CD4",
+      "path": "highres/sites-cohomology_p114.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 405041,
+      "page": 115,
+      "sha256": "D76D46ABAE0B9B746355EF58C245454329C0B06C28D1C9D4A4C18C490BF64CA3",
+      "path": "highres/sites-cohomology_p115.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 410821,
+      "page": 116,
+      "sha256": "84B99F293C0EEF8662FE3E5FB732B96CA0FD956DB1E325D1BCDAE1A154C608B4",
+      "path": "highres/sites-cohomology_p116.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 403142,
+      "page": 120,
+      "sha256": "4B34CB53C315D2DD33E40B78710CB4FFDCF6334ADFA6FE18A2F19236EB4DF0A2",
+      "path": "highres/sites-cohomology_p120.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 428648,
+      "page": 125,
+      "sha256": "13486AEC8CDD64774CE21284ADAD52D040BC163EC923A501661663B6B787E7AB",
+      "path": "highres/sites-cohomology_p125.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 356752,
+      "page": 128,
+      "sha256": "95E12C8224D84B0A2EFE860AEC2FF4516278079CDE46B47A3E67C192595588EA",
+      "path": "highres/sites-cohomology_p128.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 429332,
+      "page": 129,
+      "sha256": "89CE9ABF05B2F0371C29CCB2CFA40A5FB62CBD7E7AEF5DB0386A7485AEAE8F0C",
+      "path": "highres/sites-cohomology_p129.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 455926,
+      "page": 130,
+      "sha256": "4B7D12380D39A61CF8A18F2BFF3F4C4147A4EF46967629CC1F33E9C81748F45A",
+      "path": "highres/sites-cohomology_p130.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 438810,
+      "page": 131,
+      "sha256": "6B14D9715C1A6222E85F077A44EE4FFCA35B05B5ADDD5A604197A0CD903055CA",
+      "path": "highres/sites-cohomology_p131.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    },
+    {
+      "bytes": 391120,
+      "page": 132,
+      "sha256": "E4B05C1B127671BBC6124769BFD4DDE1E31F0D60D10F7F20E2881BD5B1C6D66B",
+      "path": "highres/sites-cohomology_p132.png",
+      "dpi": 180,
+      "inspector": "main",
+      "manifest_match_recomputed": true
+    }
+  ],
+  "next_action": "Parent integrates this bounded receipt with other page-range reports and deterministic checks; this subreview performs no release or registry action.",
+  "inspection_method": "Full-page existing PNGs viewed individually with view_image, not contact-sheet-only review. The 180-dpi source PNGs were displayed by the tool at 1376x1780 after automatic resizing from 1530x1980.",
+  "inspectors": {
+    "main": "r39_visual_097_134",
+    "delegated": "r39_visual_097_134/visual_117_134",
+    "delegation_scope": "Read-only full-page 96-dpi inspection of pages117-134; no files written by delegated inspector; its exact artifact identity checks matched the main inspector's checks."
+  },
+  "layout_defects": [],
+  "overfull_warning_impact": {
+    "reported_context": "The parent assignment reports 21 overfull warnings unchanged from authority.",
+    "count_or_authority_parity_independently_verified": false,
+    "visual_assessment": "No clipping, overlap, unreadable glyphs, or off-page material attributable to line overflow was observed in this range. Wide display sequences on p128 and dense formulas on p125 and pp130-132 remain visibly within the page content area.",
+    "limitation": "No source-line-to-warning mapping or build-log inspection was performed. This is a visual impact judgment, not a warning-free claim."
+  },
+  "page_observations": [
+    {
+      "page": 97,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Remark39.13 and section40 transition are separated; lower displayed sum and nested indices fit."
+    },
+    {
+      "page": 98,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Lemma40.2 direct-sum displays and Lemma40.3 transition fit; no formula collisions."
+    },
+    {
+      "page": 99,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Upper factorization diagram and section41 definitions fit with clean margins."
+    },
+    {
+      "page": 100,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Section42 transition, long tensor formulas, and cochain product fit."
+    },
+    {
+      "page": 101,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Long transition-map formula and equation42.2.1 fit; item indentation is consistent."
+    },
+    {
+      "page": 102,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Exact sequences and product display fit; section43 transition is clear."
+    },
+    {
+      "page": 103,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Short lemmas, cardinality displays, and last theorem block remain separated."
+    },
+    {
+      "page": 104,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Inductive subcomplex formulas and numbered cardinality conditions fit."
+    },
+    {
+      "page": 105,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Commutative square arrows and labels are separated; large union/product display fits."
+    },
+    {
+      "page": 106,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Ringed-topoi square and aligned equalities fit; continuation to next page is intact."
+    },
+    {
+      "page": 107,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Cohomology equalities, long sheafification formula, and footnote remain inside margins."
+    },
+    {
+      "page": 108,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Section44 transition and bottom triangular diagram fit; lemma continues on next page."
+    },
+    {
+      "page": 109,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Exact sequence and dotted-arrow diagram are separated and fully visible."
+    },
+    {
+      "page": 110,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Product/direct-sum formulas and numbered hypotheses fit; long equality stays on-page."
+    },
+    {
+      "page": 111,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Section45 transition and dense definition/lemma lists are separated and legible."
+    },
+    {
+      "page": 112,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Pullback formulas and distinguished triangles fit; bottom proof continues normally."
+    },
+    {
+      "page": 113,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Upper commutative square has distinct arrows/labels; tensor and triangle displays fit."
+    },
+    {
+      "page": 114,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Section46 transition and three-item definition have clean spacing."
+    },
+    {
+      "page": 115,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Tor formulas, complexes, and numbered conditions fit; bottom proof continues normally."
+    },
+    {
+      "page": 116,
+      "inspector": "main",
+      "layout_finding": "no_visible_defect",
+      "note": "Exact sequence and Tor-amplitude statements remain inside margins."
+    },
+    {
+      "page": 117,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Display formulas, list indentation, and section47 transition fit cleanly."
+    },
+    {
+      "page": 118,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Dense lemma/proof blocks and displayed complex fit."
+    },
+    {
+      "page": 119,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Section48 heading and duality formulas remain separated and within margins."
+    },
+    {
+      "page": 120,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Duality formulas and large direct-sum expressions fit; bottom lemma intact."
+    },
+    {
+      "page": 121,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Lower commutative diagram has visible arrows and labels without collision."
+    },
+    {
+      "page": 122,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Both diagrams and complexes are legible and separated from prose."
+    },
+    {
+      "page": 123,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Two stacked multirow diagrams fit without overlap; product display intact."
+    },
+    {
+      "page": 124,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Section49 heading, product decomposition, numbered items, and footnote fit."
+    },
+    {
+      "page": 125,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Numbered conditions and large direct sums remain inside the text area."
+    },
+    {
+      "page": 126,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Section50 formulas and lower multirow projection-formula diagram fit fully, including lowest node."
+    },
+    {
+      "page": 127,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Section51 heading, seven-item proposition, products, and exact sequence fit."
+    },
+    {
+      "page": 128,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Wide exact sequences and product formulas stay within margins; section52 transition clean."
+    },
+    {
+      "page": 129,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Compact-object proof and factorization displays fit; lower lemma begins cleanly."
+    },
+    {
+      "page": 130,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Dense lemma blocks, products, and nested indices show no visible collisions."
+    },
+    {
+      "page": 131,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Lists and section53 transition are separated; inline/display math intact."
+    },
+    {
+      "page": 132,
+      "inspector": "delegated_96dpi_and_main_180dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Constant-sheaf underlines, complexes, exact sequence, and lists render visibly."
+    },
+    {
+      "page": 133,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Lemma formulas and two-column chapter listing fit."
+    },
+    {
+      "page": 134,
+      "inspector": "delegated_96dpi",
+      "layout_finding": "no_visible_defect",
+      "note": "Two-column chapter list, wrapped long title, and four bibliography entries fit without clipping."
+    }
+  ],
+  "disposition": "Assigned visual inspection complete; no visible layout defect identified. Cross-reference caveat retained for parent adjudication."
+}

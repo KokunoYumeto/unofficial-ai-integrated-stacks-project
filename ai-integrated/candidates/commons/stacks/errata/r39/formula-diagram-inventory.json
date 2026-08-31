@@ -1,0 +1,462 @@
+{
+  "note": "No assertion of complete math identity:61 explicit operations include intended formula/notation changes. Unchanged byte intervals proved exact.",
+  "operation_bound_math_changes": true,
+  "operations": [
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1359-OP1",
+      "line": 6823,
+      "new": "\\Sh(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "\\Sh(\\mathcal{C}_{\\tau'}/X)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1360-OP1",
+      "line": 7301,
+      "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/Y)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1360-OP2",
+      "line": 7339,
+      "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+      "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/X)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1361-OP1",
+      "line": 7322,
+      "new": "H^n(K') = H^n(K')",
+      "old": "H^i(K') = H^i(K')"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1361-OP2",
+      "line": 7324,
+      "new": "H^n(K')",
+      "old": "H^i(K')"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1362-OP1",
+      "line": 7548,
+      "new": "X_{i_a j}",
+      "old": "X_{ij}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1362-OP2",
+      "line": 7548,
+      "new": "g_{i_a j}",
+      "old": "g_{ij}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1362-OP3",
+      "line": 7554,
+      "new": "g_{i_a j}",
+      "old": "g_{ij}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1362-OP4",
+      "line": 7560,
+      "new": "f_{i_a}(g_{i_a j}(F_{e_k, j}))",
+      "old": "f_i(g_{ij}(F_{e_k, j}))"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1363-OP1",
+      "line": 7600,
+      "new": "f(X \\setminus (U_{x_1} \\cup \\ldots \\cup U_{x_n}))",
+      "old": "f(X \\setminus U_{x_1} \\cup \\ldots \\cup U_{x_n})"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1364-OP1",
+      "line": 7948,
+      "new": "a_Y = \\pi_Y \\circ \\epsilon_Y",
+      "old": "a_Y = \\pi_X \\circ \\epsilon_X"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1365-OP1",
+      "line": 8085,
+      "new": "\\epsilon_X^{-1} \\circ \\pi_X^{-1}",
+      "old": "\\epsilon_X^{-1} \\circ a_X^{-1}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1366-OP1",
+      "line": 8117,
+      "new": "a_X = \\pi_X \\circ \\epsilon_X",
+      "old": "a_X = \\epsilon_X \\circ \\pi_X"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP1",
+      "line": 8291,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP2",
+      "line": 8295,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP3",
+      "line": 8299,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP4",
+      "line": 8313,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP5",
+      "line": 8317,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1367-OP6",
+      "line": 8321,
+      "new": "\\mathcal{O}_\\mathcal{C}",
+      "old": "\\mathcal{O}_\\mathcal{D}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1368-OP1",
+      "line": 8513,
+      "new": "L(f' \\circ f)^*R(f' \\circ f)_*L",
+      "old": "L(f' \\circ f)^*R(f' \\circ f)_*L)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1369-OP1",
+      "line": 8534,
+      "new": "(\\Sh(\\mathcal{C}), \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f",
+      "old": "(\\Sh(\\mathcal{C}, \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1370-OP1",
+      "line": 8549,
+      "new": "R(f')_*L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}}^\\mathbf{L} R(f')_*L(g')^*L \\ar[r] &",
+      "old": "R(f')_*(L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}} R(f')_*(L(g')^*L \\ar[r] &"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1371-OP1",
+      "line": 8683,
+      "new": "",
+      "old": ", \\mathcal{M}^\\bullet"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1372-OP1",
+      "line": 9803,
+      "new": "\\Sh(\\mathcal{C}/U), \\mathcal{O}_U",
+      "old": "\\Sh(\\mathcal{C}), \\mathcal{O}_U"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1373-OP1",
+      "line": 9819,
+      "new": "p' : \\mathcal{C}' \\to \\mathcal{D}",
+      "old": "p' : \\mathcal{C}' \\to \\mathcal{D}'"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1374-OP1",
+      "line": 10224,
+      "new": "left adjoint",
+      "old": "right adjoint"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1374-OP2",
+      "line": 10220,
+      "new": "L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!",
+      "old": "L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1375-OP1",
+      "line": 10490,
+      "new": "a map of sheaves of rings",
+      "old": "a map sheaf of rings"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1376-OP1",
+      "line": 10591,
+      "new": "U_{i, n}",
+      "old": "U_{i, n + 1}"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1377-OP1",
+      "line": 10595,
+      "new": "occurs at most once",
+      "old": "occurs are most once"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1378-OP1",
+      "line": 10597,
+      "new": "K_n(\\mathcal{F}^+)(V)",
+      "old": "K_\\bullet(\\mathcal{F}^+)(V)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1379-OP1",
+      "line": 10625,
+      "new": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{D})",
+      "old": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{C})"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1380-OP1",
+      "line": 10642,
+      "new": "\\mathcal{D}",
+      "old": "\\mathcal{D})"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1381-OP1",
+      "line": 12200,
+      "new": "H^j(\\beta_i)",
+      "old": "H^j(\\beta)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1382-OP1",
+      "line": 12204,
+      "new": "\\gamma_i : \\mathcal{K}_i^\\bullet \\to \\mathcal{L}_i^\\bullet",
+      "old": "\\gamma_i : \\mathcal{K}^\\bullet \\to \\mathcal{L}^\\bullet"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1383-OP1",
+      "line": 12258,
+      "new": "H^i(\\alpha)$ an isomorphism",
+      "old": "H^i(\\alpha)$ and isomorphism"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1383-OP2",
+      "line": 12260,
+      "new": "H^i(\\beta)$ an isomorphism",
+      "old": "H^i(\\beta)$ and isomorphism"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1384-OP1",
+      "line": 12326,
+      "new": "$H^m(K)$ can be generated",
+      "old": "$H^m(K)$ is can be generated"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1385-OP1",
+      "line": 12340,
+      "new": "H^n(\\mathcal{E}^\\bullet)",
+      "old": "H^n(E^\\bullet)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1386-OP1",
+      "line": 12461,
+      "new": "$\\mathcal{K}^\\bullet$ is a complex of flat",
+      "old": "$K^\\bullet$ is a complex of flat"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1387-OP1",
+      "line": 12538,
+      "new": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses},",
+      "old": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses}."
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1388-OP1",
+      "line": 12555,
+      "new": "represent $E$ by a complex",
+      "old": "represent $E$ by a complex of"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1389-OP1",
+      "line": 12560,
+      "new": "the modules $f^*\\mathcal{E}^i$ are flat",
+      "old": "the module $f^*\\mathcal{E}^i$ are flat"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1390-OP1",
+      "line": 13066,
+      "new": "We will use without further mention",
+      "old": "We will us without further mention"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1391-OP1",
+      "line": 13073,
+      "new": "K = R\\SheafHom(\\mathcal{O}, \\mathcal{O})",
+      "old": "K = R\\SheafHom(\\mathcal{O}_X, \\mathcal{O}_X)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1391-OP2",
+      "line": 13074,
+      "new": "\\otimes_{\\mathcal{O}}^\\mathbf{L} K",
+      "old": "\\otimes_{\\mathcal{O}_X}^\\mathbf{L} K"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1391-OP3",
+      "line": 13075,
+      "new": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}), \\mathcal{O})",
+      "old": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}_X), \\mathcal{O}_X)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1392-OP1",
+      "line": 13609,
+      "new": "$b \\circ a = 1$ and $a \\circ b - 1 = dh + hd$",
+      "old": "$b \\circ a = 1$ and $b \\circ a - 1 = dh + hd$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1393-OP1",
+      "line": 13857,
+      "new": "a system as in (3)",
+      "old": "a system as in (2)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1394-OP1",
+      "line": 13961,
+      "new": "$D^{-}(\\mathcal{A})$",
+      "old": "$D^{-}(R)$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1394-OP2",
+      "line": 13976,
+      "new": "$D(\\mathcal{A})$",
+      "old": "$D(R)$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1394-OP3",
+      "line": 13998,
+      "new": "$D(\\mathcal{A})$",
+      "old": "$D(R)$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1395-OP1",
+      "line": 13984,
+      "new": "that $L^i$ is a finite direct sum",
+      "old": "that $L^i$ a finite direct sum"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1396-OP1",
+      "line": 14011,
+      "new": "E_\\lambda)[-c]",
+      "old": "E_\\lambda)[-i]"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1396-OP2",
+      "line": 14014,
+      "new": "in degree $c$",
+      "old": "in degree $i$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1397-OP1",
+      "line": 14089,
+      "new": "for all $p > 0$",
+      "old": "for all $p$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1398-OP1",
+      "line": 14102,
+      "new": "\\bigoplus \\Gamma(U, \\mathcal{I}_i^\\bullet)",
+      "old": "\\bigoplus \\Gamma(U, \\bigoplus \\mathcal{I}_i^\\bullet)"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1399-OP1",
+      "line": 14275,
+      "new": "there exists a covering $\\{U_i \\to X\\}$ such that for every $i$ and every $j = 1, \\ldots, r$",
+      "old": "there exists a covering $\\{U_i \\to X\\}$ such that $x_i \\in H^0(X, H^b(K))$"
+    },
+    {
+      "class": "source_defect",
+      "id": "MC-STK-ERR-1399-OP2",
+      "line": 14276,
+      "new": "the class $x_j \\in H^0(X, H^b(K))$ lifts to an element of $H^b(U_i, K)$",
+      "old": "lifts to an element of $H^b(U_i, K)$"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1400-OP1",
+      "line": 14297,
+      "new": "$D(\\mathcal{C}, \\Lambda)$",
+      "old": "$D(\\mathcal{C}, \\underline{\\Lambda})$"
+    },
+    {
+      "class": "editorial_or_notational_clarification",
+      "id": "MC-STK-ERR-1401-OP1",
+      "line": 14299,
+      "new": "$L \\to \\underline{\\Lambda^{\\oplus r}}[-b + 1]$",
+      "old": "$L \\to \\Lambda^{\\oplus r}[-b + 1]$"
+    }
+  ],
+  "schema": "stacks-r39-formula-diagram-inventory-v1",
+  "source": "sites-cohomology.tex",
+  "structure": {
+    "cites": {
+      "authority": 12,
+      "candidate": 12,
+      "ordered_equal": true
+    },
+    "environments": {
+      "authority": 1408,
+      "candidate": 1408,
+      "ordered_equal": true
+    },
+    "inputs": {
+      "authority": 2,
+      "candidate": 2,
+      "ordered_equal": true
+    },
+    "labels": {
+      "authority": 377,
+      "candidate": 377,
+      "ordered_equal": true
+    },
+    "refs": {
+      "authority": 1029,
+      "candidate": 1029,
+      "ordered_equal": true
+    }
+  }
+}

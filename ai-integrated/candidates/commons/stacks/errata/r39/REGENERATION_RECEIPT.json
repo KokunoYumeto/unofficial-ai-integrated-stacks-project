@@ -1,0 +1,37 @@
+{
+  "next_command": "python replay-build.py --upstream-root <PINNED_SOURCE_DIRECTORY> --work-root <NEW_R39_WORK_DIRECTORY> --private-evidence-root <R39_PRIVATE_EVIDENCE_DIRECTORY>",
+  "no_final_manifest": true,
+  "operation_spec": {
+    "bytes": 53100,
+    "path": "operation-spec.json",
+    "sha256": "CC437C00386E55B1978EE208245FD36B7BA59D6CAE2461DD271773242E0468F8"
+  },
+  "payload": {
+    "bytes": 534485,
+    "path": "payload/sites-cohomology.tex",
+    "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+  },
+  "pipeline": {
+    "bytes": 13332,
+    "path": "pipeline_r39.py",
+    "sha256": "53E4D437B980228D62E0531EF2042F32C35B0E6349DEC50C3936890A540FE334"
+  },
+  "schema": "stacks-r39-source-regeneration-v1",
+  "source_map": {
+    "bytes": 77280,
+    "path": "source-map.jsonl",
+    "sha256": "F52F9962519FCFA47C5E10FBCDC44B7A6F9227D23CE6D55BE77FA3F11E7EE453"
+  },
+  "source_validation": {
+    "bytes": 12644,
+    "path": "source-validation.json",
+    "sha256": "5CE221C20743B0FC225763F1864AD64762B07BD51DCCD4CDD4D37CA386809A6F"
+  },
+  "stable_units": {
+    "bytes": 21146,
+    "path": "stable-units.json",
+    "sha256": "9BFCB556DD0A9ACD68090386A7AA04730409BF236D5EE448C070DE696C34937F"
+  },
+  "status": "SOURCE_REPLAY_PASS_BUILD_PENDING",
+  "write_scope": "Only leased r39 candidate; no build was executed."
+}

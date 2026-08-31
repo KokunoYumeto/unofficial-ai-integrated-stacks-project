@@ -1,0 +1,121 @@
+{
+  "schema": "stacks-r39-build-render-stage-v1",
+  "status": "BUILD_DETERMINISTIC_RENDER_PASS_VISUAL_NOT_PERFORMED",
+  "identities": [
+    {
+      "path": "builds/sites-cohomology.pdf",
+      "bytes": 1274274,
+      "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+    },
+    {
+      "path": "builds/sites-cohomology.authority.pdf",
+      "bytes": 1274260,
+      "sha256": "282E30F2D719AD9C52B0191E038CEBA4FE394BC6EE7971C77438FD1ECB83160A"
+    },
+    {
+      "path": "builds/build-execution.json",
+      "bytes": 7375,
+      "sha256": "6A7E963B56DE3FBFAA8494E25F6119BAA00FD2AF1105E9A1382A92525FD6BEB1"
+    },
+    {
+      "path": "builds/build-receipt.json",
+      "bytes": 44495,
+      "sha256": "D9ED88A0D22BA536685E589E768E842A2E75253A3F3A900091F42A122D8E6539"
+    },
+    {
+      "path": "builds/deterministic-replay.json",
+      "bytes": 995,
+      "sha256": "232A785E4AC7AAF0FDD5A83C0CF70A858A6A3D44A6ABFF3F1BD7AB3814E2D028"
+    },
+    {
+      "path": "builds/source-page-map.json",
+      "bytes": 16202,
+      "sha256": "DB0F6A494FD473435A0BDAE925F647F18E3A068594C238C64053DA937FB438C0"
+    },
+    {
+      "path": "replay-build.py",
+      "bytes": 10531,
+      "sha256": "CC26DCE97A3BFAE9E6E4DDF902F428B151DEDCF0EE9796A2F797060AA5D0DBDF"
+    },
+    {
+      "path": "derive-visual-pages.py",
+      "bytes": 5082,
+      "sha256": "B000C7B783C255055668FF9D503C0BC41573F8111D009AB2CE965141A6D34452"
+    },
+    {
+      "path": "replay/SOURCE_INDEPENDENT_VALIDATION.json",
+      "bytes": 4010,
+      "sha256": "AC10D0D9AA35B4828AFF591FC46EA392AAD8406DC82588EEF37FD08C4BD1B61F"
+    }
+  ],
+  "candidate": {
+    "pages": 134,
+    "fatal_markers": 0,
+    "missing_glyph_markers": 0,
+    "overfull_boxes": 21,
+    "underfull_boxes": 0
+  },
+  "authority": {
+    "pages": 134,
+    "fatal_markers": 0,
+    "missing_glyph_markers": 0,
+    "overfull_boxes": 21,
+    "underfull_boxes": 0
+  },
+  "render": {
+    "path": "canon/private_evidence/errata-r39-20260831/render/render-manifest.json",
+    "bytes": 33657,
+    "sha256": "5715ADE0EC9EAF83A17D844B5112DC52CC8624D2657DA9245680171A24355F96",
+    "checked": 169,
+    "failures": [],
+    "pages": 134,
+    "contact_sheets": 9,
+    "high_resolution_pages": [
+      64,
+      68,
+      70,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      90,
+      94,
+      97,
+      98,
+      112,
+      113,
+      114,
+      115,
+      116,
+      120,
+      125,
+      128,
+      129,
+      130,
+      131,
+      132
+    ]
+  },
+  "handles": {
+    "first_build": 42105,
+    "second_build": 99435,
+    "synctex": 5343,
+    "render": 8384,
+    "all_completed": true
+  },
+  "operational_findings": [
+    "PDF skill read in full. Authoring marker unavailable at workspace/container_tools and plugin/container_tools checked locations; no marker invocation falsely claimed.",
+    "Preflight found no R39 live process and24657216KiB free RAM; single sequential R39 worker.",
+    "SyncTeX first mapping attempt failed because copied file used captured original work path. Helper now uses exact Input:1 from the bound SyncTeX; subsequent mapping61/61 succeeded.",
+    "Each successful build removed only its own newly created marked workroot; no other cleanup.",
+    "Candidate and authority both have21 overfull-box diagnostics; visual impact remains unreviewed."
+  ],
+  "visual_inspection": "NOT_PERFORMED",
+  "independent_full_candidate_replay": "NOT_PERFORMED",
+  "admission": "NOT_PERFORMED",
+  "preservation": "Source-stage config, receipts and inputs remain untouched; this additive stage receipt supersedes no historical bytes.",
+  "next_action": "Inspect9contact sheets covering all134pages and26high-resolution correction-sensitive pages; record actual findings before visual PASS. Then full independent candidate closure."
+}

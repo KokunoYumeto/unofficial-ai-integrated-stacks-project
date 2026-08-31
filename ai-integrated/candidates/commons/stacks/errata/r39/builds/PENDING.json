@@ -1,0 +1,10 @@
+{
+  "admission": "NOT_PERFORMED",
+  "build": "NOT_PERFORMED",
+  "deterministic_pdf_replay": "NOT_PERFORMED",
+  "independent_candidate_replay": "NOT_PERFORMED",
+  "reason": "This worker is authorized for source preparation only.",
+  "render": "NOT_PERFORMED",
+  "schema": "stacks-r39-build-ready-state-v1",
+  "visual_inspection": "NOT_PERFORMED"
+}

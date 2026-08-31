@@ -1,0 +1,490 @@
+{
+  "authority": {
+    "bytes": 534394,
+    "path": "authority/source/sites-cohomology.tex",
+    "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+  },
+  "build": "NOT_PERFORMED",
+  "deduplication": {
+    "linked_10220_prime_swap_already_admitted": false,
+    "linked_expansion": {
+      "line": 10220,
+      "new": "L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!",
+      "old": "L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!",
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "reason": "Both sides must map D(underline B) to D(B′). The proposed right→left at10224 alone does not fix the ill-typed statement.",
+      "recommendation": "Bind this linked correction to053 only after registrar checks prior overlay at this newly identified locus; do not allocate or mutate here."
+    },
+    "manifest_and_map_commit_blob_pairs_verified": 39,
+    "novel_producer_ids": [
+      "SITES-COHOMOLOGY-038",
+      "SITES-COHOMOLOGY-039",
+      "SITES-COHOMOLOGY-040",
+      "SITES-COHOMOLOGY-041",
+      "SITES-COHOMOLOGY-042",
+      "SITES-COHOMOLOGY-043",
+      "SITES-COHOMOLOGY-044",
+      "SITES-COHOMOLOGY-045",
+      "SITES-COHOMOLOGY-046",
+      "SITES-COHOMOLOGY-047",
+      "SITES-COHOMOLOGY-048",
+      "SITES-COHOMOLOGY-049",
+      "SITES-COHOMOLOGY-050",
+      "SITES-COHOMOLOGY-051",
+      "SITES-COHOMOLOGY-052",
+      "SITES-COHOMOLOGY-053",
+      "SITES-COHOMOLOGY-054",
+      "SITES-COHOMOLOGY-055",
+      "SITES-COHOMOLOGY-056",
+      "SITES-COHOMOLOGY-057",
+      "SITES-COHOMOLOGY-058",
+      "SITES-COHOMOLOGY-059",
+      "SITES-COHOMOLOGY-060",
+      "SITES-COHOMOLOGY-061",
+      "SITES-COHOMOLOGY-062",
+      "SITES-COHOMOLOGY-063",
+      "SITES-COHOMOLOGY-064",
+      "SITES-COHOMOLOGY-065",
+      "SITES-COHOMOLOGY-066",
+      "SITES-COHOMOLOGY-067",
+      "SITES-COHOMOLOGY-068",
+      "SITES-COHOMOLOGY-069",
+      "SITES-COHOMOLOGY-070",
+      "SITES-COHOMOLOGY-071",
+      "SITES-COHOMOLOGY-072",
+      "SITES-COHOMOLOGY-073",
+      "SITES-COHOMOLOGY-074",
+      "SITES-COHOMOLOGY-075",
+      "SITES-COHOMOLOGY-076",
+      "SITES-COHOMOLOGY-077",
+      "SITES-COHOMOLOGY-078",
+      "SITES-COHOMOLOGY-079"
+    ],
+    "novel_row_count": 42,
+    "prior_operation_overlap_count": 0,
+    "prior_sites_operations": 42,
+    "prior_sites_units": 37,
+    "prior_units": [
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1298-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-001"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1298"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1299-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-002"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1299"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1300-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-003"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1300"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1301-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-004"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1301"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1302-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-005"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1302"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1303-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-006"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1303"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1304-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-007"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1304"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1305-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-008"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1305"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1306-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-009"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1306"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1307-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-010"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1307"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1308-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-011"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1308"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1309-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-012"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1309"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1310-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-013"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1310"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1311-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-028"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1311"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1313-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-014"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1313"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1314-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-015"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1314"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1315-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-016"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1315"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1316-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-017"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1316"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1317-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-018"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1317"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1318-OP1",
+          "MC-STK-ERR-1318-OP2",
+          "MC-STK-ERR-1318-OP3"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-019"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1318"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1319-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-020"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1319"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1320-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-021"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1320"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1321-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-022"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1321"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1322-OP1",
+          "MC-STK-ERR-1322-OP2",
+          "MC-STK-ERR-1322-OP3"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-023"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1322"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1323-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-024"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1323"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1324-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-025"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1324"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1325-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-026"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1325"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1326-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-027"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1326"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1327-OP1",
+          "MC-STK-ERR-1327-OP2"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-029"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1327"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1328-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-030"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1328"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1329-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-031"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1329"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1330-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-032"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1330"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1331-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-033"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1331"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1332-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-034"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1332"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1333-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-035"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1333"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1334-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-036"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1334"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1335-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-037"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1335"
+      }
+    ],
+    "stable_id_collisions": 0
+  },
+  "independent_candidate_replay": "NOT_PERFORMED",
+  "line_preimages_exact": 61,
+  "nonoverlapping": true,
+  "operations": 61,
+  "passed": true,
+  "payload": {
+    "bytes": 534485,
+    "path": "payload/sites-cohomology.tex",
+    "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+  },
+  "producer_rows": 42,
+  "schema": "stacks-r39-source-validation-v1",
+  "scope": "source-only exact replay; NOT build/render/independent-candidate validation",
+  "semantic_units": 43,
+  "structure": {
+    "cites": {
+      "authority": 12,
+      "candidate": 12,
+      "ordered_equal": true
+    },
+    "environments": {
+      "authority": 1408,
+      "candidate": 1408,
+      "ordered_equal": true
+    },
+    "inputs": {
+      "authority": 2,
+      "candidate": 2,
+      "ordered_equal": true
+    },
+    "labels": {
+      "authority": 377,
+      "candidate": 377,
+      "ordered_equal": true
+    },
+    "refs": {
+      "authority": 1029,
+      "candidate": 1029,
+      "ordered_equal": true
+    }
+  },
+  "unchanged_interval_sha256": "746A4328A17E69C29F18B1D21ABA2F91D6864DAB1CFFB9A94E076D7B4D09060F",
+  "unlisted_byte_changes": 0,
+  "visual_qa": "NOT_PERFORMED"
+}

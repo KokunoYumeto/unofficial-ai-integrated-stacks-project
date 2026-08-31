@@ -1,0 +1,865 @@
+{
+  "adverse_evidence": [
+    "050's extra quantified complex does not make the theorem false.",
+    "057 is an admissible degree-specific clarification; the source K_bullet can be shorthand.",
+    "078 and079 are notation consistency, not mathematical counterexamples.",
+    "053's submitted operation is correct but insufficient to close the containing lemma."
+  ],
+  "authority_and_evidence": [
+    {
+      "bytes": 534394,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\cjk\\03_working_translations\\stacks_cjk_20260821\\upstream\\src\\stacks-project-a04446e57ec1fbc252a871afcec7752fb2807b14\\sites-cohomology.tex",
+      "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+    },
+    {
+      "bytes": 26075,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\romance\\03_working_translations\\stacks_fr_20260821\\p03\\evidence\\SITES_COHOMOLOGY_SOURCE_EMENDATIONS.json",
+      "sha256": "DA3BFA3A8E310D2A5426BDA63F05F4AC3AFFA212BF5DCB9CA36CD03382F186E3"
+    },
+    {
+      "bytes": 33575,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\romance\\03_working_translations\\stacks_fr_20260821\\p03\\evidence\\SITES_COHOMOLOGY_SOURCE_DEFECT_LEDGER.csv",
+      "sha256": "34C199DD53EF7B37A4143F0C7B5F1EEED91BE523A016F217182A8D9A3F5F4A92"
+    }
+  ],
+  "deduplication": {
+    "independently_reran_global_registry_dedup": false,
+    "new_stable_ids_allocated": [],
+    "no_prior_rows_re_adjudicated": true,
+    "scope": "Parent registrar supplied completed immutable-registry dedup:78 incoming=36 previously admitted+42 novel; this task verified the declared registry HEAD and independently reviewed only the42 novel rows."
+  },
+  "grouping_summary": {
+    "producer_rows": 42,
+    "proposed_semantic_units": 43,
+    "reason": "Split067's two unrelated grammar defects; all other producer groupings retained;053 linked expansion stays in its unit.",
+    "stable_id_allocation": "Not performed; registrar owns admission/allocation."
+  },
+  "linked_expansion": {
+    "line": 10220,
+    "new": "L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!",
+    "old": "L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!",
+    "producer_id": "SITES-COHOMOLOGY-053",
+    "reason": "Both sides must map D(underline B) to D(B′). The proposed right→left at10224 alone does not fix the ill-typed statement.",
+    "recommendation": "Bind this linked correction to053 only after registrar checks prior overlay at this newly identified locus; do not allocate or mutate here."
+  },
+  "mechanical": {
+    "authority_mutated": false,
+    "exact_line_preimages": 60,
+    "failed_line_preimages": 0,
+    "selected_operations": 60,
+    "selected_semantic_rows": 42
+  },
+  "original_private_transport_identity": {
+    "bytes": 39042,
+    "filename": "SITES_COHOMOLOGY_038_079_INDEPENDENT_REVIEW_20260831.json",
+    "sha256": "D89961406CA250C13E538F0AD9F241838C65522F130F57CB99CC5ED2AF622059"
+  },
+  "registry_head_verified": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
+  "rows": [
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 6823,
+          "new": "\\Sh(\\mathcal{C}_{\\tau'}/Y)",
+          "old": "\\Sh(\\mathcal{C}_{\\tau'}/X)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-001"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-038",
+      "rationale": "At6814 f:X→Y; εY in6821 must land in the τ′ topos over Y. The lower-left corner already supplies the X topos. Change only the lower-right base.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 7301,
+          "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+          "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/Y)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-002"
+        },
+        {
+          "line": 7339,
+          "new": "D^+_{\\mathcal{A}'_Y}(\\mathcal{C}_{\\tau'}/Y)",
+          "old": "D^+_{\\mathcal{A}'_X}(\\mathcal{C}_{\\tau'}/X)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-005"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-039",
+      "rationale": "The two assertions describe Rfτ′,*K′. Its cohomology sheaves lie in A′Y by7333–7336, so both statement7301 and conclusion7339 must use Y; retain the input category over X at7300.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 7322,
+          "new": "H^n(K') = H^n(K')",
+          "old": "H^i(K') = H^i(K')",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-003"
+        },
+        {
+          "line": 7324,
+          "new": "H^n(K')",
+          "old": "H^i(K')",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-004"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-040",
+      "rationale": "Equation7321 computes H^n throughout. The next equality must retain n in both H(K′) factors, and7324 should refer to that same degree. These are one displayed computation, not separate defects.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 7548,
+          "new": "X_{i_a j}",
+          "old": "X_{ij}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-006"
+        },
+        {
+          "line": 7548,
+          "new": "g_{i_a j}",
+          "old": "g_{ij}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-007"
+        },
+        {
+          "line": 7554,
+          "new": "g_{i_a j}",
+          "old": "g_{ij}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-008"
+        },
+        {
+          "line": 7560,
+          "new": "f_{i_a}(g_{i_a j}(F_{e_k, j}))",
+          "old": "f_i(g_{ij}(F_{e_k, j}))",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-009"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-041",
+      "rationale": "At7544–7547 the selected index is i_a and J_e⊂J_{i_a}. Hence the domains, maps, and outer composite in7548–7560 all need i_a. All four operations repair one nested-cover indexing defect.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 7600,
+          "new": "f(X \\setminus (U_{x_1} \\cup \\ldots \\cup U_{x_n}))",
+          "old": "f(X \\setminus U_{x_1} \\cup \\ldots \\cup U_{x_n})",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-010"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-042",
+      "rationale": "The union covers the whole fibre by7596. Its complement is closed and misses that fibre; its image therefore misses y. The unparenthesized expression can reintroduce U_x2 and hence y. Parenthesize the whole union under set difference.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 7948,
+          "new": "a_Y = \\pi_Y \\circ \\epsilon_Y",
+          "old": "a_Y = \\pi_X \\circ \\epsilon_X",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-011"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-043",
+      "rationale": "The right vertical map of7939–7944 has target Sh(Y). Its factors are εY and πY, not the X-side factors. This is independent of the X-side inverse-image/composition errors below.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8085,
+          "new": "\\epsilon_X^{-1} \\circ \\pi_X^{-1}",
+          "old": "\\epsilon_X^{-1} \\circ a_X^{-1}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-012"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-044",
+      "rationale": "From7948 aX=πX∘εX. Contravariance gives aX^-1=εX^-1∘πX^-1. Repeating aX^-1 as the second factor is ill-typed.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8117,
+          "new": "a_X = \\pi_X \\circ \\epsilon_X",
+          "old": "a_X = \\epsilon_X \\circ \\pi_X",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-013"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-045",
+      "rationale": "The arrows go LCqc/X→LCZar/X→Sh(X); thus aX=πX∘εX. This is also what the two-stage Leray argument8120–8123 uses.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8291,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-014"
+        },
+        {
+          "line": 8295,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-015"
+        },
+        {
+          "line": 8299,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-016"
+        },
+        {
+          "line": 8313,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-017"
+        },
+        {
+          "line": 8317,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-018"
+        },
+        {
+          "line": 8321,
+          "new": "\\mathcal{O}_\\mathcal{C}",
+          "old": "\\mathcal{O}_\\mathcal{D}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-019"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-046",
+      "rationale": "Lf* and f* take O_D modules to O_C modules. Each of the six tensor products is after that pullback (or between K and M themselves), so its base is O_C. Do not change the O_D bases inside Lf*(...) at8287 and8309.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8513,
+          "new": "L(f' \\circ f)^*R(f' \\circ f)_*L",
+          "old": "L(f' \\circ f)^*R(f' \\circ f)_*L)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-020"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-047",
+      "rationale": "The opening left/right parentheses at8507–8509 are already balanced. The next equality has no extra outer opening parenthesis;8513 has one unmatched closing parenthesis.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8534,
+          "new": "(\\Sh(\\mathcal{C}), \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f",
+          "old": "(\\Sh(\\mathcal{C}, \\mathcal{O}_{\\mathcal{C}}) \\ar[d]^f",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-021"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-048",
+      "rationale": "Each vertex is a pair (Sh(site),structure sheaf). The C vertex alone has the comma inside Sh rather than closing Sh(C), unlike the other three vertices.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8549,
+          "new": "R(f')_*L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}}^\\mathbf{L} R(f')_*L(g')^*L \\ar[r] &",
+          "old": "R(f')_*(L(g')^*K \\otimes_{\\mathcal{O}_{\\mathcal{D}'}} R(f')_*(L(g')^*L \\ar[r] &",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-022"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-049",
+      "rationale": "The lower-left vertex is the tensor product of two derived direct images, the source of the relative cup product for f′. It must have two separate Rf′* factors and a derived tensor over O_D′. The proposed full-line correction is typed and removes both unmatched openings.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 8683,
+          "new": "",
+          "old": ", \\mathcal{M}^\\bullet",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-023"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-050",
+      "rationale": "The displayed diagonal map8686–8689 depends only on K and L and8691 says both complexes. Removing unused M is an editorial simplification of an over-specified hypothesis, not a false mathematical theorem.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 9803,
+          "new": "\\Sh(\\mathcal{C}/U), \\mathcal{O}_U",
+          "old": "\\Sh(\\mathcal{C}), \\mathcal{O}_U",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-024"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-051",
+      "rationale": "This is the localized morphism at U′ with U=u(U′). The arrow g′ and πU have domain/codomain involving C/U; the structure sheaf O_U likewise lives there.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 9819,
+          "new": "p' : \\mathcal{C}' \\to \\mathcal{D}",
+          "old": "p' : \\mathcal{C}' \\to \\mathcal{D}'",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-025"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-052",
+      "rationale": "The fibred categories have common base D;9780–9788 and9820–9824 confirm it. D′ is not introduced. Remove only the spurious prime.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted_submitted_correction_with_required_linked_expansion",
+      "operations": [
+        {
+          "line": 10224,
+          "new": "left adjoint",
+          "old": "right adjoint",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-026"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "rationale": "Both composites are left adjoints, but the displayed statement10220 is itself ill-typed. h*:D(underline B)→D(underline B′), π!:D(underline B)→D(B), π′!:D(underline B′)→D(B′), f*:D(B)→D(B′). Therefore the typed identity is Lπ′!∘Lh*=Lf*∘Lπ!, both left adjoint to restriction composed with constant-sheaf pullback D(B′)→D(underline B). Accept right→left and recommend the linked prime-swap at10220; do not claim the one-word proposal alone closes the lemma.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10490,
+          "new": "a map of sheaves of rings",
+          "old": "a map sheaf of rings",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-027"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-054",
+      "rationale": "A morphism between two sheaves of rings is a map of sheaves of rings. The source phrase lacks its grammatical connecting words; the proposed replacement preserves mathematical meaning.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10591,
+          "new": "U_{i, n}",
+          "old": "U_{i, n + 1}",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-028"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-055",
+      "rationale": "The element is explicitly in K_n at10586, and10594 defines its summands by chains U_n→...→U_0. The first index at10591 must be n, not n+1.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10595,
+          "new": "occurs at most once",
+          "old": "occurs are most once",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-029"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-056",
+      "rationale": "The argument needs distinct chains so a direct-sum element vanishes coefficientwise. The English idiom is at most once; are is a typographical substitution.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10597,
+          "new": "K_n(\\mathcal{F}^+)(V)",
+          "old": "K_\\bullet(\\mathcal{F}^+)(V)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-030"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-057",
+      "rationale": "The vanishing is degree n as stated10586–10589, so K_n is precise. K_bullet may also be read as shorthand for vanishing in the underlying graded complex; accept only as degree-notation clarification, not evidence that the mathematical argument was false.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10625,
+          "new": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{D})",
+          "old": "\\textit{PAb}(\\mathcal{C}) \\to \\textit{Ab}(\\mathcal{C})",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-031"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-058",
+      "rationale": "The value is a sheaf on D obtained by varying V∈D, as10574–10577 and10626–10628 show. Its domain remains presheaves on C; only the codomain changes.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 10642,
+          "new": "\\mathcal{D}",
+          "old": "\\mathcal{D})",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "C-032"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-059",
+      "rationale": "The math fragment is U over V=p(U) in D. No opening parenthesis precedes D; remove the unmatched closing character.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12200,
+          "new": "H^j(\\beta_i)",
+          "old": "H^j(\\beta)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-060"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-060",
+      "rationale": "Only β_i is defined at12198; the cohomology assertion belongs to each local map. Restore its index.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12204,
+          "new": "\\gamma_i : \\mathcal{K}_i^\\bullet \\to \\mathcal{L}_i^\\bullet",
+          "old": "\\gamma_i : \\mathcal{K}^\\bullet \\to \\mathcal{L}^\\bullet",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-061"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-061",
+      "rationale": "The source/target in the following commutative square12209–12210 are K_i and L_i. γ_i is their local lift, so restore both indices in its declaration.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12258,
+          "new": "H^i(\\alpha)$ an isomorphism",
+          "old": "H^i(\\alpha)$ and isomorphism",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-062A"
+        },
+        {
+          "line": 12260,
+          "new": "H^i(\\beta)$ an isomorphism",
+          "old": "H^i(\\beta)$ and isomorphism",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-062B"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-062",
+      "rationale": "The parallel α and β clauses each require the indefinite article an before isomorphism. One repeated transcription error in the paired hypothesis; both replacements are exact and mathematical content is unchanged.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12326,
+          "new": "$H^m(K)$ can be generated",
+          "old": "$H^m(K)$ is can be generated",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-063"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-063",
+      "rationale": "is can be generated has two incompatible verb forms. Removing is leaves the intended finite-generation assertion.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12340,
+          "new": "H^n(\\mathcal{E}^\\bullet)",
+          "old": "H^n(E^\\bullet)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-064"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-064",
+      "rationale": "The proof defines the strictly perfect script-E complex12332 and inducts on its highest nonzero degree12336. H^n of that same complex vanishes; plain E is not the defined complex.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12461,
+          "new": "$\\mathcal{K}^\\bullet$ is a complex of flat",
+          "old": "$K^\\bullet$ is a complex of flat",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-065"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-065",
+      "rationale": "The bounded-above flat resolution is script-K at12451–12460; its truncation and remaining terms12462 are script-K. Restore that decoration in the intervening sentence.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12538,
+          "new": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses},",
+          "old": "By Lemma \\ref{lemma-K-flat-two-out-of-three-ses}.",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-066"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-066",
+      "rationale": "The By Lemma introductory phrase continues with the complex on12539. Replacing the period with a comma reconnects the sentence without changing the reference.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 12555,
+          "new": "represent $E$ by a complex",
+          "old": "represent $E$ by a complex of",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-067A"
+        },
+        {
+          "line": 12560,
+          "new": "the modules $f^*\\mathcal{E}^i$ are flat",
+          "old": "the module $f^*\\mathcal{E}^i$ are flat",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-067B"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-067",
+      "rationale": "12555 has a redundant of before the named complex, while12560 independently has a singular subject with plural are. Both replacements are valid, but these are two distinct grammatical defects and should be two semantic subunits under the same producer row, not one mathematical defect.",
+      "semantic_group_recommendation": "Split into067A redundant preposition and067B subject/verb agreement; preserve producer067 alias on both."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13066,
+          "new": "We will use without further mention",
+          "old": "We will us without further mention",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-068"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-068",
+      "rationale": "After will the verb is use. us is a spelling omission.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13073,
+          "new": "K = R\\SheafHom(\\mathcal{O}, \\mathcal{O})",
+          "old": "K = R\\SheafHom(\\mathcal{O}_X, \\mathcal{O}_X)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-069A"
+        },
+        {
+          "line": 13074,
+          "new": "\\otimes_{\\mathcal{O}}^\\mathbf{L} K",
+          "old": "\\otimes_{\\mathcal{O}_X}^\\mathbf{L} K",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-069B"
+        },
+        {
+          "line": 13075,
+          "new": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}), \\mathcal{O})",
+          "old": "R\\SheafHom(R\\SheafHom(K, \\mathcal{O}_X), \\mathcal{O}_X)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-069C"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-069",
+      "rationale": "The lemma13049 is on an arbitrary ringed site (C,O), with dual defined against O13051. X is nowhere supplied. All three operations remove a copied topological-space subscript from one biduality display.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13609,
+          "new": "$b \\circ a = 1$ and $a \\circ b - 1 = dh + hd$",
+          "old": "$b \\circ a = 1$ and $b \\circ a - 1 = dh + hd$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-070"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-070",
+      "rationale": "a:R→Tot and b:Tot→R at13604–13605. dh+hd is an endomorphism of Tot, so it equals ab−1, whereas ba=1 is the separate identity on R. This matches αβ homotopic to1 at13584–13593.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13857,
+          "new": "a system as in (3)",
+          "old": "a system as in (2)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-071"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-071",
+      "rationale": "Item2 is the derived-limit assertion for K; item3 at13813–13816 is exactly the inverse system with surjective transition maps. Correct the reference in the proof of3.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13961,
+          "new": "$D^{-}(\\mathcal{A})$",
+          "old": "$D^{-}(R)$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-072A"
+        },
+        {
+          "line": 13976,
+          "new": "$D(\\mathcal{A})$",
+          "old": "$D(R)$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-072B"
+        },
+        {
+          "line": 13998,
+          "new": "$D(\\mathcal{A})$",
+          "old": "$D(R)$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-072C"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-072",
+      "rationale": "The ambient category is the Grothendieck category A at13935 and K∈D(A)13949. No R is introduced. All three occurrences belong to the same compact-object proof and must use A.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 13984,
+          "new": "that $L^i$ is a finite direct sum",
+          "old": "that $L^i$ a finite direct sum",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-073"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-073",
+      "rationale": "The predicate L^i a finite direct sum lacks is; insert it without changing the degree quantifier.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14011,
+          "new": "E_\\lambda)[-c]",
+          "old": "E_\\lambda)[-i]",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-074A"
+        },
+        {
+          "line": 14014,
+          "new": "in degree $c$",
+          "old": "in degree $i$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-074B"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-074",
+      "rationale": "The claim fixes the first potentially infinite degree c at13983–13985, and L^c is decomposed14001. Its quotient projection is concentrated in degree c, i.e. shifted by[-c]; both display and explanation must agree.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14089,
+          "new": "for all $p > 0$",
+          "old": "for all $p$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-075"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-075",
+      "rationale": "Injectives have zero positive cohomology, not necessarily zero sections. On a one-point site a nonzero injective already contradicts p=0. Restrict the stated vanishing to p>0.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14102,
+          "new": "\\bigoplus \\Gamma(U, \\mathcal{I}_i^\\bullet)",
+          "old": "\\bigoplus \\Gamma(U, \\bigoplus \\mathcal{I}_i^\\bullet)",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-076"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-076",
+      "rationale": "The direct-sum commutation identifies Γ(U,⊕I_i) with ⊕Γ(U,I_i); a second inner sum duplicates the family and does not give the last term⊕RΓ(U,M_i). Remove only the inner sum.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14275,
+          "new": "there exists a covering $\\{U_i \\to X\\}$ such that for every $i$ and every $j = 1, \\ldots, r$",
+          "old": "there exists a covering $\\{U_i \\to X\\}$ such that $x_i \\in H^0(X, H^b(K))$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-077A"
+        },
+        {
+          "line": 14276,
+          "new": "the class $x_j \\in H^0(X, H^b(K))$ lifts to an element of $H^b(U_i, K)$",
+          "old": "lifts to an element of $H^b(U_i, K)$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-077B"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-077",
+      "rationale": "There are finitely many generators x_1,...,x_r at14269. Each locally lifts; a common refinement of their finitely many coverings makes every x_j lift on every U_i. This simultaneous lifting, not one generator per cover member, is needed for the rank-r map14278.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14297,
+          "new": "$D(\\mathcal{C}, \\Lambda)$",
+          "old": "$D(\\mathcal{C}, \\underline{\\Lambda})$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-078"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-078",
+      "rationale": "The section explicitly defines D(C,Λ) at14243–14244 for modules over underlineΛ. Using the defined abbreviation here is consistent. Classify as notation normalization, not a change of the actual category.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "line": 14299,
+          "new": "$L \\to \\underline{\\Lambda^{\\oplus r}}[-b + 1]$",
+          "old": "$L \\to \\Lambda^{\\oplus r}[-b + 1]$",
+          "preimage_occurrences_on_declared_line": 1,
+          "producer_operation_id": "SITES-COHOMOLOGY-079"
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-079",
+      "rationale": "The distinguished triangle14282–14283 already has underline(Λ^r). The map cited14299 is its final arrow, so repeat that sheaf decoration. Plain Λ^r is an understandable constant-sheaf shorthand but less precise; classify as notation clarification.",
+      "semantic_group_recommendation": "Keep this row as one semantic unit; no cross-row grouping recommended."
+    }
+  ],
+  "schema": "bounded-independent-source-review-v1",
+  "scope": "SITES-COHOMOLOGY-038..079 only; no prior001..037 or excluded028 readjudication",
+  "status": "review_complete_not_admission",
+  "unresolved_issues": [
+    "Registrar must check newly identified10220 prime-swap against prior admitted operations before deciding whether an additional payload operation is needed."
+  ],
+  "write_boundary": "Only this independent review JSON was written. No candidate, registry, authority, locale, Git, build, or publication changes."
+}

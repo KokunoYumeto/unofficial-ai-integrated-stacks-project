@@ -1,0 +1,211 @@
+{
+  "authority_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+  "authority_inputs": {
+    "sites-cohomology.tex": {
+      "bytes": 534394,
+      "path": "sites-cohomology.tex",
+      "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+    }
+  },
+  "authority_phase": {
+    "stems": {
+      "sites-cohomology": {
+        "commands": [
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_1",
+            "stdout_bytes": 154170,
+            "stdout_sha256_raw": "F805735CD167DDCD8B29F1D0FA365EA0FA274C07707ED016A244330DDC57C073"
+          },
+          {
+            "argv": [
+              "bibtex",
+              "sites-cohomology"
+            ],
+            "exit_code": 0,
+            "role": "bibtex",
+            "stdout_bytes": 153,
+            "stdout_sha256_raw": "2FC9840841986187F010E9891F979A6F1D7817555E6E93B04EA9AFA5ACC64AE1"
+          },
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_2",
+            "stdout_bytes": 95183,
+            "stdout_sha256_raw": "7D02C9E085D26753C0EAEBA7697C1DD6CBD059004339DD9819057986C36EEEC4"
+          },
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_3",
+            "stdout_bytes": 94425,
+            "stdout_sha256_raw": "68A68A88890E9DF511CE491B1F0EBB3CC1979706DCE0CDDF5734D867EAE03CA9"
+          }
+        ],
+        "outputs": {
+          "bibtex_stdout": {
+            "bytes": 153,
+            "path": "builds/sites-cohomology.authority.bibtex.txt",
+            "sha256": "2FC9840841986187F010E9891F979A6F1D7817555E6E93B04EA9AFA5ACC64AE1"
+          },
+          "log": {
+            "bytes": 106303,
+            "path": "builds/sites-cohomology.authority.log",
+            "sha256": "62FBB975549B81CA7B6D448DABD1572448E3E6287AFDE342EB8182CCA1D6D06F"
+          },
+          "pass3_stdout": {
+            "bytes": 94019,
+            "path": "builds/sites-cohomology.authority.pass3.txt",
+            "sha256": "7BFBF631F913E43832BCC527B4367DFE9C243A22760CC8991B22D95FD61CDE9F"
+          },
+          "pdf": {
+            "bytes": 1274260,
+            "path": "builds/sites-cohomology.authority.pdf",
+            "sha256": "282E30F2D719AD9C52B0191E038CEBA4FE394BC6EE7971C77438FD1ECB83160A"
+          }
+        },
+        "source": {
+          "bytes": 534394,
+          "path": "sites-cohomology.tex",
+          "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+        }
+      }
+    }
+  },
+  "authority_tree": "3feeb703b931a6e7259782c10e7d1575adc83e5e",
+  "candidate_id": "stacks-errata-a04446e-r39",
+  "candidate_inputs": {
+    "sites-cohomology.tex": {
+      "bytes": 534485,
+      "path": "sites-cohomology.tex",
+      "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+    }
+  },
+  "candidate_phase": {
+    "stems": {
+      "sites-cohomology": {
+        "commands": [
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_1",
+            "stdout_bytes": 154171,
+            "stdout_sha256_raw": "7DA140CFCA93581B97EFEE1A574E63A5A76B2940D48283EE6028D0F3AC5395FE"
+          },
+          {
+            "argv": [
+              "bibtex",
+              "sites-cohomology"
+            ],
+            "exit_code": 0,
+            "role": "bibtex",
+            "stdout_bytes": 153,
+            "stdout_sha256_raw": "2FC9840841986187F010E9891F979A6F1D7817555E6E93B04EA9AFA5ACC64AE1"
+          },
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_2",
+            "stdout_bytes": 95184,
+            "stdout_sha256_raw": "343E13705371A65B4DD33C9527175789F435BEAC4FC1694E4904CCCCE095ED81"
+          },
+          {
+            "argv": [
+              "pdflatex",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-halt-on-error",
+              "-file-line-error",
+              "sites-cohomology.tex"
+            ],
+            "exit_code": 0,
+            "role": "pdflatex_pass_3",
+            "stdout_bytes": 94426,
+            "stdout_sha256_raw": "D25BA00B643459DE09480E5043841224B62A4DC309DD86144C0376E14C328F47"
+          }
+        ],
+        "outputs": {
+          "bibtex_stdout": {
+            "bytes": 153,
+            "path": "builds/sites-cohomology.bibtex.txt",
+            "sha256": "2FC9840841986187F010E9891F979A6F1D7817555E6E93B04EA9AFA5ACC64AE1"
+          },
+          "log": {
+            "bytes": 106304,
+            "path": "builds/sites-cohomology.log",
+            "sha256": "4E265B7B37F065EB2F034C48F7741AD6FEC57CCD20D4C77143DFF384B1EE036D"
+          },
+          "pass3_stdout": {
+            "bytes": 94020,
+            "path": "builds/sites-cohomology.pass3.txt",
+            "sha256": "89FA85E35E808137BFBA420407E872B9A71BFBE104E92515D32426B1AED12AD6"
+          },
+          "pdf": {
+            "bytes": 1274274,
+            "path": "builds/sites-cohomology.pdf",
+            "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+          }
+        },
+        "source": {
+          "bytes": 534485,
+          "path": "sites-cohomology.tex",
+          "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+        }
+      }
+    }
+  },
+  "completed_at_utc": "2026-08-31T13:27:05Z",
+  "passed": true,
+  "restored_authority_inputs": {
+    "sites-cohomology.tex": {
+      "bytes": 534394,
+      "path": "sites-cohomology.tex",
+      "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+    }
+  },
+  "schema": "mathematics-commons-stacks-errata-build-execution/v1",
+  "source_date_epoch": "1788181807",
+  "started_at_utc": "2026-08-31T13:26:48Z",
+  "tools": {
+    "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+    "pdflatex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]"
+  },
+  "work_root": "new empty task-local directory outside source and candidate; exact local path retained only in private evidence"
+}

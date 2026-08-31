@@ -1,0 +1,43 @@
+{
+  "067_split": "MC-STK-ERR-1388/1389 preserve the same producer067 identity for two independent grammar defects.",
+  "editorial_not_mathematical_falsehood_ids": [
+    "MC-STK-ERR-1371",
+    "MC-STK-ERR-1378",
+    "MC-STK-ERR-1400",
+    "MC-STK-ERR-1401"
+  ],
+  "independent_review": "authority/registrar/SITES_COHOMOLOGY_LINKED_053_REVIEW_20260831.json",
+  "linked_statement_operation": [
+    {
+      "class": "source_defect",
+      "declared_line_occurrences": 1,
+      "end_byte_exclusive": 370280,
+      "file_occurrences": 1,
+      "line": 10220,
+      "old_bytes": 38,
+      "old_sha256": "C90D4FE51E72D0F2BCC2F3A303AA0CA46BF6DEDFFF82A5D825B77E93A1746D04",
+      "old_text": "L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!",
+      "operation_id": "MC-STK-ERR-1374-OP2",
+      "origin": "registrar_linked_expansion",
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "producer_operation_id": "CANON-SITES-COHOMOLOGY-053-EXPANSION-10220",
+      "replacement_bytes": 38,
+      "replacement_sha256": "0BD3076ADA9FDDFD30EEEE85D7E18B017BC1F98F667565D358196C18C9815044",
+      "replacement_text": "L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!",
+      "source": "sites-cohomology.tex",
+      "source_end_line": 10220,
+      "source_start_line": 10220,
+      "stable_id": "MC-STK-ERR-1374",
+      "start_byte": 370242
+    }
+  ],
+  "original_producer_proposal": {
+    "id": "C-026",
+    "line": 10224,
+    "new": "left adjoint",
+    "old": "right adjoint",
+    "rationale": "The composites are left-derived left adjoints.",
+    "status": "corrected_in_french_target"
+  },
+  "original_proposal_is_correct_but_incomplete": true
+}

@@ -1,0 +1,1723 @@
+{
+  "allocation_is_proposed_not_reserved": true,
+  "closure": {
+    "editorial_notational_units": 4,
+    "exact_preimages": 61,
+    "failed_preimages": 0,
+    "linked_expansion_operations": 1,
+    "nonoverlapping_operations": true,
+    "payload_written": false,
+    "producer_operations": 60,
+    "producer_rows": 42,
+    "replayed_payload_bytes": 534485,
+    "replayed_payload_sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD",
+    "semantic_units": 43,
+    "source_defect_units": 39,
+    "stable_id_end": "MC-STK-ERR-1401",
+    "stable_id_start": "MC-STK-ERR-1359",
+    "total_operations": 61
+  },
+  "contract_and_reusable_helper_bindings": [
+    {
+      "bytes": 2219,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\CONTRACT.md",
+      "sha256": "44D6E273B8BC4AAF94D366944EAE9340F9C55C14B64841370243AFB17609519E"
+    },
+    {
+      "bytes": 3259,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\schemas\\candidate-manifest.schema.json",
+      "sha256": "FBB10F32FB17F4FC04EE6782FE3BBE63B44E9DB89669D272E0E94EC70DDEB9A4"
+    },
+    {
+      "bytes": 1813,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\schemas\\overlay-entry.schema.json",
+      "sha256": "80491B260471CA4428BD898BF01DCB0FF10B1BC9D7FC591D91975D00C0D20DC0"
+    },
+    {
+      "bytes": 1919,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\schemas\\lease-registry.schema.json",
+      "sha256": "AC7F10D0FB06D1E4386BB9EA545BBA77FB676277FF167432EF2CEBD8CB9A2E11"
+    },
+    {
+      "bytes": 33067,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\pipeline_r38.py",
+      "sha256": "36651C0EC194A233EFC6826E9B5B2B1517F9C992F61324759F537500EE159253"
+    },
+    {
+      "bytes": 10326,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\replay-build.py",
+      "sha256": "9205E4AF10098EA28F13835BA8A5AC85A051D1C5D502BEFE1BAEC364E7FED4F0"
+    },
+    {
+      "bytes": 1722,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\deterministic-replay.py",
+      "sha256": "2AC1C7B011702CBC5D4D29EF8B603746D863FC59AA41B9DDE400EA9E26A32F7D"
+    },
+    {
+      "bytes": 7848,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\build-receipt.py",
+      "sha256": "4A7907EBC51C8279EEECE5E78C92AC484D91143AD9A53118D57AD32B2F55466F"
+    },
+    {
+      "bytes": 4593,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\derive-visual-pages.py",
+      "sha256": "1DDDB3D87C3B005561267D2860EEFFA5AA7D353539193FB60B2D433BCD4066A8"
+    },
+    {
+      "bytes": 4998,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\render-qa.py",
+      "sha256": "414C1CB7AD3FEAB14B90E2865FD92A5EE2E06D90105C904B8544D6DA2AA2D26B"
+    },
+    {
+      "bytes": 10573,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\visual-qa.py",
+      "sha256": "CE8CD571FD1C557C8C80E10D9F7944040BBBB38995F2AB0A7F019E69CD974A92"
+    },
+    {
+      "bytes": 7341,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\finalize_r38.py",
+      "sha256": "3C3185DB9991AC8A40D3E19D16F5B177E6A72C770198E5258B86CE2B4A7E6EF7"
+    },
+    {
+      "bytes": 5761,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\independent-review.py",
+      "sha256": "B2D4C1C7D24E4F111BC5447F6390DD2A6B8688B3643A7A933C886484D465A83F"
+    },
+    {
+      "bytes": 3940,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\build-manifest.py",
+      "sha256": "AE3BFC1597F3F5B2741BE96EFF9D4AC1922CD1E5F6F75DAD8D5FBB3E4F4630C6"
+    },
+    {
+      "bytes": 2140,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\check-manifest.py",
+      "sha256": "8C8521B4E14A66F83495916339472E6CF3DB4BFB958AE09CC61F838F3244BAAE"
+    },
+    {
+      "bytes": 2237,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\verify.py",
+      "sha256": "F21F5EE6851112650E3AB8F714E5E7FF7A2F115ABFE8649EB6E8B77CA7EEADEF"
+    },
+    {
+      "bytes": 8,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\candidates\\commons\\stacks\\errata\\r38\\.gitattributes",
+      "sha256": "705FD4D6451A31D36B3DF7DE96F83F30AC976C9B4A6D1E51671D8E2F33E2D0DA"
+    }
+  ],
+  "created_date": "2026-08-31",
+  "deduplication": {
+    "linked_10220_prime_swap_already_admitted": false,
+    "linked_expansion": {
+      "line": 10220,
+      "new": "L\\pi'_! \\circ Lh^* = Lf^* \\circ L\\pi_!",
+      "old": "L\\pi_! \\circ Lh^* = Lf^* \\circ L\\pi'_!",
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "reason": "Both sides must map D(underline B) to D(B′). The proposed right→left at10224 alone does not fix the ill-typed statement.",
+      "recommendation": "Bind this linked correction to053 only after registrar checks prior overlay at this newly identified locus; do not allocate or mutate here."
+    },
+    "manifest_and_map_commit_blob_pairs_verified": 39,
+    "novel_producer_ids": [
+      "SITES-COHOMOLOGY-038",
+      "SITES-COHOMOLOGY-039",
+      "SITES-COHOMOLOGY-040",
+      "SITES-COHOMOLOGY-041",
+      "SITES-COHOMOLOGY-042",
+      "SITES-COHOMOLOGY-043",
+      "SITES-COHOMOLOGY-044",
+      "SITES-COHOMOLOGY-045",
+      "SITES-COHOMOLOGY-046",
+      "SITES-COHOMOLOGY-047",
+      "SITES-COHOMOLOGY-048",
+      "SITES-COHOMOLOGY-049",
+      "SITES-COHOMOLOGY-050",
+      "SITES-COHOMOLOGY-051",
+      "SITES-COHOMOLOGY-052",
+      "SITES-COHOMOLOGY-053",
+      "SITES-COHOMOLOGY-054",
+      "SITES-COHOMOLOGY-055",
+      "SITES-COHOMOLOGY-056",
+      "SITES-COHOMOLOGY-057",
+      "SITES-COHOMOLOGY-058",
+      "SITES-COHOMOLOGY-059",
+      "SITES-COHOMOLOGY-060",
+      "SITES-COHOMOLOGY-061",
+      "SITES-COHOMOLOGY-062",
+      "SITES-COHOMOLOGY-063",
+      "SITES-COHOMOLOGY-064",
+      "SITES-COHOMOLOGY-065",
+      "SITES-COHOMOLOGY-066",
+      "SITES-COHOMOLOGY-067",
+      "SITES-COHOMOLOGY-068",
+      "SITES-COHOMOLOGY-069",
+      "SITES-COHOMOLOGY-070",
+      "SITES-COHOMOLOGY-071",
+      "SITES-COHOMOLOGY-072",
+      "SITES-COHOMOLOGY-073",
+      "SITES-COHOMOLOGY-074",
+      "SITES-COHOMOLOGY-075",
+      "SITES-COHOMOLOGY-076",
+      "SITES-COHOMOLOGY-077",
+      "SITES-COHOMOLOGY-078",
+      "SITES-COHOMOLOGY-079"
+    ],
+    "novel_row_count": 42,
+    "prior_operation_overlap_count": 0,
+    "prior_sites_operations": 42,
+    "prior_sites_units": 37,
+    "prior_units": [
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1298-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-001"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1298"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1299-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-002"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1299"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1300-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-003"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1300"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1301-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-004"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1301"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1302-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-005"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1302"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1303-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-006"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1303"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1304-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-007"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1304"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1305-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-008"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1305"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1306-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-009"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1306"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1307-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-010"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1307"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1308-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-011"
+        ],
+        "round": "stacks-errata-a04446e-r34",
+        "stable_id": "MC-STK-ERR-1308"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1309-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-012"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1309"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1310-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-013"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1310"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1311-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-028"
+        ],
+        "round": "stacks-errata-a04446e-r35",
+        "stable_id": "MC-STK-ERR-1311"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1313-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-014"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1313"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1314-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-015"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1314"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1315-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-016"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1315"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1316-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-017"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1316"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1317-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-018"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1317"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1318-OP1",
+          "MC-STK-ERR-1318-OP2",
+          "MC-STK-ERR-1318-OP3"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-019"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1318"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1319-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-020"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1319"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1320-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-021"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1320"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1321-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-022"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1321"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1322-OP1",
+          "MC-STK-ERR-1322-OP2",
+          "MC-STK-ERR-1322-OP3"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-023"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1322"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1323-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-024"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1323"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1324-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-025"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1324"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1325-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-026"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1325"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1326-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-027"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1326"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1327-OP1",
+          "MC-STK-ERR-1327-OP2"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-029"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1327"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1328-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-030"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1328"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1329-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-031"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1329"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1330-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-032"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1330"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1331-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-033"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1331"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1332-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-034"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1332"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1333-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-035"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1333"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1334-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-036"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1334"
+      },
+      {
+        "operation_ids": [
+          "MC-STK-ERR-1335-OP1"
+        ],
+        "producer_ids": [
+          "SITES-COHOMOLOGY-037"
+        ],
+        "round": "stacks-errata-a04446e-r37",
+        "stable_id": "MC-STK-ERR-1335"
+      }
+    ],
+    "stable_id_collisions": 0
+  },
+  "inputs": [
+    {
+      "bytes": 39042,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\romance\\00_lane_control\\SITES_COHOMOLOGY_038_079_INDEPENDENT_REVIEW_20260831.json",
+      "sha256": "D89961406CA250C13E538F0AD9F241838C65522F130F57CB99CC5ED2AF622059"
+    },
+    {
+      "bytes": 63508,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\registry\\overlays.json",
+      "sha256": "C1A561855086A651B210537410D2767037E19926049E6AC557309B6333CEBEB4"
+    },
+    {
+      "bytes": 49553,
+      "path": "<WORKSPACE>\\ai-stacks-r31-sites-modules-20260829\\registry\\leases.json",
+      "sha256": "33F1D8553828A7516FC0695ABE22FC6E3659CBD32CB1C3F918D89B168A8BA648"
+    },
+    {
+      "bytes": 534394,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\cjk\\03_working_translations\\stacks_cjk_20260821\\upstream\\src\\stacks-project-a04446e57ec1fbc252a871afcec7752fb2807b14\\sites-cohomology.tex",
+      "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+    },
+    {
+      "bytes": 26075,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\romance\\03_working_translations\\stacks_fr_20260821\\p03\\evidence\\SITES_COHOMOLOGY_SOURCE_EMENDATIONS.json",
+      "sha256": "DA3BFA3A8E310D2A5426BDA63F05F4AC3AFFA212BF5DCB9CA36CD03382F186E3"
+    },
+    {
+      "bytes": 33575,
+      "path": "<WORKSPACE>\\03_projects\\language_management\\romance\\03_working_translations\\stacks_fr_20260821\\p03\\evidence\\SITES_COHOMOLOGY_SOURCE_DEFECT_LEDGER.csv",
+      "sha256": "34C199DD53EF7B37A4143F0C7B5F1EEED91BE523A016F217182A8D9A3F5F4A92"
+    }
+  ],
+  "minimal_pipeline": [
+    "After registrar issues exact R39 lease, create only the new leased candidate path; copy raw authority/COPYING/lock, exact 42-row packet, full source ledger/emendations as provenance, independent review and this plan. Preserve row053 initial incomplete proposal as adverse evidence.",
+    "Adapt pipeline_r38.py source-specific materialization, replacing R38 more-algebra inputs and GROUPS with the proposed 43-unit table; retain exact input hashes and separate immutable input/generated files. Do not run the R38 materializer against R39 or overwrite prior rounds.",
+    "Materialize source-map, stable-units, operation-spec, decisions, rejection ledger, formula/diagram inventory, source-validation, config, LEASE, README and regeneration receipt. Prove 61 exact unique preimages and payload 534485 bytes / 002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD.",
+    "Reuse replay-build.py with config.stems key sites-cohomology and a new R39 captured work marker. Build authority/candidate in two distinct fresh narrow roots serially. Retain deterministic source date, inputs and recorder evidence.",
+    "Adapt deterministic-replay.py, derive-visual-pages.py and render-qa.py hardcoded more-algebra stems to sites-cohomology. Use actual R39 source offsets/SyncTeX mappings and actual PDF page count. Never reuse R38 pages or page-count constants.",
+    "Run build-receipt.py only as an intentional write stage after fresh builds; it does not support --help. Classify authority/candidate diagnostic deltas and fix actual new damage before passing.",
+    "Render every actual R39 PDF page; inspect all pages and high-resolution correction-sensitive pages. Adapt visual-qa.py to current config. Replace finalize_r38.py with an R39-specific finalizer; its 401-page/13-sensitive-page/page392 false-positive facts are R38-only and must not be copied.",
+    "Adapt independent-review.py and verify.py to exact R39 source, stable range1359..1401 and counts43/42/61. The independent reviewer must re-read/replay the candidate, not merely copy prior passing receipts.",
+    "Adapt build-manifest.py expected counts/date/claim strings; check-manifest.py can be reused with identical directory depth and current schema. Bind every permanent candidate artifact with uppercase SHA-256 and exclude __pycache__/pyc. Preserve * -text to prevent line-ending transport changes.",
+    "Only after independent candidate validation, registrar may append R39 overlay entry and release event, write admission receipt, narrowly commit/push registrar branch and anonymously verify committed/public blobs. Composer alone applies admitted operations to generated source; no generated-source composition is part of this plan."
+  ],
+  "original_private_transport_identity": {
+    "bytes": 63982,
+    "filename": "SITES_COHOMOLOGY_R39_DEDUP_AND_PLAN_20260831.json",
+    "sha256": "D4E18974327DE591A8318E83310DFA47198E588D4097579D1FCDFF3DC273209B"
+  },
+  "proposed_units": [
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 247151,
+          "line": 6823,
+          "old_bytes": 26,
+          "old_sha256": "3B6E239701480E78899820E2BE77C59CEDDACEB35F35C73553F67724F1C292C5",
+          "operation_id": "MC-STK-ERR-1359-OP1",
+          "producer_operation_id": "C-001",
+          "replacement_bytes": 26,
+          "replacement_sha256": "EF34EAEE9698040B6B3E689FFF8B91EF907FFD85764CE2E1C171342F838EDA86",
+          "start_byte": 247125
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-038",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1359"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 265502,
+          "line": 7301,
+          "old_bytes": 43,
+          "old_sha256": "2EE252007FBD2B8F069C9C04705B7A7A1E60B7678A4640F581DE57080BDF39D6",
+          "operation_id": "MC-STK-ERR-1360-OP1",
+          "producer_operation_id": "C-002",
+          "replacement_bytes": 43,
+          "replacement_sha256": "85DB4AE1BB35FBE0FEE33C0A63C28F0DCD3F516096C28FE1D8F7A15DD7D8F9B9",
+          "start_byte": 265459
+        },
+        {
+          "end_byte_exclusive": 266775,
+          "line": 7339,
+          "old_bytes": 43,
+          "old_sha256": "D05EA46876193A3E4B8DC5B42A198CEB18F7D68A90F6AAD40056C91CF200A124",
+          "operation_id": "MC-STK-ERR-1360-OP2",
+          "producer_operation_id": "C-005",
+          "replacement_bytes": 43,
+          "replacement_sha256": "85DB4AE1BB35FBE0FEE33C0A63C28F0DCD3F516096C28FE1D8F7A15DD7D8F9B9",
+          "start_byte": 266732
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-039",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1360"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 266164,
+          "line": 7322,
+          "old_bytes": 17,
+          "old_sha256": "6B8826145C46634C7A820015D451E72378A711AF9EBF84D433E53D8CFA826C4A",
+          "operation_id": "MC-STK-ERR-1361-OP1",
+          "producer_operation_id": "C-003",
+          "replacement_bytes": 17,
+          "replacement_sha256": "08672E858F5C89515AF7ECBB24288250AAAE6BAC6018E41925603EEB5A910F9F",
+          "start_byte": 266147
+        },
+        {
+          "end_byte_exclusive": 266191,
+          "line": 7324,
+          "old_bytes": 7,
+          "old_sha256": "010510FB3E68EC0CAD833846C394424BBF4B5D3AB49B6CA3A618859E3A81DFAC",
+          "operation_id": "MC-STK-ERR-1361-OP2",
+          "producer_operation_id": "C-004",
+          "replacement_bytes": 7,
+          "replacement_sha256": "B540E13C875022B287C0F1582ABB4F2C8A0DD8D312CF961B362171C9077CBDA1",
+          "start_byte": 266184
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-040",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1361"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 274011,
+          "line": 7548,
+          "old_bytes": 6,
+          "old_sha256": "0298CC60BFC2D7E5F477CFA9F73A56317699C9F8C1742226BC7802CAC3A23D7E",
+          "operation_id": "MC-STK-ERR-1362-OP1",
+          "producer_operation_id": "C-006",
+          "replacement_bytes": 9,
+          "replacement_sha256": "F852A91A13EFAB288A9A8E376EAB724D77C81741B48A80464A0105381AA88B26",
+          "start_byte": 274005
+        },
+        {
+          "end_byte_exclusive": 274051,
+          "line": 7548,
+          "old_bytes": 6,
+          "old_sha256": "26E0FE64A665447014B9DFCE4B926F5C3E0D67F24208A6579E51ADB6BB546AE3",
+          "operation_id": "MC-STK-ERR-1362-OP2",
+          "producer_operation_id": "C-007",
+          "replacement_bytes": 9,
+          "replacement_sha256": "891B3677ADF8B80E428D64CDD9083BBA9D9A1956FE899DB5276DEF91C62DA838",
+          "start_byte": 274045
+        },
+        {
+          "end_byte_exclusive": 274272,
+          "line": 7554,
+          "old_bytes": 6,
+          "old_sha256": "26E0FE64A665447014B9DFCE4B926F5C3E0D67F24208A6579E51ADB6BB546AE3",
+          "operation_id": "MC-STK-ERR-1362-OP3",
+          "producer_operation_id": "C-008",
+          "replacement_bytes": 9,
+          "replacement_sha256": "891B3677ADF8B80E428D64CDD9083BBA9D9A1956FE899DB5276DEF91C62DA838",
+          "start_byte": 274266
+        },
+        {
+          "end_byte_exclusive": 274439,
+          "line": 7560,
+          "old_bytes": 23,
+          "old_sha256": "979C811DF81F6A17DCA482FECCC6159B4CCFE7386DC3CFE17288888B9742B26F",
+          "operation_id": "MC-STK-ERR-1362-OP4",
+          "producer_operation_id": "C-009",
+          "replacement_bytes": 30,
+          "replacement_sha256": "B9718AA4D5B18A1A1BEC2990B8DA24BFF82F85B6E880B0EE770A67391532CE72",
+          "start_byte": 274416
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-041",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1362"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 276105,
+          "line": 7600,
+          "old_bytes": 47,
+          "old_sha256": "B4DB3726234485DF5BD97D9B47406010788DE98FDBDED16CE452B2D885334EFB",
+          "operation_id": "MC-STK-ERR-1363-OP1",
+          "producer_operation_id": "C-010",
+          "replacement_bytes": 49,
+          "replacement_sha256": "26CC7BB256F23419A09D0702BF8F08A3FC1722362FB8552A6DF92CD56D4B6429",
+          "start_byte": 276058
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-042",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1363"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 289621,
+          "line": 7948,
+          "old_bytes": 28,
+          "old_sha256": "78C1AE24F7C73E1CC9544362D7FCEE00A917C681CFDE79E203707909E84AFA33",
+          "operation_id": "MC-STK-ERR-1364-OP1",
+          "producer_operation_id": "C-011",
+          "replacement_bytes": 28,
+          "replacement_sha256": "F043C10BE5899BC72FDCB97E0CC5674FF80785E9AB994EFD11E133D46C273833",
+          "start_byte": 289593
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-043",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1364"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 295396,
+          "line": 8085,
+          "old_bytes": 30,
+          "old_sha256": "51A7B9F7348FE726DACAB5100F01E39C8986BF5FC12FE8F995ABCD662DB7D20F",
+          "operation_id": "MC-STK-ERR-1365-OP1",
+          "producer_operation_id": "C-012",
+          "replacement_bytes": 32,
+          "replacement_sha256": "CD88601DE7982573F01A46E93FBF32CEE4B8727E4D762CE54B67802E0A0D88E9",
+          "start_byte": 295366
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-044",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1365"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 296567,
+          "line": 8117,
+          "old_bytes": 28,
+          "old_sha256": "64411F929188E437C56597FC21908E6D330D25AB77609299883EB406C1A2FF01",
+          "operation_id": "MC-STK-ERR-1366-OP1",
+          "producer_operation_id": "C-013",
+          "replacement_bytes": 28,
+          "replacement_sha256": "8A36C677761E29D55F0E5F26D42641017E82A3A9CEC84C294003B07EAE9DE6CB",
+          "start_byte": 296539
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-045",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1366"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 301630,
+          "line": 8291,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP1",
+          "producer_operation_id": "C-014",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 301607
+        },
+        {
+          "end_byte_exclusive": 301739,
+          "line": 8295,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP2",
+          "producer_operation_id": "C-015",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 301716
+        },
+        {
+          "end_byte_exclusive": 301841,
+          "line": 8299,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP3",
+          "producer_operation_id": "C-016",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 301818
+        },
+        {
+          "end_byte_exclusive": 302233,
+          "line": 8313,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP4",
+          "producer_operation_id": "C-017",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 302210
+        },
+        {
+          "end_byte_exclusive": 302340,
+          "line": 8317,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP5",
+          "producer_operation_id": "C-018",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 302317
+        },
+        {
+          "end_byte_exclusive": 302440,
+          "line": 8321,
+          "old_bytes": 23,
+          "old_sha256": "538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285",
+          "operation_id": "MC-STK-ERR-1367-OP6",
+          "producer_operation_id": "C-019",
+          "replacement_bytes": 23,
+          "replacement_sha256": "B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468",
+          "start_byte": 302417
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-046",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1367"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 308669,
+          "line": 8513,
+          "old_bytes": 32,
+          "old_sha256": "861BE72A1FA71E748DD4B80C375A296F694BA289D9D896F63AFF0FFB2DE89C2D",
+          "operation_id": "MC-STK-ERR-1368-OP1",
+          "producer_operation_id": "C-020",
+          "replacement_bytes": 31,
+          "replacement_sha256": "D5E6A83F3ABF0F65DF2B6A76A5E2C2D11ADB899838E419489BD1129CC2BB153F",
+          "start_byte": 308637
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-047",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1368"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 309262,
+          "line": 8534,
+          "old_bytes": 53,
+          "old_sha256": "84E588C68C8E4C895F14E7AA34BF8CF78BA933FB9C3B5A303AD720CE628C56CD",
+          "operation_id": "MC-STK-ERR-1369-OP1",
+          "producer_operation_id": "C-021",
+          "replacement_bytes": 54,
+          "replacement_sha256": "8751E4747DEB5DD56052F75629EDD46A58F4DA797561634071379A3C22F6073A",
+          "start_byte": 309209
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-048",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1369"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 309934,
+          "line": 8549,
+          "old_bytes": 79,
+          "old_sha256": "0385B5381AFB2A421070D50CA978C629B41C7F9CF3C8FF2A896B6AF09D3BA692",
+          "operation_id": "MC-STK-ERR-1370-OP1",
+          "producer_operation_id": "C-022",
+          "replacement_bytes": 88,
+          "replacement_sha256": "BD031644AF6D32F5A09F27D953E25A4AF2729DE0C5565EBAE84EC436590E432B",
+          "start_byte": 309855
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-049",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1370"
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 314382,
+          "line": 8683,
+          "old_bytes": 21,
+          "old_sha256": "E9AE00328F7FB524AF8312F39B54672F9222E0D93E34B0C90754F63CFB3BEFF9",
+          "operation_id": "MC-STK-ERR-1371-OP1",
+          "producer_operation_id": "C-023",
+          "replacement_bytes": 0,
+          "replacement_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+          "start_byte": 314361
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-050",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1371"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 354672,
+          "line": 9803,
+          "old_bytes": 31,
+          "old_sha256": "01C6F46B8DBCC589358E6D23C74E63A4120809C9E89351C0D7F59CA79724C090",
+          "operation_id": "MC-STK-ERR-1372-OP1",
+          "producer_operation_id": "C-024",
+          "replacement_bytes": 33,
+          "replacement_sha256": "9DE159475EF65E599EBFCA16CAFE189E7673CA4A20AB6F77E8ECAE913AD96AD7",
+          "start_byte": 354641
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-051",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1372"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 355237,
+          "line": 9819,
+          "old_bytes": 34,
+          "old_sha256": "2A1BD0F3958DDC3E005D68179F6D87AF17DACACD5BF70BD901916D117D6743A2",
+          "operation_id": "MC-STK-ERR-1373-OP1",
+          "producer_operation_id": "C-025",
+          "replacement_bytes": 33,
+          "replacement_sha256": "57D0BBD17F1F8ABF0E92FF8C64AED7B86CC0637AC6ED2175375AC765434ED16F",
+          "start_byte": 355203
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-052",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1373"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted_submitted_correction_with_required_linked_expansion",
+      "operations": [
+        {
+          "end_byte_exclusive": 370341,
+          "line": 10224,
+          "old_bytes": 13,
+          "old_sha256": "AAC515010A711C982B6E5DA4B3056335D6DC30927DB7062C201FEFE383EA24DB",
+          "operation_id": "MC-STK-ERR-1374-OP1",
+          "producer_operation_id": "C-026",
+          "replacement_bytes": 12,
+          "replacement_sha256": "8D8CE98FA837F82AB49546A3BACAF999FC8F69E42558AEF8EF05FFEBFD9029CD",
+          "start_byte": 370328
+        },
+        {
+          "end_byte_exclusive": 370280,
+          "line": 10220,
+          "old_bytes": 38,
+          "old_sha256": "C90D4FE51E72D0F2BCC2F3A303AA0CA46BF6DEDFFF82A5D825B77E93A1746D04",
+          "operation_id": "MC-STK-ERR-1374-OP2",
+          "producer_operation_id": "CANON-SITES-COHOMOLOGY-053-EXPANSION-10220",
+          "replacement_bytes": 38,
+          "replacement_sha256": "0BD3076ADA9FDDFD30EEEE85D7E18B017BC1F98F667565D358196C18C9815044",
+          "start_byte": 370242
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-053",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1374"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 381414,
+          "line": 10490,
+          "old_bytes": 20,
+          "old_sha256": "6B71B6B7926F1955CBAAC580C8777129E37580A456D7458DD0CD119ACF604C75",
+          "operation_id": "MC-STK-ERR-1375-OP1",
+          "producer_operation_id": "C-027",
+          "replacement_bytes": 25,
+          "replacement_sha256": "44FFE389DF8383D6251FBE2414E5ED6E458EDDAF2292118DEEC0A73C0A84198F",
+          "start_byte": 381394
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-054",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1375"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 385015,
+          "line": 10591,
+          "old_bytes": 12,
+          "old_sha256": "A56156512E7CAE1D70B1ADE68DD6AE9FACB0E0D73521E05714FFEB224816FDC4",
+          "operation_id": "MC-STK-ERR-1376-OP1",
+          "producer_operation_id": "C-028",
+          "replacement_bytes": 8,
+          "replacement_sha256": "407F19886854FF184E7668633A93C58E42541708F4A32327B915505EA13DF389",
+          "start_byte": 385003
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-055",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1376"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 385210,
+          "line": 10595,
+          "old_bytes": 20,
+          "old_sha256": "4577A10450C6D850006882824762E4D912246C8EDCCBA074BCB545ACBFE0969B",
+          "operation_id": "MC-STK-ERR-1377-OP1",
+          "producer_operation_id": "C-029",
+          "replacement_bytes": 19,
+          "replacement_sha256": "E0E421F2884F939645A6838EF116E7B014C57EAF3D2A01C8BC54E8ABBA99F92D",
+          "start_byte": 385190
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-056",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1377"
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 385354,
+          "line": 10597,
+          "old_bytes": 27,
+          "old_sha256": "77046402E9E3090945E86FF2B149A9B1890154B3FAB727A527BDC3F24DE9A7E2",
+          "operation_id": "MC-STK-ERR-1378-OP1",
+          "producer_operation_id": "C-030",
+          "replacement_bytes": 21,
+          "replacement_sha256": "5174435AA0103BD4E47B8178CEB69F5EF677BDAC3F520EE16A94F53E4863D41C",
+          "start_byte": 385327
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-057",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1378"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 386570,
+          "line": 10625,
+          "old_bytes": 54,
+          "old_sha256": "AFDE1B732C12724E669DBC09A8E6200E51DB3E0E34276B0730E582C25B187979",
+          "operation_id": "MC-STK-ERR-1379-OP1",
+          "producer_operation_id": "C-031",
+          "replacement_bytes": 54,
+          "replacement_sha256": "F02536930DFC0C72788588FC02384529A95773904C33AF9AEA3C6AB78810E425",
+          "start_byte": 386516
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-058",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1379"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 387250,
+          "line": 10642,
+          "old_bytes": 12,
+          "old_sha256": "59E0885520EB86E21C77F2E9B454AFC7721B62D1124F575FB57882B4F7164709",
+          "operation_id": "MC-STK-ERR-1380-OP1",
+          "producer_operation_id": "C-032",
+          "replacement_bytes": 11,
+          "replacement_sha256": "F51BECF01423B2B11DB9D30CBFAE38BD5C108BFEE1D71ECCF00E821161DA8CE6",
+          "start_byte": 387238
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-059",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1380"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 448510,
+          "line": 12200,
+          "old_bytes": 10,
+          "old_sha256": "26331A439A6B1AFCD84CEA6C0D85F365AA04061454F789FE70AF07C3326A9947",
+          "operation_id": "MC-STK-ERR-1381-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-060",
+          "replacement_bytes": 12,
+          "replacement_sha256": "B6766AABF070D8DB3B19A93360C2775B1D0C97D2670337B08E73C0638605DFF6",
+          "start_byte": 448500
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-060",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1381"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 448737,
+          "line": 12204,
+          "old_bytes": 54,
+          "old_sha256": "DAFF46FEE72EF142E29D60CF614E771D9D256F226004C223BB82FB7394D5F7D1",
+          "operation_id": "MC-STK-ERR-1382-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-061",
+          "replacement_bytes": 58,
+          "replacement_sha256": "1D4C7F6F14310710C45D502FEA0B1F5C1BBC140268063B9BAFCBA8F7ABE42C32",
+          "start_byte": 448683
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-061",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1382"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 450794,
+          "line": 12258,
+          "old_bytes": 28,
+          "old_sha256": "ED7B784A9852921AEEE61460E6A0F1276CE0A9259B844763784FDBD5F4986813",
+          "operation_id": "MC-STK-ERR-1383-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-062A",
+          "replacement_bytes": 27,
+          "replacement_sha256": "EF835BA4AB1FE7DF23B5E63CD2A06FEBF268DF036D4D13B6BDD825A2CB4832E0",
+          "start_byte": 450766
+        },
+        {
+          "end_byte_exclusive": 450871,
+          "line": 12260,
+          "old_bytes": 27,
+          "old_sha256": "3E8503FB464A2D47395408A895609AA9ACDC3940E5527D3CE3AA588BE9BD632C",
+          "operation_id": "MC-STK-ERR-1383-OP2",
+          "producer_operation_id": "SITES-COHOMOLOGY-062B",
+          "replacement_bytes": 26,
+          "replacement_sha256": "A4C995473F9D704EDE0BA45A8778931053061BC1CF0FC19470FBEE930749AE65",
+          "start_byte": 450844
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-062",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1383"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 453306,
+          "line": 12326,
+          "old_bytes": 28,
+          "old_sha256": "37879A76305381B35EB1EADBAF2A1C8C21B1914F47321700F323D49EDAA8A568",
+          "operation_id": "MC-STK-ERR-1384-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-063",
+          "replacement_bytes": 25,
+          "replacement_sha256": "3824B053C4527E64B60CF283C9F912A72F53997E774352147CB6008A4DAF054D",
+          "start_byte": 453278
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-063",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1384"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 454160,
+          "line": 12340,
+          "old_bytes": 14,
+          "old_sha256": "F718FDE48A3DA349EF4978B6CFF442F84FAFC987D510DFF20A914BB6DB387CA6",
+          "operation_id": "MC-STK-ERR-1385-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-064",
+          "replacement_bytes": 24,
+          "replacement_sha256": "30C2A7C99396DAFBC98C9B3AA9722ED40415DD16DB709A02B0A2D1C84AF800AB",
+          "start_byte": 454146
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-064",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1385"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 458832,
+          "line": 12461,
+          "old_bytes": 32,
+          "old_sha256": "75136257B0E22D63037B73B7CC162866288DC85E08231AE0C7346CC2DE556837",
+          "operation_id": "MC-STK-ERR-1386-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-065",
+          "replacement_bytes": 42,
+          "replacement_sha256": "E33F8888BB5BDE44AA0FD995D545B16BFDDA2E1EAE119265D6CD34ED498ACD2A",
+          "start_byte": 458800
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-065",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1386"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 462031,
+          "line": 12538,
+          "old_bytes": 49,
+          "old_sha256": "696DFE30D9DFFBF60C49B85FABF23923050FD3D8C92D2AD4FF1BFFC2064D93CE",
+          "operation_id": "MC-STK-ERR-1387-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-066",
+          "replacement_bytes": 49,
+          "replacement_sha256": "A0CBBC7E33227C06DFCFA4B29D7E005EDD072CDCB763D334B52D8CDD3F43E4C1",
+          "start_byte": 461982
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-066",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1387"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 462581,
+          "line": 12555,
+          "old_bytes": 29,
+          "old_sha256": "CB7B0E51C2B815F9311362E307097BF2B5BEDF887C488690786D5A5C29144761",
+          "operation_id": "MC-STK-ERR-1388-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-067A",
+          "replacement_bytes": 26,
+          "replacement_sha256": "82E8ABB76EFDE86D024E364069B61D4C3BF5B992DFAEE1ABE9A8F1552F64D577",
+          "start_byte": 462552
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-067",
+      "producer_subunit": "SITES-COHOMOLOGY-067A",
+      "stable_id": "MC-STK-ERR-1388"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 462846,
+          "line": 12560,
+          "old_bytes": 38,
+          "old_sha256": "98963B1059E73316F6A4D419C2A39F24C0325BA135941C11C53F6458CD8CCEF1",
+          "operation_id": "MC-STK-ERR-1389-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-067B",
+          "replacement_bytes": 39,
+          "replacement_sha256": "05F182DD09D20E3DBFEA22AD995AD98276C37F7D527C9FDD2FC3329AF1872F78",
+          "start_byte": 462808
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-067",
+      "producer_subunit": "SITES-COHOMOLOGY-067B",
+      "stable_id": "MC-STK-ERR-1389"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 480904,
+          "line": 13066,
+          "old_bytes": 34,
+          "old_sha256": "34FAC934C07CFB3E0685668B1DF82B61C361FD245E6A6B127ADA41FC185DC1A8",
+          "operation_id": "MC-STK-ERR-1390-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-068",
+          "replacement_bytes": 35,
+          "replacement_sha256": "1E352B637909C6B3DC7A4288CEA0F19C5532048FF18D009319C3DC4B2029B076",
+          "start_byte": 480870
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-068",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1390"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 481276,
+          "line": 13073,
+          "old_bytes": 44,
+          "old_sha256": "AF427D51A5B09595C7C527B2CA2512A7941906D52629E844556F6DC7B04C41C2",
+          "operation_id": "MC-STK-ERR-1391-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-069A",
+          "replacement_bytes": 40,
+          "replacement_sha256": "973C1DB64BA5B403841E7EE3CECC6276DD9ED65234B01CD6F19DFFB3F38A2DBF",
+          "start_byte": 481232
+        },
+        {
+          "end_byte_exclusive": 481313,
+          "line": 13074,
+          "old_bytes": 36,
+          "old_sha256": "5AAC8AAA92B217A1F478ECB2A48D4CE8F1FACC1915982561F3BFDBF6BB436E12",
+          "operation_id": "MC-STK-ERR-1391-OP2",
+          "producer_operation_id": "SITES-COHOMOLOGY-069B",
+          "replacement_bytes": 34,
+          "replacement_sha256": "68A7A51C2072A7D08ADD710EA76869EF76DC47577925137C6FBF9FE46AD5E248",
+          "start_byte": 481277
+        },
+        {
+          "end_byte_exclusive": 481385,
+          "line": 13075,
+          "old_bytes": 55,
+          "old_sha256": "B4403F75B1DA64A61FC2B2C41E74601DC040CF6E6A2E59F0E9FA45D6A537FFDA",
+          "operation_id": "MC-STK-ERR-1391-OP3",
+          "producer_operation_id": "SITES-COHOMOLOGY-069C",
+          "replacement_bytes": 51,
+          "replacement_sha256": "64B6EA0512ABBE5916D7DF1141BABDE8CD2F401F72DEA2C51114DFD2C92D7A52",
+          "start_byte": 481330
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-069",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1391"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 502322,
+          "line": 13609,
+          "old_bytes": 45,
+          "old_sha256": "C46D82518CDB77C55D60753D2307A66930BCDD7A626EE2F79D8E5A7844A4F34A",
+          "operation_id": "MC-STK-ERR-1392-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-070",
+          "replacement_bytes": 45,
+          "replacement_sha256": "6634305B4A0067461A0D018FDCC789505AA3BDC8E7997C80721BAABEF78226DD",
+          "start_byte": 502277
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-070",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1392"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 511848,
+          "line": 13857,
+          "old_bytes": 18,
+          "old_sha256": "A5570107A9DD169D6B9344E27F089112C089D6BF8F23160E117DA993FDE40AC0",
+          "operation_id": "MC-STK-ERR-1393-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-071",
+          "replacement_bytes": 18,
+          "replacement_sha256": "DF2B0210D8B765370DC6148DF81115DB9610370926A844E2EAF6F67FCCF963C9",
+          "start_byte": 511830
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-071",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1393"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 515460,
+          "line": 13961,
+          "old_bytes": 10,
+          "old_sha256": "99709D713FF405B2A1A38B1E60B2F7FB16757F337B3ABCB7DF2C0E96287A7AE4",
+          "operation_id": "MC-STK-ERR-1394-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-072A",
+          "replacement_bytes": 20,
+          "replacement_sha256": "81F1CF8B659F96CA860FC0724E2B46D1B79E0288FB6493C775E95ED1BE7DBDEC",
+          "start_byte": 515450
+        },
+        {
+          "end_byte_exclusive": 516098,
+          "line": 13976,
+          "old_bytes": 6,
+          "old_sha256": "AE2103C6076E05DB2C7AAE457772F8CD26D4D9B5F915F89BE4337A7C62FA192D",
+          "operation_id": "MC-STK-ERR-1394-OP2",
+          "producer_operation_id": "SITES-COHOMOLOGY-072B",
+          "replacement_bytes": 16,
+          "replacement_sha256": "3F43A9C26AE95C748FF3ACA34F5A5CBC45B72FE0D0ABC2F4FC0530AF445A44E7",
+          "start_byte": 516092
+        },
+        {
+          "end_byte_exclusive": 517111,
+          "line": 13998,
+          "old_bytes": 6,
+          "old_sha256": "AE2103C6076E05DB2C7AAE457772F8CD26D4D9B5F915F89BE4337A7C62FA192D",
+          "operation_id": "MC-STK-ERR-1394-OP3",
+          "producer_operation_id": "SITES-COHOMOLOGY-072C",
+          "replacement_bytes": 16,
+          "replacement_sha256": "3F43A9C26AE95C748FF3ACA34F5A5CBC45B72FE0D0ABC2F4FC0530AF445A44E7",
+          "start_byte": 517105
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-072",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1394"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 516475,
+          "line": 13984,
+          "old_bytes": 30,
+          "old_sha256": "DEC7C1FC26EBC3EB0CAF3279E81EBA6E292D8F580CCF9A374427FC8BD5DF62C5",
+          "operation_id": "MC-STK-ERR-1395-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-073",
+          "replacement_bytes": 33,
+          "replacement_sha256": "9D19C2B8C70BB8BF22055FD4B664192A96F2E76CDBFBA5AEF99737D3BCD03273",
+          "start_byte": 516445
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-073",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1395"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 517602,
+          "line": 14011,
+          "old_bytes": 14,
+          "old_sha256": "97AD287060E6756CEF5AC2CCEC3BE594F2D4283CE9341790D7ECE964DCF37DD1",
+          "operation_id": "MC-STK-ERR-1396-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-074A",
+          "replacement_bytes": 14,
+          "replacement_sha256": "0EC1D9C92CC8808E427EDE714149177C2DA74A69F565DF2EE8E898F582863815",
+          "start_byte": 517588
+        },
+        {
+          "end_byte_exclusive": 517706,
+          "line": 14014,
+          "old_bytes": 13,
+          "old_sha256": "25E386BB1E7F38177C810A1848BE048CAA06C72EC980F37C7DFECBE6218ED2B2",
+          "operation_id": "MC-STK-ERR-1396-OP2",
+          "producer_operation_id": "SITES-COHOMOLOGY-074B",
+          "replacement_bytes": 13,
+          "replacement_sha256": "38284C3F3FA792838A6B97ABC536950D090DFD38E1CF5DF62332D50FC27A33B7",
+          "start_byte": 517693
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-074",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1396"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 521042,
+          "line": 14089,
+          "old_bytes": 11,
+          "old_sha256": "66C2E7ACE9153CEED17C48DF6E7DF64DA076381AD8C37AD93184872A1AE372F0",
+          "operation_id": "MC-STK-ERR-1397-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-075",
+          "replacement_bytes": 15,
+          "replacement_sha256": "61E139986EAE655007D8EAB378D86BF10C318CA67FB3522AEBE88C45E755F17F",
+          "start_byte": 521031
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-075",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1397"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 521757,
+          "line": 14102,
+          "old_bytes": 52,
+          "old_sha256": "EBA905EBD4BAA50860D8B53F448A91F95E67794C48178B6EC3C9186396890175",
+          "operation_id": "MC-STK-ERR-1398-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-076",
+          "replacement_bytes": 42,
+          "replacement_sha256": "0305A4CBEB1021567A3FFCF6C2E5C3B11FA2DFF197DBDC9650FBEADFD34F3178",
+          "start_byte": 521705
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-076",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1398"
+    },
+    {
+      "classification": "source_defect",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 528457,
+          "line": 14275,
+          "old_bytes": 74,
+          "old_sha256": "0393C5112F3CBDD378AFD5A3B6CB957A1955A1658CB7DF8C3489E4634787F610",
+          "operation_id": "MC-STK-ERR-1399-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-077A",
+          "replacement_bytes": 92,
+          "replacement_sha256": "4DF2E1C6016CF0564F82BC570F5DF4CBABD03DCA7183657D47911E9B0AE18C57",
+          "start_byte": 528383
+        },
+        {
+          "end_byte_exclusive": 528494,
+          "line": 14276,
+          "old_bytes": 36,
+          "old_sha256": "83C22ACD2883700A1FCFA67DAC4C92FE0D2828526E846B43141EDF7A79C597F7",
+          "operation_id": "MC-STK-ERR-1399-OP2",
+          "producer_operation_id": "SITES-COHOMOLOGY-077B",
+          "replacement_bytes": 71,
+          "replacement_sha256": "49F478AA45373E8B6AAC1153295C2962B962F2549B9F68D64646B54A1656247E",
+          "start_byte": 528458
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-077",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1399"
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 529376,
+          "line": 14297,
+          "old_bytes": 37,
+          "old_sha256": "7A0E9AA145FA874F36999D86EABDC7EDCFC77B828798ABFD9414364E2C92A7B6",
+          "operation_id": "MC-STK-ERR-1400-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-078",
+          "replacement_bytes": 25,
+          "replacement_sha256": "FF8C9C00FEB18B0AE9BCF5E557AA10683E5B27503A43600CA42AB0F9386C6DFD",
+          "start_byte": 529339
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-078",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1400"
+    },
+    {
+      "classification": "editorial_or_notational_clarification",
+      "disposition": "accepted",
+      "operations": [
+        {
+          "end_byte_exclusive": 529499,
+          "line": 14299,
+          "old_bytes": 34,
+          "old_sha256": "FC3993D3DE4ED57B40739558227C63A8F381DFA0996936087BD3C9A9B22FF265",
+          "operation_id": "MC-STK-ERR-1401-OP1",
+          "producer_operation_id": "SITES-COHOMOLOGY-079",
+          "replacement_bytes": 46,
+          "replacement_sha256": "DDE32567EF8F7B1F48A9326AACCEFFDB5C3A9EAF8BA2D2CF3D44B3BE3696958C",
+          "start_byte": 529465
+        }
+      ],
+      "producer_id": "SITES-COHOMOLOGY-079",
+      "producer_subunit": null,
+      "stable_id": "MC-STK-ERR-1401"
+    }
+  ],
+  "registry_head": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
+  "schema": "stacks-r39-dedup-and-plan-v1",
+  "schema_mapping": {
+    "authority_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "authority_tree": "3feeb703b931a6e7259782c10e7d1575adc83e5e",
+    "candidate_id": "stacks-errata-a04446e-r39",
+    "candidate_path": "candidates/commons/stacks/errata/r39",
+    "class_mapping": {
+      "editorial_or_notational_clarification": "editorial_or_notational_clarification",
+      "source_defect": "source_defect_correction"
+    },
+    "config_closure": {
+      "accepted": 43,
+      "linked_expansion_operations": 1,
+      "operations": 61,
+      "producer_rows": 42,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "editorial_ids": [
+      {
+        "producer_id": "SITES-COHOMOLOGY-050",
+        "stable_id": "MC-STK-ERR-1371"
+      },
+      {
+        "producer_id": "SITES-COHOMOLOGY-057",
+        "stable_id": "MC-STK-ERR-1378"
+      },
+      {
+        "producer_id": "SITES-COHOMOLOGY-078",
+        "stable_id": "MC-STK-ERR-1400"
+      },
+      {
+        "producer_id": "SITES-COHOMOLOGY-079",
+        "stable_id": "MC-STK-ERR-1401"
+      }
+    ],
+    "lease_caveat": "Recheck live head immediately before issue; these IDs are suggestions only and this task issued no lease.",
+    "manifest": "mathematics-commons-stacks-candidate-manifest/v1; source_closure expected_units=manifested_units=43; bytes is now permitted by hashedEvidence schema. Start independent_replay=not_performed and set passed only after fresh independent validation.",
+    "namespace": "commons/stacks/errata/r39",
+    "operation_spec": "61 nonoverlapping exact frozen-authority operations; 60 from independent review plus one atomic full-formula expansion at line10220. Apply descending start_byte against authority, not against the R38 more-algebra payload or a cumulative mutable tree.",
+    "proposed_issue_event": "lease-event-000082",
+    "proposed_lease_id": "stacks-lease-000043-errata-r39",
+    "proposed_release_event": "lease-event-000083",
+    "source_map": "One row per stable unit, unit_id; retain same SITES-COHOMOLOGY-067 producer alias on both distinct 067A/067B stable units. Do not impose producer_id uniqueness on stable-unit records. Each operation keeps producer_operation_id plus unique stable-ID-derived operation_id, byte offsets and old/new SHA-256.",
+    "stable_units": "43 rows with id, source=sites-cohomology.tex, producer_id, producer_ids, operation_ids, payload=payload/sites-cohomology.tex, status=accepted_new; editorial rows retain editorial_or_notational_clarification class.",
+    "writer_task": "01a0256d-5693-77c1-96b2-cf37101e0c6c"
+  },
+  "status": "ready_for_candidate_preparation_not_admission",
+  "traps": [
+    "R36 is cohomology.tex mirror correction, not a duplicate sites-cohomology admission. Actual prior site rounds are R34/R35/R37.",
+    "Prime swap at10220 has zero overlap with all already admitted sites-cohomology operations; include it within row053, not as a new unrelated semantic stable ID.",
+    "Row067 is two grammar units: MC-STK-ERR-1388 (067A) and MC-STK-ERR-1389 (067B), both preserving producer067.",
+    "Rows050/057/078/079 are editorial/notational clarifications, not proof of false mathematical assertions.",
+    "Emendations C-001..C-032 are aliases for semantic038..059; naive numeric extraction loses this entire tranche.",
+    "The 61-operation payload is this round's authority-relative candidate, not cumulative composition of R34/R35/R37. Replacing a downstream chapter wholesale would erase prior corrections.",
+    "Proposed IDs/events are not reservations; recheck current registry before materialization/admission."
+  ],
+  "write_boundary": {
+    "authority_mutated": false,
+    "build_started": false,
+    "candidate_written": false,
+    "lease_issued": false,
+    "only_new_central_plan_written": true,
+    "producer_mutated": false,
+    "publication_performed": false,
+    "registry_mutated": false
+  }
+}
