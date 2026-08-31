@@ -7,10 +7,12 @@ import argparse
 import ast
 import hashlib
 import json
+import math
 import re
 import shlex
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote
 
@@ -28,19 +30,19 @@ SOURCE_UNION = "ad58625f60e6816905ff217d21d91b07b2722fcf"
 EGA_EXPORT = "91df7f1c96bd4973264c29b0e121253a05d1d361"
 COMPOSITION_RECEIPT = Path("validation/composition-current.json")
 DEFAULT_BUILD_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r38-build-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-build-2026-08-31.json"
 )
 VISUAL_QA_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r38-visual-qa-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-visual-qa-2026-08-31.json"
 )
 REPRODUCIBILITY_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r38-reproducibility-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-reproducibility-2026-08-31.json"
 )
 SECOND_REPRODUCIBILITY_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r38-reproducibility-second-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-reproducibility-second-2026-08-31.json"
 )
 CURRENT_RELEASE_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r38-release-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-release-2026-08-31.json"
 )
 SHA1_RE = re.compile(r"^[0-9a-f]{40}$")
 SHA256_RE = re.compile(r"^[0-9A-Fa-f]{64}$")
@@ -61,6 +63,45 @@ EXPECTED_FIXED_POINT_SUFFIXES = [
     ".toc",
     ".pdf",
 ]
+TEX_MUTEX_RECEIPT_SCHEMA = "unofficial-ai-integrated-stacks-tex-mutex/v1"
+TEX_MUTEX_NAME = r"Global\InterlanguageTeXSlotV1"
+TEX_MUTEX_TIMEOUT_MS = 5 * 60 * 1000
+TEX_MUTEX_HELD_SCOPE = (
+    "all TeX/BibTeX passes, TeX/BibTeX version probes, and immediate final log checks"
+)
+TEX_MUTEX_REQUIRED_KEYS = frozenset(
+    {
+        "schema",
+        "status",
+        "name",
+        "namespace",
+        "acquisition_timeout_ms",
+        "wait_started_utc",
+        "acquired_utc",
+        "wait_duration_ms",
+        "wait_result_code",
+        "wait_result",
+        "abandoned_mutex_recovered",
+        "ownership_acquired",
+        "held_scope",
+        "released_utc",
+        "held_duration_ms",
+        "release_result",
+    }
+)
+TEX_MUTEX_VOLATILE_KEYS = frozenset(
+    {
+        "wait_started_utc",
+        "acquired_utc",
+        "wait_duration_ms",
+        "wait_result_code",
+        "wait_result",
+        "abandoned_mutex_recovered",
+        "released_utc",
+        "held_duration_ms",
+    }
+)
+UTC_TIMESTAMP_RE = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$")
 
 PUBLIC_MARKDOWN = (
     "README.md",
@@ -151,6 +192,93 @@ def load_json_object(path: Path, errors: list[str], label: str) -> dict | None:
         errors.append(f"{label} is not a JSON object: {display_path(path)}")
         return None
     return value
+
+
+def parse_utc_timestamp(
+    value: object, label: str, errors: list[str]
+) -> datetime | None:
+    if not isinstance(value, str) or not UTC_TIMESTAMP_RE.fullmatch(value):
+        errors.append(f"invalid {label} UTC timestamp: {value!r}")
+        return None
+    try:
+        parsed = datetime.fromisoformat(value[:-1] + "+00:00")
+    except ValueError:
+        errors.append(f"invalid {label} UTC timestamp: {value!r}")
+        return None
+    if parsed.tzinfo != timezone.utc:
+        errors.append(f"non-UTC {label} timestamp: {value!r}")
+        return None
+    return parsed
+
+
+def validate_machine_wide_tex_mutex(
+    value: object, label: str, errors: list[str]
+) -> None:
+    """Validate one run's mutex evidence before replay normalization."""
+    if not isinstance(value, dict):
+        errors.append(f"{label} lacks machine-wide TeX mutex evidence")
+        return
+    if set(value) != TEX_MUTEX_REQUIRED_KEYS:
+        errors.append(f"{label} has an incomplete machine-wide TeX mutex record")
+
+    expected_scalars = {
+        "schema": TEX_MUTEX_RECEIPT_SCHEMA,
+        "status": "PASS",
+        "name": TEX_MUTEX_NAME,
+        "namespace": "Windows Global",
+        "acquisition_timeout_ms": TEX_MUTEX_TIMEOUT_MS,
+        "ownership_acquired": True,
+        "held_scope": TEX_MUTEX_HELD_SCOPE,
+        "release_result": "released_in_finally",
+    }
+    for key, expected in expected_scalars.items():
+        if value.get(key) != expected:
+            errors.append(f"{label} has invalid TeX mutex {key}")
+
+    wait_result_code = value.get("wait_result_code")
+    wait_result = value.get("wait_result")
+    abandoned = value.get("abandoned_mutex_recovered")
+    if (wait_result_code, wait_result, abandoned) not in {
+        ("0x00000000", "acquired", False),
+        ("0x00000080", "abandoned_recovered", True),
+    }:
+        errors.append(f"{label} has inconsistent TeX mutex acquisition result")
+
+    timestamps = {
+        key: parse_utc_timestamp(value.get(key), f"{label} TeX mutex {key}", errors)
+        for key in ("wait_started_utc", "acquired_utc", "released_utc")
+    }
+    if all(timestamp is not None for timestamp in timestamps.values()) and not (
+        timestamps["wait_started_utc"]
+        <= timestamps["acquired_utc"]
+        <= timestamps["released_utc"]
+    ):
+        errors.append(f"{label} has nonmonotonic TeX mutex timestamps")
+
+    for key in ("wait_duration_ms", "held_duration_ms"):
+        duration = value.get(key)
+        if (
+            not isinstance(duration, (int, float))
+            or isinstance(duration, bool)
+            or not math.isfinite(duration)
+            or duration < 0
+        ):
+            errors.append(f"{label} has invalid TeX mutex {key}")
+
+
+def normalize_build_for_reproducibility(value: object) -> object:
+    """Remove only independently validated, per-invocation mutex observations."""
+    if not isinstance(value, dict):
+        return value
+    normalized = dict(value)
+    mutex = normalized.get("machine_wide_tex_mutex")
+    if isinstance(mutex, dict):
+        normalized["machine_wide_tex_mutex"] = {
+            key: item
+            for key, item in mutex.items()
+            if key not in TEX_MUTEX_VOLATILE_KEYS
+        }
+    return normalized
 
 
 def require_commit(commit: object, label: str, errors: list[str]) -> str | None:
@@ -2380,6 +2508,20 @@ def main(argv: list[str] | None = None) -> int:
     if not isinstance(build_state, dict):
         errors.append("fixed-point build receipt lacks build state")
         build_state = {}
+    validate_machine_wide_tex_mutex(
+        build_state.get("machine_wide_tex_mutex"),
+        "fixed-point build receipt",
+        errors,
+    )
+    second_build_state = second_build.get("build")
+    if not isinstance(second_build_state, dict):
+        errors.append("second fixed-point build receipt lacks build state")
+        second_build_state = {}
+    validate_machine_wide_tex_mutex(
+        second_build_state.get("machine_wide_tex_mutex"),
+        "second fixed-point build receipt",
+        errors,
+    )
     if build_state.get("chapter_count") != len(artifacts):
         errors.append("fixed-point chapter count does not match artifact inventory")
     if build_state.get("pdfinfo_readable") != len(artifacts):
@@ -2653,9 +2795,7 @@ def main(argv: list[str] | None = None) -> int:
         "sha256": sha256_bytes(second_build_bytes or b""),
         "status": second_build.get("status"),
         "global_fixed_point_sweep": (
-            second_build.get("build", {}).get("global_fixed_point_sweep")
-            if isinstance(second_build.get("build"), dict)
-            else None
+            second_build_state.get("global_fixed_point_sweep")
         ),
     }
     if second_run != expected_second_run:
@@ -2671,7 +2811,12 @@ def main(argv: list[str] | None = None) -> int:
         "artifacts",
         "pdfs_committed",
     ):
-        if second_build.get(key) != build_receipt.get(key):
+        second_value = second_build.get(key)
+        first_value = build_receipt.get(key)
+        if key == "build":
+            second_value = normalize_build_for_reproducibility(second_value)
+            first_value = normalize_build_for_reproducibility(first_value)
+        if second_value != first_value:
             errors.append(f"second fixed-point receipt mismatch for {key}")
     if second_build.get("created_utc") == build_receipt.get("created_utc"):
         errors.append("second fixed-point receipt does not identify a later invocation")

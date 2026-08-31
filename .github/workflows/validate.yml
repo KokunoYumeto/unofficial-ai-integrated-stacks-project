@@ -39,4 +39,4 @@ jobs:
         shell: bash
         run: |
           python tools/generate_changes_from_upstream.py --check
-          python -m unittest tests.test_changes_from_upstream tests.test_semantic_composition
+          python -m unittest tests.test_changes_from_upstream tests.test_semantic_composition tests.test_build_fixed_point_mutex

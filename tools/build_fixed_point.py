@@ -13,6 +13,7 @@ import shlex
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -68,6 +69,7 @@ COMPOSITION_PREPARATION_PATHS = frozenset(
         "tools/compose_overlay_projection.py",
         "tools/write_r38_composition_receipt.py",
         "tools/write_r39_composition_receipt.py",
+        "tests/test_build_fixed_point_mutex.py",
         "tests/test_semantic_composition.py",
         "validation/overlay-composition-semantic-dispositions-v1.json",
     }
@@ -111,7 +113,224 @@ GENERATED_SUFFIXES = FIXED_POINT_SUFFIXES + (
     ".synctex.gz",
 )
 
-def run(command: list[str], source: Path, env: dict[str, str]) -> str:
+TEX_MUTEX_NAME = r"Global\InterlanguageTeXSlotV1"
+TEX_MUTEX_TIMEOUT_MS = 5 * 60 * 1000
+TEX_MUTEX_RECEIPT_SCHEMA = "unofficial-ai-integrated-stacks-tex-mutex/v1"
+TEX_MUTEX_HELD_SCOPE = (
+    "all TeX/BibTeX passes, TeX/BibTeX version probes, and immediate final log checks"
+)
+WAIT_OBJECT_0 = 0x00000000
+WAIT_ABANDONED_0 = 0x00000080
+WAIT_TIMEOUT = 0x00000102
+WAIT_FAILED = 0xFFFFFFFF
+TEX_EXECUTABLES = frozenset(
+    {
+        "tex",
+        "etex",
+        "latex",
+        "pdftex",
+        "pdflatex",
+        "xetex",
+        "xelatex",
+        "luatex",
+        "lualatex",
+        "latexmk",
+        "bibtex",
+        "bibtex8",
+        "bibtexu",
+        "biber",
+    }
+)
+
+
+def utc_timestamp() -> str:
+    return (
+        datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+def load_windows_kernel32() -> tuple[object, object]:
+    """Load the small Win32 API surface needed for the global TeX mutex."""
+    if os.name != "nt":
+        raise RuntimeError(
+            f"the required Windows named TeX mutex {TEX_MUTEX_NAME!r} "
+            "cannot be acquired on this operating system"
+        )
+
+    import ctypes
+    from ctypes import wintypes
+
+    kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel32.CreateMutexW.argtypes = [wintypes.LPVOID, wintypes.BOOL, wintypes.LPCWSTR]
+    kernel32.CreateMutexW.restype = wintypes.HANDLE
+    kernel32.WaitForSingleObject.argtypes = [wintypes.HANDLE, wintypes.DWORD]
+    kernel32.WaitForSingleObject.restype = wintypes.DWORD
+    kernel32.ReleaseMutex.argtypes = [wintypes.HANDLE]
+    kernel32.ReleaseMutex.restype = wintypes.BOOL
+    kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel32.CloseHandle.restype = wintypes.BOOL
+    return kernel32, ctypes.get_last_error
+
+
+class WindowsNamedMutex:
+    """Own a Windows mutex and retain auditable acquisition/release facts."""
+
+    def __init__(self, name: str, timeout_ms: int) -> None:
+        if not name:
+            raise ValueError("mutex name must not be empty")
+        if not 0 < timeout_ms < WAIT_FAILED:
+            raise ValueError("mutex timeout must be a positive bounded DWORD value")
+        self.name = name
+        self.timeout_ms = timeout_ms
+        self._kernel32: object | None = None
+        self._get_last_error: object | None = None
+        self._handle: object | None = None
+        self._owned = False
+        self._details: dict[str, object] | None = None
+        self._acquired_monotonic_ns: int | None = None
+
+    @property
+    def owned(self) -> bool:
+        return self._owned
+
+    def __enter__(self) -> WindowsNamedMutex:
+        if self._handle is not None or self._details is not None:
+            raise RuntimeError("named mutex instances cannot be reused")
+        kernel32, get_last_error = load_windows_kernel32()
+        self._kernel32 = kernel32
+        self._get_last_error = get_last_error
+        wait_started_utc = utc_timestamp()
+        wait_started_ns = time.monotonic_ns()
+        handle = kernel32.CreateMutexW(None, False, self.name)
+        if not handle:
+            error = get_last_error()
+            raise RuntimeError(
+                f"could not create/open Windows named TeX mutex {self.name!r}: "
+                f"Win32 error {error}"
+            )
+        self._handle = handle
+        result = int(kernel32.WaitForSingleObject(handle, self.timeout_ms))
+        wait_finished_ns = time.monotonic_ns()
+        wait_duration_ms = round((wait_finished_ns - wait_started_ns) / 1_000_000, 3)
+
+        if result not in (WAIT_OBJECT_0, WAIT_ABANDONED_0):
+            wait_error = int(get_last_error()) if result == WAIT_FAILED else None
+            close_error: int | None = None
+            if not kernel32.CloseHandle(handle):
+                close_error = int(get_last_error())
+            self._handle = None
+            if result == WAIT_TIMEOUT:
+                detail = (
+                    f"timed out after {self.timeout_ms} ms acquiring Windows named "
+                    f"TeX mutex {self.name!r}; no TeX process was launched"
+                )
+            elif result == WAIT_FAILED:
+                detail = (
+                    f"failed to acquire Windows named TeX mutex {self.name!r}: "
+                    f"Win32 error {wait_error}"
+                )
+            else:
+                detail = (
+                    f"unexpected wait result 0x{result:08X} while acquiring "
+                    f"Windows named TeX mutex {self.name!r}"
+                )
+            if close_error is not None:
+                detail += f"; CloseHandle also failed with Win32 error {close_error}"
+            raise RuntimeError(detail)
+
+        abandoned = result == WAIT_ABANDONED_0
+        self._owned = True
+        self._acquired_monotonic_ns = wait_finished_ns
+        self._details = {
+            "schema": TEX_MUTEX_RECEIPT_SCHEMA,
+            "status": "PASS",
+            "name": self.name,
+            "namespace": "Windows Global",
+            "acquisition_timeout_ms": self.timeout_ms,
+            "wait_started_utc": wait_started_utc,
+            "acquired_utc": utc_timestamp(),
+            "wait_duration_ms": wait_duration_ms,
+            "wait_result_code": f"0x{result:08X}",
+            "wait_result": "abandoned_recovered" if abandoned else "acquired",
+            "abandoned_mutex_recovered": abandoned,
+            "ownership_acquired": True,
+            "held_scope": TEX_MUTEX_HELD_SCOPE,
+        }
+        return self
+
+    def __exit__(self, exc_type: object, exc: object, traceback: object) -> bool:
+        release_error: RuntimeError | None = None
+        try:
+            if self._owned:
+                if self._kernel32 is None or self._handle is None:
+                    release_error = RuntimeError("owned named mutex has no Win32 handle")
+                elif not self._kernel32.ReleaseMutex(self._handle):
+                    error = self._get_last_error() if self._get_last_error else "unknown"
+                    release_error = RuntimeError(
+                        f"failed to release Windows named TeX mutex {self.name!r}: "
+                        f"Win32 error {error}"
+                    )
+                else:
+                    self._owned = False
+                    if self._details is not None:
+                        released_ns = time.monotonic_ns()
+                        acquired_ns = self._acquired_monotonic_ns or released_ns
+                        self._details.update(
+                            {
+                                "released_utc": utc_timestamp(),
+                                "held_duration_ms": round(
+                                    (released_ns - acquired_ns) / 1_000_000, 3
+                                ),
+                                "release_result": "released_in_finally",
+                            }
+                        )
+        finally:
+            if self._handle is not None and self._kernel32 is not None:
+                if not self._kernel32.CloseHandle(self._handle) and release_error is None:
+                    error = self._get_last_error() if self._get_last_error else "unknown"
+                    release_error = RuntimeError(
+                        f"failed to close Windows named TeX mutex {self.name!r}: "
+                        f"Win32 error {error}"
+                    )
+                self._handle = None
+        if release_error is not None:
+            raise release_error from exc
+        return False
+
+    def receipt_details(self) -> dict[str, object]:
+        if self._details is None or self._owned or "released_utc" not in self._details:
+            raise RuntimeError("TeX mutex receipt requested before successful final release")
+        return dict(self._details)
+
+
+def tex_executable(command: list[str]) -> str | None:
+    if not command:
+        return None
+    executable = Path(command[0]).name.lower()
+    if executable.endswith(".exe"):
+        executable = executable[:-4]
+    if executable.startswith("miktex-"):
+        executable = executable[len("miktex-") :]
+    return executable if executable in TEX_EXECUTABLES else None
+
+
+def run(
+    command: list[str],
+    source: Path,
+    env: dict[str, str],
+    tex_mutex: WindowsNamedMutex | None = None,
+) -> str:
+    protected_executable = tex_executable(command)
+    if protected_executable is not None and (
+        tex_mutex is None or not tex_mutex.owned
+    ):
+        raise RuntimeError(
+            f"refusing to launch {protected_executable} without owning "
+            f"Windows named TeX mutex {TEX_MUTEX_NAME!r}"
+        )
     completed = subprocess.run(
         command,
         cwd=source,
@@ -201,9 +420,14 @@ def external_reference_labels(source: Path) -> dict[str, str]:
     return labels
 
 
-def version_line(executable: str, env: dict[str, str], source: Path) -> str:
+def version_line(
+    executable: str,
+    env: dict[str, str],
+    source: Path,
+    tex_mutex: WindowsNamedMutex | None = None,
+) -> str:
     version_flag = "-v" if executable == "pdfinfo" else "--version"
-    output = run([executable, version_flag], source, env)
+    output = run([executable, version_flag], source, env, tex_mutex)
     return output.splitlines()[0].strip()
 
 
@@ -2684,82 +2908,91 @@ def main() -> int:
             + ", ".join(stale_generated[:8])
         )
 
-    latex = [
-        "pdflatex",
-        "-interaction=nonstopmode",
-        "-halt-on-error",
-        "-file-line-error",
-    ]
-    for stem in stems:
-        print(f"prime {stem}", flush=True)
-        run([*latex, f"{stem}.tex"], source, env)
-    for stem in stems:
-        print(f"bibtex {stem}", flush=True)
-        run(["bibtex", stem], source, env)
-
-    previous: tuple[str, ...] | None = None
-    fixed_sweep: int | None = None
-    for sweep in range(1, args.max_sweeps + 1):
-        print(f"global sweep {sweep}", flush=True)
+    tex_mutex = WindowsNamedMutex(TEX_MUTEX_NAME, TEX_MUTEX_TIMEOUT_MS)
+    with tex_mutex:
+        latex = [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+        ]
         for stem in stems:
-            run([*latex, f"{stem}.tex"], source, env)
-        current = build_state_vector(source, stems)
-        if current == previous:
-            fixed_sweep = sweep
-            break
-        previous = current
-    if fixed_sweep is None:
-        raise RuntimeError(
-            f"generated build state did not reach a fixed point in "
-            f"{args.max_sweeps} sweeps"
-        )
+            print(f"prime {stem}", flush=True)
+            run([*latex, f"{stem}.tex"], source, env, tex_mutex)
+        for stem in stems:
+            print(f"bibtex {stem}", flush=True)
+            run(["bibtex", stem], source, env, tex_mutex)
 
-    artifacts: list[dict[str, object]] = []
-    diagnostic_totals = {
-        "fatal_markers": 0,
-        "missing_glyph_markers": 0,
-        "undefined_reference_markers": 0,
-        "external_reference_markers": 0,
-        "undefined_citation_markers": 0,
-        "multiply_defined_markers": 0,
-        "rerun_required_markers": 0,
-        "destination_warning_markers": 0,
-    }
-    pages_pattern = re.compile(r"^Pages:\s+(\d+)\s*$", re.MULTILINE)
-    for stem in stems:
-        pdf = source / f"{stem}.pdf"
-        info = run(["pdfinfo", str(pdf)], source, env)
-        match = pages_pattern.search(info)
-        if not match or int(match.group(1)) < 1:
-            raise RuntimeError(f"pdfinfo did not report a positive page count: {pdf}")
-        diagnostics, external_inventory = scan_tex_diagnostics(
-            source / f"{stem}.log",
-            source / f"{stem}.blg",
-            stem,
-            reference_labels,
-        )
-        for key, value in diagnostics.items():
-            diagnostic_totals[key] += value
-        artifacts.append(
-            {
-                "stem": stem,
-                "pages": int(match.group(1)),
-                "bytes": pdf.stat().st_size,
-                "sha256": sha256(pdf),
-                "diagnostics": diagnostics,
-                "external_references": external_inventory,
-            }
-        )
-    failed_diagnostics = {
-        key: value
-        for key, value in diagnostic_totals.items()
-        if key != "external_reference_markers" and value
-    }
-    if failed_diagnostics:
-        detail = ", ".join(
-            f"{key}={value}" for key, value in failed_diagnostics.items()
-        )
-        raise RuntimeError(f"final TeX diagnostics are not clean: {detail}")
+        previous: tuple[str, ...] | None = None
+        fixed_sweep: int | None = None
+        for sweep in range(1, args.max_sweeps + 1):
+            print(f"global sweep {sweep}", flush=True)
+            for stem in stems:
+                run([*latex, f"{stem}.tex"], source, env, tex_mutex)
+            current = build_state_vector(source, stems)
+            if current == previous:
+                fixed_sweep = sweep
+                break
+            previous = current
+        if fixed_sweep is None:
+            raise RuntimeError(
+                f"generated build state did not reach a fixed point in "
+                f"{args.max_sweeps} sweeps"
+            )
+
+        artifacts: list[dict[str, object]] = []
+        diagnostic_totals = {
+            "fatal_markers": 0,
+            "missing_glyph_markers": 0,
+            "undefined_reference_markers": 0,
+            "external_reference_markers": 0,
+            "undefined_citation_markers": 0,
+            "multiply_defined_markers": 0,
+            "rerun_required_markers": 0,
+            "destination_warning_markers": 0,
+        }
+        pages_pattern = re.compile(r"^Pages:\s+(\d+)\s*$", re.MULTILINE)
+        for stem in stems:
+            pdf = source / f"{stem}.pdf"
+            info = run(["pdfinfo", str(pdf)], source, env)
+            match = pages_pattern.search(info)
+            if not match or int(match.group(1)) < 1:
+                raise RuntimeError(f"pdfinfo did not report a positive page count: {pdf}")
+            diagnostics, external_inventory = scan_tex_diagnostics(
+                source / f"{stem}.log",
+                source / f"{stem}.blg",
+                stem,
+                reference_labels,
+            )
+            for key, value in diagnostics.items():
+                diagnostic_totals[key] += value
+            artifacts.append(
+                {
+                    "stem": stem,
+                    "pages": int(match.group(1)),
+                    "bytes": pdf.stat().st_size,
+                    "sha256": sha256(pdf),
+                    "diagnostics": diagnostics,
+                    "external_references": external_inventory,
+                }
+            )
+        failed_diagnostics = {
+            key: value
+            for key, value in diagnostic_totals.items()
+            if key != "external_reference_markers" and value
+        }
+        if failed_diagnostics:
+            detail = ", ".join(
+                f"{key}={value}" for key, value in failed_diagnostics.items()
+            )
+            raise RuntimeError(f"final TeX diagnostics are not clean: {detail}")
+
+        tool_versions = {
+            "pdftex": version_line("pdflatex", env, source, tex_mutex),
+            "bibtex": version_line("bibtex", env, source, tex_mutex),
+            "pdfinfo": version_line("pdfinfo", env, source),
+        }
+    tex_mutex_details = tex_mutex.receipt_details()
 
     builder_path = "tools/build_fixed_point.py"
     builder_blob = git(source, "rev-parse", f"HEAD:{builder_path}")
@@ -2780,9 +3013,7 @@ def main() -> int:
     receipt = {
         "schema": "unofficial-ai-integrated-stacks-fixed-point-build/v1",
         "status": "PASS" if full_profile else "PASS_PARTIAL",
-        "created_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace(
-            "+00:00", "Z"
-        ),
+        "created_utc": utc_timestamp(),
         "source": {
             "commit": git(source, "rev-parse", "HEAD"),
             "tree": git(source, "rev-parse", "HEAD^{tree}"),
@@ -2796,9 +3027,7 @@ def main() -> int:
         "environment": {
             "operating_system": platform.platform(),
             "python": platform.python_version(),
-            "pdftex": version_line("pdflatex", env, source),
-            "bibtex": version_line("bibtex", env, source),
-            "pdfinfo": version_line("pdfinfo", env, source),
+            **tool_versions,
             "source_date_epoch": args.source_date_epoch,
         },
         "build": {
@@ -2813,6 +3042,7 @@ def main() -> int:
             "artifact_tuple_set_sha256": artifact_tuple_set_sha256,
             "worktree_kind": kind,
             "primary_worktree_override": args.allow_primary_worktree,
+            "machine_wide_tex_mutex": tex_mutex_details,
         },
         "artifacts": artifacts,
         "pdfs_committed": False,
