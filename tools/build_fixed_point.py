@@ -67,6 +67,7 @@ COMPOSITION_PREPARATION_PATHS = frozenset(
         "tools/validate_unified_repository.py",
         "tools/compose_overlay_projection.py",
         "tools/write_r38_composition_receipt.py",
+        "tools/write_r39_composition_receipt.py",
         "tests/test_semantic_composition.py",
         "validation/overlay-composition-semantic-dispositions-v1.json",
     }
@@ -498,9 +499,11 @@ def validate_import_preparation_topology(
     """Prove exact imports and separately bounded preparation from Git objects.
 
     Extended v3 receipts bind registry.linear_import_chain rows with
-    registry_commit/import_commit/import_tree and composition.preparation_commits
-    rows with commit/parent/tree/paths. No unlisted commit or path is permitted.
-    Legacy receipts retain the original single-import/direct-source topology.
+    registry_commit/import_commit/import_tree, optional fail-closed
+    registry.preimage_alignment_commits rows, and
+    composition.preparation_commits rows with commit/parent/tree/paths. No
+    unlisted commit or path is permitted. Legacy receipts retain the original
+    single-import/direct-source topology.
     """
     previous = receipt.get("previous_cutoff")
     registry = receipt.get("registry")
@@ -524,6 +527,7 @@ def validate_import_preparation_topology(
         source, base, composition.get("base_tree"), "composition base"
     )
     chain = registry.get("linear_import_chain")
+    alignments = registry.get("preimage_alignment_commits", [])
     preparations = composition.get("preparation_commits")
     if chain is None:
         if preparations is not None:
@@ -534,13 +538,22 @@ def validate_import_preparation_topology(
         return None
     if receipt.get("schema") != COMPOSITION_SCHEMA_V3:
         raise RuntimeError("explicit import/preparation chains require composition v3")
-    if not isinstance(chain, list) or not chain or not isinstance(preparations, list):
-        raise RuntimeError("invalid explicit import chain or preparation inventory")
+    if (
+        not isinstance(chain, list)
+        or not chain
+        or not isinstance(alignments, list)
+        or not isinstance(preparations, list)
+    ):
+        raise RuntimeError(
+            "invalid explicit import chain, preimage alignment, or preparation inventory"
+        )
     cutoff = require_commit_object(source, registry.get("cutoff_commit"), "registry cutoff")
     integrated_parent = previous_public
     registry_parent = previous_registry
     normalized_imports: list[dict[str, object]] = []
+    normalized_alignments: list[dict[str, object]] = []
     imported_paths: set[str] = set()
+    alignment_index = 0
     for index, row in enumerate(chain, start=1):
         if not isinstance(row, dict) or set(row) != {
             "registry_commit", "import_commit", "import_tree"
@@ -549,13 +562,79 @@ def validate_import_preparation_topology(
         original = require_commit_object(source, row["registry_commit"], f"registry step {index}")
         imported = require_commit_object(source, row["import_commit"], f"import step {index}")
         require_single_parent(source, original, f"registry step {index}", registry_parent)
-        require_single_parent(source, imported, f"import step {index}", integrated_parent)
         require_tree_identity(source, imported, row["import_tree"], f"import step {index}")
         original_changes = committed_path_changes(source, registry_parent, original)
         expected_changes = {
             f"ai-integrated/{path}": identity
             for path, identity in original_changes.items()
         }
+        while (
+            alignment_index < len(alignments)
+            and isinstance(alignments[alignment_index], dict)
+            and alignments[alignment_index].get("registry_commit") == original
+        ):
+            alignment = alignments[alignment_index]
+            if set(alignment) != {
+                "registry_commit", "commit", "parent", "tree", "paths"
+            }:
+                raise RuntimeError(
+                    f"invalid registry preimage-alignment row {alignment_index + 1}"
+                )
+            alignment_commit = require_commit_object(
+                source,
+                alignment["commit"],
+                f"registry preimage alignment {alignment_index + 1}",
+            )
+            if alignment["parent"] != integrated_parent:
+                raise RuntimeError(
+                    f"registry preimage alignment {alignment_index + 1} parent mismatch"
+                )
+            require_single_parent(
+                source,
+                alignment_commit,
+                f"registry preimage alignment {alignment_index + 1}",
+                integrated_parent,
+            )
+            require_tree_identity(
+                source,
+                alignment_commit,
+                alignment["tree"],
+                f"registry preimage alignment {alignment_index + 1}",
+            )
+            alignment_paths = alignment["paths"]
+            if (
+                not isinstance(alignment_paths, list)
+                or not alignment_paths
+                or not all(isinstance(path, str) for path in alignment_paths)
+                or alignment_paths != sorted(set(alignment_paths))
+                or not set(alignment_paths).issubset(expected_changes)
+            ):
+                raise RuntimeError(
+                    f"registry preimage alignment {alignment_index + 1} has invalid paths"
+                )
+            alignment_changes = committed_path_changes(
+                source, integrated_parent, alignment_commit
+            )
+            if sorted(alignment_changes) != alignment_paths:
+                raise RuntimeError(
+                    f"registry preimage alignment {alignment_index + 1} path mismatch"
+                )
+            for path in alignment_paths:
+                actual = alignment_changes[path]
+                expected = expected_changes[path]
+                if (
+                    actual[1] != expected[0]
+                    or actual[3] != expected[2]
+                    or actual[4] not in {"A", "M", "T"}
+                ):
+                    raise RuntimeError(
+                        "registry preimage alignment does not reproduce the exact "
+                        f"next-step mode/blob preimage: {path}"
+                    )
+            normalized_alignments.append(dict(alignment))
+            integrated_parent = alignment_commit
+            alignment_index += 1
+        require_single_parent(source, imported, f"import step {index}", integrated_parent)
         actual_changes = committed_path_changes(source, integrated_parent, imported)
         if not expected_changes or actual_changes != expected_changes:
             mismatches = [
@@ -570,6 +649,8 @@ def validate_import_preparation_topology(
         normalized_imports.append({**row, "changed_paths": sorted(actual_changes)})
         registry_parent = original
         integrated_parent = imported
+    if alignment_index != len(alignments):
+        raise RuntimeError("orphaned or out-of-order registry preimage alignment")
     if registry_parent != cutoff or integrated_parent != import_head:
         raise RuntimeError("explicit import chain does not end at its bound cutoffs")
     require_ancestor(source, previous_public, "public-to-import", import_head)
@@ -617,6 +698,7 @@ def validate_import_preparation_topology(
         "schema": "unofficial-ai-integrated-stacks-import-preparation-topology/v1",
         "status": "PASS",
         "registry_import_chain": normalized_imports,
+        "registry_preimage_alignments": normalized_alignments,
         "preparation_commits": normalized_preparations,
         "root_source_inputs_unchanged_before_composition": True,
         "imported_subtree_unchanged_by_preparation": True,
