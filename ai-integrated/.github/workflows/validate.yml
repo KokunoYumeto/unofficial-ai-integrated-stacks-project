@@ -12,75 +12,273 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate bound state and namespace leases
+      - name: Validate bound state, admitted overlays, and namespace leases
         run: |
           python - <<'PY'
+          import hashlib
           import json
+          import os
           from pathlib import Path
 
-          for path in sorted(Path('.').rglob('*.json')):
-              json.loads(path.read_text(encoding='utf-8'))
+          ROOT = Path('.').resolve()
+          CANDIDATES = ROOT / 'candidates'
 
-          lock = json.loads(Path('upstream/stacks.lock.json').read_text(encoding='utf-8'))
+          def sha256(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+
+          def safe_candidate_path(candidate_dir, relative):
+              relative_path = Path(relative)
+              assert not relative_path.is_absolute(), relative
+              resolved = (candidate_dir / relative_path).resolve()
+              assert resolved == candidate_dir or candidate_dir in resolved.parents, relative
+              return resolved
+
+          def contains_passed_true(value):
+              if isinstance(value, dict):
+                  if value.get('passed') is True:
+                      return True
+                  return any(contains_passed_true(item) for item in value.values())
+              if isinstance(value, list):
+                  return any(contains_passed_true(item) for item in value)
+              return False
+
+          # Every durable JSON and JSONL artifact must parse. Nonempty JSONL ledgers
+          # are newline-terminated so append-only transport cannot silently fuse rows.
+          for path in sorted(ROOT.rglob('*.json')):
+              json.loads(path.read_text(encoding='utf-8'))
+          for path in sorted(ROOT.rglob('*.jsonl')):
+              raw = path.read_bytes()
+              if raw:
+                  assert raw.endswith(b'\n'), path
+              for line_number, line in enumerate(raw.decode('utf-8').splitlines(), 1):
+                  if line.strip():
+                      try:
+                          json.loads(line)
+                      except Exception as exc:
+                          raise AssertionError((path, line_number)) from exc
+
+          lock = json.loads((ROOT / 'upstream/stacks.lock.json').read_text(encoding='utf-8'))
           assert lock['commit'] == 'a04446e57ec1fbc252a871afcec7752fb2807b14'
           assert lock['tree'] == '3feeb703b931a6e7259782c10e7d1575adc83e5e'
           assert lock['license']['sha256'] == '4B2C8FC390F802CD92F0622DC00A708A588BEC54D0145D2EE135D6D7672BFE85'
           assert lock['endorsement']['claimed'] is False
 
-          overlays = json.loads(Path('registry/overlays.json').read_text(encoding='utf-8'))
-          locales = json.loads(Path('registry/locales.json').read_text(encoding='utf-8'))
-          releases = json.loads(Path('registry/releases.json').read_text(encoding='utf-8'))
-          assert overlays['registered_entries'] == []
+          overlays = json.loads((ROOT / 'registry/overlays.json').read_text(encoding='utf-8'))
+          entries = overlays['registered_entries']
+          assert overlays['schema'] == 'mathematics-commons-stacks-overlay-registry/v1'
+          assert overlays['upstream_lock'] == 'upstream/stacks.lock.json'
+          assert len(entries) == 32
+          assert len({entry['id'] for entry in entries}) == len(entries)
+          assert len({entry['namespace'] for entry in entries}) == len(entries)
+          assert len({entry['manifest_sha256'] for entry in entries}) == len(entries)
+
+          errata_entries = [entry for entry in entries if entry['id'].startswith('stacks-errata-')]
+          assert [entry['id'] for entry in errata_entries] == [
+              f'stacks-errata-a04446e-r{round_number}' for round_number in range(1, 32)
+          ]
+          assert [entry['id'] for entry in entries if not entry['id'].startswith('stacks-errata-')] == [
+              'stacks-verdier-a04446e-1-2-13-r1'
+          ]
+          assert entries[-1]['id'] == 'stacks-errata-a04446e-r31'
+
+          all_stable_ids = [
+              stable_id
+              for entry in entries
+              for stable_id in entry['stable_ids']
+          ]
+          assert len(all_stable_ids) == len(set(all_stable_ids))
+          assert len(all_stable_ids) == 932
+          r31 = entries[-1]
+          assert r31['manifest_sha256'] == '2110CA17E1D0426A7C23F921099C9165578FED46C45E808BF3C9E580B92295E9'
+          assert r31['stable_ids'] == [
+              'MC-STK-ERR-1287'
+          ]
+
+          locales = json.loads((ROOT / 'registry/locales.json').read_text(encoding='utf-8'))
+          releases = json.loads((ROOT / 'registry/releases.json').read_text(encoding='utf-8'))
           assert locales['admitted_locales'] == []
           assert releases['releases'] == []
 
-          leases = json.loads(Path('registry/leases.json').read_text(encoding='utf-8'))
+          leases = json.loads((ROOT / 'registry/leases.json').read_text(encoding='utf-8'))
           assert leases['schema'] == 'mathematics-commons-stacks-lease-registry/v1'
           assert leases['upstream_lock'] == 'upstream/stacks.lock.json'
           events = leases['events']
-          assert [e['event_id'] for e in events] == [
-              'lease-event-000001', 'lease-event-000002', 'lease-event-000003'
+          assert len(events) == 67
+          assert [event['event_id'] for event in events] == [
+              f'lease-event-{number:06d}' for number in range(1, 68)
           ]
-          assert len({e['event_id'] for e in events}) == len(events)
-          assert len({e['lease_id'] for e in events}) == len(events)
-          assert len({e['namespace'] for e in events}) == len(events)
-          assert len({e['candidate_path'] for e in events}) == len(events)
-          active = [e for e in events if e['state'] == 'active']
-          assert len(active) == 3
-          expected = {
+
+          event_by_id = {}
+          issued_by_lease = {}
+          latest_by_lease = {}
+          immutable = (
+              'lease_id', 'namespace', 'candidate_path', 'writer_task',
+              'upstream_commit', 'upstream_tree', 'writer_contract'
+          )
+          for event in events:
+              assert event['event_id'] not in event_by_id
+              if 'supersedes_event_id' in event:
+                  assert event['supersedes_event_id'] in event_by_id, event['event_id']
+              assert event['candidate_path'] == 'candidates/' + event['namespace']
+              assert event['upstream_commit'] == lock['commit']
+              assert event['upstream_tree'] == lock['tree']
+              if event['event'] == 'issued':
+                  assert event['state'] == 'active'
+                  assert event['lease_id'] not in issued_by_lease
+                  issued_by_lease[event['lease_id']] = event
+              else:
+                  assert event['event'] == 'released'
+                  assert event['state'] == 'released'
+                  issued = issued_by_lease[event['lease_id']]
+                  assert event['supersedes_event_id'] == issued['event_id']
+                  for key in immutable:
+                      assert event[key] == issued[key], (event['event_id'], key)
+              event_by_id[event['event_id']] = event
+              latest_by_lease[event['lease_id']] = event
+
+          assert len(issued_by_lease) == 35
+          active = [event for event in latest_by_lease.values() if event['state'] == 'active']
+          expected_active = {
               'commons/stacks/fac': 'stacks-lease-000001-fac',
               'commons/stacks/tohoku': 'stacks-lease-000002-tohoku',
               'commons/stacks/gaga': 'stacks-lease-000003-gaga',
           }
-          assert {e['namespace']: e['lease_id'] for e in active} == expected
+          assert {event['namespace']: event['lease_id'] for event in active} == expected_active
+          expected_active_writers = {
+              'commons/stacks/fac': '019fca5a-c29e-7330-acdc-c93f4a3dc9fb',
+              'commons/stacks/tohoku': '019fca5a-c29e-7330-acdc-c93f4a3dc9fb',
+              'commons/stacks/gaga': '019fca5a-c29e-7330-acdc-c93f4a3dc9fb',
+          }
           for event in active:
-              assert event['event'] == 'issued'
-              assert event['writer_task'] == '019fca5a-c29e-7330-acdc-c93f4a3dc9fb'
-              assert event['upstream_commit'] == lock['commit']
-              assert event['upstream_tree'] == lock['tree']
-              assert event['candidate_path'] == 'candidates/' + event['namespace']
-              pointer_path = Path(event['candidate_path']) / 'LEASE.json'
+              assert event['writer_task'] == expected_active_writers[event['namespace']]
+              pointer_path = ROOT / event['candidate_path'] / 'LEASE.json'
               pointer = json.loads(pointer_path.read_text(encoding='utf-8'))
               for key in ('lease_id', 'namespace', 'writer_task', 'upstream_commit'):
                   assert pointer[key] == event[key], (pointer_path, key)
 
-          namespaces = sorted(e['namespace'].strip('/') for e in active)
-          for i, left in enumerate(namespaces):
-              for right in namespaces[i + 1:]:
+          active_namespaces = sorted(event['namespace'].strip('/') for event in active)
+          for index, left in enumerate(active_namespaces):
+              for right in active_namespaces[index + 1:]:
                   assert not right.startswith(left + '/'), (left, right)
 
-          for manifest_path in sorted(Path('candidates').rglob('candidate.manifest.json')):
-              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-              lease = next((e for e in active if e['lease_id'] == manifest['lease_id']), None)
-              assert lease is not None, manifest_path
-              assert manifest['namespace'] == lease['namespace']
-              assert manifest['writer_task'] == lease['writer_task']
-              assert manifest['upstream']['commit'] == lock['commit']
-              assert manifest['upstream']['tree'] == lock['tree']
-              assert manifest['source_closure']['complete'] is True
-              assert manifest['source_closure']['expected_units'] == manifest['source_closure']['manifested_units']
+          manifests = sorted(CANDIDATES.glob('commons/stacks/**/candidate.manifest.json'))
+          assert len(manifests) == len(entries) == 32
+          overlay_by_id = {entry['id']: entry for entry in entries}
+          observed_candidates = set()
+          observed_supersessions = []
 
-          forbidden = list(Path('.').rglob('*.tex')) + list(Path('.').rglob('*.pdf'))
-          assert not forbidden, f'unexpected upstream or build payload: {forbidden}'
-          print('validated exact Stacks pin, zero admissions, and three namespace leases')
+          for manifest_path in manifests:
+              manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+              candidate_dir = manifest_path.parent.resolve()
+              candidate_id = manifest['candidate_id']
+              assert candidate_id not in observed_candidates
+              observed_candidates.add(candidate_id)
+              overlay = overlay_by_id[candidate_id]
+
+              expected_dir = (CANDIDATES / manifest['namespace']).resolve()
+              assert candidate_dir == expected_dir
+              assert manifest['namespace'] == overlay['namespace']
+              assert manifest['writer_task'] == overlay['writer']
+              assert manifest['upstream']['commit'] == lock['commit'] == overlay['source_commit']
+              assert manifest['upstream']['tree'] == lock['tree'] == overlay['source_tree']
+              assert sha256(manifest_path) == overlay['manifest_sha256']
+              assert manifest['review_state'] == 'performed'
+              assert manifest['independent_replay'] == 'passed'
+              closure = manifest['source_closure']
+              assert closure['enumerated'] is True
+              assert closure['complete'] is True
+              assert closure['expected_units'] == closure['manifested_units']
+
+              issued = issued_by_lease[manifest['lease_id']]
+              assert issued['candidate_path'] == manifest_path.parent.relative_to(ROOT).as_posix()
+              assert issued['namespace'] == manifest['namespace']
+              assert issued['writer_task'] == manifest['writer_task']
+              assert latest_by_lease[manifest['lease_id']]['state'] == 'released'
+
+              references = list(manifest['source_authorities'])
+              references.extend(
+                  manifest[key]
+                  for key in (
+                      'stable_unit_manifest', 'source_map', 'decision_ledger',
+                      'rejection_ledger', 'formula_diagram_inventory'
+                  )
+              )
+              references.extend(manifest['builds'])
+              reference_by_path = {}
+              for reference in references:
+                  relative = Path(reference['path']).as_posix()
+                  assert relative not in reference_by_path, (candidate_id, relative)
+                  reference_by_path[relative] = reference
+                  evidence_path = safe_candidate_path(candidate_dir, relative)
+                  assert evidence_path.is_file(), evidence_path
+                  assert sha256(evidence_path) == reference['sha256'], evidence_path
+
+              stable_path = safe_candidate_path(candidate_dir, manifest['stable_unit_manifest']['path'])
+              stable = json.loads(stable_path.read_text(encoding='utf-8'))
+              unit_ids = [unit['id'] for unit in stable['units']]
+              observed_supersessions.extend(
+                  (unit['id'], unit['supersedes_unit_id'])
+                  for unit in stable['units']
+                  if 'supersedes_unit_id' in unit
+              )
+              assert stable['unit_count'] == len(unit_ids)
+              assert len(unit_ids) == closure['expected_units']
+              assert unit_ids == overlay['stable_ids']
+
+              source_map_path = safe_candidate_path(candidate_dir, manifest['source_map']['path'])
+              source_map_ids = [
+                  json.loads(line)['unit_id']
+                  for line in source_map_path.read_text(encoding='utf-8').splitlines()
+                  if line.strip()
+              ]
+              assert source_map_ids == unit_ids
+
+              expected_review = (
+                  manifest_path.parent.relative_to(ROOT) / 'replay/independent-review.json'
+              ).as_posix()
+              assert overlay['review_receipt'] == expected_review
+              review_relative = 'replay/independent-review.json'
+              assert review_relative in reference_by_path
+              review_path = candidate_dir / review_relative
+              review = json.loads(review_path.read_text(encoding='utf-8'))
+              assert review['candidate_id'] == candidate_id
+              assert contains_passed_true(review)
+
+              # Every owned file is manifest-bound. Prune nested round directories
+              # when checking the legacy R1 root, which is an ancestor of R2+.
+              actual_owned = set()
+              for current, directories, filenames in os.walk(candidate_dir):
+                  current_path = Path(current)
+                  directories[:] = [
+                      directory
+                      for directory in directories
+                      if not (
+                          (current_path / directory / 'candidate.manifest.json').exists()
+                          or (current_path / directory / 'LEASE.json').exists()
+                      )
+                  ]
+                  for filename in filenames:
+                      actual_owned.add(
+                          (current_path / filename).relative_to(candidate_dir).as_posix()
+                      )
+              expected_owned = {'candidate.manifest.json', *reference_by_path}
+              assert actual_owned == expected_owned, (
+                  candidate_id,
+                  sorted(actual_owned - expected_owned),
+                  sorted(expected_owned - actual_owned),
+              )
+
+          assert observed_candidates == set(overlay_by_id)
+          assert observed_supersessions == [('MC-STK-ERR-1216', 'MC-STK-ERR-1183')]
+
+          # TeX/PDF payloads are expected only inside manifest-complete candidates;
+          # the registry and generated-release surfaces remain payload-free.
+          for suffix in ('*.tex', '*.pdf'):
+              for path in ROOT.rglob(suffix):
+                  assert CANDIDATES in path.resolve().parents, path
+
+          print(
+              'validated exact Stacks pin, 32 admitted overlays, 67 lease events, '
+              '32 manifest/hash closures, 932 globally unique stable IDs, and R31'
+          )
           PY
