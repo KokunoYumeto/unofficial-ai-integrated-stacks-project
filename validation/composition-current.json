@@ -1,337 +1,144 @@
 {
   "schema": "unofficial-ai-integrated-stacks-composition/v3",
   "status": "PASS",
-  "created_utc": "2026-08-31T13:17:22Z",
+  "created_utc": "2026-08-31T15:53:52Z",
   "authority": {
     "commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
     "tree": "3feeb703b931a6e7259782c10e7d1575adc83e5e"
   },
   "previous_cutoff": {
-    "public_main_head": "d4a2a2d40bee38ae8505fcfd98fcd1a757038f3d",
-    "public_main_tree": "93c6d36c33a33c8f84d99825a469ec209dc20367",
-    "registry_commit": "acb48c7edaf9595b542b003ed360399870188b7f",
-    "registry_tree": "8356ae1652ae4ce6a22a457855072c5a3e7b3ad4",
-    "last_admitted_overlay": "stacks-errata-a04446e-r33",
+    "public_main_head": "4e34fcd92f39f6b711e825b6cd46ffc924a9a231",
+    "public_main_tree": "e619f038b9cdfb3513b1bf70d8929bc9312f485a",
+    "registry_commit": "7418fe8de04b68eb793924b56bd3b53dc0d0838d",
+    "registry_tree": "8f9543559a79b9e384818346ea54124992315042",
+    "last_admitted_overlay": "stacks-errata-a04446e-r38",
     "source_blobs": {
-      "cohomology.tex": {
-        "bytes": 539701,
-        "sha256": "9BD4A2C84CC68E2829A92E467798457C2C8069217DD82BC1DDDB5DA2488F7E39",
-        "git_blob": "247b0aa09f05f31ed1952017229f7dceec9a896e"
-      },
-      "more-algebra.tex": {
-        "bytes": 1517988,
-        "sha256": "69CD9E00183C17938EC4DFC1FF1EB33C292DDACF8B64AD054FD666054D2CBE2C",
-        "git_blob": "d53ee36a9b35cc847aa8ba4806fbb1fb85a55c88"
-      },
       "sites-cohomology.tex": {
-        "bytes": 534394,
-        "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
-        "git_blob": "ba8f62453f35abc5d9f10c14c361382128ebb042"
+        "bytes": 534441,
+        "sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
+        "git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8"
       }
     }
   },
   "registry": {
-    "cutoff_commit": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
-    "cutoff_tree": "367d43b7eed72cdfd55a86b1ec887e01bf032280",
-    "post_admission_successor": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
+    "cutoff_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+    "cutoff_tree": "7efd519d762e47278c56e1e5296d6f99e65a2c07",
+    "post_admission_successor": "bf472632906dcfbc032620f8ce203fa687e929e5",
     "overlays_path": "ai-integrated/registry/overlays.json",
-    "overlays_bytes": 63508,
-    "overlays_sha256": "C1A561855086A651B210537410D2767037E19926049E6AC557309B6333CEBEB4",
-    "overlays_git_blob": "005eeae0efff7eb6611bd6f3099083e69a510e70",
-    "linear_import_commit": "e4978987d5bf67f09a1b7649bda6fd90fe0fb2d8",
-    "linear_import_tree": "c6fadf0e564339d94fe159b9d787073b1d8c9dfa",
+    "overlays_bytes": 65552,
+    "overlays_sha256": "A259CAA4DBB502B35B7F0F0759D093CF59811D1590228B93AFD4D1714DC14FF0",
+    "overlays_git_blob": "e351eb80bf3d96c5068d1816b53b14d01841d414",
+    "linear_import_commit": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+    "linear_import_tree": "fc2eaae11b2a9065a3a9fa662392fe4e2db30f1f",
     "linear_import_chain": [
       {
-        "registry_commit": "cf44258b59a2a0189897367b90d131eb36af3d34",
-        "import_commit": "e731c22f18bac7e841cbebef68df13489c2023b9",
-        "import_tree": "fd525bdd6ebfd5beaededa3daca548dc481562e2"
+        "registry_commit": "fcd866c83f868f49f699e110d1a54b74a54c0886",
+        "import_commit": "a78fc48486bf0bdc65afbce96fb5e79018711287",
+        "import_tree": "d7c548edaf27b26e1ce096739c14c4f9726699bc"
       },
       {
-        "registry_commit": "fd63306e7896a1cbafebb49e10735dbe82405d0d",
-        "import_commit": "546452e8a175203979640ce0e76a6f2c769a93cb",
-        "import_tree": "97730a7c3b4c1e4fb187be948cb63d2495089012"
-      },
-      {
-        "registry_commit": "4a49f441ee535dc7de7fbaa9e702d19e48a5336a",
-        "import_commit": "dc1903c46d9e2b990cd6e73eac7509ad365d2f10",
-        "import_tree": "347a28780e92cc3d6df0ca3d0dfd44129becbb10"
-      },
-      {
-        "registry_commit": "f6395eb5d171cc517a7231811fabf6855296505e",
-        "import_commit": "30e566fd0b25627b89e23c0182a4543bfa90b541",
-        "import_tree": "0400d82decfd60099139ab0052e5bc3100a439b7"
-      },
-      {
-        "registry_commit": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
-        "import_commit": "e4978987d5bf67f09a1b7649bda6fd90fe0fb2d8",
-        "import_tree": "c6fadf0e564339d94fe159b9d787073b1d8c9dfa"
+        "registry_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+        "import_commit": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+        "import_tree": "fc2eaae11b2a9065a3a9fa662392fe4e2db30f1f"
       }
     ],
-    "registered_overlays": 39,
-    "registered_stable_ids": 1106,
-    "last_admitted_overlay": "stacks-errata-a04446e-r38",
+    "preimage_alignment_commits": [
+      {
+        "registry_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+        "commit": "25fdedbaec234e7581d89aee021bc10b6113f493",
+        "parent": "a78fc48486bf0bdc65afbce96fb5e79018711287",
+        "tree": "7458a116208f0ee3b1c5af5f6e02026f7a09ed33",
+        "paths": [
+          "ai-integrated/.github/workflows/validate.yml"
+        ]
+      }
+    ],
+    "registered_overlays": 40,
+    "registered_stable_ids": 1149,
+    "last_admitted_overlay": "stacks-errata-a04446e-r39",
     "leases_path": "ai-integrated/registry/leases.json",
-    "leases_bytes": 49553,
-    "leases_sha256": "33F1D8553828A7516FC0695ABE22FC6E3659CBD32CB1C3F918D89B168A8BA648",
-    "leases_git_blob": "272918794482e7cc51a4d76cce6e92416e399638"
+    "leases_bytes": 50789,
+    "leases_sha256": "BCDFF849CACF5C14657B76BE7BD43B5F147857ACE77621888CB3C2E4B9E7BD2A",
+    "leases_git_blob": "7b04dc6f92728d7168dc12eca57cf56645bc48b9"
   },
   "new_overlays": [
     {
-      "id": "stacks-errata-a04446e-r34",
-      "stable_ids": 14,
-      "operations": 14,
-      "manifest_sha256": "89D253B19D00C0A9D3203E65A43974C765C42760D83B5E4E7D5040E4F6227196",
-      "payload_sha256": "DD44456392FE64B181B6DC67CA99865E40B7D69F667C998DE6706520B5DE661D",
-      "payloads": [
-        {
-          "path": "payload/cohomology.tex",
-          "sha256": "DD44456392FE64B181B6DC67CA99865E40B7D69F667C998DE6706520B5DE661D"
-        },
-        {
-          "path": "payload/sites-cohomology.tex",
-          "sha256": "66A32CD69EF1CCA8FF31B2E6568396FF11D96B9DC52FB87E7EF9B18B2306330C"
-        }
-      ],
-      "review_receipt_sha256": "82755A96A15E22650DDDA6B6CE9ABE5C51F873D6F495FD1FD0F71B0CF3E21122",
-      "topology": "embedded_candidate_direct_admission",
-      "candidate_commit": "cf44258b59a2a0189897367b90d131eb36af3d34",
-      "candidate_commits": [
-        "cf44258b59a2a0189897367b90d131eb36af3d34"
-      ],
-      "candidate_tree": "eaf9d9b0e8c3f8c083369a37709a8c9ff1598efa",
-      "candidate_subtree": "fbceee1e28bdf13f0a88c8a73565ebfc2e86c06b",
-      "admission_commit": "cf44258b59a2a0189897367b90d131eb36af3d34",
-      "admission_tree": "eaf9d9b0e8c3f8c083369a37709a8c9ff1598efa",
-      "admission_parent": "acb48c7edaf9595b542b003ed360399870188b7f",
-      "lease_release_event": "lease-event-000073",
-      "successor_lease_event": "lease-event-000074"
-    },
-    {
-      "id": "stacks-errata-a04446e-r35",
-      "stable_ids": 3,
-      "operations": 3,
-      "manifest_sha256": "FCE804F72A9FAA21A4AFFD15C0A7FF0C685120EE44F7D63252E80B696C1E30C8",
-      "payload_sha256": "838F3D4F8DF122979FDFE21453E3A03277009887CEB68527253AE0D14122C571",
+      "id": "stacks-errata-a04446e-r39",
+      "stable_ids": 43,
+      "operations": 61,
+      "manifest_sha256": "879FB3790D808707B343CD583E7E257F3DBB3035166636598992F7886E6223E0",
+      "payload_sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD",
       "payloads": [
         {
           "path": "payload/sites-cohomology.tex",
-          "sha256": "838F3D4F8DF122979FDFE21453E3A03277009887CEB68527253AE0D14122C571"
+          "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
         }
       ],
-      "review_receipt_sha256": "763EB44C62DDAF89C4248CB5B6D0877058DDD4F19149A14BB5794058BD6E8B83",
-      "topology": "embedded_candidate_direct_admission",
-      "candidate_commit": "fd63306e7896a1cbafebb49e10735dbe82405d0d",
+      "review_receipt_sha256": "E940BF704B7D08A4169E73669A0A614652D9B3C32B4BC31669B8AEFB769A61CB",
+      "candidate_commit": "fcd866c83f868f49f699e110d1a54b74a54c0886",
       "candidate_commits": [
-        "fd63306e7896a1cbafebb49e10735dbe82405d0d"
+        "fcd866c83f868f49f699e110d1a54b74a54c0886"
       ],
-      "candidate_tree": "a8ad6738280df68e91361efef91c445f5c722378",
-      "candidate_subtree": "aef261fb32bed93cc0c13ddf476c43723b34b1af",
-      "admission_commit": "fd63306e7896a1cbafebb49e10735dbe82405d0d",
-      "admission_tree": "a8ad6738280df68e91361efef91c445f5c722378",
-      "admission_parent": "cf44258b59a2a0189897367b90d131eb36af3d34",
-      "lease_release_event": "lease-event-000075",
-      "successor_lease_event": "lease-event-000076"
-    },
-    {
-      "id": "stacks-errata-a04446e-r36",
-      "stable_ids": 1,
-      "operations": 1,
-      "manifest_sha256": "64509286722A1AAF114FC4F2165C429778003AA9B8240A304364B071E6CBBC3D",
-      "payload_sha256": "BF1DE1FE537E07F2EAF5711EBEFA28AB08D9A8F13BBB900BF9C72501CA1CFD83",
-      "payloads": [
-        {
-          "path": "payload/cohomology.tex",
-          "sha256": "BF1DE1FE537E07F2EAF5711EBEFA28AB08D9A8F13BBB900BF9C72501CA1CFD83"
-        }
-      ],
-      "review_receipt_sha256": "CEE7D742F63F5DEE59C7D595701F754ED4211DFB104CD1583C7EDC32F17A48D5",
-      "topology": "embedded_candidate_direct_admission",
-      "candidate_commit": "4a49f441ee535dc7de7fbaa9e702d19e48a5336a",
-      "candidate_commits": [
-        "4a49f441ee535dc7de7fbaa9e702d19e48a5336a"
-      ],
-      "candidate_tree": "c0c8d0beaa0a6a00b32446de7fb6fc727c3b4335",
-      "candidate_subtree": "59653d965a8cdd94422c596623a988cdab56e212",
-      "admission_commit": "4a49f441ee535dc7de7fbaa9e702d19e48a5336a",
-      "admission_tree": "c0c8d0beaa0a6a00b32446de7fb6fc727c3b4335",
-      "admission_parent": "fd63306e7896a1cbafebb49e10735dbe82405d0d",
-      "lease_release_event": "lease-event-000077",
-      "successor_lease_event": "lease-event-000078"
-    },
-    {
-      "id": "stacks-errata-a04446e-r37",
-      "stable_ids": 23,
-      "operations": 28,
-      "manifest_sha256": "0E32DA3122577F6A7614AFF606045FF3DFE89B6EF3993903CDD045E2F232DDC9",
-      "payload_sha256": "B802DEFA8FE11B40F71944DE28C3B001F12ED6059344B5080676A5B36B242B4D",
-      "payloads": [
-        {
-          "path": "payload/sites-cohomology.tex",
-          "sha256": "B802DEFA8FE11B40F71944DE28C3B001F12ED6059344B5080676A5B36B242B4D"
-        }
-      ],
-      "review_receipt_sha256": "C7EE393C9A465C56553A2995ED1D1FC08D33E6A7637D5C611E6A5A637687A51A",
-      "topology": "embedded_candidate_direct_admission",
-      "candidate_commit": "f6395eb5d171cc517a7231811fabf6855296505e",
-      "candidate_commits": [
-        "f6395eb5d171cc517a7231811fabf6855296505e"
-      ],
-      "candidate_tree": "f1b1ad6df92ba5b3ca63599317e01fbd710be60b",
-      "candidate_subtree": "5986fa5568bc6a307db77e3b9db8649786420005",
-      "admission_commit": "f6395eb5d171cc517a7231811fabf6855296505e",
-      "admission_tree": "f1b1ad6df92ba5b3ca63599317e01fbd710be60b",
-      "admission_parent": "4a49f441ee535dc7de7fbaa9e702d19e48a5336a",
-      "lease_release_event": "lease-event-000079",
-      "successor_lease_event": "lease-event-000080"
-    },
-    {
-      "id": "stacks-errata-a04446e-r38",
-      "stable_ids": 23,
-      "operations": 31,
-      "manifest_sha256": "9636737033D82B50569C81C697EDB8ACC5A0A9EB65F04D25FBF32E3D5C5F1A52",
-      "payload_sha256": "B4D8BF24D64BF7D5A50E4BC0791D02DDC19849F34A24FB4857CED6CB143DD196",
-      "payloads": [
-        {
-          "path": "payload/more-algebra.tex",
-          "sha256": "B4D8BF24D64BF7D5A50E4BC0791D02DDC19849F34A24FB4857CED6CB143DD196"
-        }
-      ],
-      "review_receipt_sha256": "1DB05892DD5F76C055432B4CB28E52273F41C3C9023A46C4E635AA6630C11AFD",
-      "topology": "embedded_candidate_direct_admission",
-      "candidate_commit": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
-      "candidate_commits": [
-        "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c"
-      ],
-      "candidate_tree": "367d43b7eed72cdfd55a86b1ec887e01bf032280",
-      "candidate_subtree": "93c97aef4a5484ce5210e7e77c26f61ab12c90cd",
-      "admission_commit": "69f14d67c3a456c3d1447e1a201bdfc3f3d87f0c",
-      "admission_tree": "367d43b7eed72cdfd55a86b1ec887e01bf032280",
-      "admission_parent": "f6395eb5d171cc517a7231811fabf6855296505e",
-      "lease_release_event": "lease-event-000081"
+      "candidate_tree": "6a58c38e19a5ed921835268622a939250597f847",
+      "candidate_subtree": "c51de579a3b1f4e2b70b0d47657181ec3cb16eaa",
+      "admission_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+      "admission_tree": "7efd519d762e47278c56e1e5296d6f99e65a2c07",
+      "admission_parent": "fcd866c83f868f49f699e110d1a54b74a54c0886",
+      "lease_release_event": "lease-event-000083"
     }
   ],
   "composition": {
     "mode": "manifest-bound registry-order replay rebased onto verified cumulative source",
-    "base_commit": "72d10f3135c6007a38fa20a1aee4273fc4cb5693",
-    "base_tree": "81569b4171ef2a3b61a8a392977962996a12d591",
+    "base_commit": "32217a7e220c0456709b07aff9d7c295a54e8afc",
+    "base_tree": "7c51f5bd697e65e46aaf2a917594b9e6fc996264",
     "preparation_commits": [
       {
-        "commit": "b6080897e6c7fdd8dd2c20672bcfaf3f4948a7ef",
-        "parent": "e4978987d5bf67f09a1b7649bda6fd90fe0fb2d8",
-        "tree": "ccd6cf90643d2d9b57be099e944125601eed34f8",
+        "commit": "32217a7e220c0456709b07aff9d7c295a54e8afc",
+        "parent": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+        "tree": "7c51f5bd697e65e46aaf2a917594b9e6fc996264",
         "paths": [
-          "tests/test_semantic_composition.py",
-          "tools/compose_overlay_projection.py",
-          "validation/overlay-composition-semantic-dispositions-v1.json"
-        ]
-      },
-      {
-        "commit": "72d10f3135c6007a38fa20a1aee4273fc4cb5693",
-        "parent": "b6080897e6c7fdd8dd2c20672bcfaf3f4948a7ef",
-        "tree": "81569b4171ef2a3b61a8a392977962996a12d591",
-        "paths": [
-          ".github/workflows/validate.yml",
           "tools/build_fixed_point.py",
-          "tools/validate_unified_repository.py",
-          "tools/write_r38_composition_receipt.py"
+          "tools/write_r39_composition_receipt.py"
         ]
       }
     ],
-    "source_commit": "1242d514b71e60b4fe11b4c867f7de660f9a3b77",
-    "source_tree": "8ff4833ee14208f2ed5ce109a3e9743e1efeaf4c",
-    "total_v2_operations": 1243,
-    "new_operations": 77,
-    "new_byte_edit_operations": 76,
+    "source_commit": "0cf35b6ffdb46a63355f0d9ee3f2fa47a529ffe0",
+    "source_tree": "240a935c9a1d6ba2619ffd1d3a8a4ed70b7e6825",
+    "total_v2_operations": 1304,
+    "new_operations": 61,
+    "new_byte_edit_operations": 61,
     "semantic_dispositions": {
-      "consumed_operation_ids": [
-        "MC-STK-ERR-1296-OP1"
-      ],
+      "consumed_operation_ids": [],
       "path": "validation/overlay-composition-semantic-dispositions-v1.json",
       "sha256": "9144F8C2952809C96BD1FBF24E04BEDDE2420CF16F1776DC5B606DD89D456ADF"
     },
     "r1_r3_replacements": 69,
     "r1_tag_additions": 9,
     "affected_sources": {
-      "cohomology.tex": {
-        "authority_bytes": 519286,
-        "authority_projection_bytes": 519289,
-        "authority_projection_git_blob": "f55cd9bb8e566dfd2c4ff26e775ff6e24c953d80",
-        "authority_projection_sha256": "28E226FAC62CFD47F0BAA7B3480876EE389C766690C3902A8C20192218D35A6C",
-        "authority_sha256": "FA9747D0082AFBF8B09244DCC6C260F8A122E5E3B4A3C69E2273506D76E18A42",
-        "before_bytes": 539701,
-        "before_git_blob": "247b0aa09f05f31ed1952017229f7dceec9a896e",
-        "before_sha256": "9BD4A2C84CC68E2829A92E467798457C2C8069217DD82BC1DDDB5DA2488F7E39",
-        "before_state": "verified_committed_cumulative_source",
-        "before_worktree_bytes": null,
-        "before_worktree_sha256": null,
-        "composed_bytes": 539704,
-        "composed_git_blob": "32194c7debdc308dfb29899762a9c8d175e56e9a",
-        "composed_sha256": "591F19389EF437DDFE05B00214064DDA31AA225D44B019A779F9F98F6EC0B4DE",
-        "existing_operations": 0,
-        "matches_target_after": true,
-        "new_operations": 4,
-        "preapplied_operation_ids": [],
-        "semantic_disposition_operation_ids": [
-          "MC-STK-ERR-1296-OP1"
-        ],
-        "superseded_operations": 0,
-        "target_operations": 4,
-        "written": false,
-        "composition_mode": "Exact manifest-bound operations on cumulative source; separately hash-bound ancestor-rewrite disposition where recorded",
-        "committed_matches_composition": true,
-        "authority_git_blob": "0e2c7cd4265156c4e925e81a4d215ab59f73bbe3"
-      },
-      "more-algebra.tex": {
-        "authority_bytes": 1492039,
-        "authority_projection_bytes": 1492149,
-        "authority_projection_git_blob": "6f36ba03c021b97884750518fd61f6fbf506ad81",
-        "authority_projection_sha256": "8A74C9CA1F7049CE14D1D68BF67ED0C3B6A8B9E442D6EECC4C6D26B1A279016F",
-        "authority_sha256": "0106554339E8966FE04411B2AE9F9CD856B165849FEEF0C7BC37634819064708",
-        "before_bytes": 1517988,
-        "before_git_blob": "d53ee36a9b35cc847aa8ba4806fbb1fb85a55c88",
-        "before_sha256": "69CD9E00183C17938EC4DFC1FF1EB33C292DDACF8B64AD054FD666054D2CBE2C",
-        "before_state": "verified_committed_cumulative_source",
-        "before_worktree_bytes": null,
-        "before_worktree_sha256": null,
-        "composed_bytes": 1518081,
-        "composed_git_blob": "9db253ad6bf37ba398eccc7cf81a9ff76eaf38f2",
-        "composed_sha256": "0490028F82EFFCF08C0D790D0C8145EEB8D55DB66BFB8CF7BA29CCD27FC3FABE",
-        "existing_operations": 106,
-        "matches_target_after": true,
-        "new_operations": 31,
-        "preapplied_operation_ids": [],
-        "semantic_disposition_operation_ids": [],
-        "superseded_operations": 0,
-        "target_operations": 137,
-        "written": false,
-        "composition_mode": "Exact manifest-bound operations on cumulative source; separately hash-bound ancestor-rewrite disposition where recorded",
-        "committed_matches_composition": true,
-        "authority_git_blob": "6ff837ac787433d48e0e6e8061e720d93eeb4b05"
-      },
       "sites-cohomology.tex": {
         "authority_bytes": 534394,
-        "authority_projection_bytes": 534441,
-        "authority_projection_git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8",
-        "authority_projection_sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
+        "authority_projection_bytes": 534532,
+        "authority_projection_git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29",
+        "authority_projection_sha256": "0D9E067D20F6A708BB228EC7B0F6DA7881901C6C49CB38887553C17CD3A7B023",
         "authority_sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
-        "before_bytes": 534394,
-        "before_git_blob": "ba8f62453f35abc5d9f10c14c361382128ebb042",
-        "before_sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
+        "before_bytes": 534441,
+        "before_git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8",
+        "before_sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
         "before_state": "exact_existing_overlay_projection",
         "before_worktree_bytes": null,
         "before_worktree_sha256": null,
-        "composed_bytes": 534441,
-        "composed_git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8",
-        "composed_sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
-        "existing_operations": 0,
+        "composed_bytes": 534532,
+        "composed_git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29",
+        "composed_sha256": "0D9E067D20F6A708BB228EC7B0F6DA7881901C6C49CB38887553C17CD3A7B023",
+        "existing_operations": 42,
         "matches_target_after": true,
-        "new_operations": 42,
+        "new_operations": 61,
         "preapplied_operation_ids": [],
         "semantic_disposition_operation_ids": [],
         "superseded_operations": 0,
-        "target_operations": 42,
+        "target_operations": 103,
         "written": false,
-        "composition_mode": "Exact manifest-bound operations on cumulative source; separately hash-bound ancestor-rewrite disposition where recorded",
+        "composition_mode": "Exact manifest-bound operations on cumulative source; no preapplied operation or semantic disposition consumed",
         "committed_matches_composition": true,
         "authority_git_blob": "ba8f62453f35abc5d9f10c14c361382128ebb042"
       }
@@ -419,7 +226,13 @@
       "sha256": "048BC16D80E71DBAA9C5CF11B109B69B481D920B278CBCB379C3BC9B8BBFC252",
       "git_blob": "5b503c04d90520e8cbdc4ffbee5b6e6c815b8aa6"
     },
-    "r34_r38_state": "Five ordered immutable admissions; 77 accepted operations, 76 applied byte edits, one proved earlier structural rewrite. Prior integrated additions and rejected-producer exclusions preserved."
+    "r34_r38_state": "Five ordered immutable admissions; 77 accepted operations, 76 applied byte edits, one proved earlier structural rewrite. Prior integrated additions and rejected-producer exclusions preserved.",
+    "sites-cohomology.tex": {
+      "bytes": 534532,
+      "sha256": "0D9E067D20F6A708BB228EC7B0F6DA7881901C6C49CB38887553C17CD3A7B023",
+      "git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29"
+    },
+    "r39_state": "One immutable R39 admission; 61 accepted operations and 61 byte edits applied to sites-cohomology.tex; zero preapplied operations, semantic dispositions, supersessions, or conflicts."
   },
   "known_admitted_metadata_defects": [
     {
@@ -450,7 +263,7 @@
   ],
   "projection_verifier": {
     "path": "tools/compose_overlay_projection.py",
-    "command": "python tools/compose_overlay_projection.py --existing-rounds 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 --target-rounds 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 --base-revision 72d10f3135c6007a38fa20a1aee4273fc4cb5693 --check-revision 1242d514b71e60b4fe11b4c867f7de660f9a3b77",
+    "command": "python tools/compose_overlay_projection.py --existing-rounds 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 --target-rounds 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 --base-revision 32217a7e220c0456709b07aff9d7c295a54e8afc --check-revision 0cf35b6ffdb46a63355f0d9ee3f2fa47a529ffe0",
     "status": "PASS"
   },
   "required_build_stems": [
