@@ -6,16 +6,15 @@ unmarked: this generated sidecar shows what changed while the source and PDF
 remain readable as mathematics.
 
 - Pinned official baseline: [`a04446e57ec1fbc252a871afcec7752fb2807b14`](https://github.com/stacks/stacks-project/commit/a04446e57ec1fbc252a871afcec7752fb2807b14)
-- Admitted errata batches: **38**
-- Stable correction IDs: **1,094**
-- Displayed exact change hunks: **1,311**
-- Manifest/source-map exact operations: **1,243**
+- Admitted errata batches: **39**
+- Stable correction IDs: **1,137**
+- Displayed exact change hunks: **1,372**
+- Manifest/source-map exact operations: **1,304**
 - Hash-bound reconstructed legacy hunks: **68**
 - Affected source paths: **25**
-- Registry SHA-256: `C1A561855086A651B210537410D2767037E19926049E6AC557309B6333CEBEB4`
+- Registry SHA-256: `A259CAA4DBB502B35B7F0F0759D093CF59811D1590228B93AFD4D1714DC14FF0`
 
-[Open the offline filterable browser](ai-integrated/changes/index.html) · 
-[Open the admitted registry](ai-integrated/registry/overlays.json)
+[Open the offline filterable browser](ai-integrated/changes/index.html) · [Open the admitted registry](ai-integrated/registry/overlays.json)
 
 ## How to read the fidelity labels
 
@@ -211,7 +210,7 @@ Original SHA-256 `6F3B8FDF461012AB11C78087A58AF5E13F9598BE8EE42EC8C8298E202DDE92
 Pinned-official lines `21584-21584`; bytes `969923:969923`.
 
 ````diff
-- 
+-
 + 0HB4,topology-lemma-dense-in-constructible
 + 0HB5,more-morphisms-lemma-weighting-specialization
 + 0HB6,more-morphisms-lemma-weighting-on-dense-set
@@ -850,7 +849,7 @@ Original SHA-256 `E40997B91FFFB49AC941C39DBB3A17F7A23F9D448B066D3291081BB6BC7C6E
 Pinned-official lines `1102-1102`; bytes `44801:44801`.
 
 ````diff
-- 
+-
 + After increasing $\beta$ to at least $\beta(\mathcal{U})$ if necessary,
 + which still leaves $\beta < \beta_2$, we may also assume that
 + $\mathcal{U} \in \text{Cov}_{\kappa, f(\beta)}$.
@@ -1425,7 +1424,7 @@ Pinned-official lines `5484-5484`; bytes `216400:216421`.
 
 ````diff
 - \item add more here.
-+ 
++
 ````
 
 Original SHA-256 `BF7114CCA3C67CAEE34E047933C6BAC7CD51064B69C0C3B15F47184D753CB355`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -5895,7 +5894,7 @@ Pinned-official lines `7793-7793`; bytes `276711:276726`.
 
 ````diff
 -  = f^{-1}h_V^\#
-+ 
++
 ````
 
 Original SHA-256 `A3EB8A13788B9DB4A25076002C2838FD2C5F25ADFA6031E73AE6DF7E7054B9A1`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -6051,8 +6050,8 @@ Original SHA-256 `E1215481B712A33BC7F20236B1A0F2EDBD53F7C0A9CB64DC23798DBA598BC8
 Pinned-official lines `8204-8204`; bytes `291333:291364`.
 
 ````diff
-- it commutes with coequalizers, 
-+ 
+- it commutes with coequalizers,
++
 ````
 
 Original SHA-256 `E6E5431E97121A7948210AD71C1C54A1C94C20C674D9667CE0DD62ABF4E76198`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -6246,8 +6245,8 @@ Original SHA-256 `433C8C788AD1F183B00D781400372C9890F33815CEEE284551CBE27920F596
 Pinned-official lines `8623-8623`; bytes `307221:307239`.
 
 ````diff
-- which is equal to 
-+ 
+- which is equal to
++
 ````
 
 Original SHA-256 `67E9A182D1539A4B0BAF9E6752C46642C26BB97AEA8629EA01CB48109B8A43EF`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -9922,12 +9921,12 @@ Pinned-official lines `45098-45102`; bytes `1664736:1664904`.
 ````diff
 - $R_0 \to R$ is injective (see Lemma \ref{lemma-integral-dim-up}),
 - and the lemma is proved.
-- 
+-
 - \medskip\noindent
 - Case II: $\Lambda$ is a Cohen ring. Let $d + 1 = \dim(R)$.
 + $R_0 \to R$ is injective (see Lemma \ref{lemma-integral-dim-up}).
 + This proves Case I.
-+ 
++
 + \medskip\noindent
 + Case II: $\Lambda$ is a Cohen ring. Let $d + 1 = \dim(R)$.
 ````
@@ -13543,7 +13542,7 @@ Pinned-official lines `3651-3651`; bytes `127989:128020`.
 
 ````diff
 -  (insert future reference here)
-+ 
++
 ````
 
 Original SHA-256 `F1E118665BDE6F8315778752B518D2AEB4629F709D0D8C5902D838557A4902F2`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -14516,7 +14515,7 @@ Pinned-official lines `7759-7759`; bytes `276783:276813`.
 
 ````diff
 - \item Add more here as needed.
-+ 
++
 ````
 
 Original SHA-256 `9C61AA68D4EB0A2CC769AD3260C94E7CD6B57413AD0F01481404023073E29D3C`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -16035,7 +16034,7 @@ Pinned-official lines `11360-11360`; bytes `428781:428812`.
 
 ````diff
 -  (insert future reference here)
-+ 
++
 ````
 
 Original SHA-256 `F1E118665BDE6F8315778752B518D2AEB4629F709D0D8C5902D838557A4902F2`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -16244,7 +16243,7 @@ Pinned-official lines `15399-15400`; bytes `580493:580524`.
 ````diff
 -  (insert
 - future reference here)
-+ 
++
 ````
 
 Original SHA-256 `F20205E4BE9CCDCBFB9C55DA7369E531B213B0DC672674DDFEF94F466003BBEC`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -16878,8 +16877,8 @@ Original SHA-256 `CCBC9841EEE9D36F7EE081FAB6B4F4D5B8B947B152D973280AC7A155A1006B
 Pinned-official lines `20634-20634`; bytes `777115:777135`.
 
 ````diff
-- Derived Categories. 
-+ 
+- Derived Categories.
++
 ````
 
 Original SHA-256 `A6AAC2466FEBD53F9A07C1E0075CBE00186B44F309720DA150A393974640912E`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
@@ -19186,8 +19185,8 @@ Original SHA-256 `73B2E6897621DC987DE3695EB81F1A719A55A4DC77E019C657D476C6D9FAD7
 Pinned-official lines `1288-1288`; bytes `47225:47249`.
 
 ````diff
-- the two squares commute 
-+ the two squares commute by 
+- the two squares commute
++ the two squares commute by
 ````
 
 Original SHA-256 `560B885B65519883938B1A064A2C60379E226EC46F02F816C8C3BC6081B8817E`; replacement SHA-256 `13C839E8E6949E41CB0E6D1271F066A49A780E9F3ADC1331A03CEBB6C7E6A749`.
@@ -19197,8 +19196,8 @@ Original SHA-256 `560B885B65519883938B1A064A2C60379E226EC46F02F816C8C3BC6081B881
 Pinned-official lines `1382-1382`; bytes `50829:50853`.
 
 ````diff
-- the two squares commute 
-+ the two squares commute by 
+- the two squares commute
++ the two squares commute by
 ````
 
 Original SHA-256 `560B885B65519883938B1A064A2C60379E226EC46F02F816C8C3BC6081B8817E`; replacement SHA-256 `13C839E8E6949E41CB0E6D1271F066A49A780E9F3ADC1331A03CEBB6C7E6A749`.
@@ -22959,8 +22958,8 @@ Original SHA-256 `8BDC96A653D6E2988EF629F099CCE703910A5D6CBDB2508D929FCB99A07ADC
 Pinned-official lines `5630-5630`; bytes `223186:223193`.
 
 ````diff
-- Denote 
-+ Let 
+- Denote
++ Let
 ````
 
 Original SHA-256 `8B70074A369C9F087397923D792B2F433970DF3181F4850330376A90E89F7457`; replacement SHA-256 `3988F7AFB44A169E39BDB01B76321CC2D85908B921FD09EFBBA09AD027FF4549`.
@@ -31573,5 +31572,1287 @@ Pinned-official lines `39126-39126`; bytes `1488496:1488505`.
 ````
 
 Original SHA-256 `D5CD4104BD93E7482C9A365C2F4D3ACCCF63DBEA7599DC7C70052DFA8D5A1DA0`; replacement SHA-256 `630561153C51164874A69CFD5DF11CCFC84B492FE441F766D64BFFFB0C6171AD`.
+
+</details>
+
+## stacks-errata-a04446e-r39
+
+43 stable IDs · 61 displayed change hunks · admitted 2026-08-31T13:53:06.518Z.
+
+<details id="mc-stk-err-1359">
+<summary><code>MC-STK-ERR-1359 — sites-cohomology.tex:sites-cohomology.tex:6823 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1359`; producer ID: `SITES-COHOMOLOGY-038`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:6823`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L6823) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: At6814 f:X→Y; εY in6821 must land in the τ′ topos over Y. The lower-left corner already supplies the X topos. Change only the lower-right base.
+
+### Change 1: `MC-STK-ERR-1359-OP1`
+
+Pinned-official lines `6823-6823`; bytes `247125:247151`.
+
+````diff
+- \Sh(\mathcal{C}_{\tau'}/X)
++ \Sh(\mathcal{C}_{\tau'}/Y)
+````
+
+Original SHA-256 `3B6E239701480E78899820E2BE77C59CEDDACEB35F35C73553F67724F1C292C5`; replacement SHA-256 `EF34EAEE9698040B6B3E689FFF8B91EF907FFD85764CE2E1C171342F838EDA86`.
+
+</details>
+
+<details id="mc-stk-err-1360">
+<summary><code>MC-STK-ERR-1360 — sites-cohomology.tex:sites-cohomology.tex:7301,7339 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1360`; producer ID: `SITES-COHOMOLOGY-039`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:7301,7339`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L7301-L7339) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The two assertions describe Rfτ′,*K′. Its cohomology sheaves lie in A′Y by7333–7336, so both statement7301 and conclusion7339 must use Y; retain the input category over X at7300.
+
+### Change 1: `MC-STK-ERR-1360-OP1`
+
+Pinned-official lines `7301-7301`; bytes `265459:265502`.
+
+````diff
+- D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/Y)
++ D^+_{\mathcal{A}'_Y}(\mathcal{C}_{\tau'}/Y)
+````
+
+Original SHA-256 `2EE252007FBD2B8F069C9C04705B7A7A1E60B7678A4640F581DE57080BDF39D6`; replacement SHA-256 `85DB4AE1BB35FBE0FEE33C0A63C28F0DCD3F516096C28FE1D8F7A15DD7D8F9B9`.
+
+### Change 2: `MC-STK-ERR-1360-OP2`
+
+Pinned-official lines `7339-7339`; bytes `266732:266775`.
+
+````diff
+- D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/X)
++ D^+_{\mathcal{A}'_Y}(\mathcal{C}_{\tau'}/Y)
+````
+
+Original SHA-256 `D05EA46876193A3E4B8DC5B42A198CEB18F7D68A90F6AAD40056C91CF200A124`; replacement SHA-256 `85DB4AE1BB35FBE0FEE33C0A63C28F0DCD3F516096C28FE1D8F7A15DD7D8F9B9`.
+
+</details>
+
+<details id="mc-stk-err-1361">
+<summary><code>MC-STK-ERR-1361 — sites-cohomology.tex:sites-cohomology.tex:7322,7324 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1361`; producer ID: `SITES-COHOMOLOGY-040`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:7322,7324`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L7322-L7324) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Equation7321 computes H^n throughout. The next equality must retain n in both H(K′) factors, and7324 should refer to that same degree. These are one displayed computation, not separate defects.
+
+### Change 1: `MC-STK-ERR-1361-OP1`
+
+Pinned-official lines `7322-7322`; bytes `266147:266164`.
+
+````diff
+- H^i(K') = H^i(K')
++ H^n(K') = H^n(K')
+````
+
+Original SHA-256 `6B8826145C46634C7A820015D451E72378A711AF9EBF84D433E53D8CFA826C4A`; replacement SHA-256 `08672E858F5C89515AF7ECBB24288250AAAE6BAC6018E41925603EEB5A910F9F`.
+
+### Change 2: `MC-STK-ERR-1361-OP2`
+
+Pinned-official lines `7324-7324`; bytes `266184:266191`.
+
+````diff
+- H^i(K')
++ H^n(K')
+````
+
+Original SHA-256 `010510FB3E68EC0CAD833846C394424BBF4B5D3AB49B6CA3A618859E3A81DFAC`; replacement SHA-256 `B540E13C875022B287C0F1582ABB4F2C8A0DD8D312CF961B362171C9077CBDA1`.
+
+</details>
+
+<details id="mc-stk-err-1362">
+<summary><code>MC-STK-ERR-1362 — sites-cohomology.tex:sites-cohomology.tex:7548,7548,7554,7560 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1362`; producer ID: `SITES-COHOMOLOGY-041`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:7548,7548,7554,7560`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L7548-L7560) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: At7544–7547 the selected index is i_a and J_e⊂J_{i_a}. Hence the domains, maps, and outer composite in7548–7560 all need i_a. All four operations repair one nested-cover indexing defect.
+
+### Change 1: `MC-STK-ERR-1362-OP1`
+
+Pinned-official lines `7548-7548`; bytes `274005:274011`.
+
+````diff
+- X_{ij}
++ X_{i_a j}
+````
+
+Original SHA-256 `0298CC60BFC2D7E5F477CFA9F73A56317699C9F8C1742226BC7802CAC3A23D7E`; replacement SHA-256 `F852A91A13EFAB288A9A8E376EAB724D77C81741B48A80464A0105381AA88B26`.
+
+### Change 2: `MC-STK-ERR-1362-OP2`
+
+Pinned-official lines `7548-7548`; bytes `274045:274051`.
+
+````diff
+- g_{ij}
++ g_{i_a j}
+````
+
+Original SHA-256 `26E0FE64A665447014B9DFCE4B926F5C3E0D67F24208A6579E51ADB6BB546AE3`; replacement SHA-256 `891B3677ADF8B80E428D64CDD9083BBA9D9A1956FE899DB5276DEF91C62DA838`.
+
+### Change 3: `MC-STK-ERR-1362-OP3`
+
+Pinned-official lines `7554-7554`; bytes `274266:274272`.
+
+````diff
+- g_{ij}
++ g_{i_a j}
+````
+
+Original SHA-256 `26E0FE64A665447014B9DFCE4B926F5C3E0D67F24208A6579E51ADB6BB546AE3`; replacement SHA-256 `891B3677ADF8B80E428D64CDD9083BBA9D9A1956FE899DB5276DEF91C62DA838`.
+
+### Change 4: `MC-STK-ERR-1362-OP4`
+
+Pinned-official lines `7560-7560`; bytes `274416:274439`.
+
+````diff
+- f_i(g_{ij}(F_{e_k, j}))
++ f_{i_a}(g_{i_a j}(F_{e_k, j}))
+````
+
+Original SHA-256 `979C811DF81F6A17DCA482FECCC6159B4CCFE7386DC3CFE17288888B9742B26F`; replacement SHA-256 `B9718AA4D5B18A1A1BEC2990B8DA24BFF82F85B6E880B0EE770A67391532CE72`.
+
+</details>
+
+<details id="mc-stk-err-1363">
+<summary><code>MC-STK-ERR-1363 — sites-cohomology.tex:sites-cohomology.tex:7600 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1363`; producer ID: `SITES-COHOMOLOGY-042`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:7600`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L7600) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The union covers the whole fibre by7596. Its complement is closed and misses that fibre; its image therefore misses y. The unparenthesized expression can reintroduce U_x2 and hence y. Parenthesize the whole union under set difference.
+
+### Change 1: `MC-STK-ERR-1363-OP1`
+
+Pinned-official lines `7600-7600`; bytes `276058:276105`.
+
+````diff
+- f(X \setminus U_{x_1} \cup \ldots \cup U_{x_n})
++ f(X \setminus (U_{x_1} \cup \ldots \cup U_{x_n}))
+````
+
+Original SHA-256 `B4DB3726234485DF5BD97D9B47406010788DE98FDBDED16CE452B2D885334EFB`; replacement SHA-256 `26CC7BB256F23419A09D0702BF8F08A3FC1722362FB8552A6DF92CD56D4B6429`.
+
+</details>
+
+<details id="mc-stk-err-1364">
+<summary><code>MC-STK-ERR-1364 — sites-cohomology.tex:sites-cohomology.tex:7948 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1364`; producer ID: `SITES-COHOMOLOGY-043`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:7948`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L7948) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The right vertical map of7939–7944 has target Sh(Y). Its factors are εY and πY, not the X-side factors. This is independent of the X-side inverse-image/composition errors below.
+
+### Change 1: `MC-STK-ERR-1364-OP1`
+
+Pinned-official lines `7948-7948`; bytes `289593:289621`.
+
+````diff
+- a_Y = \pi_X \circ \epsilon_X
++ a_Y = \pi_Y \circ \epsilon_Y
+````
+
+Original SHA-256 `78C1AE24F7C73E1CC9544362D7FCEE00A917C681CFDE79E203707909E84AFA33`; replacement SHA-256 `F043C10BE5899BC72FDCB97E0CC5674FF80785E9AB994EFD11E133D46C273833`.
+
+</details>
+
+<details id="mc-stk-err-1365">
+<summary><code>MC-STK-ERR-1365 — sites-cohomology.tex:sites-cohomology.tex:8085 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1365`; producer ID: `SITES-COHOMOLOGY-044`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8085`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8085) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: From7948 aX=πX∘εX. Contravariance gives aX^-1=εX^-1∘πX^-1. Repeating aX^-1 as the second factor is ill-typed.
+
+### Change 1: `MC-STK-ERR-1365-OP1`
+
+Pinned-official lines `8085-8085`; bytes `295366:295396`.
+
+````diff
+- \epsilon_X^{-1} \circ a_X^{-1}
++ \epsilon_X^{-1} \circ \pi_X^{-1}
+````
+
+Original SHA-256 `51A7B9F7348FE726DACAB5100F01E39C8986BF5FC12FE8F995ABCD662DB7D20F`; replacement SHA-256 `CD88601DE7982573F01A46E93FBF32CEE4B8727E4D762CE54B67802E0A0D88E9`.
+
+</details>
+
+<details id="mc-stk-err-1366">
+<summary><code>MC-STK-ERR-1366 — sites-cohomology.tex:sites-cohomology.tex:8117 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1366`; producer ID: `SITES-COHOMOLOGY-045`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8117`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8117) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The arrows go LCqc/X→LCZar/X→Sh(X); thus aX=πX∘εX. This is also what the two-stage Leray argument8120–8123 uses.
+
+### Change 1: `MC-STK-ERR-1366-OP1`
+
+Pinned-official lines `8117-8117`; bytes `296539:296567`.
+
+````diff
+- a_X = \epsilon_X \circ \pi_X
++ a_X = \pi_X \circ \epsilon_X
+````
+
+Original SHA-256 `64411F929188E437C56597FC21908E6D330D25AB77609299883EB406C1A2FF01`; replacement SHA-256 `8A36C677761E29D55F0E5F26D42641017E82A3A9CEC84C294003B07EAE9DE6CB`.
+
+</details>
+
+<details id="mc-stk-err-1367">
+<summary><code>MC-STK-ERR-1367 — sites-cohomology.tex:sites-cohomology.tex:8291,8295,8299,8313,8317,8321 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1367`; producer ID: `SITES-COHOMOLOGY-046`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8291,8295,8299,8313,8317,8321`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8291-L8321) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Lf* and f* take O_D modules to O_C modules. Each of the six tensor products is after that pullback (or between K and M themselves), so its base is O_C. Do not change the O_D bases inside Lf*(...) at8287 and8309.
+
+### Change 1: `MC-STK-ERR-1367-OP1`
+
+Pinned-official lines `8291-8291`; bytes `301607:301630`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+### Change 2: `MC-STK-ERR-1367-OP2`
+
+Pinned-official lines `8295-8295`; bytes `301716:301739`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+### Change 3: `MC-STK-ERR-1367-OP3`
+
+Pinned-official lines `8299-8299`; bytes `301818:301841`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+### Change 4: `MC-STK-ERR-1367-OP4`
+
+Pinned-official lines `8313-8313`; bytes `302210:302233`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+### Change 5: `MC-STK-ERR-1367-OP5`
+
+Pinned-official lines `8317-8317`; bytes `302317:302340`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+### Change 6: `MC-STK-ERR-1367-OP6`
+
+Pinned-official lines `8321-8321`; bytes `302417:302440`.
+
+````diff
+- \mathcal{O}_\mathcal{D}
++ \mathcal{O}_\mathcal{C}
+````
+
+Original SHA-256 `538F6844F9EA3E8667336F5FAD775F78D3A0586D70B542D3D48064568A94E285`; replacement SHA-256 `B014A2B523EA2A468DDF82FC8ED36C33FAA449D157EDB22A505DF477578ED468`.
+
+</details>
+
+<details id="mc-stk-err-1368">
+<summary><code>MC-STK-ERR-1368 — sites-cohomology.tex:sites-cohomology.tex:8513 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1368`; producer ID: `SITES-COHOMOLOGY-047`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8513`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8513) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The opening left/right parentheses at8507–8509 are already balanced. The next equality has no extra outer opening parenthesis;8513 has one unmatched closing parenthesis.
+
+### Change 1: `MC-STK-ERR-1368-OP1`
+
+Pinned-official lines `8513-8513`; bytes `308637:308669`.
+
+````diff
+- L(f' \circ f)^*R(f' \circ f)_*L)
++ L(f' \circ f)^*R(f' \circ f)_*L
+````
+
+Original SHA-256 `861BE72A1FA71E748DD4B80C375A296F694BA289D9D896F63AFF0FFB2DE89C2D`; replacement SHA-256 `D5E6A83F3ABF0F65DF2B6A76A5E2C2D11ADB899838E419489BD1129CC2BB153F`.
+
+</details>
+
+<details id="mc-stk-err-1369">
+<summary><code>MC-STK-ERR-1369 — sites-cohomology.tex:sites-cohomology.tex:8534 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1369`; producer ID: `SITES-COHOMOLOGY-048`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8534`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8534) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Each vertex is a pair (Sh(site),structure sheaf). The C vertex alone has the comma inside Sh rather than closing Sh(C), unlike the other three vertices.
+
+### Change 1: `MC-STK-ERR-1369-OP1`
+
+Pinned-official lines `8534-8534`; bytes `309209:309262`.
+
+````diff
+- (\Sh(\mathcal{C}, \mathcal{O}_{\mathcal{C}}) \ar[d]^f
++ (\Sh(\mathcal{C}), \mathcal{O}_{\mathcal{C}}) \ar[d]^f
+````
+
+Original SHA-256 `84E588C68C8E4C895F14E7AA34BF8CF78BA933FB9C3B5A303AD720CE628C56CD`; replacement SHA-256 `8751E4747DEB5DD56052F75629EDD46A58F4DA797561634071379A3C22F6073A`.
+
+</details>
+
+<details id="mc-stk-err-1370">
+<summary><code>MC-STK-ERR-1370 — sites-cohomology.tex:sites-cohomology.tex:8549 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1370`; producer ID: `SITES-COHOMOLOGY-049`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8549`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8549) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The lower-left vertex is the tensor product of two derived direct images, the source of the relative cup product for f′. It must have two separate Rf′* factors and a derived tensor over O_D′. The proposed full-line correction is typed and removes both unmatched openings.
+
+### Change 1: `MC-STK-ERR-1370-OP1`
+
+Pinned-official lines `8549-8549`; bytes `309855:309934`.
+
+````diff
+- R(f')_*(L(g')^*K \otimes_{\mathcal{O}_{\mathcal{D}'}} R(f')_*(L(g')^*L \ar[r] &
++ R(f')_*L(g')^*K \otimes_{\mathcal{O}_{\mathcal{D}'}}^\mathbf{L} R(f')_*L(g')^*L \ar[r] &
+````
+
+Original SHA-256 `0385B5381AFB2A421070D50CA978C629B41C7F9CF3C8FF2A896B6AF09D3BA692`; replacement SHA-256 `BD031644AF6D32F5A09F27D953E25A4AF2729DE0C5565EBAE84EC436590E432B`.
+
+</details>
+
+<details id="mc-stk-err-1371">
+<summary><code>MC-STK-ERR-1371 — sites-cohomology.tex:sites-cohomology.tex:8683 — editorial_or_notational_clarification</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1371`; producer ID: `SITES-COHOMOLOGY-050`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:8683`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L8683) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The displayed diagonal map8686–8689 depends only on K and L and8691 says both complexes. Removing unused M is an editorial simplification of an over-specified hypothesis, not a false mathematical theorem.
+- Adverse evidence: The displayed diagonal map8686–8689 depends only on K and L and8691 says both complexes. Removing unused M is an editorial simplification of an over-specified hypothesis, not a false mathematical theorem.
+
+### Change 1: `MC-STK-ERR-1371-OP1`
+
+Pinned-official lines `8683-8683`; bytes `314361:314382`.
+
+````diff
+- , \mathcal{M}^\bullet
++
+````
+
+Original SHA-256 `E9AE00328F7FB524AF8312F39B54672F9222E0D93E34B0C90754F63CFB3BEFF9`; replacement SHA-256 `E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855`.
+
+</details>
+
+<details id="mc-stk-err-1372">
+<summary><code>MC-STK-ERR-1372 — sites-cohomology.tex:sites-cohomology.tex:9803 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1372`; producer ID: `SITES-COHOMOLOGY-051`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:9803`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L9803) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: This is the localized morphism at U′ with U=u(U′). The arrow g′ and πU have domain/codomain involving C/U; the structure sheaf O_U likewise lives there.
+
+### Change 1: `MC-STK-ERR-1372-OP1`
+
+Pinned-official lines `9803-9803`; bytes `354641:354672`.
+
+````diff
+- \Sh(\mathcal{C}), \mathcal{O}_U
++ \Sh(\mathcal{C}/U), \mathcal{O}_U
+````
+
+Original SHA-256 `01C6F46B8DBCC589358E6D23C74E63A4120809C9E89351C0D7F59CA79724C090`; replacement SHA-256 `9DE159475EF65E599EBFCA16CAFE189E7673CA4A20AB6F77E8ECAE913AD96AD7`.
+
+</details>
+
+<details id="mc-stk-err-1373">
+<summary><code>MC-STK-ERR-1373 — sites-cohomology.tex:sites-cohomology.tex:9819 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1373`; producer ID: `SITES-COHOMOLOGY-052`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:9819`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L9819) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The fibred categories have common base D;9780–9788 and9820–9824 confirm it. D′ is not introduced. Remove only the spurious prime.
+
+### Change 1: `MC-STK-ERR-1373-OP1`
+
+Pinned-official lines `9819-9819`; bytes `355203:355237`.
+
+````diff
+- p' : \mathcal{C}' \to \mathcal{D}'
++ p' : \mathcal{C}' \to \mathcal{D}
+````
+
+Original SHA-256 `2A1BD0F3958DDC3E005D68179F6D87AF17DACACD5BF70BD901916D117D6743A2`; replacement SHA-256 `57D0BBD17F1F8ABF0E92FF8C64AED7B86CC0637AC6ED2175375AC765434ED16F`.
+
+</details>
+
+<details id="mc-stk-err-1374">
+<summary><code>MC-STK-ERR-1374 — sites-cohomology.tex:sites-cohomology.tex:10224,10220 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1374`; producer ID: `SITES-COHOMOLOGY-053`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10224,10220`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10220-L10224) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Both composites are left adjoints, but the displayed statement10220 is itself ill-typed. h*:D(underline B)→D(underline B′), π!:D(underline B)→D(B), π′!:D(underline B′)→D(B′), f*:D(B)→D(B′). Therefore the typed identity is Lπ′!∘Lh*=Lf*∘Lπ!, both left adjoint to restriction composed with constant-sheaf pullback D(B′)→D(underline B). Accept right→left and recommend the linked prime-swap at10220; do not claim the one-word proposal alone closes the lemma.
+- Adverse evidence: Both composites are left adjoints, but the displayed statement10220 is itself ill-typed. h*:D(underline B)→D(underline B′), π!:D(underline B)→D(B), π′!:D(underline B′)→D(B′), f*:D(B)→D(B′). Therefore the typed identity is Lπ′!∘Lh*=Lf*∘Lπ!, both left adjoint to restriction composed with constant-sheaf pullback D(B′)→D(underline B). Accept right→left and recommend the linked prime-swap at10220; do not claim the one-word proposal alone closes the lemma.
+
+### Change 1: `MC-STK-ERR-1374-OP1`
+
+Pinned-official lines `10224-10224`; bytes `370328:370341`.
+
+````diff
+- right adjoint
++ left adjoint
+````
+
+Original SHA-256 `AAC515010A711C982B6E5DA4B3056335D6DC30927DB7062C201FEFE383EA24DB`; replacement SHA-256 `8D8CE98FA837F82AB49546A3BACAF999FC8F69E42558AEF8EF05FFEBFD9029CD`.
+
+### Change 2: `MC-STK-ERR-1374-OP2`
+
+Pinned-official lines `10220-10220`; bytes `370242:370280`.
+
+````diff
+- L\pi_! \circ Lh^* = Lf^* \circ L\pi'_!
++ L\pi'_! \circ Lh^* = Lf^* \circ L\pi_!
+````
+
+Original SHA-256 `C90D4FE51E72D0F2BCC2F3A303AA0CA46BF6DEDFFF82A5D825B77E93A1746D04`; replacement SHA-256 `0BD3076ADA9FDDFD30EEEE85D7E18B017BC1F98F667565D358196C18C9815044`.
+
+</details>
+
+<details id="mc-stk-err-1375">
+<summary><code>MC-STK-ERR-1375 — sites-cohomology.tex:sites-cohomology.tex:10490 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1375`; producer ID: `SITES-COHOMOLOGY-054`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10490`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10490) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: A morphism between two sheaves of rings is a map of sheaves of rings. The source phrase lacks its grammatical connecting words; the proposed replacement preserves mathematical meaning.
+
+### Change 1: `MC-STK-ERR-1375-OP1`
+
+Pinned-official lines `10490-10490`; bytes `381394:381414`.
+
+````diff
+- a map sheaf of rings
++ a map of sheaves of rings
+````
+
+Original SHA-256 `6B71B6B7926F1955CBAAC580C8777129E37580A456D7458DD0CD119ACF604C75`; replacement SHA-256 `44FFE389DF8383D6251FBE2414E5ED6E458EDDAF2292118DEEC0A73C0A84198F`.
+
+</details>
+
+<details id="mc-stk-err-1376">
+<summary><code>MC-STK-ERR-1376 — sites-cohomology.tex:sites-cohomology.tex:10591 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1376`; producer ID: `SITES-COHOMOLOGY-055`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10591`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10591) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The element is explicitly in K_n at10586, and10594 defines its summands by chains U_n→...→U_0. The first index at10591 must be n, not n+1.
+
+### Change 1: `MC-STK-ERR-1376-OP1`
+
+Pinned-official lines `10591-10591`; bytes `385003:385015`.
+
+````diff
+- U_{i, n + 1}
++ U_{i, n}
+````
+
+Original SHA-256 `A56156512E7CAE1D70B1ADE68DD6AE9FACB0E0D73521E05714FFEB224816FDC4`; replacement SHA-256 `407F19886854FF184E7668633A93C58E42541708F4A32327B915505EA13DF389`.
+
+</details>
+
+<details id="mc-stk-err-1377">
+<summary><code>MC-STK-ERR-1377 — sites-cohomology.tex:sites-cohomology.tex:10595 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1377`; producer ID: `SITES-COHOMOLOGY-056`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10595`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10595) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The argument needs distinct chains so a direct-sum element vanishes coefficientwise. The English idiom is at most once; are is a typographical substitution.
+
+### Change 1: `MC-STK-ERR-1377-OP1`
+
+Pinned-official lines `10595-10595`; bytes `385190:385210`.
+
+````diff
+- occurs are most once
++ occurs at most once
+````
+
+Original SHA-256 `4577A10450C6D850006882824762E4D912246C8EDCCBA074BCB545ACBFE0969B`; replacement SHA-256 `E0E421F2884F939645A6838EF116E7B014C57EAF3D2A01C8BC54E8ABBA99F92D`.
+
+</details>
+
+<details id="mc-stk-err-1378">
+<summary><code>MC-STK-ERR-1378 — sites-cohomology.tex:sites-cohomology.tex:10597 — editorial_or_notational_clarification</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1378`; producer ID: `SITES-COHOMOLOGY-057`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10597`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10597) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The vanishing is degree n as stated10586–10589, so K_n is precise. K_bullet may also be read as shorthand for vanishing in the underlying graded complex; accept only as degree-notation clarification, not evidence that the mathematical argument was false.
+- Adverse evidence: The vanishing is degree n as stated10586–10589, so K_n is precise. K_bullet may also be read as shorthand for vanishing in the underlying graded complex; accept only as degree-notation clarification, not evidence that the mathematical argument was false.
+
+### Change 1: `MC-STK-ERR-1378-OP1`
+
+Pinned-official lines `10597-10597`; bytes `385327:385354`.
+
+````diff
+- K_\bullet(\mathcal{F}^+)(V)
++ K_n(\mathcal{F}^+)(V)
+````
+
+Original SHA-256 `77046402E9E3090945E86FF2B149A9B1890154B3FAB727A527BDC3F24DE9A7E2`; replacement SHA-256 `5174435AA0103BD4E47B8178CEB69F5EF677BDAC3F520EE16A94F53E4863D41C`.
+
+</details>
+
+<details id="mc-stk-err-1379">
+<summary><code>MC-STK-ERR-1379 — sites-cohomology.tex:sites-cohomology.tex:10625 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1379`; producer ID: `SITES-COHOMOLOGY-058`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10625`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10625) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The value is a sheaf on D obtained by varying V∈D, as10574–10577 and10626–10628 show. Its domain remains presheaves on C; only the codomain changes.
+
+### Change 1: `MC-STK-ERR-1379-OP1`
+
+Pinned-official lines `10625-10625`; bytes `386516:386570`.
+
+````diff
+- \textit{PAb}(\mathcal{C}) \to \textit{Ab}(\mathcal{C})
++ \textit{PAb}(\mathcal{C}) \to \textit{Ab}(\mathcal{D})
+````
+
+Original SHA-256 `AFDE1B732C12724E669DBC09A8E6200E51DB3E0E34276B0730E582C25B187979`; replacement SHA-256 `F02536930DFC0C72788588FC02384529A95773904C33AF9AEA3C6AB78810E425`.
+
+</details>
+
+<details id="mc-stk-err-1380">
+<summary><code>MC-STK-ERR-1380 — sites-cohomology.tex:sites-cohomology.tex:10642 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1380`; producer ID: `SITES-COHOMOLOGY-059`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:10642`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L10642) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The math fragment is U over V=p(U) in D. No opening parenthesis precedes D; remove the unmatched closing character.
+
+### Change 1: `MC-STK-ERR-1380-OP1`
+
+Pinned-official lines `10642-10642`; bytes `387238:387250`.
+
+````diff
+- \mathcal{D})
++ \mathcal{D}
+````
+
+Original SHA-256 `59E0885520EB86E21C77F2E9B454AFC7721B62D1124F575FB57882B4F7164709`; replacement SHA-256 `F51BECF01423B2B11DB9D30CBFAE38BD5C108BFEE1D71ECCF00E821161DA8CE6`.
+
+</details>
+
+<details id="mc-stk-err-1381">
+<summary><code>MC-STK-ERR-1381 — sites-cohomology.tex:sites-cohomology.tex:12200 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1381`; producer ID: `SITES-COHOMOLOGY-060`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12200`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12200) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Only β_i is defined at12198; the cohomology assertion belongs to each local map. Restore its index.
+
+### Change 1: `MC-STK-ERR-1381-OP1`
+
+Pinned-official lines `12200-12200`; bytes `448500:448510`.
+
+````diff
+- H^j(\beta)
++ H^j(\beta_i)
+````
+
+Original SHA-256 `26331A439A6B1AFCD84CEA6C0D85F365AA04061454F789FE70AF07C3326A9947`; replacement SHA-256 `B6766AABF070D8DB3B19A93360C2775B1D0C97D2670337B08E73C0638605DFF6`.
+
+</details>
+
+<details id="mc-stk-err-1382">
+<summary><code>MC-STK-ERR-1382 — sites-cohomology.tex:sites-cohomology.tex:12204 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1382`; producer ID: `SITES-COHOMOLOGY-061`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12204`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12204) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The source/target in the following commutative square12209–12210 are K_i and L_i. γ_i is their local lift, so restore both indices in its declaration.
+
+### Change 1: `MC-STK-ERR-1382-OP1`
+
+Pinned-official lines `12204-12204`; bytes `448683:448737`.
+
+````diff
+- \gamma_i : \mathcal{K}^\bullet \to \mathcal{L}^\bullet
++ \gamma_i : \mathcal{K}_i^\bullet \to \mathcal{L}_i^\bullet
+````
+
+Original SHA-256 `DAFF46FEE72EF142E29D60CF614E771D9D256F226004C223BB82FB7394D5F7D1`; replacement SHA-256 `1D4C7F6F14310710C45D502FEA0B1F5C1BBC140268063B9BAFCBA8F7ABE42C32`.
+
+</details>
+
+<details id="mc-stk-err-1383">
+<summary><code>MC-STK-ERR-1383 — sites-cohomology.tex:sites-cohomology.tex:12258,12260 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1383`; producer ID: `SITES-COHOMOLOGY-062`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12258,12260`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12258-L12260) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The parallel α and β clauses each require the indefinite article an before isomorphism. One repeated transcription error in the paired hypothesis; both replacements are exact and mathematical content is unchanged.
+
+### Change 1: `MC-STK-ERR-1383-OP1`
+
+Pinned-official lines `12258-12258`; bytes `450766:450794`.
+
+````diff
+- H^i(\alpha)$ and isomorphism
++ H^i(\alpha)$ an isomorphism
+````
+
+Original SHA-256 `ED7B784A9852921AEEE61460E6A0F1276CE0A9259B844763784FDBD5F4986813`; replacement SHA-256 `EF835BA4AB1FE7DF23B5E63CD2A06FEBF268DF036D4D13B6BDD825A2CB4832E0`.
+
+### Change 2: `MC-STK-ERR-1383-OP2`
+
+Pinned-official lines `12260-12260`; bytes `450844:450871`.
+
+````diff
+- H^i(\beta)$ and isomorphism
++ H^i(\beta)$ an isomorphism
+````
+
+Original SHA-256 `3E8503FB464A2D47395408A895609AA9ACDC3940E5527D3CE3AA588BE9BD632C`; replacement SHA-256 `A4C995473F9D704EDE0BA45A8778931053061BC1CF0FC19470FBEE930749AE65`.
+
+</details>
+
+<details id="mc-stk-err-1384">
+<summary><code>MC-STK-ERR-1384 — sites-cohomology.tex:sites-cohomology.tex:12326 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1384`; producer ID: `SITES-COHOMOLOGY-063`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12326`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12326) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: is can be generated has two incompatible verb forms. Removing is leaves the intended finite-generation assertion.
+
+### Change 1: `MC-STK-ERR-1384-OP1`
+
+Pinned-official lines `12326-12326`; bytes `453278:453306`.
+
+````diff
+- $H^m(K)$ is can be generated
++ $H^m(K)$ can be generated
+````
+
+Original SHA-256 `37879A76305381B35EB1EADBAF2A1C8C21B1914F47321700F323D49EDAA8A568`; replacement SHA-256 `3824B053C4527E64B60CF283C9F912A72F53997E774352147CB6008A4DAF054D`.
+
+</details>
+
+<details id="mc-stk-err-1385">
+<summary><code>MC-STK-ERR-1385 — sites-cohomology.tex:sites-cohomology.tex:12340 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1385`; producer ID: `SITES-COHOMOLOGY-064`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12340`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12340) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The proof defines the strictly perfect script-E complex12332 and inducts on its highest nonzero degree12336. H^n of that same complex vanishes; plain E is not the defined complex.
+
+### Change 1: `MC-STK-ERR-1385-OP1`
+
+Pinned-official lines `12340-12340`; bytes `454146:454160`.
+
+````diff
+- H^n(E^\bullet)
++ H^n(\mathcal{E}^\bullet)
+````
+
+Original SHA-256 `F718FDE48A3DA349EF4978B6CFF442F84FAFC987D510DFF20A914BB6DB387CA6`; replacement SHA-256 `30C2A7C99396DAFBC98C9B3AA9722ED40415DD16DB709A02B0A2D1C84AF800AB`.
+
+</details>
+
+<details id="mc-stk-err-1386">
+<summary><code>MC-STK-ERR-1386 — sites-cohomology.tex:sites-cohomology.tex:12461 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1386`; producer ID: `SITES-COHOMOLOGY-065`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12461`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12461) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The bounded-above flat resolution is script-K at12451–12460; its truncation and remaining terms12462 are script-K. Restore that decoration in the intervening sentence.
+
+### Change 1: `MC-STK-ERR-1386-OP1`
+
+Pinned-official lines `12461-12461`; bytes `458800:458832`.
+
+````diff
+- $K^\bullet$ is a complex of flat
++ $\mathcal{K}^\bullet$ is a complex of flat
+````
+
+Original SHA-256 `75136257B0E22D63037B73B7CC162866288DC85E08231AE0C7346CC2DE556837`; replacement SHA-256 `E33F8888BB5BDE44AA0FD995D545B16BFDDA2E1EAE119265D6CD34ED498ACD2A`.
+
+</details>
+
+<details id="mc-stk-err-1387">
+<summary><code>MC-STK-ERR-1387 — sites-cohomology.tex:sites-cohomology.tex:12538 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1387`; producer ID: `SITES-COHOMOLOGY-066`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12538`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12538) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The By Lemma introductory phrase continues with the complex on12539. Replacing the period with a comma reconnects the sentence without changing the reference.
+
+### Change 1: `MC-STK-ERR-1387-OP1`
+
+Pinned-official lines `12538-12538`; bytes `461982:462031`.
+
+````diff
+- By Lemma \ref{lemma-K-flat-two-out-of-three-ses}.
++ By Lemma \ref{lemma-K-flat-two-out-of-three-ses},
+````
+
+Original SHA-256 `696DFE30D9DFFBF60C49B85FABF23923050FD3D8C92D2AD4FF1BFFC2064D93CE`; replacement SHA-256 `A0CBBC7E33227C06DFCFA4B29D7E005EDD072CDCB763D334B52D8CDD3F43E4C1`.
+
+</details>
+
+<details id="mc-stk-err-1388">
+<summary><code>MC-STK-ERR-1388 — sites-cohomology.tex:sites-cohomology.tex:12555 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1388`; producer ID: `SITES-COHOMOLOGY-067`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12555`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12555) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: 12555 has a redundant of before the named complex, while12560 independently has a singular subject with plural are. Both replacements are valid, but these are two distinct grammatical defects and should be two semantic subunits under the same producer row, not one mathematical defect.
+
+### Change 1: `MC-STK-ERR-1388-OP1`
+
+Pinned-official lines `12555-12555`; bytes `462552:462581`.
+
+````diff
+- represent $E$ by a complex of
++ represent $E$ by a complex
+````
+
+Original SHA-256 `CB7B0E51C2B815F9311362E307097BF2B5BEDF887C488690786D5A5C29144761`; replacement SHA-256 `82E8ABB76EFDE86D024E364069B61D4C3BF5B992DFAEE1ABE9A8F1552F64D577`.
+
+</details>
+
+<details id="mc-stk-err-1389">
+<summary><code>MC-STK-ERR-1389 — sites-cohomology.tex:sites-cohomology.tex:12560 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1389`; producer ID: `SITES-COHOMOLOGY-067`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:12560`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L12560) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: 12555 has a redundant of before the named complex, while12560 independently has a singular subject with plural are. Both replacements are valid, but these are two distinct grammatical defects and should be two semantic subunits under the same producer row, not one mathematical defect.
+
+### Change 1: `MC-STK-ERR-1389-OP1`
+
+Pinned-official lines `12560-12560`; bytes `462808:462846`.
+
+````diff
+- the module $f^*\mathcal{E}^i$ are flat
++ the modules $f^*\mathcal{E}^i$ are flat
+````
+
+Original SHA-256 `98963B1059E73316F6A4D419C2A39F24C0325BA135941C11C53F6458CD8CCEF1`; replacement SHA-256 `05F182DD09D20E3DBFEA22AD995AD98276C37F7D527C9FDD2FC3329AF1872F78`.
+
+</details>
+
+<details id="mc-stk-err-1390">
+<summary><code>MC-STK-ERR-1390 — sites-cohomology.tex:sites-cohomology.tex:13066 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1390`; producer ID: `SITES-COHOMOLOGY-068`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13066`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13066) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: After will the verb is use. us is a spelling omission.
+
+### Change 1: `MC-STK-ERR-1390-OP1`
+
+Pinned-official lines `13066-13066`; bytes `480870:480904`.
+
+````diff
+- We will us without further mention
++ We will use without further mention
+````
+
+Original SHA-256 `34FAC934C07CFB3E0685668B1DF82B61C361FD245E6A6B127ADA41FC185DC1A8`; replacement SHA-256 `1E352B637909C6B3DC7A4288CEA0F19C5532048FF18D009319C3DC4B2029B076`.
+
+</details>
+
+<details id="mc-stk-err-1391">
+<summary><code>MC-STK-ERR-1391 — sites-cohomology.tex:sites-cohomology.tex:13073,13074,13075 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1391`; producer ID: `SITES-COHOMOLOGY-069`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13073,13074,13075`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13073-L13075) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The lemma13049 is on an arbitrary ringed site (C,O), with dual defined against O13051. X is nowhere supplied. All three operations remove a copied topological-space subscript from one biduality display.
+
+### Change 1: `MC-STK-ERR-1391-OP1`
+
+Pinned-official lines `13073-13073`; bytes `481232:481276`.
+
+````diff
+- K = R\SheafHom(\mathcal{O}_X, \mathcal{O}_X)
++ K = R\SheafHom(\mathcal{O}, \mathcal{O})
+````
+
+Original SHA-256 `AF427D51A5B09595C7C527B2CA2512A7941906D52629E844556F6DC7B04C41C2`; replacement SHA-256 `973C1DB64BA5B403841E7EE3CECC6276DD9ED65234B01CD6F19DFFB3F38A2DBF`.
+
+### Change 2: `MC-STK-ERR-1391-OP2`
+
+Pinned-official lines `13074-13074`; bytes `481277:481313`.
+
+````diff
+- \otimes_{\mathcal{O}_X}^\mathbf{L} K
++ \otimes_{\mathcal{O}}^\mathbf{L} K
+````
+
+Original SHA-256 `5AAC8AAA92B217A1F478ECB2A48D4CE8F1FACC1915982561F3BFDBF6BB436E12`; replacement SHA-256 `68A7A51C2072A7D08ADD710EA76869EF76DC47577925137C6FBF9FE46AD5E248`.
+
+### Change 3: `MC-STK-ERR-1391-OP3`
+
+Pinned-official lines `13075-13075`; bytes `481330:481385`.
+
+````diff
+- R\SheafHom(R\SheafHom(K, \mathcal{O}_X), \mathcal{O}_X)
++ R\SheafHom(R\SheafHom(K, \mathcal{O}), \mathcal{O})
+````
+
+Original SHA-256 `B4403F75B1DA64A61FC2B2C41E74601DC040CF6E6A2E59F0E9FA45D6A537FFDA`; replacement SHA-256 `64B6EA0512ABBE5916D7DF1141BABDE8CD2F401F72DEA2C51114DFD2C92D7A52`.
+
+</details>
+
+<details id="mc-stk-err-1392">
+<summary><code>MC-STK-ERR-1392 — sites-cohomology.tex:sites-cohomology.tex:13609 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1392`; producer ID: `SITES-COHOMOLOGY-070`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13609`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13609) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: a:R→Tot and b:Tot→R at13604–13605. dh+hd is an endomorphism of Tot, so it equals ab−1, whereas ba=1 is the separate identity on R. This matches αβ homotopic to1 at13584–13593.
+
+### Change 1: `MC-STK-ERR-1392-OP1`
+
+Pinned-official lines `13609-13609`; bytes `502277:502322`.
+
+````diff
+- $b \circ a = 1$ and $b \circ a - 1 = dh + hd$
++ $b \circ a = 1$ and $a \circ b - 1 = dh + hd$
+````
+
+Original SHA-256 `C46D82518CDB77C55D60753D2307A66930BCDD7A626EE2F79D8E5A7844A4F34A`; replacement SHA-256 `6634305B4A0067461A0D018FDCC789505AA3BDC8E7997C80721BAABEF78226DD`.
+
+</details>
+
+<details id="mc-stk-err-1393">
+<summary><code>MC-STK-ERR-1393 — sites-cohomology.tex:sites-cohomology.tex:13857 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1393`; producer ID: `SITES-COHOMOLOGY-071`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13857`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13857) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Item2 is the derived-limit assertion for K; item3 at13813–13816 is exactly the inverse system with surjective transition maps. Correct the reference in the proof of3.
+
+### Change 1: `MC-STK-ERR-1393-OP1`
+
+Pinned-official lines `13857-13857`; bytes `511830:511848`.
+
+````diff
+- a system as in (2)
++ a system as in (3)
+````
+
+Original SHA-256 `A5570107A9DD169D6B9344E27F089112C089D6BF8F23160E117DA993FDE40AC0`; replacement SHA-256 `DF2B0210D8B765370DC6148DF81115DB9610370926A844E2EAF6F67FCCF963C9`.
+
+</details>
+
+<details id="mc-stk-err-1394">
+<summary><code>MC-STK-ERR-1394 — sites-cohomology.tex:sites-cohomology.tex:13961,13976,13998 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1394`; producer ID: `SITES-COHOMOLOGY-072`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13961,13976,13998`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13961-L13998) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The ambient category is the Grothendieck category A at13935 and K∈D(A)13949. No R is introduced. All three occurrences belong to the same compact-object proof and must use A.
+
+### Change 1: `MC-STK-ERR-1394-OP1`
+
+Pinned-official lines `13961-13961`; bytes `515450:515460`.
+
+````diff
+- $D^{-}(R)$
++ $D^{-}(\mathcal{A})$
+````
+
+Original SHA-256 `99709D713FF405B2A1A38B1E60B2F7FB16757F337B3ABCB7DF2C0E96287A7AE4`; replacement SHA-256 `81F1CF8B659F96CA860FC0724E2B46D1B79E0288FB6493C775E95ED1BE7DBDEC`.
+
+### Change 2: `MC-STK-ERR-1394-OP2`
+
+Pinned-official lines `13976-13976`; bytes `516092:516098`.
+
+````diff
+- $D(R)$
++ $D(\mathcal{A})$
+````
+
+Original SHA-256 `AE2103C6076E05DB2C7AAE457772F8CD26D4D9B5F915F89BE4337A7C62FA192D`; replacement SHA-256 `3F43A9C26AE95C748FF3ACA34F5A5CBC45B72FE0D0ABC2F4FC0530AF445A44E7`.
+
+### Change 3: `MC-STK-ERR-1394-OP3`
+
+Pinned-official lines `13998-13998`; bytes `517105:517111`.
+
+````diff
+- $D(R)$
++ $D(\mathcal{A})$
+````
+
+Original SHA-256 `AE2103C6076E05DB2C7AAE457772F8CD26D4D9B5F915F89BE4337A7C62FA192D`; replacement SHA-256 `3F43A9C26AE95C748FF3ACA34F5A5CBC45B72FE0D0ABC2F4FC0530AF445A44E7`.
+
+</details>
+
+<details id="mc-stk-err-1395">
+<summary><code>MC-STK-ERR-1395 — sites-cohomology.tex:sites-cohomology.tex:13984 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1395`; producer ID: `SITES-COHOMOLOGY-073`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:13984`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L13984) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The predicate L^i a finite direct sum lacks is; insert it without changing the degree quantifier.
+
+### Change 1: `MC-STK-ERR-1395-OP1`
+
+Pinned-official lines `13984-13984`; bytes `516445:516475`.
+
+````diff
+- that $L^i$ a finite direct sum
++ that $L^i$ is a finite direct sum
+````
+
+Original SHA-256 `DEC7C1FC26EBC3EB0CAF3279E81EBA6E292D8F580CCF9A374427FC8BD5DF62C5`; replacement SHA-256 `9D19C2B8C70BB8BF22055FD4B664192A96F2E76CDBFBA5AEF99737D3BCD03273`.
+
+</details>
+
+<details id="mc-stk-err-1396">
+<summary><code>MC-STK-ERR-1396 — sites-cohomology.tex:sites-cohomology.tex:14011,14014 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1396`; producer ID: `SITES-COHOMOLOGY-074`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14011,14014`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14011-L14014) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The claim fixes the first potentially infinite degree c at13983–13985, and L^c is decomposed14001. Its quotient projection is concentrated in degree c, i.e. shifted by[-c]; both display and explanation must agree.
+
+### Change 1: `MC-STK-ERR-1396-OP1`
+
+Pinned-official lines `14011-14011`; bytes `517588:517602`.
+
+````diff
+- E_\lambda)[-i]
++ E_\lambda)[-c]
+````
+
+Original SHA-256 `97AD287060E6756CEF5AC2CCEC3BE594F2D4283CE9341790D7ECE964DCF37DD1`; replacement SHA-256 `0EC1D9C92CC8808E427EDE714149177C2DA74A69F565DF2EE8E898F582863815`.
+
+### Change 2: `MC-STK-ERR-1396-OP2`
+
+Pinned-official lines `14014-14014`; bytes `517693:517706`.
+
+````diff
+- in degree $i$
++ in degree $c$
+````
+
+Original SHA-256 `25E386BB1E7F38177C810A1848BE048CAA06C72EC980F37C7DFECBE6218ED2B2`; replacement SHA-256 `38284C3F3FA792838A6B97ABC536950D090DFD38E1CF5DF62332D50FC27A33B7`.
+
+</details>
+
+<details id="mc-stk-err-1397">
+<summary><code>MC-STK-ERR-1397 — sites-cohomology.tex:sites-cohomology.tex:14089 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1397`; producer ID: `SITES-COHOMOLOGY-075`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14089`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14089) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: Injectives have zero positive cohomology, not necessarily zero sections. On a one-point site a nonzero injective already contradicts p=0. Restrict the stated vanishing to p>0.
+
+### Change 1: `MC-STK-ERR-1397-OP1`
+
+Pinned-official lines `14089-14089`; bytes `521031:521042`.
+
+````diff
+- for all $p$
++ for all $p > 0$
+````
+
+Original SHA-256 `66C2E7ACE9153CEED17C48DF6E7DF64DA076381AD8C37AD93184872A1AE372F0`; replacement SHA-256 `61E139986EAE655007D8EAB378D86BF10C318CA67FB3522AEBE88C45E755F17F`.
+
+</details>
+
+<details id="mc-stk-err-1398">
+<summary><code>MC-STK-ERR-1398 — sites-cohomology.tex:sites-cohomology.tex:14102 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1398`; producer ID: `SITES-COHOMOLOGY-076`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14102`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14102) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The direct-sum commutation identifies Γ(U,⊕I_i) with ⊕Γ(U,I_i); a second inner sum duplicates the family and does not give the last term⊕RΓ(U,M_i). Remove only the inner sum.
+
+### Change 1: `MC-STK-ERR-1398-OP1`
+
+Pinned-official lines `14102-14102`; bytes `521705:521757`.
+
+````diff
+- \bigoplus \Gamma(U, \bigoplus \mathcal{I}_i^\bullet)
++ \bigoplus \Gamma(U, \mathcal{I}_i^\bullet)
+````
+
+Original SHA-256 `EBA905EBD4BAA50860D8B53F448A91F95E67794C48178B6EC3C9186396890175`; replacement SHA-256 `0305A4CBEB1021567A3FFCF6C2E5C3B11FA2DFF197DBDC9650FBEADFD34F3178`.
+
+</details>
+
+<details id="mc-stk-err-1399">
+<summary><code>MC-STK-ERR-1399 — sites-cohomology.tex:sites-cohomology.tex:14275,14276 — source_defect</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1399`; producer ID: `SITES-COHOMOLOGY-077`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14275,14276`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14275-L14276) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: There are finitely many generators x_1,...,x_r at14269. Each locally lifts; a common refinement of their finitely many coverings makes every x_j lift on every U_i. This simultaneous lifting, not one generator per cover member, is needed for the rank-r map14278.
+
+### Change 1: `MC-STK-ERR-1399-OP1`
+
+Pinned-official lines `14275-14275`; bytes `528383:528457`.
+
+````diff
+- there exists a covering $\{U_i \to X\}$ such that $x_i \in H^0(X, H^b(K))$
++ there exists a covering $\{U_i \to X\}$ such that for every $i$ and every $j = 1, \ldots, r$
+````
+
+Original SHA-256 `0393C5112F3CBDD378AFD5A3B6CB957A1955A1658CB7DF8C3489E4634787F610`; replacement SHA-256 `4DF2E1C6016CF0564F82BC570F5DF4CBABD03DCA7183657D47911E9B0AE18C57`.
+
+### Change 2: `MC-STK-ERR-1399-OP2`
+
+Pinned-official lines `14276-14276`; bytes `528458:528494`.
+
+````diff
+- lifts to an element of $H^b(U_i, K)$
++ the class $x_j \in H^0(X, H^b(K))$ lifts to an element of $H^b(U_i, K)$
+````
+
+Original SHA-256 `83C22ACD2883700A1FCFA67DAC4C92FE0D2828526E846B43141EDF7A79C597F7`; replacement SHA-256 `49F478AA45373E8B6AAC1153295C2962B962F2549B9F68D64646B54A1656247E`.
+
+</details>
+
+<details id="mc-stk-err-1400">
+<summary><code>MC-STK-ERR-1400 — sites-cohomology.tex:sites-cohomology.tex:14297 — editorial_or_notational_clarification</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1400`; producer ID: `SITES-COHOMOLOGY-078`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14297`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14297) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The section explicitly defines D(C,Λ) at14243–14244 for modules over underlineΛ. Using the defined abbreviation here is consistent. Classify as notation normalization, not a change of the actual category.
+- Adverse evidence: The section explicitly defines D(C,Λ) at14243–14244 for modules over underlineΛ. Using the defined abbreviation here is consistent. Classify as notation normalization, not a change of the actual category.
+
+### Change 1: `MC-STK-ERR-1400-OP1`
+
+Pinned-official lines `14297-14297`; bytes `529339:529376`.
+
+````diff
+- $D(\mathcal{C}, \underline{\Lambda})$
++ $D(\mathcal{C}, \Lambda)$
+````
+
+Original SHA-256 `7A0E9AA145FA874F36999D86EABDC7EDCFC77B828798ABFD9414364E2C92A7B6`; replacement SHA-256 `FF8C9C00FEB18B0AE9BCF5E557AA10683E5B27503A43600CA42AB0F9386C6DFD`.
+
+</details>
+
+<details id="mc-stk-err-1401">
+<summary><code>MC-STK-ERR-1401 — sites-cohomology.tex:sites-cohomology.tex:14299 — editorial_or_notational_clarification</code></summary>
+
+- Overlay: `stacks-errata-a04446e-r39`
+- Stable ID: `MC-STK-ERR-1401`; producer ID: `SITES-COHOMOLOGY-079`
+- Bound source locator: `sites-cohomology.tex:sites-cohomology.tex:14299`
+- Registry admission: `admitted`.
+- Historical candidate status: `accepted_source_proposal_not_admitted`; candidate review state: `performed`. This frozen field is not the current admission status.
+- Fidelity: `manifest-bound exact operation`
+- Links: [Official](https://github.com/stacks/stacks-project/blob/a04446e57ec1fbc252a871afcec7752fb2807b14/sites-cohomology.tex#L14299) · [Integrated source](sites-cohomology.tex) · [Manifest](ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json) · [Source map](ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl) · [Stable units](ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json) · [Independent review](ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json)
+- Rationale: The distinguished triangle14282–14283 already has underline(Λ^r). The map cited14299 is its final arrow, so repeat that sheaf decoration. Plain Λ^r is an understandable constant-sheaf shorthand but less precise; classify as notation clarification.
+- Adverse evidence: The distinguished triangle14282–14283 already has underline(Λ^r). The map cited14299 is its final arrow, so repeat that sheaf decoration. Plain Λ^r is an understandable constant-sheaf shorthand but less precise; classify as notation clarification.
+
+### Change 1: `MC-STK-ERR-1401-OP1`
+
+Pinned-official lines `14299-14299`; bytes `529465:529499`.
+
+````diff
+- $L \to \Lambda^{\oplus r}[-b + 1]$
++ $L \to \underline{\Lambda^{\oplus r}}[-b + 1]$
+````
+
+Original SHA-256 `FC3993D3DE4ED57B40739558227C63A8F381DFA0996936087BD3C9A9B22FF265`; replacement SHA-256 `DDE32567EF8F7B1F48A9326AACCEFFDB5C3A9EAF8BA2D2CF3D44B3BE3696958C`.
 
 </details>

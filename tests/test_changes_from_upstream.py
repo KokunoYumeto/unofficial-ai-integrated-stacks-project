@@ -27,11 +27,11 @@ class ChangesFromUpstreamTests(unittest.TestCase):
         cls.model, cls.payloads = cls.generator.generated_payloads(ROOT)
 
     def test_complete_errata_registry_coverage(self) -> None:
-        self.assertEqual(self.model.overlay_count, 38)
-        self.assertEqual(self.model.unit_count, 1094)
-        self.assertEqual(self.model.exact_operation_count, 1243)
+        self.assertEqual(self.model.overlay_count, 39)
+        self.assertEqual(self.model.unit_count, 1137)
+        self.assertEqual(self.model.exact_operation_count, 1304)
         self.assertEqual(self.model.reconstructed_operation_count, 68)
-        self.assertEqual(self.model.operation_count, 1311)
+        self.assertEqual(self.model.operation_count, 1372)
         self.assertEqual(self.model.source_count, 25)
         self.assertEqual(
             self.model.excluded_overlay_ids,
@@ -47,6 +47,15 @@ class ChangesFromUpstreamTests(unittest.TestCase):
         second_model, second_payloads = self.generator.generated_payloads(ROOT)
         self.assertEqual(self.model, second_model)
         self.assertEqual(self.payloads, second_payloads)
+
+    def test_markdown_has_no_invisible_trailing_whitespace(self) -> None:
+        markdown = self.payloads[self.generator.MARKDOWN_REL].decode("utf-8")
+        offending = [
+            (line_number, line)
+            for line_number, line in enumerate(markdown.splitlines(), 1)
+            if line.endswith((" ", "\t"))
+        ]
+        self.assertEqual(offending, [])
 
     def test_markdown_and_html_expose_both_sides(self) -> None:
         markdown = self.payloads[self.generator.MARKDOWN_REL].decode("utf-8")
@@ -64,7 +73,7 @@ class ChangesFromUpstreamTests(unittest.TestCase):
         self.assertIn("Unofficial Stacks Project AI Drafts", page)
         self.assertIn("Registry admission", page)
         self.assertIn("Historical candidate status", page)
-        self.assertEqual(page.count('class="change-card"'), 1094)
+        self.assertEqual(page.count('class="change-card"'), 1137)
         self.assertIn('id="search"', page)
         self.assertIn('id="overlay"', page)
         self.assertIn('id="source"', page)

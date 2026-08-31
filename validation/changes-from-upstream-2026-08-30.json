@@ -1,18 +1,18 @@
 {
   "coverage": {
     "affected_source_path_count": 25,
-    "displayed_change_hunk_count": 1311,
+    "displayed_change_hunk_count": 1372,
     "hash_bound_reconstructed_legacy_hunk_count": 68,
-    "manifest_bound_exact_operation_count": 1243,
+    "manifest_bound_exact_operation_count": 1304,
     "missing_stable_ids": [],
-    "stable_unit_count": 1094,
+    "stable_unit_count": 1137,
     "unbound_display_rows": []
   },
   "generator": {
-    "bytes": 57641,
+    "bytes": 57917,
     "check_command": "python tools/generate_changes_from_upstream.py --check",
     "path": "tools/generate_changes_from_upstream.py",
-    "sha256": "02BA4084735334631737EE8C8331D7FA28F5C6A48F3A7E4126B92F51F7F5429A",
+    "sha256": "A93501D90E636AE13FDDF00B4247079C493DE9E08B9C8187960190E4AD45D3BD",
     "test_command": "python -m unittest tests.test_changes_from_upstream"
   },
   "input_closure": [
@@ -222,6 +222,11 @@
       "sha256": "9636737033D82B50569C81C697EDB8ACC5A0A9EB65F04D25FBF32E3D5C5F1A52"
     },
     {
+      "bytes": 11133,
+      "path": "ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json",
+      "sha256": "879FB3790D808707B343CD583E7E257F3DBB3035166636598992F7886E6223E0"
+    },
+    {
       "bytes": 15448,
       "path": "ai-integrated/candidates/commons/stacks/errata/r4/candidate.manifest.json",
       "sha256": "23689FD1C97501468D8E137BB89D149187241F65382A838958CF8DB855FF2465"
@@ -267,9 +272,9 @@
       "sha256": "F4694DF73A9676EB6B07971EBCA8C96A141DA40B6E7ED8790D8478AA97DA4591"
     },
     {
-      "bytes": 63508,
+      "bytes": 65552,
       "path": "ai-integrated/registry/overlays.json",
-      "sha256": "C1A561855086A651B210537410D2767037E19926049E6AC557309B6333CEBEB4"
+      "sha256": "A259CAA4DBB502B35B7F0F0759D093CF59811D1590228B93AFD4D1714DC14FF0"
     },
     {
       "bytes": 1771230,
@@ -1407,6 +1412,41 @@
       "sha256": "6E4C3C6A7387A96638A006A4B07E17C940DB217D67652B7719304E1A9ADB339A"
     },
     {
+      "bytes": 534394,
+      "path": "candidates/commons/stacks/errata/r39/authority/source/sites-cohomology.tex",
+      "sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C"
+    },
+    {
+      "bytes": 19842,
+      "path": "candidates/commons/stacks/errata/r39/decisions.jsonl",
+      "sha256": "61C94F1D78DEF2C2D9FF305BCA4521445B314DFB0537AE4F3E03EF77B957C3E9"
+    },
+    {
+      "bytes": 53100,
+      "path": "candidates/commons/stacks/errata/r39/operation-spec.json",
+      "sha256": "CC437C00386E55B1978EE208245FD36B7BA59D6CAE2461DD271773242E0468F8"
+    },
+    {
+      "bytes": 534485,
+      "path": "candidates/commons/stacks/errata/r39/payload/sites-cohomology.tex",
+      "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+    },
+    {
+      "bytes": 5746,
+      "path": "candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json",
+      "sha256": "E940BF704B7D08A4169E73669A0A614652D9B3C32B4BC31669B8AEFB769A61CB"
+    },
+    {
+      "bytes": 77280,
+      "path": "candidates/commons/stacks/errata/r39/source-map.jsonl",
+      "sha256": "F52F9962519FCFA47C5E10FBCDC44B7A6F9227D23CE6D55BE77FA3F11E7EE453"
+    },
+    {
+      "bytes": 21146,
+      "path": "candidates/commons/stacks/errata/r39/stable-units.json",
+      "sha256": "9BFCB556DD0A9ACD68090386A7AA04730409BF236D5EE448C070DE696C34937F"
+    },
+    {
       "bytes": 184841,
       "path": "candidates/commons/stacks/errata/r4/authority/source/sheaves.tex",
       "sha256": "AC4F9EDC7DB85E66329806EC9EA42816187A469772844BAEA663E1C9A9F00B38"
@@ -1633,14 +1673,14 @@
   },
   "outputs": [
     {
-      "bytes": 1954385,
+      "bytes": 2035541,
       "path": "CHANGES_FROM_UPSTREAM.md",
-      "sha256": "32D1A001E186E3F12EB2C77BA18C79CFF828B207B77AF48186E4E83F17002A75"
+      "sha256": "E149C827697F8C4BD54C491AA791F53ACD287B02DBB3BC00C963B31524850AFC"
     },
     {
-      "bytes": 3114625,
+      "bytes": 3242082,
       "path": "ai-integrated/changes/index.html",
-      "sha256": "DF89FEC8FE71ED569ADAFC75C13FE4C4C52107910DA1AC8E1038DC665E9ADE19"
+      "sha256": "B0FA18718A377837F80A3A7B748721F0F96510A0F4BC1829881D6FE47EE68F37"
     }
   ],
   "privacy": {
@@ -1648,12 +1688,12 @@
     "credentials_in_receipt": false
   },
   "registry": {
-    "errata_overlay_count": 38,
+    "errata_overlay_count": 39,
     "excluded_non_errata_overlays": [
       "stacks-verdier-a04446e-1-2-13-r1"
     ],
     "path": "ai-integrated/registry/overlays.json",
-    "sha256": "C1A561855086A651B210537410D2767037E19926049E6AC557309B6333CEBEB4"
+    "sha256": "A259CAA4DBB502B35B7F0F0759D093CF59811D1590228B93AFD4D1714DC14FF0"
   },
   "schema": "unofficial-ai-integrated-stacks-changes-from-upstream-validation/v1",
   "scope": "reader-facing admitted Stacks errata comparison; mathematical TeX unchanged",

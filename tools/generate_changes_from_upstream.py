@@ -839,7 +839,12 @@ def markdown_escape(value: str) -> str:
 def diff_block(operation: Operation) -> str:
     old_lines = operation.old_text.splitlines() or [""]
     new_lines = operation.replacement_text.splitlines() or [""]
-    lines = [f"- {line}" for line in old_lines] + [f"+ {line}" for line in new_lines]
+    # Empty replacements should render as a bare diff marker, not as a marker
+    # followed by invisible trailing whitespace. Exact bytes remain available
+    # through the bound operation data and hashes immediately below the block.
+    lines = [f"- {line}".rstrip(" \t") for line in old_lines] + [
+        f"+ {line}".rstrip(" \t") for line in new_lines
+    ]
     return "````diff\n" + "\n".join(lines) + "\n````"
 
 
@@ -861,7 +866,7 @@ def render_markdown(model: Model) -> str:
         f"- Affected source paths: **{model.source_count:,}**",
         f"- Registry SHA-256: `{model.registry_sha256}`",
         "",
-        "[Open the offline filterable browser](ai-integrated/changes/index.html) · ",
+        "[Open the offline filterable browser](ai-integrated/changes/index.html) · "
         "[Open the admitted registry](ai-integrated/registry/overlays.json)",
         "",
         "## How to read the fidelity labels",
