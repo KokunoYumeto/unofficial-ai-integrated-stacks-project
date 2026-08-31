@@ -280,6 +280,49 @@
         "prospective_full_bytes": 57781,
         "prospective_full_sha256": "56B778FF148644E9953A5E87D9420C715C2F4F90E84AFD7389B80206AED87038"
       }
+    },
+    "ega:I.6.6.4": {
+      "receipt": "F37ZW.json",
+      "receipt_sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0",
+      "path": "ega1/ega1-6-fr.tex",
+      "full_bytes": 57781,
+      "full_sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+      "lf_line_start": 1067,
+      "lf_line_end": 1121,
+      "slice_bytes": 3114,
+      "slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+      "statement_lf_line_start": 1067,
+      "statement_lf_line_end": 1085,
+      "statement_bytes": 993,
+      "statement_sha256": "14F12025ABB9DD9297975B3B12558BF03F38428B31718E3570A3C79B389709AF",
+      "proof_lf_line_start": 1087,
+      "proof_lf_line_end": 1117,
+      "proof_bytes": 1943,
+      "proof_sha256": "D7DC4235D086D176AF20A908AAD61572C690D2C5BB84F27EC7F6DB22111E5D42",
+      "base_change_proof_lf_line_start": 1104,
+      "base_change_proof_lf_line_end": 1117,
+      "base_change_proof_bytes": 810,
+      "base_change_proof_sha256": "294E9925570B8D1BF240DE2D29EFCFB7409B8A4878E8A2E602EA13495D23B345",
+      "binary_sum_lf_line_start": 1119,
+      "binary_sum_lf_line_end": 1121,
+      "binary_sum_bytes": 176,
+      "binary_sum_sha256": "D1DA0EE6876E59C88147AEA8D384FDA25358C74B14726CABB659F2929C738059",
+      "root_proof_completion": {
+        "path": "schemes.tex",
+        "label": "lemma-quasi-compact-preserved-base-change",
+        "official_tag": "01K5",
+        "statement_changed": false,
+        "preimage_bytes": 230,
+        "preimage_sha256": "A37612375252BF61767A8175DF9E6C27DD76E17B7717D38A4522C790AF596634",
+        "postimage_bytes": 1195,
+        "postimage_sha256": "CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123",
+        "proof_bytes": 1000,
+        "proof_sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861",
+        "dependencies": [
+          "01K4",
+          "01JS"
+        ]
+      }
     }
   },
   "reviewed_errata_slices": {
@@ -459,19 +502,19 @@
   },
   "statement_review_snapshot": {
     "file": "smap.csv",
-    "statement_edge_rows": 1242,
-    "file_rows": 1249,
+    "statement_edge_rows": 1252,
+    "file_rows": 1259,
     "superseded_rows": 7,
-    "source_units": 416,
-    "existing_official_tag_rows": 1229,
-    "distinct_existing_official_tags": 347,
+    "source_units": 418,
+    "existing_official_tag_rows": 1239,
+    "distinct_existing_official_tags": 350,
     "local_untagged_rows": 13,
     "full_statement_equivalences": 61
   },
   "residual_snapshot": {
     "file": "resid.csv",
-    "rows": 800,
-    "file_rows": 825,
+    "rows": 804,
+    "file_rows": 829,
     "superseded_rows": 25,
     "open_gaps": 12,
     "integrated_local_mirror": 13

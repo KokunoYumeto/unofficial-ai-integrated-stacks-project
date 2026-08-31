@@ -1,0 +1,37 @@
+{
+  "schema": "unofficial-stacks-project-ai-drafts-ega-independent-review/v1",
+  "status": "PASS_LOCAL_REVIEW_ONLY",
+  "reviewer": "Codex /root/r37_r38_admission_review",
+  "base_commit": "bb6e7ccca41fe00a06815d81e174c5261e7a1ce3",
+  "implementation_receipt": {
+    "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+    "bytes": 28005,
+    "sha256": "C55A2320FBF3C6B0D0655CFEA2943119F239085C56AC0D891652B81777AF0C6D"
+  },
+  "source_unit": "EGA I 6.6.4",
+  "next_source_unit": "EGA I 6.6.5",
+  "root_source": {
+    "path": "schemes.tex",
+    "bytes": 189721,
+    "sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233",
+    "statement_and_tag_01K5_unchanged": true,
+    "only_omitted_proof_replaced": true,
+    "surrounding_bytes_unchanged": true
+  },
+  "findings": [
+    "The finite-affine-cover proof is valid for arbitrary base change using earlier 01K4 and 01JS, without circularity or additional hypotheses.",
+    "All ten source mappings are mathematically sound, preserving topological Noetherian hypotheses, the stronger 03GI specialization, and binary coproduct scope.",
+    "All four prior CSV byte prefixes are preserved; exactly D000329, S001250-S001259, R000826-R000829, and A000257 are appended.",
+    "All eight preimage/postimage identities match. Independently retrieved pinned French and English files and all named slices match the implementation receipt.",
+    "Independent counts: 1252 active / 1259 physical mapping edges, 418 source units, 1239 official-tag edges using 350 distinct tags, 13 local edges, 61 full equivalences; 804 active / 829 physical residuals; 12 open gaps."
+  ],
+  "receipt_wording_correction": {
+    "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+    "claim": "ten named unchanged-surface file checks",
+    "correction": "nine named unchanged file paths, all independently verified byte-identical to the base",
+    "effect_on_mathematics_or_validation": "none; the embedded executable list contains the correct nine paths"
+  },
+  "build_performed": false,
+  "visual_review_performed": false,
+  "publication_performed": false
+}

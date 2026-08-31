@@ -30,7 +30,7 @@ EGA integration manifest enter the repository's root TeX tree.
   [Zenodo 21861666](https://doi.org/10.5281/zenodo.21861666) is retained as a
   historical checkpoint, not presented as the current edition or as a release
   of this integrated Stacks repository.
-- The integrated repository's current EGA semantic checkpoint covers EGA I
+- The integrated repository's latest published EGA semantic checkpoint covers EGA I
   through §6.6.3 and advances the next semantic cursor to §6.6.4. The sealed
   checkpoint receipt is [PASS](../validation/ega-i-6.6.3-semantic-checkpoint-2026-08-30.json)
   (SHA-256
@@ -48,6 +48,13 @@ EGA integration manifest enter the repository's root TeX tree.
   statement-map rows, 825 residual rows, 102 issue rows, and zero quarantined
   rows. I000104 remains routed pending successor adjudication; no root theorem
   is justified by this slice.
+- The separate local implementation now covers EGA I §6.6.4 componentwise
+  and completes the omitted proof of existing tag 01K5 in `schemes.tex`.
+  D000329, S001250--S001259, R000826--R000829, and A000257 record this
+  source-bound slice. Its [local implementation receipt](../validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json)
+  distinguishes source and checker validation from TeX/PDF build, visual QA,
+  and publication, which are not claimed complete. It creates no theorem,
+  official tag, canon correction, or new visual-evidence item.
 - Stacks upstream base: `a04446e57ec1fbc252a871afcec7752fb2807b14`.
 - English discovery manifest: R184, 92,445 bytes, SHA-256
   `5C64ECD32FD7C5458D2599D70ED667D2CF06D95517EFFA9C6D6DCEF7626913A0`;
@@ -280,12 +287,14 @@ EGA integration manifest enter the repository's root TeX tree.
   unselected block candidates remain explicitly uncertified; each future
   promotion requires its own active V row. Shared, full-page, and grouped crops
   do not qualify.
-- Current statement-level frontier: direct-French review is complete through
-  EGA I 6.6.3. The sealed fixed point contains 1,242 operational statement
-  edges, 1,249 statement-map rows, 825 residual rows, 328 decisions, 256
-  agent audits, 102 issue rows, and zero quarantined rows. The next semantic
-  cursor is EGA I 6.6.4; the exact source, target, and append-only bindings
-  are recorded in the [6.6.3 checkpoint receipt](../validation/ega-i-6.6.3-semantic-checkpoint-2026-08-30.json).
+- Current local statement-level frontier: direct-French review and source
+  implementation extend through EGA I 6.6.4. The local graph contains 1,252
+  operational statement edges, 1,259 statement-map rows, 829 residual rows,
+  329 decisions, 257 agent audits, 102 issue rows, and zero quarantined rows.
+  The next source-order unit is EGA I 6.6.5 after the current implementation's
+  deterministic production checks. The published frontier remains 6.6.3;
+  see the [6.6.4 local implementation receipt](../validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json)
+  for the exact source, target, append-only bindings, and unfinished stages.
 
 ## State model
 
@@ -355,7 +364,39 @@ maintainer feedback remain append-only.
   direct-authority crops for source-error evidence; these are not edition
   outputs or three-surface visual certifications.
 
-### Current reviewed frontier: EGA I 6.6.3
+### Current local implementation: EGA I 6.6.4
+
+The direct-French F37ZW slice at LF1067--1121 is 3,114 UTF-8/LF bytes,
+SHA-256 `95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB`.
+It includes the six-part proposition, its proof, and the following
+two-summand paragraph. English discovery LF753--785 is a separate
+3,017-byte witness at SHA-256
+`F36B6FCC7D2B40F6F174C1A3750B7E9EF13C0B556F0DD31A7BCE2AB24EA0784A`.
+
+D000329 and S001250--S001259 map the clauses to 01K7, 04ZA, 01K6, 01K5,
+03GI, 04ZB, 01K3, and 01JS at the pinned official Stacks baseline.
+R000826--R000829 keep the componentwise nature of the package, the
+underlying-space Noetherian hypotheses, the stronger quasi-separated
+cancellation result, and the binary rather than infinite coproduct scope
+explicit. No single edge claims equivalence with the complete proposition.
+
+The only root TeX change is an independently written completion of the
+omitted proof of 01K5. Its official statement and label are unchanged.
+Earlier results 01K4 and 01JS give finite affine covers after arbitrary base
+change; no Noetherianity, separation, finite-type, or flatness hypothesis is
+added. This is a local proof completion, not an official Stacks endorsement.
+The graph has 1,252 active / 1,259 physical edges over 418 source units,
+1,239 official-tag edges using 350 tags, thirteen local edges, and 61
+full-statement equivalences. Residual history has 804 active / 829 physical
+rows, with twelve open gaps and thirteen local-mirror rows.
+
+The [implementation receipt](../validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json)
+records local validation and the exact base. It does not certify TeX/PDF
+builds, visual QA, publication, or anonymous readback; those remain explicit
+production stages. No authority, issue, registry, or composition-receipt
+bytes are changed by this semantic slice.
+
+### Latest published reviewed frontier: EGA I 6.6.3
 
 The latest sealed semantic-only slice closes EGA I §6.6.3 and is bound to the
 direct-French F37ZW lines 1046--1065 and the corresponding English discovery
@@ -831,8 +872,10 @@ tree immediately before atomic promotion, closing the reproduced concurrent-
 producer race. Independent mathematical and governance inverse audits both
 returned HARD PASS after the repairs while preserving their earlier failures.
 
-The immediate semantic work continues after direct-French EGA I §6.6.3 at
-EGA I §6.6.4. Every reviewed claim remains bound to its own historical source
+The current local semantic slice is EGA I §6.6.4, with source-order
+continuation at §6.6.5 after its deterministic production checks. The latest
+published semantic frontier remains §6.6.3. Every reviewed claim remains
+bound to its own historical source
 receipt; the 5.4 and 5.5 rows use F33 plus direct authority evidence rather
 than a mutable producer frontier. The §6.6.3 fixed point is sealed by
 `ega-i-6.6.3-semantic-checkpoint-2026-08-30.json` (SHA-256

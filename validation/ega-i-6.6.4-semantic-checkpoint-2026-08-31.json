@@ -1,0 +1,549 @@
+{
+  "schema": "unofficial-ai-integrated-stacks-ega-semantic-implementation/v1",
+  "status": "PASS_LOCAL_IMPLEMENTATION_ONLY",
+  "updated_utc": "2026-08-31T13:42:50.892Z",
+  "base_commit": "bb6e7ccca41fe00a06815d81e174c5261e7a1ce3",
+  "branch": "codex/ega-i-6-6-4-20260831",
+  "scope": {
+    "source_unit": "EGA I 6.6.4",
+    "next_source_unit": "EGA I 6.6.5",
+    "proof_completion_tag": "01K5",
+    "decisions": [
+      "D000329"
+    ],
+    "statement_edges": "S001250-S001259",
+    "residuals": "R000826-R000829",
+    "agent_audit": "A000257"
+  },
+  "authority": {
+    "preparation_sha256": "1FB6C4DEA3B78A83023E5FAEE07FDD23A3123E1152EEB93FC642B69C64ED5916",
+    "official_stacks_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "french_commit": "6b38875842e3723b619d4aeeda9ed260a4f94f7c",
+    "french_path": "source/ega1/ega1-6-fr.tex",
+    "french_full_bytes": 57781,
+    "french_full_sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+    "french_lf_lines": "1067-1121",
+    "french_slice_bytes": 3114,
+    "french_slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+    "french_receipt": "F37ZW.json",
+    "french_receipt_sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0",
+    "english_role": "discovery_only_not_canonical_authority",
+    "english_commit": "94d5c73ac9263b26043ad0551646b824b1030c9b",
+    "english_path": "source/ega1/ega1-6.tex",
+    "english_full_bytes": 55021,
+    "english_full_sha256": "990DF9E209D804AAC103CE3B23C5F5F2307CD57B87C3A6F4F6E699AA9227C9FD",
+    "english_lf_lines": "753-785",
+    "english_slice_bytes": 3017,
+    "english_slice_sha256": "F36B6FCC7D2B40F6F174C1A3750B7E9EF13C0B556F0DD31A7BCE2AB24EA0784A"
+  },
+  "write_boundary": [
+    "schemes.tex",
+    "ega/README.md",
+    "ega/agent.csv",
+    "ega/check.py",
+    "ega/dec.csv",
+    "ega/resid.csv",
+    "ega/scope.json",
+    "ega/smap.csv",
+    "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json"
+  ],
+  "preimages": [
+    {
+      "path": "schemes.tex",
+      "bytes": 188756,
+      "sha256": "3D4162B83C39F85372EB43195961630D97CC981E10DA486B01514F23C85E54E4"
+    },
+    {
+      "path": "ega/README.md",
+      "bytes": 54683,
+      "sha256": "FB39966F70026C49B92BE66610E8A29D22B0862AAE7A43CFAD280B848EA1F64B"
+    },
+    {
+      "path": "ega/agent.csv",
+      "bytes": 134895,
+      "sha256": "6B46CED2A8F82A74CF44BCDF3A8BB84E64543A343C37A63DF1F69E898AC429DD"
+    },
+    {
+      "path": "ega/check.py",
+      "bytes": 411617,
+      "sha256": "5876A587B652A87B1771495FC0A667BE783C25D8051A41885764135D8A74C3DA"
+    },
+    {
+      "path": "ega/dec.csv",
+      "bytes": 88154,
+      "sha256": "EB8ABC33A7E16F8F4EEBC0F537EC84BE7EDDBDDD8B3CE12B2FDA9FC7AA70703E"
+    },
+    {
+      "path": "ega/resid.csv",
+      "bytes": 238388,
+      "sha256": "DAE6F852E2B0B4BD622BD3C7C235E5F7FBA139D42011CD3BDF6FB4CD82E18458"
+    },
+    {
+      "path": "ega/scope.json",
+      "bytes": 25667,
+      "sha256": "357ECC4839BF7A685A926D8AF56A5BC796E808533EB7892A5A7B8FA6A7344637"
+    },
+    {
+      "path": "ega/smap.csv",
+      "bytes": 547417,
+      "sha256": "C33EADB6F06627A15FC4CE1CCCFE7E4CC8A4AADE2077D44BEFBC358B0055307C"
+    }
+  ],
+  "validation": {
+    "ega_checker": "PASS",
+    "structural_checks": "PASS",
+    "source_byte_verification": "PASS",
+    "scope_and_unchanged_surface_checks": "PASS",
+    "git_diff_check": "PASS_EXACT_ASSIGNED_PATHS",
+    "tex_build": "NOT_RUN_OWNER_SEQUENTIAL_STAGE",
+    "pdf_build": "NOT_RUN_OWNER_SEQUENTIAL_STAGE",
+    "visual_qa": "NOT_RUN_OWNER_STAGE",
+    "publication": "NOT_PERFORMED",
+    "anonymous_readback": "NOT_PERFORMED"
+  },
+  "completed": [
+    "Verified base commit and branch",
+    "Verified durable preparation hash",
+    "Verified unique omitted-proof target and existing CSV headers",
+    "Applied only the exact independently written 01K5 proof",
+    "Appended D000329 S001250-S001259 R000826-R000829 A000257",
+    "Updated source scope and README with local-only status",
+    "Added exact immutable-prefix and semantic checker contracts",
+    "Passed source-byte verification and source structural checks including seven in-memory proof-guard rejection cases",
+    "Reverified both commit-pinned primary source files and every named slice",
+    "Passed full bounded EGA checker after exact scope reseal",
+    "Passed immutable-scope preservation and ten named unchanged-surface checks",
+    "Passed exact-path git diff whitespace validation",
+    "Sealed all eight non-receipt postimages and append bindings; the receipt omits its own hash to avoid self-reference"
+  ],
+  "remaining": [
+    "Production owner independently reviews and integrates these exact uncommitted paths onto the final release chain",
+    "Production owner performs sequential Schemes fixed-point TeX/PDF build and reference checks",
+    "Production owner performs affected/all-page visual QA and applicable unified validation",
+    "Production owner performs the already-authorized publication transaction and anonymous byte/hash readback"
+  ],
+  "next_executable_action": "Independently inspect the nine assigned worktree paths against this receipt, preserve the exact older ledger prefixes and 01K5 statement, and integrate the source slice into the production chain before its sequential build and publication stages.",
+  "exclusions": {
+    "authority_mutated": false,
+    "official_tags_assigned": 0,
+    "registry_mutated": false,
+    "composition_receipts_mutated": false,
+    "tex_or_pdf_build_performed": false,
+    "publication_performed": false,
+    "committed": false,
+    "pushed": false,
+    "root_production_worktree_mutated": false,
+    "source_units_added": 0,
+    "source_issue_added": false,
+    "new_visual_evidence_rows": 0
+  },
+  "append_bindings": [
+    {
+      "path": "ega/dec.csv",
+      "bytes": 88716,
+      "sha256": "E1A25BF4A99A3AF0DFA924C601BB7EEF585606EB9E92D430C1D635E7CAC66D26",
+      "append_bytes": 562,
+      "append_sha256": "3DD0AAC098383448A7EEDA2F413D2B7F2D75C6BDCF4DD635BA09810619E2FD30"
+    },
+    {
+      "path": "ega/smap.csv",
+      "bytes": 553166,
+      "sha256": "C94FFE7B4E846AFA8532E65DC485AC5D2ABB416641653682EB82902E79D5C210",
+      "append_bytes": 5749,
+      "append_sha256": "0261D7FC8D1419B8E379E57FCE78031E92BAAB815D0F795D2F4B9A26147D2B26"
+    },
+    {
+      "path": "ega/resid.csv",
+      "bytes": 239886,
+      "sha256": "9EF8C07469ABDAEC0B488F162F29987839067D2AC714A883108B0A3E1D990755",
+      "append_bytes": 1498,
+      "append_sha256": "6E8DADEE3EDC5C3A06536994C9B0307B69FF79BEF24E1A6B218301B0E84942EC"
+    },
+    {
+      "path": "ega/agent.csv",
+      "bytes": 135811,
+      "sha256": "9AD67E86A6312DE3415B8124BC165E8F95EF0C9D59D55342F67A80849D6AB2CA",
+      "append_bytes": 916,
+      "append_sha256": "79C5C30E290AF22201EB3E0B2E761767AD8D37DC0A91E01B72CF796934C49B42"
+    }
+  ],
+  "validation_attempts": [
+    {
+      "command": "python -B ega/check.py",
+      "exit_code": 1,
+      "status": "FAIL",
+      "errors": [
+        "final scope manifest identity mismatch"
+      ],
+      "remedy": "Advanced the exact scope byte/hash seal to the implemented source slice without weakening any semantic check."
+    },
+    {
+      "command": "python -B ega/check.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "errors": []
+    }
+  ],
+  "claim": "The assigned source implementation and bounded local validation are complete. No TeX/PDF build, visual certification, publication, or anonymous public-byte readback is claimed.",
+  "source_slice": {
+    "receipt": "F37ZW.json",
+    "receipt_sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0",
+    "path": "ega1/ega1-6-fr.tex",
+    "full_bytes": 57781,
+    "full_sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+    "lf_line_start": 1067,
+    "lf_line_end": 1121,
+    "slice_bytes": 3114,
+    "slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+    "statement_lf_line_start": 1067,
+    "statement_lf_line_end": 1085,
+    "statement_bytes": 993,
+    "statement_sha256": "14F12025ABB9DD9297975B3B12558BF03F38428B31718E3570A3C79B389709AF",
+    "proof_lf_line_start": 1087,
+    "proof_lf_line_end": 1117,
+    "proof_bytes": 1943,
+    "proof_sha256": "D7DC4235D086D176AF20A908AAD61572C690D2C5BB84F27EC7F6DB22111E5D42",
+    "base_change_proof_lf_line_start": 1104,
+    "base_change_proof_lf_line_end": 1117,
+    "base_change_proof_bytes": 810,
+    "base_change_proof_sha256": "294E9925570B8D1BF240DE2D29EFCFB7409B8A4878E8A2E602EA13495D23B345",
+    "binary_sum_lf_line_start": 1119,
+    "binary_sum_lf_line_end": 1121,
+    "binary_sum_bytes": 176,
+    "binary_sum_sha256": "D1DA0EE6876E59C88147AEA8D384FDA25358C74B14726CABB659F2929C738059",
+    "root_proof_completion": {
+      "path": "schemes.tex",
+      "label": "lemma-quasi-compact-preserved-base-change",
+      "official_tag": "01K5",
+      "statement_changed": false,
+      "preimage_bytes": 230,
+      "preimage_sha256": "A37612375252BF61767A8175DF9E6C27DD76E17B7717D38A4522C790AF596634",
+      "postimage_bytes": 1195,
+      "postimage_sha256": "CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123",
+      "proof_bytes": 1000,
+      "proof_sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861",
+      "dependencies": [
+        "01K4",
+        "01JS"
+      ]
+    }
+  },
+  "root_change": {
+    "path": "schemes.tex",
+    "label": "lemma-quasi-compact-preserved-base-change",
+    "official_tag": "01K5",
+    "statement_changed": false,
+    "preimage_bytes": 230,
+    "preimage_sha256": "A37612375252BF61767A8175DF9E6C27DD76E17B7717D38A4522C790AF596634",
+    "postimage_bytes": 1195,
+    "postimage_sha256": "CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123",
+    "proof_bytes": 1000,
+    "proof_sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861",
+    "dependencies": [
+      "01K4",
+      "01JS"
+    ],
+    "base_file_bytes": 188756,
+    "base_file_sha256": "3D4162B83C39F85372EB43195961630D97CC981E10DA486B01514F23C85E54E4",
+    "postimage_file_bytes": 189721,
+    "postimage_file_sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233",
+    "preimage_lf_lines": "3874-3882",
+    "preimage_zero_based_byte_offset": 141160,
+    "dependency_argument": "01K4 gives a finite affine cover of each inverse image of an affine target chart. 01JS makes its base change a finite affine cover over every affine chart upstairs. 01K4 detects quasi-compactness on that upstairs target cover. Both referenced lemmas precede 01K5.",
+    "hypotheses": "f is a quasi-compact morphism of S-schemes and S-prime to S is arbitrary; no Noetherianity, quasi-separatedness, finite-type, or flatness assumption."
+  },
+  "postimages": [
+    {
+      "path": "schemes.tex",
+      "bytes": 189721,
+      "sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233"
+    },
+    {
+      "path": "ega/README.md",
+      "bytes": 57369,
+      "sha256": "B0B7D8C17C992FD1E9877FA6F437FB2564942323E19DF1C079DD62582407E979"
+    },
+    {
+      "path": "ega/agent.csv",
+      "bytes": 135811,
+      "sha256": "9AD67E86A6312DE3415B8124BC165E8F95EF0C9D59D55342F67A80849D6AB2CA"
+    },
+    {
+      "path": "ega/check.py",
+      "bytes": 426666,
+      "sha256": "33DF997D958B10AE6D9AC435532948724E5BF55F5F974307C8562FED07C9904A"
+    },
+    {
+      "path": "ega/dec.csv",
+      "bytes": 88716,
+      "sha256": "E1A25BF4A99A3AF0DFA924C601BB7EEF585606EB9E92D430C1D635E7CAC66D26"
+    },
+    {
+      "path": "ega/resid.csv",
+      "bytes": 239886,
+      "sha256": "9EF8C07469ABDAEC0B488F162F29987839067D2AC714A883108B0A3E1D990755"
+    },
+    {
+      "path": "ega/scope.json",
+      "bytes": 27613,
+      "sha256": "00B73A864EC78D127D1FF9F683C5CDE763CA65D340D5E3B113E08682D6D1F6D6"
+    },
+    {
+      "path": "ega/smap.csv",
+      "bytes": 553166,
+      "sha256": "C94FFE7B4E846AFA8532E65DC485AC5D2ABB416641653682EB82902E79D5C210"
+    }
+  ],
+  "local_checks": {
+    "ega_checker": {
+      "command": "python -B ega/check.py",
+      "exit_code": 0,
+      "result": {
+        "counts": {
+          "agent.csv": 257,
+          "cand.csv": 2749,
+          "dec.csv": 329,
+          "fb.csv": 0,
+          "files.csv": 127,
+          "findings.jsonl": 26,
+          "issues.csv": 102,
+          "operational_statement_edges": 1252,
+          "operational_vqa_rows": 26,
+          "pages.csv": 29,
+          "pending_visual_referral_crops": 0,
+          "qsrc.csv": 16,
+          "quarantined_residual_rows": 0,
+          "quarantined_statement_edges": 0,
+          "quarantined_vqa_rows": 0,
+          "resid.csv": 829,
+          "smap.csv": 1259,
+          "source_error_qa_bytes": 6022269,
+          "source_error_qa_crops": 16,
+          "src.csv": 1,
+          "tmap.csv": 24,
+          "topics.csv": 36,
+          "units.csv": 9585,
+          "vqa.csv": 45
+        },
+        "errors": [],
+        "existing_official_tags_referenced": 13,
+        "official_tags_assigned_by_scaffold": 0,
+        "schema": "ega-stacks-scaffold-check-v1",
+        "status": "PASS"
+      }
+    },
+    "structural": {
+      "command": "Execute this object's python string with python -B in the worktree",
+      "python": "import ast, csv, hashlib, io, json, pathlib, re, subprocess, textwrap\nroot = pathlib.Path.cwd()\nbase = \"bb6e7ccca41fe00a06815d81e174c5261e7a1ce3\"\npinned = \"a04446e57ec1fbc252a871afcec7752fb2807b14\"\nchecks = []\ndef blob(ref, path):\n    return subprocess.run([\"git\", \"show\", ref + \":\" + path], check=True, capture_output=True, timeout=30).stdout\ndef sha(data):\n    return hashlib.sha256(data).hexdigest().upper()\ncontracts = {\n    \"ega/dec.csv\": (\"decision_id\", \"D\", 328, 329),\n    \"ega/smap.csv\": (\"edge_id\", \"S\", 1249, 1259),\n    \"ega/resid.csv\": (\"residual_id\", \"R\", 825, 829),\n    \"ega/agent.csv\": (\"run_id\", \"A\", 256, 257),\n}\nfor path, (field, prefix, old_count, new_count) in contracts.items():\n    old = blob(base, path)\n    current = (root / path).read_bytes()\n    assert current.startswith(old), path\n    assert current.endswith(b\"\\n\") and b\"\\r\" not in current, path\n    rows = list(csv.DictReader(io.StringIO(current.decode(\"utf-8\"))))\n    assert len(rows) == new_count and not any(None in row for row in rows), path\n    assert [row[field] for row in rows[old_count:]] == [\n        f\"{prefix}{number:06}\" for number in range(old_count + 1, new_count + 1)], path\n    checks.append({\"check\": \"append_only_prefix_and_exact_rows\", \"path\": path, \"status\": \"PASS\",\n                   \"old_bytes\": len(old), \"old_sha256\": sha(old), \"append_bytes\": len(current)-len(old),\n                   \"append_sha256\": sha(current[len(old):])})\nold_tex = blob(base, \"schemes.tex\")\ntex = (root / \"schemes.tex\").read_bytes()\npattern = re.compile(rb\"\\\\begin\\{lemma\\}\\n\\\\label\\{lemma-quasi-compact-preserved-base-change\\}\\n.*?\\\\end\\{proof\\}\\n\", re.S)\nold_blocks = pattern.findall(old_tex)\nnew_blocks = pattern.findall(tex)\nassert len(old_blocks) == len(new_blocks) == 1\nassert old_tex.replace(old_blocks[0], new_blocks[0]) == tex\nassert sha(new_blocks[0]) == \"CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123\"\nmarker = b\"\\\\begin{proof}\\n\"\nassert old_blocks[0].split(marker)[0] == new_blocks[0].split(marker)[0]\nproof = marker + new_blocks[0].split(marker, 1)[1]\nassert len(proof) == 1000 and sha(proof) == \"0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861\"\nassert proof.count(b\"{\") == proof.count(b\"}\") and proof.count(b\"$\") % 2 == 0\nrefs = re.findall(rb\"\\\\ref\\{([^}]+)\\}\", proof)\nassert refs == [b\"lemma-quasi-compact-affine\", b\"lemma-affine-covering-fibre-product\", b\"lemma-quasi-compact-affine\"]\nfor ref in set(refs):\n    label = b\"\\\\label{\" + ref + b\"}\"\n    assert tex.count(label) == 1 and tex.index(label) < tex.index(new_blocks[0])\nassert blob(base, \"tags/tags\") == (root / \"tags/tags\").read_bytes()\nchecks.append({\"check\": \"only_unique_01K5_proof_changes_statement_and_tags_preserved_dependencies_prior_and_resolved\",\n               \"status\": \"PASS\", \"proof_bytes\":len(proof), \"proof_sha256\":sha(proof),\n               \"file_bytes\":len(tex), \"file_sha256\":sha(tex)})\nscope = json.loads((root / \"ega/scope.json\").read_text(encoding=\"utf-8\"))\nchecker = (root / \"ega/check.py\").read_text(encoding=\"utf-8\")\nast.parse(checker)\nstart = checker.index(\"    i664_label =\")\nend = checker.index('    if any(units_by_id[row[\"source_unit\"]][\"kind\"] in {', start)\nguard = textwrap.dedent(checker[start:end])\npinned_tex = blob(pinned, \"schemes.tex\")\ndef guard_errors(raw, fixed=pinned_tex):\n    env={\"i664_root_raw\":raw,\"re\":re,\"hashlib\":hashlib,\"scope\":scope,\n         \"git_blob\":lambda *args: fixed,\n         \"expected_i664_source_slice\":scope[\"reviewed_source_slices\"][\"ega:I.6.6.4\"], \"ERRORS\":[]}\n    exec(compile(guard, \"adopted_i664_proof_guard\", \"exec\"), env)\n    return env[\"ERRORS\"]\nassert not guard_errors(tex)\nlabel = rb\"\\label{lemma-quasi-compact-preserved-base-change}\"\ndep = rb\"\\label{lemma-quasi-compact-affine}\"\nadverse = {\n    \"omitted_proof_reversion\":old_tex,\n    \"duplicate_target_label\":tex+b\"\\n\"+label+b\"\\n\",\n    \"missing_target_label\":tex.replace(label,b\"\"),\n    \"statement_mutation\":tex.replace(b\"Being quasi-compact is a property\",b\"Being flat is a property\",1),\n    \"proof_mutation\":tex.replace(b\"the right hand side is a finite affine open covering.\",b\"the right hand side is an affine open covering.\",1),\n    \"missing_dependency\":tex.replace(dep,b\"\"),\n    \"forward_dependency\":tex.replace(dep,b\"\")+b\"\\n\"+dep+b\"\\n\",\n}\nfor name, raw in adverse.items():\n    errors=guard_errors(raw)\n    assert errors, name\n    checks.append({\"check\":\"adversarial_\"+name,\"status\":\"PASS_REJECTED\",\"errors\":errors})\nchecks.append({\"check\":\"adopted_guard_positive_case_and_checker_AST\",\"status\":\"PASS\"})\nprint(json.dumps({\"schema\":\"ega-i-6.6.4-local-structural-check/v1\",\"status\":\"PASS\",\"checks\":checks},indent=2))\n",
+      "result": {
+        "schema": "ega-i-6.6.4-local-structural-check/v1",
+        "status": "PASS",
+        "checks": [
+          {
+            "check": "append_only_prefix_and_exact_rows",
+            "path": "ega/dec.csv",
+            "status": "PASS",
+            "old_bytes": 88154,
+            "old_sha256": "EB8ABC33A7E16F8F4EEBC0F537EC84BE7EDDBDDD8B3CE12B2FDA9FC7AA70703E",
+            "append_bytes": 562,
+            "append_sha256": "3DD0AAC098383448A7EEDA2F413D2B7F2D75C6BDCF4DD635BA09810619E2FD30"
+          },
+          {
+            "check": "append_only_prefix_and_exact_rows",
+            "path": "ega/smap.csv",
+            "status": "PASS",
+            "old_bytes": 547417,
+            "old_sha256": "C33EADB6F06627A15FC4CE1CCCFE7E4CC8A4AADE2077D44BEFBC358B0055307C",
+            "append_bytes": 5749,
+            "append_sha256": "0261D7FC8D1419B8E379E57FCE78031E92BAAB815D0F795D2F4B9A26147D2B26"
+          },
+          {
+            "check": "append_only_prefix_and_exact_rows",
+            "path": "ega/resid.csv",
+            "status": "PASS",
+            "old_bytes": 238388,
+            "old_sha256": "DAE6F852E2B0B4BD622BD3C7C235E5F7FBA139D42011CD3BDF6FB4CD82E18458",
+            "append_bytes": 1498,
+            "append_sha256": "6E8DADEE3EDC5C3A06536994C9B0307B69FF79BEF24E1A6B218301B0E84942EC"
+          },
+          {
+            "check": "append_only_prefix_and_exact_rows",
+            "path": "ega/agent.csv",
+            "status": "PASS",
+            "old_bytes": 134895,
+            "old_sha256": "6B46CED2A8F82A74CF44BCDF3A8BB84E64543A343C37A63DF1F69E898AC429DD",
+            "append_bytes": 916,
+            "append_sha256": "79C5C30E290AF22201EB3E0B2E761767AD8D37DC0A91E01B72CF796934C49B42"
+          },
+          {
+            "check": "only_unique_01K5_proof_changes_statement_and_tags_preserved_dependencies_prior_and_resolved",
+            "status": "PASS",
+            "proof_bytes": 1000,
+            "proof_sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861",
+            "file_bytes": 189721,
+            "file_sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233"
+          },
+          {
+            "check": "adversarial_omitted_proof_reversion",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 root proof or preserved statement changed"
+            ]
+          },
+          {
+            "check": "adversarial_duplicate_target_label",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 root proof is not uniquely label-bound"
+            ]
+          },
+          {
+            "check": "adversarial_missing_target_label",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 root proof is not uniquely label-bound"
+            ]
+          },
+          {
+            "check": "adversarial_statement_mutation",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 root proof or preserved statement changed"
+            ]
+          },
+          {
+            "check": "adversarial_proof_mutation",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 root proof or preserved statement changed"
+            ]
+          },
+          {
+            "check": "adversarial_missing_dependency",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 proof dependency is missing or forward"
+            ]
+          },
+          {
+            "check": "adversarial_forward_dependency",
+            "status": "PASS_REJECTED",
+            "errors": [
+              "EGA I 6.6.4 proof dependency is missing or forward"
+            ]
+          },
+          {
+            "check": "adopted_guard_positive_case_and_checker_AST",
+            "status": "PASS"
+          }
+        ]
+      }
+    },
+    "scope_and_unchanged_surfaces": {
+      "command": "Execute this object's python string with python -B in the worktree",
+      "python": "import ast,csv,hashlib,io,json,pathlib,subprocess\nroot=pathlib.Path.cwd()\nbase=\"bb6e7ccca41fe00a06815d81e174c5261e7a1ce3\"\nold_scope=json.loads(subprocess.run([\"git\",\"show\",base+\":ega/scope.json\"],check=True,capture_output=True,timeout=30).stdout)\nscope=json.loads((root/\"ega/scope.json\").read_text(encoding=\"utf-8\"))\nnew=scope[\"reviewed_source_slices\"].copy()\nnew.pop(\"ega:I.6.6.4\")\nassert new==old_scope[\"reviewed_source_slices\"]\nfor key in set(old_scope)-{\"reviewed_source_slices\",\"statement_review_snapshot\",\"residual_snapshot\"}:\n    assert scope[key]==old_scope[key],key\nassert scope[\"statement_review_snapshot\"]=={\"file\":\"smap.csv\",\"statement_edge_rows\":1252,\"file_rows\":1259,\"superseded_rows\":7,\"source_units\":418,\"existing_official_tag_rows\":1239,\"distinct_existing_official_tags\":350,\"local_untagged_rows\":13,\"full_statement_equivalences\":61}\nassert scope[\"residual_snapshot\"]=={\"file\":\"resid.csv\",\"rows\":804,\"file_rows\":829,\"superseded_rows\":25,\"open_gaps\":12,\"integrated_local_mirror\":13}\nfor path in [\"ega/units.csv\",\"ega/files.csv\",\"ega/interface.json\",\"ega/publication-current.json\",\"ega/issues.csv\",\"ega/vqa.csv\",\"ega/rej.csv\",\"reports/qsrc.csv\",\"tags/tags\"]:\n    old=subprocess.run([\"git\",\"show\",base+\":\"+path],check=True,capture_output=True,timeout=30).stdout\n    assert old==(root/path).read_bytes(),path\nast.parse((root/\"ega/check.py\").read_text(encoding=\"utf-8\"))\npaths=[\"schemes.tex\",\"ega/README.md\",\"ega/agent.csv\",\"ega/check.py\",\"ega/dec.csv\",\"ega/resid.csv\",\"ega/scope.json\",\"ega/smap.csv\"]\npostimages=[]\nfor path in paths:\n    raw=(root/path).read_bytes()\n    postimages.append({\"path\":path,\"bytes\":len(raw),\"sha256\":hashlib.sha256(raw).hexdigest().upper()})\nprint(json.dumps({\"status\":\"PASS\",\"checks\":[\"all_prior_scope_slices_preserved\",\"all_other_scope_fields_preserved\",\"exact_live_counts\",\"ten_named_authority_inventory_issue_visual_and_tag_paths_unchanged\",\"checker_AST\"],\"postimages\":postimages},indent=2))\n",
+      "result": {
+        "status": "PASS",
+        "checks": [
+          "all_prior_scope_slices_preserved",
+          "all_other_scope_fields_preserved",
+          "exact_live_counts",
+          "ten_named_authority_inventory_issue_visual_and_tag_paths_unchanged",
+          "checker_AST"
+        ]
+      }
+    },
+    "source_byte_verification": {
+      "status": "PASS",
+      "network_requests": 2,
+      "source_files_written": 0,
+      "witnesses": [
+        {
+          "surface": "french",
+          "url": "https://raw.githubusercontent.com/KokunoYumeto/ega-fr/6b38875842e3723b619d4aeeda9ed260a4f94f7c/source/ega1/ega1-6-fr.tex",
+          "bytes": 57781,
+          "sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+          "slices": [
+            {
+              "lf_lines": "1067-1121",
+              "bytes": 3114,
+              "sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB"
+            },
+            {
+              "lf_lines": "1067-1085",
+              "bytes": 993,
+              "sha256": "14F12025ABB9DD9297975B3B12558BF03F38428B31718E3570A3C79B389709AF"
+            },
+            {
+              "lf_lines": "1087-1117",
+              "bytes": 1943,
+              "sha256": "D7DC4235D086D176AF20A908AAD61572C690D2C5BB84F27EC7F6DB22111E5D42"
+            },
+            {
+              "lf_lines": "1104-1117",
+              "bytes": 810,
+              "sha256": "294E9925570B8D1BF240DE2D29EFCFB7409B8A4878E8A2E602EA13495D23B345"
+            },
+            {
+              "lf_lines": "1119-1121",
+              "bytes": 176,
+              "sha256": "D1DA0EE6876E59C88147AEA8D384FDA25358C74B14726CABB659F2929C738059"
+            }
+          ],
+          "status": "PASS"
+        },
+        {
+          "surface": "english_discovery",
+          "url": "https://raw.githubusercontent.com/KokunoYumeto/ega-en/94d5c73ac9263b26043ad0551646b824b1030c9b/source/ega1/ega1-6.tex",
+          "bytes": 55021,
+          "sha256": "990DF9E209D804AAC103CE3B23C5F5F2307CD57B87C3A6F4F6E699AA9227C9FD",
+          "slices": [
+            {
+              "lf_lines": "753-785",
+              "bytes": 3017,
+              "sha256": "F36B6FCC7D2B40F6F174C1A3750B7E9EF13C0B556F0DD31A7BCE2AB24EA0784A"
+            },
+            {
+              "lf_lines": "753-764",
+              "bytes": 1017,
+              "sha256": "B39062C65CB0F8B9CFC25EE76DB4AB59D1C25C5C77BCA096F8532E68449DD6C7"
+            },
+            {
+              "lf_lines": "766-783",
+              "bytes": 1816,
+              "sha256": "116649463CE36C675313E0DE5B3F29F9548BFB65012AB98156419F6DA684BD5D"
+            },
+            {
+              "lf_lines": "785-785",
+              "bytes": 182,
+              "sha256": "1F2E0EF07FB8606FFD18BF3BF7B7476F8BEBA2204BDBC6394E51264BA90B04B0"
+            }
+          ],
+          "status": "PASS"
+        }
+      ]
+    },
+    "git_diff_check": {
+      "command": "git diff --check -- schemes.tex ega/README.md ega/agent.csv ega/check.py ega/dec.csv ega/resid.csv ega/scope.json ega/smap.csv validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+      "exit_code": 0
+    }
+  },
+  "counts": {
+    "active_statement_edges": 1252,
+    "physical_statement_edges": 1259,
+    "mapped_source_units": 418,
+    "existing_official_tag_edges": 1239,
+    "distinct_existing_official_tags": 350,
+    "local_untagged_edges": 13,
+    "full_statement_equivalences": 61,
+    "active_residuals": 804,
+    "physical_residuals": 829,
+    "open_gaps": 12,
+    "local_mirror_residuals": 13,
+    "decisions": 329,
+    "agent_rows": 257,
+    "issues": 102,
+    "registered_discovery_units": 9585,
+    "quarantined_rows": 0
+  }
+}
