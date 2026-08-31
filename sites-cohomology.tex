@@ -6820,7 +6820,7 @@ diagram of morphisms of topoi
 \Sh(\mathcal{C}_\tau/X) \ar[r]_{f_\tau} \ar[d]_{\epsilon_X} &
 \Sh(\mathcal{C}_\tau/Y) \ar[d]^{\epsilon_Y} \\
 \Sh(\mathcal{C}_{\tau'}/X) \ar[r]^{f_{\tau'}} &
-\Sh(\mathcal{C}_{\tau'}/X)
+\Sh(\mathcal{C}_{\tau'}/Y)
 }
 }
 \end{equation}
@@ -7298,7 +7298,7 @@ $K' \in D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/X)$ the map
 $K' \to R\epsilon_{X, *}(\epsilon_X^{-1}K')$ is an isomorphism.
 \item For $f : X \to Y$ in $\mathcal{P}$ and
 $K' \in D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/X)$ we have
-$Rf_{\tau', *}K' \in D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/Y)$ and
+$Rf_{\tau', *}K' \in D^+_{\mathcal{A}'_Y}(\mathcal{C}_{\tau'}/Y)$ and
 $\epsilon_Y^{-1}(Rf_{\tau', *}K') = Rf_{\tau, *}(\epsilon_X^{-1}K')$.
 \end{enumerate}
 \end{lemma}
@@ -7319,9 +7319,9 @@ $$
 degenerates by $(V_n)$ for all $n$ and we find
 $$
 H^n(R\epsilon_{X, *}K) = \epsilon_{X, *}H^n(K) =
-\epsilon_{X, *}\epsilon_X^{-1}H^i(K') = H^i(K').
+\epsilon_{X, *}\epsilon_X^{-1}H^n(K') = H^n(K').
 $$
-again because $H^i(K')$ is in $\mathcal{A}'_X$.
+again because $H^n(K')$ is in $\mathcal{A}'_X$.
 Thus the canonical map $K' \to R\epsilon_{X, *}(\epsilon_X^{-1}K')$
 is an isomorphism.
 
@@ -7336,7 +7336,7 @@ the fact that $\mathcal{A}'_Y$ is a weak Serre subcategory of
 $\textit{Ab}(\mathcal{C}_{\tau'}/Y)$,
 and Homology, Lemma \ref{homology-lemma-biregular-ss-converges}
 we conclude that
-$Rf_{\tau', *}K' \in D^+_{\mathcal{A}'_X}(\mathcal{C}_{\tau'}/X)$.
+$Rf_{\tau', *}K' \in D^+_{\mathcal{A}'_Y}(\mathcal{C}_{\tau'}/Y)$.
 To finish the proof we have to show the base change map
 $$
 \epsilon_Y^{-1}(Rf_{\tau', *}K')
@@ -7545,19 +7545,19 @@ Proof of (2). Let $x \in X$. Choose $i_1, \ldots, i_n \in I$ and
 $E_a \subset X_{i_a}$ quasi-compact such that $\bigcup f_{i_a}(E_a)$
 is a neighbourhood of $x$. For every $e \in E_a$ we can find
 a finite subset $J_e \subset J_{i_a}$ and quasi-compact
-$F_{e, j} \subset X_{ij}$, $j \in J_e$ such that $\bigcup g_{ij}(F_{e, j})$
+$F_{e, j} \subset X_{i_a j}$, $j \in J_e$ such that $\bigcup g_{i_a j}(F_{e, j})$
 is a neighbourhood of $e$. Since $E_a$ is quasi-compact we find
 a finite collection $e_1, \ldots, e_{m_a}$ such that
 $$
 E_a \subset
 \bigcup\nolimits_{k = 1, \ldots, m_a}
-\bigcup\nolimits_{j \in J_{e_k}} g_{ij}(F_{e_k, j})
+\bigcup\nolimits_{j \in J_{e_k}} g_{i_a j}(F_{e_k, j})
 $$
 Then we find that
 $$
 \bigcup\nolimits_{a = 1, \ldots, n}
 \bigcup\nolimits_{k = 1, \ldots, m_a}
-\bigcup\nolimits_{j \in J_{e_k}} f_i(g_{ij}(F_{e_k, j}))
+\bigcup\nolimits_{j \in J_{e_k}} f_{i_a}(g_{i_a j}(F_{e_k, j}))
 $$
 is a neighbourhood of $x$.
 
@@ -7597,7 +7597,7 @@ $X_y \subset U_{x_1} \cup \ldots \cup U_{x_n}$.
 We claim that $f(E_{x_1}) \cup \ldots \cup f(E_{x_n})$ is a neighbourhood of
 $y$. Namely, as $f$ is closed
 (Topology, Theorem \ref{topology-theorem-characterize-proper})
-we see that $Z = f(X \setminus U_{x_1} \cup \ldots \cup U_{x_n})$
+we see that $Z = f(X \setminus (U_{x_1} \cup \ldots \cup U_{x_n}))$
 is a closed subset of $Y$ not containing $y$. As $f$ is surjective
 we see that $Y \setminus Z$ is contained in
 $f(E_{x_1}) \cup \ldots \cup f(E_{x_n})$ as desired.
@@ -7945,7 +7945,7 @@ $$
 }
 }
 $$
-with $a_X = \pi_X \circ \epsilon_X$, $a_Y = \pi_X \circ \epsilon_X$.
+with $a_X = \pi_X \circ \epsilon_X$, $a_Y = \pi_Y \circ \epsilon_Y$.
 If $f$ is proper, then $a_Y^{-1} \circ f_* = f_{qc, *} \circ a_X^{-1}$.
 \end{lemma}
 
@@ -8082,7 +8082,7 @@ Lemma \ref{lemma-V-implies-C-general}.
 \medskip\noindent
 Part (3) follows from Lemma \ref{lemma-V-C-all-n-general} part (1)
 because $\pi_X^{-1}K$ is in $D^+_{\mathcal{A}'_X}(\textit{LC}_{Zar}/X)$
-and $a_X^{-1} = \epsilon_X^{-1} \circ a_X^{-1}$.
+and $a_X^{-1} = \epsilon_X^{-1} \circ \pi_X^{-1}$.
 
 \medskip\noindent
 Part (4) follows from Lemma \ref{lemma-V-C-all-n-general} part (2)
@@ -8114,7 +8114,7 @@ and the functor $a_{X, *}$ we conclude. From now on assume $K = \mathcal{F}$.
 By Lemma \ref{lemma-describe-pullback-pi} we have
 $a_{X, *}a_X^{-1}\mathcal{F} = \mathcal{F}$. Thus it suffices to show that
 $R^qa_{X, *}a_X^{-1}\mathcal{F} = 0$ for $q > 0$.
-For this we can use $a_X = \epsilon_X \circ \pi_X$ and
+For this we can use $a_X = \pi_X \circ \epsilon_X$ and
 the Leray spectral sequence Lemma \ref{lemma-relative-Leray}.
 By Lemma \ref{lemma-V-C-all-n}
 we have $R^i\epsilon_{X, *}(a_X^{-1}\mathcal{F}) = 0$ for $i > 0$
@@ -8288,15 +8288,15 @@ Lf^*(f_*\mathcal{K}^\bullet
 f_*\mathcal{M}^\bullet)
 & =
 Lf^*f_*\mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 Lf^*f_*\mathcal{M}^\bullet \\
 & \to
 Lf^*Rf_*\mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 Lf^*Rf_*\mathcal{M}^\bullet \\
 & \to
 \mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 \mathcal{M}^\bullet \\
 & \to
 \text{Tot}(\mathcal{K}^\bullet
@@ -8310,15 +8310,15 @@ Lf^*(f_*\mathcal{K}^\bullet
 f_*\mathcal{M}^\bullet)
 & =
 Lf^*f_*\mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 Lf^*f_*\mathcal{M}^\bullet \\
 & \to
 f^*f_*\mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 f^*f_*\mathcal{M}^\bullet \\
 & \to
 \mathcal{K}^\bullet
-\otimes_{\mathcal{O}_\mathcal{D}}^\mathbf{L}
+\otimes_{\mathcal{O}_\mathcal{C}}^\mathbf{L}
 \mathcal{M}^\bullet \\
 & \to
 \text{Tot}(\mathcal{K}^\bullet
@@ -8510,7 +8510,7 @@ R(f' \circ f)_*L\right) \\
 & =
 L(f' \circ f)^*R(f' \circ f)_*K
 \otimes_\mathcal{O}^\mathbf{L}
-L(f' \circ f)^*R(f' \circ f)_*L) \\
+L(f' \circ f)^*R(f' \circ f)_*L \\
 & \to
 K \otimes_\mathcal{O}^\mathbf{L} L
 \end{align*}
@@ -8531,7 +8531,7 @@ Consider a commutative square
 $$
 \xymatrix{
 (\Sh(\mathcal{C}'), \mathcal{O}_{\mathcal{C}'}) \ar[r]_{g'} \ar[d]_{f'} &
-(\Sh(\mathcal{C}, \mathcal{O}_{\mathcal{C}}) \ar[d]^f \\
+(\Sh(\mathcal{C}), \mathcal{O}_{\mathcal{C}}) \ar[d]^f \\
 (\Sh(\mathcal{D}'), \mathcal{O}_{\mathcal{D}'}) \ar[r]^g &
 (\Sh(\mathcal{D}), \mathcal{O}_{\mathcal{D}}) 
 }
@@ -8546,7 +8546,7 @@ Lg^*(Rf_*K \otimes_{\mathcal{O}_{\mathcal{D}}}^\mathbf{L} Rf_*L)
 Lg^*(Rf_*(K \otimes_{\mathcal{O}_{\mathcal{C}}}^\mathbf{L} L)) \ar[d] \\
 Lg^*Rf_*K \otimes_{\mathcal{O}_{\mathcal{D}'}}^\mathbf{L} Lg^*Rf_*L \ar[d] &
 R(f')_*L(g')^*(K \otimes_{\mathcal{O}_{\mathcal{C}}}^\mathbf{L} L) \ar@{=}[d] \\
-R(f')_*(L(g')^*K \otimes_{\mathcal{O}_{\mathcal{D}'}} R(f')_*(L(g')^*L \ar[r] &
+R(f')_*L(g')^*K \otimes_{\mathcal{O}_{\mathcal{D}'}}^\mathbf{L} R(f')_*L(g')^*L \ar[r] &
 R(f')_*(L(g')^*K \otimes_{\mathcal{O}_{\mathcal{C}'}}^\mathbf{L} L(g')^*L)
 }
 $$
@@ -8680,7 +8680,7 @@ More on Algebra, Lemma \ref{more-algebra-lemma-diagonal-better}.
 \begin{lemma}
 \label{lemma-diagonal}
 Let $(\mathcal{C}, \mathcal{O})$ be a ringed site. Given complexes
-$\mathcal{K}^\bullet, \mathcal{L}^\bullet, \mathcal{M}^\bullet$
+$\mathcal{K}^\bullet, \mathcal{L}^\bullet$
 of $\mathcal{O}$-modules there is a canonical morphism
 $$
 \mathcal{K}^\bullet
@@ -9800,7 +9800,7 @@ consider the induced morphisms of ringed topoi
 $$
 \xymatrix{
 (\Sh(\mathcal{C}'/U'), \mathcal{O}_{U'}) \ar[rd]_{\pi'_{U'}} \ar[rr]_{g'} & &
-(\Sh(\mathcal{C}), \mathcal{O}_U) \ar[ld]^{\pi_U} \\
+(\Sh(\mathcal{C}/U), \mathcal{O}_U) \ar[ld]^{\pi_U} \\
 & (\Sh(\mathcal{D}/V), \mathcal{O}_V)
 }
 $$
@@ -9816,7 +9816,7 @@ $(\sigma')^{-1} = \pi'_{U', *}$, and $\sigma^{-1} = \pi_{U, *}$.
 \begin{proof}
 Let $v' : \mathcal{D}/V \to \mathcal{C}'/U'$ be the functor constructed
 in the proof of Lemma \ref{lemma-fibred-category-with-object} starting
-with $p' : \mathcal{C}' \to \mathcal{D}'$ and the object $U'$.
+with $p' : \mathcal{C}' \to \mathcal{D}$ and the object $U'$.
 Since $u$ is a $1$-morphism of fibred categories over $\mathcal{D}$
 it transforms strongly cartesian morphisms into strongly cartesian morphisms,
 hence the functor $v = u \circ v'$ is the functor of
@@ -10217,11 +10217,11 @@ $$
 (*, B) & (*, B') \ar[l]_f
 }
 $$
-Then $L\pi_! \circ Lh^* = Lf^* \circ L\pi'_!$.
+Then $L\pi'_! \circ Lh^* = Lf^* \circ L\pi_!$.
 \end{lemma}
 
 \begin{proof}
-Both functors are right adjoint to the obvious functor
+Both functors are left adjoint to the obvious functor
 $D(B') \to D(\underline{B})$.
 \end{proof}
 
@@ -10487,7 +10487,7 @@ We conclude that $X_\bullet$ and $X'_\bullet$ are quasi-isomorphic as desired.
 Let $\mathcal{C}$ and $B$ be as in Example \ref{example-category-to-point}.
 Assume there exists a cosimplicial object as in
 Lemma \ref{lemma-compute-by-cosimplicial-resolution}.
-Let $\mathcal{O} \to \underline{B}$ be a map sheaf of rings on
+Let $\mathcal{O} \to \underline{B}$ be a map of sheaves of rings on
 $\mathcal{C}$ which induces an isomorphism
 $L\pi_!\mathcal{O} \to L\pi_!\underline{B}$.
 In this case we obtain an exact functor of triangulated categories
@@ -10588,13 +10588,13 @@ to zero in $K_n(\mathcal{F}^+)(V)$. We have to show there exists a
 covering $\{V_j \to V\}$ such that $\xi|_{V_j}$ is zero in
 $K_n(\mathcal{F})(V_j)$. We write
 $$
-\xi = \sum (U_{i, n + 1} \to \ldots \to U_{i, 0}, \sigma_i)
+\xi = \sum (U_{i, n} \to \ldots \to U_{i, 0}, \sigma_i)
 $$
 with $\sigma_i \in \mathcal{F}(U_{i, 0})$. We arrange it so that
 each sequence of morphisms $U_n \to \ldots \to U_0$ of $\mathcal{C}_V$
-occurs are most once. Since the sums in the definition
+occurs at most once. Since the sums in the definition
 of the complex $K_\bullet$ are direct sums, the only way this can map
-to zero in $K_\bullet(\mathcal{F}^+)(V)$ is if all $\sigma_i$ map
+to zero in $K_n(\mathcal{F}^+)(V)$ is if all $\sigma_i$ map
 to zero in $\mathcal{F}^+(U_{i, 0})$. By construction of
 $\mathcal{F}^+$ there exist coverings $\{U_{i, 0, j} \to U_{i, 0}\}$
 such that $\sigma_i|_{U_{i, 0, j}}$ is zero. By our construction of
@@ -10622,7 +10622,7 @@ Lemma \ref{lemma-compute-left-derived-pi-shriek-pre}.
 
 \begin{proof}
 Consider the sequence of functors $\mathcal{F} \mapsto L_n(\mathcal{F})$
-from $\textit{PAb}(\mathcal{C}) \to \textit{Ab}(\mathcal{C})$.
+from $\textit{PAb}(\mathcal{C}) \to \textit{Ab}(\mathcal{D})$.
 Since for each $V \in \Ob(\mathcal{D})$ the sequence of functors
 $H_n(\mathcal{C}_V, - )$ forms a $\delta$-functor
 so do the functors $\mathcal{F} \mapsto L_n(\mathcal{F})$.
@@ -10639,7 +10639,7 @@ $$
 \mathcal{F}_{U'}(U) =
 \bigoplus\nolimits_{\Mor_\mathcal{C}(U, U')} \mathbf{Z}
 $$
-If $U$ lies over $V = p(U)$ in $\mathcal{D})$ and $U'$ lies over $V' = p(U')$
+If $U$ lies over $V = p(U)$ in $\mathcal{D}$ and $U'$ lies over $V' = p(U')$
 then any morphism $a : U \to U'$ factors uniquely as $U \to h^*U' \to U'$
 where $h = p(a) : V \to V'$ (see
 Categories, Definition
@@ -12197,11 +12197,11 @@ and hence we may assume that $\mathcal{K}_i^j = 0$
 for $j < m + 1$. After refining the covering we may choose
 maps $\beta_i : \mathcal{L}_i^\bullet \to L|_{U_i}$ in $D(\mathcal{O}_{U_i})$
 with $\mathcal{L}_i^\bullet$ strictly perfect such that
-$H^j(\beta)$ is an isomorphism for $j > m$ and
+$H^j(\beta_i)$ is an isomorphism for $j > m$ and
 surjective for $j = m$. By
 Lemma \ref{lemma-lift-through-quasi-isomorphism}
 we can, after refining the covering, find maps of complexes
-$\gamma_i : \mathcal{K}^\bullet \to \mathcal{L}^\bullet$
+$\gamma_i : \mathcal{K}_i^\bullet \to \mathcal{L}_i^\bullet$
 such that the diagrams
 $$
 \xymatrix{
@@ -12255,9 +12255,9 @@ and replacing $\mathcal{C}$ by the localization $\mathcal{C}/U$
 we may assume there exist strictly perfect complexes $\mathcal{K}^\bullet$
 and $\mathcal{L}^\bullet$ and maps
 $\alpha : \mathcal{K}^\bullet \to K$ and
-$\beta : \mathcal{L}^\bullet \to L$ with $H^i(\alpha)$ and isomorphism
+$\beta : \mathcal{L}^\bullet \to L$ with $H^i(\alpha)$ an isomorphism
 for $i > n$ and surjective for $i = n$ and with
-$H^i(\beta)$ and isomorphism for $i > m$ and surjective for $i = m$.
+$H^i(\beta)$ an isomorphism for $i > m$ and surjective for $i = m$.
 Then the map
 $$
 \alpha \otimes^\mathbf{L} \beta :
@@ -12323,7 +12323,7 @@ $\mathcal{O}$-module.
 
 \begin{proof}
 Proof of (1). Let $U$ be an object of $\mathcal{C}$. We have to show that
-$H^m(K)$ is can be generated by finitely many sections over the members of
+$H^m(K)$ can be generated by finitely many sections over the members of
 a covering of $U$ (see
 Modules on Sites, Definition \ref{sites-modules-definition-site-local}).
 Thus during the proof we may (finitely often) choose a covering
@@ -12337,7 +12337,7 @@ Let $n$ be the largest integer such that $\mathcal{E}^n \not = 0$.
 If $n = m$, then $H^m(\mathcal{E}^\bullet)$ is a quotient of
 $\mathcal{E}^n$ and the result is clear.
 If $n > m$, then $\mathcal{E}^{n - 1} \to \mathcal{E}^n$ is surjective as
-$H^n(E^\bullet) = 0$. By Lemma \ref{lemma-local-lift-map}
+$H^n(\mathcal{E}^\bullet) = 0$. By Lemma \ref{lemma-local-lift-map}
 we can (after replacing $U$ by the members of a covering)
 find a section of this surjection and write
 $\mathcal{E}^{n - 1} = \mathcal{E}' \oplus \mathcal{E}^n$.
@@ -12458,7 +12458,7 @@ $\Ker(\mathcal{K}^{n - 1} \to \mathcal{K}^n)$ is flat
 (Modules on Sites, Lemma \ref{sites-modules-lemma-flat-ses}).
 Hence we may replace $\mathcal{K}^\bullet$ by
 $\tau_{\leq n - 1}\mathcal{K}^\bullet$. Thus, by induction on $n$, we
-reduce to the case that $K^\bullet$ is a complex of flat
+reduce to the case that $\mathcal{K}^\bullet$ is a complex of flat
 $\mathcal{O}$-modules with $\mathcal{K}^i = 0$ for $i > b$.
 
 \medskip\noindent
@@ -12535,7 +12535,7 @@ $$
 because the short exact sequence
 $0 \to \mathcal{I} \to \mathcal{K}^a \to \mathcal{N} \to 0$
 of flat modules pulls back to a short exact sequence.
-By Lemma \ref{lemma-K-flat-two-out-of-three-ses}.
+By Lemma \ref{lemma-K-flat-two-out-of-three-ses},
 the complex $f^*\mathcal{E}^\bullet$ is K-flat and the proof is complete.
 \end{proof}
 
@@ -12552,12 +12552,12 @@ then $Lf^*E$ has tor amplitude in $[a, b]$.
 \begin{proof}
 Assume $E$ has tor amplitude in $[a, b]$. By
 Lemma \ref{lemma-tor-amplitude}
-we can represent $E$ by a complex of
+we can represent $E$ by a complex
 $\mathcal{E}^\bullet$ of flat $\mathcal{O}$-modules with
 $\mathcal{E}^i = 0$ for $i \not \in [a, b]$. Then
 $Lf^*E$ is represented by $f^*\mathcal{E}^\bullet$.
 By Modules on Sites, Lemma \ref{sites-modules-lemma-pullback-flat}
-the module $f^*\mathcal{E}^i$ are flat.
+the modules $f^*\mathcal{E}^i$ are flat.
 Thus by Lemma \ref{lemma-tor-amplitude}
 we conclude that $Lf^*E$ has tor amplitude in $[a, b]$.
 \end{proof}
@@ -13063,16 +13063,16 @@ for $M$ in $D(\mathcal{O})$.
 \end{lemma}
 
 \begin{proof}
-We will us without further mention that formation of internal hom commutes
+We will use without further mention that formation of internal hom commutes
 with restriction (Lemma \ref{lemma-restriction-RHom-to-U}). Let $U$
 be an arbitrary object of $\mathcal{C}$. To check that
 $K^\vee$ is perfect, it suffices to show that there exists a covering
 $\{U_i \to U\}$ such that $K^\vee|_{U_i}$ is perfect for all $i$.
 There is a canonical map
 $$
-K = R\SheafHom(\mathcal{O}_X, \mathcal{O}_X)
-\otimes_{\mathcal{O}_X}^\mathbf{L} K \longrightarrow
-R\SheafHom(R\SheafHom(K, \mathcal{O}_X), \mathcal{O}_X) =
+K = R\SheafHom(\mathcal{O}, \mathcal{O})
+\otimes_{\mathcal{O}}^\mathbf{L} K \longrightarrow
+R\SheafHom(R\SheafHom(K, \mathcal{O}), \mathcal{O}) =
 (K^\vee)^\vee
 $$
 see Lemma \ref{lemma-internal-hom-evaluate}. It suffices to prove there
@@ -13606,7 +13606,7 @@ $b : \text{Tot}(M^\bullet \otimes_R N^\bullet) \to R$,
 \item $\theta^n$ corresponds to a map
 $h^n : \text{Tot}^n(M^\bullet \otimes_R N^\bullet) \to
 \text{Tot}^{n - 1}(M^\bullet \otimes_R N^\bullet)$, and
-\item $b \circ a = 1$ and $b \circ a - 1 = dh + hd$,
+\item $b \circ a = 1$ and $a \circ b - 1 = dh + hd$,
 \end{enumerate}
 It follows that $M^\bullet$ and $N^\bullet$ define
 mutually inverse objects of $D(R)$. By
@@ -13854,7 +13854,7 @@ is exact.
 Proof of (2). This holds by Lemma \ref{lemma-is-limit-dimension} with $d = 0$.
 
 \medskip\noindent
-Proof of (3). Let $(\mathcal{F}_n)$ be a system as in (2) and set
+Proof of (3). Let $(\mathcal{F}_n)$ be a system as in (3) and set
 $\mathcal{F} = \lim \mathcal{F}_n$. If $U \in \mathcal{B}$, then
 $\mathcal{F}(U) = \lim \mathcal{F}_n(U)$
 surjects onto $\mathcal{F}_1(U)$ as all the transition maps
@@ -13958,7 +13958,7 @@ Homology, Section \ref{homology-section-truncations}.
 This makes sense as in each degree the direct sum on the right is finite.
 By assumption this map factors through a finite direct sum.
 We conclude that $K \to \tau_{\geq n} K$ is zero for at least one $n$,
-i.e., $K$ is in $D^{-}(R)$.
+i.e., $K$ is in $D^{-}(\mathcal{A})$.
 
 \medskip\noindent
 We may represent $K$ by a bounded above complex $K^\bullet$ each of whose
@@ -13973,7 +13973,7 @@ Homology, Section \ref{homology-section-truncations}.
 Hence by Derived Categories, Lemmas \ref{derived-lemma-colim-hocolim} and
 \ref{derived-lemma-commutes-with-countable-sums}
 we see that $1 : K^\bullet \to K^\bullet$ factors through
-$\sigma_{\geq n}K^\bullet \to K^\bullet$ in $D(R)$.
+$\sigma_{\geq n}K^\bullet \to K^\bullet$ in $D(\mathcal{A})$.
 Thus we see that $1 : K^\bullet \to K^\bullet$ factors as
 $$
 K^\bullet \xrightarrow{\varphi} L^\bullet \xrightarrow{\psi} K^\bullet
@@ -13981,7 +13981,7 @@ $$
 in $D(\mathcal{A})$ for some complex $L^\bullet$ which is bounded and
 whose terms are direct sums of elements of $S$. Say $L^i$ is zero for
 $i \not \in [a, b]$. Let $c$ be the largest integer $\leq b + 1$ such
-that $L^i$ a finite direct sum of elements of $S$ for $i < c$.
+that $L^i$ is a finite direct sum of elements of $S$ for $i < c$.
 Claim: if $c < b + 1$, then we can modify $L^\bullet$ to increase $c$.
 By induction this claim will show we have a factorization
 of $1_K$ as
@@ -13995,7 +13995,7 @@ is an idempotent. By Derived Categories,
 Lemma \ref{derived-lemma-projectors-have-images-triangulated}
 we see that $L = \Ker(e) \oplus \Ker(1 - e)$.
 The map $\varphi : K \to L$ induces an isomorphism with
-$\Ker(1 - e)$ in $D(R)$ and we conclude.
+$\Ker(1 - e)$ in $D(\mathcal{A})$ and we conclude.
 
 \medskip\noindent
 Proof of the claim. Write $L^c = \bigoplus_{\lambda \in \Lambda} E_\lambda$.
@@ -14008,10 +14008,10 @@ $$
 \pi :
 L^\bullet
 \longrightarrow
-(\bigoplus\nolimits_{\lambda \in \Lambda \setminus \Lambda'} E_\lambda)[-i]
+(\bigoplus\nolimits_{\lambda \in \Lambda \setminus \Lambda'} E_\lambda)[-c]
 $$
 given by the projection onto the factors corresponding to
-$\Lambda \setminus \Lambda'$ in degree $i$.
+$\Lambda \setminus \Lambda'$ in degree $c$.
 By our assumption on $K$ we see that, after possibly replacing $\Lambda'$ by
 a larger finite subset, we may assume that $\pi \circ \varphi = 0$
 in $D(\mathcal{A})$.
@@ -14086,7 +14086,7 @@ $$
 H^p(U, \bigoplus\nolimits_{i \in I} \mathcal{I}_i) =
 \bigoplus\nolimits_{i \in I} H^p(U, \mathcal{I}_i) = 0
 $$
-for all $p$. Since $M = \bigoplus M_i$ is bounded below, we
+for all $p > 0$. Since $M = \bigoplus M_i$ is bounded below, we
 see that there exists an $a \in \mathbf{Z}$ such that $H^n(M_i) = 0$
 for $n < a$. Thus we can choose complexes of injective $\mathcal{O}$-modues
 $\mathcal{I}_i^\bullet$ representing $M_i$
@@ -14099,7 +14099,7 @@ represents $M$. By Leray acyclicity
 we see that
 $$
 R\Gamma(U, M) = \Gamma(U, \bigoplus \mathcal{I}_i^\bullet) =
-\bigoplus \Gamma(U, \bigoplus \mathcal{I}_i^\bullet) =
+\bigoplus \Gamma(U, \mathcal{I}_i^\bullet) =
 \bigoplus R\Gamma(U, M_i)
 $$
 as desired.
@@ -14272,8 +14272,8 @@ of $M$.
 \medskip\noindent
 By a slight generalization of
 Lemma \ref{lemma-kill-cohomology-class-on-covering} (details omitted)
-there exists a covering $\{U_i \to X\}$ such that $x_i \in H^0(X, H^b(K))$
-lifts to an element of $H^b(U_i, K)$. Thus, after replacing $X$ by the
+there exists a covering $\{U_i \to X\}$ such that for every $i$ and every $j = 1, \ldots, r$
+the class $x_j \in H^0(X, H^b(K))$ lifts to an element of $H^b(U_i, K)$. Thus, after replacing $X$ by the
 $U_i$ we reach the situation where there is a map
 $\underline{\Lambda^{\oplus r}}[-b] \to K$
 inducing a surjection on cohomology sheaves in degree $b$.
@@ -14294,9 +14294,9 @@ Modules on Sites, Lemma
 \ref{sites-modules-lemma-kernel-finite-locally-constant}
 we see that $H^{b - 1}(L)$ is locally constant of finite type.
 By induction hypothesis we obtain an isomorphism
-$\underline{M^\bullet} \to L$ in $D(\mathcal{C}, \underline{\Lambda})$
+$\underline{M^\bullet} \to L$ in $D(\mathcal{C}, \Lambda)$
 with $M^p$ a finite $\Lambda$-module and $M^p = 0$ for
-$p \not \in [a, b - 1]$. The map $L \to \Lambda^{\oplus r}[-b + 1]$
+$p \not \in [a, b - 1]$. The map $L \to \underline{\Lambda^{\oplus r}}[-b + 1]$
 gives a map $\underline{M^{b - 1}} \to \underline{\Lambda^{\oplus r}}$
 which locally is constant
 (Modules on Sites, Lemma
