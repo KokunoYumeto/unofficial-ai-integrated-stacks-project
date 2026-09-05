@@ -1,0 +1,395 @@
+{
+  "schema": "unofficial-ai-integrated-stacks-visual-qa/v1",
+  "status": "PASS",
+  "created_utc": "2026-09-05T20:54:24Z",
+  "source": {
+    "commit": "91cc89df5804b8c1949d8267602fc076649ee49b",
+    "tree": "060538ea3323b366e8f445fd79725a63c4241d2f"
+  },
+  "build_receipt": {
+    "path": "validation/ega-i-6.6.4-fixed-point-build-2026-08-31.json",
+    "bytes": 41019,
+    "sha256": "1D286182056118CBB36EDF9B413B25F8D1B6161FE61541F33725E30EC9149FE9",
+    "status": "PASS",
+    "global_fixed_point_sweep": 4
+  },
+  "scope": {
+    "affected_chapters": [
+      "sites-cohomology"
+    ],
+    "full_page_render_count": 135,
+    "full_page_contact_sheet_review_count": 135,
+    "high_resolution_locus_page_count": 26,
+    "high_resolution_locus_pages": {
+      "sites-cohomology": [
+        64,
+        68,
+        70,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        90,
+        94,
+        97,
+        98,
+        112,
+        113,
+        114,
+        115,
+        116,
+        120,
+        125,
+        128,
+        129,
+        130,
+        131,
+        132
+      ]
+    },
+    "applied_byte_edit_count": 61,
+    "accepted_operation_count": 61,
+    "historical_noop_operation_count": 0
+  },
+  "artifacts": {
+    "sites-cohomology": {
+      "pdf": "sites-cohomology.pdf",
+      "bytes": 1363974,
+      "sha256": "8306E50E6FA64D8BE41CA28B4E54DB34BA19A0F941A9648D7A4B9CF46DBC577D",
+      "pages": 135,
+      "encrypted": false,
+      "media_box_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "render_dimensions_pixels": [
+        816,
+        1056
+      ],
+      "pages_without_ink": 0,
+      "minimum_ink_pixels_below_245": 19831,
+      "duplicate_render_hashes": 0
+    }
+  },
+  "render_protocol": {
+    "renderer": "Poppler pdftoppm via tools/render_visual_qa.py",
+    "full_page_dpi": 96,
+    "full_page_layout": "ordered 4-by-4",
+    "contact_sheet_count": 9,
+    "high_resolution_dpi": 180,
+    "high_resolution_selection": "Every R39 manifest-bound correction page, transferred only after monotone rendered-text alignment to the cumulative PDF",
+    "render_intermediates_published": false
+  },
+  "source_page_mapping": {
+    "candidate_map": {
+      "path": "ai-integrated/candidates/commons/stacks/errata/r39/builds/source-page-map.json",
+      "bytes": 16202,
+      "sha256": "DB0F6A494FD473435A0BDAE925F647F18E3A068594C238C64053DA937FB438C0"
+    },
+    "candidate_pdf": {
+      "path": "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.pdf",
+      "bytes": 1274274,
+      "sha256": "469CFC1995B009A3D1B1E7F322C96DACDC6267FD1F1DAF425D616954AC2A1C4F"
+    },
+    "cumulative_pdf": {
+      "path": "sites-cohomology.pdf",
+      "bytes": 1363974,
+      "sha256": "8306E50E6FA64D8BE41CA28B4E54DB34BA19A0F941A9648D7A4B9CF46DBC577D"
+    },
+    "candidate_pages": 134,
+    "cumulative_pages": 135,
+    "method": "Poppler layout-text alignment, checking each mapped page against adjacent cumulative pages",
+    "all_correction_sensitive_pages_aligned": true,
+    "alignments": [
+      {
+        "candidate_page": 64,
+        "cumulative_page": 64,
+        "text_similarity": 0.997591
+      },
+      {
+        "candidate_page": 68,
+        "cumulative_page": 68,
+        "text_similarity": 0.996989
+      },
+      {
+        "candidate_page": 70,
+        "cumulative_page": 70,
+        "text_similarity": 0.996348
+      },
+      {
+        "candidate_page": 74,
+        "cumulative_page": 74,
+        "text_similarity": 0.975653
+      },
+      {
+        "candidate_page": 75,
+        "cumulative_page": 75,
+        "text_similarity": 0.998042
+      },
+      {
+        "candidate_page": 76,
+        "cumulative_page": 76,
+        "text_similarity": 0.998817
+      },
+      {
+        "candidate_page": 77,
+        "cumulative_page": 77,
+        "text_similarity": 1.0
+      },
+      {
+        "candidate_page": 78,
+        "cumulative_page": 78,
+        "text_similarity": 0.998353
+      },
+      {
+        "candidate_page": 79,
+        "cumulative_page": 79,
+        "text_similarity": 1.0
+      },
+      {
+        "candidate_page": 80,
+        "cumulative_page": 80,
+        "text_similarity": 0.99239
+      },
+      {
+        "candidate_page": 90,
+        "cumulative_page": 90,
+        "text_similarity": 0.999036
+      },
+      {
+        "candidate_page": 94,
+        "cumulative_page": 94,
+        "text_similarity": 0.996423
+      },
+      {
+        "candidate_page": 97,
+        "cumulative_page": 97,
+        "text_similarity": 0.997241
+      },
+      {
+        "candidate_page": 98,
+        "cumulative_page": 98,
+        "text_similarity": 0.992953
+      },
+      {
+        "candidate_page": 112,
+        "cumulative_page": 112,
+        "text_similarity": 0.994714
+      },
+      {
+        "candidate_page": 113,
+        "cumulative_page": 113,
+        "text_similarity": 0.981214
+      },
+      {
+        "candidate_page": 114,
+        "cumulative_page": 114,
+        "text_similarity": 0.985202
+      },
+      {
+        "candidate_page": 115,
+        "cumulative_page": 115,
+        "text_similarity": 0.998624
+      },
+      {
+        "candidate_page": 116,
+        "cumulative_page": 116,
+        "text_similarity": 0.998856
+      },
+      {
+        "candidate_page": 120,
+        "cumulative_page": 120,
+        "text_similarity": 0.999234
+      },
+      {
+        "candidate_page": 125,
+        "cumulative_page": 125,
+        "text_similarity": 0.963161
+      },
+      {
+        "candidate_page": 128,
+        "cumulative_page": 128,
+        "text_similarity": 0.628332
+      },
+      {
+        "candidate_page": 129,
+        "cumulative_page": 129,
+        "text_similarity": 0.639616
+      },
+      {
+        "candidate_page": 130,
+        "cumulative_page": 130,
+        "text_similarity": 0.576108
+      },
+      {
+        "candidate_page": 131,
+        "cumulative_page": 131,
+        "text_similarity": 0.523739
+      },
+      {
+        "candidate_page": 132,
+        "cumulative_page": 132,
+        "text_similarity": 0.5528
+      }
+    ]
+  },
+  "private_render_evidence": {
+    "published": false,
+    "manifest": {
+      "path": "private-render-evidence/r39/sites-cohomology/render-manifest.json",
+      "bytes": 49174,
+      "sha256": "DD0124057D11C3E538DE902C7641E1CF8CCCDC614EA506066927CDB8BDE556C3"
+    }
+  },
+  "direct_inspection_evidence": {
+    "method": "direct_image_inspection",
+    "review_summary": {
+      "path": "private-render-evidence/r39/sites-cohomology/direct-review-summary.json",
+      "bytes": 3916,
+      "sha256": "5180018ED29A45EB629887948C4388E98AD63123B3F8DD958D3E13B9BCAC9123"
+    },
+    "reviews": [
+      {
+        "reviewer": "Codex visual QA \u2014 pages 1\u201348 and locus set A",
+        "status": "PASS",
+        "contact_sheets": [
+          1,
+          2,
+          3
+        ],
+        "high_resolution_pages": [
+          64,
+          68,
+          70,
+          74,
+          75,
+          76,
+          77
+        ],
+        "observations": [
+          "All contact-sheet pages and locus renders are present, nonblank, legible, and free of clipped or overlapping prose, formulas, diagrams, headers, and folios.",
+          "A first-pass concern about running heads on pages 68, 74, and 76 was checked again at original detail: pages 68 and 74 have their normal cumulative running heads, while page 76 has a nonblocking TeX page-style variation also seen in the frozen candidate on page 74; the content and page number remain intact.",
+          "Comparison and base-change identities, spectral sequences, tensor notation, arrows, labels, and the large page-77 diagram are complete and aligned."
+        ],
+        "defects": {
+          "clipped_content": 0,
+          "overlapping_content": 0,
+          "blank_pages": 0,
+          "corrupted_pages": 0,
+          "missing_or_unreadable_glyphs": 0,
+          "broken_diagrams": 0
+        }
+      },
+      {
+        "reviewer": "Codex visual QA \u2014 pages 49\u201380 and locus set B",
+        "status": "PASS",
+        "contact_sheets": [
+          4,
+          5
+        ],
+        "high_resolution_pages": [
+          78,
+          79,
+          80,
+          90,
+          94,
+          97,
+          98
+        ],
+        "observations": [
+          "All pages are sequential, nonblank, sharp, within margins, and free of clipping, overlap, raster corruption, missing-glyph boxes, or diagram damage.",
+          "The literal cross-reference placeholders on pages 79 and 90 are inherited source content also visible in the frozen authority/candidate and covered by its recorded standalone cross-chapter-reference limitation; they are not render defects or an R39 regression.",
+          "Formulas, correction-locus prose, running heads, folios, diagrams, and arrows are legible and intact."
+        ],
+        "defects": {
+          "clipped_content": 0,
+          "overlapping_content": 0,
+          "blank_pages": 0,
+          "corrupted_pages": 0,
+          "missing_or_unreadable_glyphs": 0,
+          "broken_diagrams": 0
+        }
+      },
+      {
+        "reviewer": "Codex visual QA \u2014 pages 81\u2013112 and locus set C",
+        "status": "PASS",
+        "contact_sheets": [
+          6,
+          7
+        ],
+        "high_resolution_pages": [
+          112,
+          113,
+          114,
+          115,
+          116,
+          120,
+          125
+        ],
+        "observations": [
+          "No page is blank, corrupt, clipped, or overlapped; page numbers, headers, margins, typography, and page-break continuations are sound.",
+          "Diagrams, arrows, superscripts, subscripts, direct sums, tensor and Hom notation, exact sequences, and correction-locus formulas remain crisp and complete.",
+          "High-resolution correction prose is continuous and legible on every reviewed locus page."
+        ],
+        "defects": {
+          "clipped_content": 0,
+          "overlapping_content": 0,
+          "blank_pages": 0,
+          "corrupted_pages": 0,
+          "missing_or_unreadable_glyphs": 0,
+          "broken_diagrams": 0
+        }
+      },
+      {
+        "reviewer": "Codex visual QA \u2014 pages 113\u2013135 and locus set D",
+        "status": "PASS",
+        "contact_sheets": [
+          8,
+          9
+        ],
+        "high_resolution_pages": [
+          128,
+          129,
+          130,
+          131,
+          132
+        ],
+        "observations": [
+          "All pages are present, nonblank, and uncorrupted, with no clipped or overlapping text, formulas, diagrams, headers, or page numbers.",
+          "Dense derived-limit, product, direct-sum, truncation, exact-sequence, distinguished-triangle, and cohomology notation remains legible and aligned.",
+          "Unused cells after page 135 in the final contact sheet are layout slots, not missing pages."
+        ],
+        "defects": {
+          "clipped_content": 0,
+          "overlapping_content": 0,
+          "blank_pages": 0,
+          "corrupted_pages": 0,
+          "missing_or_unreadable_glyphs": 0,
+          "broken_diagrams": 0
+        }
+      }
+    ]
+  },
+  "checks": {
+    "all_pages_rendered": true,
+    "all_pages_manually_inspected": true,
+    "all_manifest_bound_locus_pages_inspected_at_high_resolution": true,
+    "page_dimensions_consistent": true,
+    "headers_and_page_numbers_consistent": true,
+    "text_and_formulas_legible": true,
+    "diagrams_intact": true,
+    "rejected_simplicial_007_parenthesis_preserved": true,
+    "clipped_content": 0,
+    "overlapping_content": 0,
+    "blank_pages": 0,
+    "corrupted_pages": 0,
+    "missing_or_unreadable_glyphs": 0,
+    "broken_diagrams": 0
+  },
+  "qualification": "AI visual QA of the cumulative generated reader; not official Stacks review or expert certification."
+}

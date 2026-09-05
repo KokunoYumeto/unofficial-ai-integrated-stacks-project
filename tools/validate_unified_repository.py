@@ -33,13 +33,13 @@ DEFAULT_BUILD_RECEIPT = Path(
     "validation/ega-i-6.6.4-fixed-point-build-2026-08-31.json"
 )
 VISUAL_QA_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r39-visual-qa-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-visual-qa-2026-09-05.json"
 )
 REPRODUCIBILITY_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r39-reproducibility-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-reproducibility-2026-09-05.json"
 )
 SECOND_REPRODUCIBILITY_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r39-reproducibility-second-2026-08-31.json"
+    "validation/stacks-errata-a04446e-r39-reproducibility-second-2026-09-05.json"
 )
 CURRENT_RELEASE_RECEIPT = Path(
     "validation/stacks-errata-a04446e-r39-release-2026-08-31.json"

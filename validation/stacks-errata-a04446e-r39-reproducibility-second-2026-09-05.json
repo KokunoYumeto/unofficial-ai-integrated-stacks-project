@@ -1,0 +1,1072 @@
+{
+  "schema": "unofficial-ai-integrated-stacks-fixed-point-build/v1",
+  "status": "PASS",
+  "created_utc": "2026-09-05T20:36:05Z",
+  "source": {
+    "commit": "91cc89df5804b8c1949d8267602fc076649ee49b",
+    "tree": "060538ea3323b366e8f445fd79725a63c4241d2f"
+  },
+  "builder": {
+    "path": "tools/build_fixed_point.py",
+    "git_blob": "5802d13233f2d384f5553397ace921786932c10d",
+    "sha256": "FD7E584BA6E3434D31721C8C4CB48C443273378D11B18505C854CD2AD2547E09"
+  },
+  "composition": {
+    "schema": "unofficial-ai-integrated-stacks-composition/v3",
+    "receipt": "validation/composition-current.json",
+    "receipt_sha256": "5DFAA8FC81EB0F5CFE94AAC6E3DAFC3BFDDB7516EA4B5FC7DE8AE38906DFC207",
+    "receipt_git_blob": "f2ed2e2b6371943072a248dc192f948973cbe60d",
+    "authority_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "authority_tree": "3feeb703b931a6e7259782c10e7d1575adc83e5e",
+    "previous_public_main_head": "4e34fcd92f39f6b711e825b6cd46ffc924a9a231",
+    "previous_public_main_tree": "e619f038b9cdfb3513b1bf70d8929bc9312f485a",
+    "previous_registry_commit": "7418fe8de04b68eb793924b56bd3b53dc0d0838d",
+    "previous_last_admitted_overlay": "stacks-errata-a04446e-r38",
+    "previous_source_blobs": {
+      "sites-cohomology.tex": {
+        "bytes": 534441,
+        "sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
+        "git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8"
+      }
+    },
+    "composition_mode": "manifest-bound registry-order replay rebased onto verified cumulative source",
+    "composition_base_commit": "32217a7e220c0456709b07aff9d7c295a54e8afc",
+    "composition_base_tree": "7c51f5bd697e65e46aaf2a917594b9e6fc996264",
+    "composition_source_commit": "0cf35b6ffdb46a63355f0d9ee3f2fa47a529ffe0",
+    "composition_source_tree": "240a935c9a1d6ba2619ffd1d3a8a4ed70b7e6825",
+    "registry_cutoff_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+    "registry_cutoff_tree": "7efd519d762e47278c56e1e5296d6f99e65a2c07",
+    "registry_import_commit": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+    "registry_import_tree": "fc2eaae11b2a9065a3a9fa662392fe4e2db30f1f",
+    "registry_overlays_path": "ai-integrated/registry/overlays.json",
+    "registry_overlays_git_blob": "e351eb80bf3d96c5068d1816b53b14d01841d414",
+    "registry_overlays_sha256": "A259CAA4DBB502B35B7F0F0759D093CF59811D1590228B93AFD4D1714DC14FF0",
+    "registered_overlays": 40,
+    "registered_stable_ids": 1149,
+    "last_admitted_overlay": "stacks-errata-a04446e-r39",
+    "new_overlays": [
+      {
+        "id": "stacks-errata-a04446e-r39",
+        "stable_ids": 43,
+        "operations": 61,
+        "manifest_sha256": "879FB3790D808707B343CD583E7E257F3DBB3035166636598992F7886E6223E0",
+        "payload_sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD",
+        "payloads": [
+          {
+            "path": "payload/sites-cohomology.tex",
+            "sha256": "002642AD67BC27A1A0CACDF44EB548AD5997AEBA07007E22D8B130E98A2F4ABD"
+          }
+        ],
+        "review_receipt_sha256": "E940BF704B7D08A4169E73669A0A614652D9B3C32B4BC31669B8AEFB769A61CB",
+        "candidate_commit": "fcd866c83f868f49f699e110d1a54b74a54c0886",
+        "candidate_commits": [
+          "fcd866c83f868f49f699e110d1a54b74a54c0886"
+        ],
+        "candidate_tree": "6a58c38e19a5ed921835268622a939250597f847",
+        "candidate_subtree": "c51de579a3b1f4e2b70b0d47657181ec3cb16eaa",
+        "admission_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+        "admission_tree": "7efd519d762e47278c56e1e5296d6f99e65a2c07",
+        "admission_parent": "fcd866c83f868f49f699e110d1a54b74a54c0886",
+        "lease_release_event": "lease-event-000083"
+      }
+    ],
+    "new_overlay_ids": [
+      "stacks-errata-a04446e-r39"
+    ],
+    "new_overlay_candidate_commits": [
+      "fcd866c83f868f49f699e110d1a54b74a54c0886"
+    ],
+    "new_overlay_intake_commits": [],
+    "new_overlay_admission_commits": [
+      "bf472632906dcfbc032620f8ce203fa687e929e5"
+    ],
+    "required_build_stems": [
+      "sets",
+      "categories",
+      "topology",
+      "sheaves",
+      "sites",
+      "algebra",
+      "fields",
+      "artin",
+      "brauer",
+      "derived",
+      "simplicial",
+      "homology",
+      "more-algebra",
+      "smoothing",
+      "modules",
+      "sites-modules",
+      "schemes",
+      "properties",
+      "morphisms",
+      "more-morphisms",
+      "spaces-morphisms",
+      "crystalline",
+      "spaces-cohomology",
+      "spaces-duality",
+      "stacks-limits",
+      "injectives",
+      "cohomology",
+      "sites-cohomology",
+      "gaga",
+      "moduli"
+    ],
+    "affected_source_stems": [
+      "sites-cohomology"
+    ],
+    "affected_source_identities": {
+      "sites-cohomology.tex": {
+        "authority_bytes": 534394,
+        "authority_projection_bytes": 534532,
+        "authority_projection_git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29",
+        "authority_projection_sha256": "0D9E067D20F6A708BB228EC7B0F6DA7881901C6C49CB38887553C17CD3A7B023",
+        "authority_sha256": "5B335CE2C7208A128B3C744B8828D93508063F41A4FABBCE2E921F890928895C",
+        "before_bytes": 534441,
+        "before_git_blob": "9a2387a94e2ea9f077c8cebd57cbbf3a20bfeef8",
+        "before_sha256": "DDDCD6951A94B839540D4EBB35F03A34AEDB6D30516B63A55385BA6D8F5CB98B",
+        "before_state": "exact_existing_overlay_projection",
+        "before_worktree_bytes": null,
+        "before_worktree_sha256": null,
+        "composed_bytes": 534532,
+        "composed_git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29",
+        "composed_sha256": "0D9E067D20F6A708BB228EC7B0F6DA7881901C6C49CB38887553C17CD3A7B023",
+        "existing_operations": 42,
+        "matches_target_after": true,
+        "new_operations": 61,
+        "preapplied_operation_ids": [],
+        "semantic_disposition_operation_ids": [],
+        "superseded_operations": 0,
+        "target_operations": 103,
+        "written": false,
+        "composition_mode": "Exact manifest-bound operations on cumulative source; no preapplied operation or semantic disposition consumed",
+        "committed_matches_composition": true,
+        "authority_git_blob": "ba8f62453f35abc5d9f10c14c361382128ebb042"
+      }
+    },
+    "verifier_reports": {},
+    "import_preparation_topology": {
+      "schema": "unofficial-ai-integrated-stacks-import-preparation-topology/v1",
+      "status": "PASS",
+      "registry_import_chain": [
+        {
+          "registry_commit": "fcd866c83f868f49f699e110d1a54b74a54c0886",
+          "import_commit": "a78fc48486bf0bdc65afbce96fb5e79018711287",
+          "import_tree": "d7c548edaf27b26e1ce096739c14c4f9726699bc",
+          "changed_paths": [
+            "ai-integrated/candidates/commons/stacks/errata/r39/.gitattributes",
+            "ai-integrated/candidates/commons/stacks/errata/r39/BUILD.md",
+            "ai-integrated/candidates/commons/stacks/errata/r39/FINALIZATION.md",
+            "ai-integrated/candidates/commons/stacks/errata/r39/LEASE.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/README.md",
+            "ai-integrated/candidates/commons/stacks/errata/r39/REGENERATION_RECEIPT.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/COPYING",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/adverse/ROW053_ORIGINAL_AND_LINKED_EXPANSION.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/producer/SITES_COHOMOLOGY_SOURCE_DEFECT_LEDGER.csv",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/producer/SITES_COHOMOLOGY_SOURCE_EMENDATIONS.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/registrar/SITES_COHOMOLOGY_038_079_INDEPENDENT_REVIEW_20260831.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/registrar/SITES_COHOMOLOGY_LINKED_053_REVIEW_20260831.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/registrar/SITES_COHOMOLOGY_R39_DEDUP_AND_PLAN_20260831.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/source/sites-cohomology.tex",
+            "ai-integrated/candidates/commons/stacks/errata/r39/authority/upstream.lock.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/build-receipt.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/BUILD_RENDER_STAGE.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/FINAL_MECHANICAL_VALIDATION.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/PENDING.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/build-execution.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/build-receipt.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/deterministic-replay.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.authority.bibtex.txt",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.authority.log",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.authority.pass3.txt",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.authority.pdf",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.bibtex.txt",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.log",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.pass3.txt",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/sites-cohomology.pdf",
+            "ai-integrated/candidates/commons/stacks/errata/r39/builds/source-page-map.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/candidate.config.input.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/candidate.config.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/candidate.manifest.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/check-manifest.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/decisions.input.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/decisions.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/derive-visual-pages.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/deterministic-replay.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/finalize_r39.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/formula-diagram-inventory.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/operation-spec.input.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/operation-spec.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/payload/sites-cohomology.tex",
+            "ai-integrated/candidates/commons/stacks/errata/r39/pipeline_r39.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/rejections.input.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/rejections.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/render-qa.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay-build.py",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_INDEPENDENT_REVIEW.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/FINAL_STAGE.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/SOURCE_INDEPENDENT_VALIDATION.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/VISUAL_ADJUDICATION.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/VISUAL_PAGES_001_048.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/VISUAL_PAGES_049_096.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/replay/VISUAL_PAGES_097_134.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/source-map.input.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/source-map.jsonl",
+            "ai-integrated/candidates/commons/stacks/errata/r39/source-validation.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/stable-units.input.json",
+            "ai-integrated/candidates/commons/stacks/errata/r39/stable-units.json",
+            "ai-integrated/registry/leases.json"
+          ]
+        },
+        {
+          "registry_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+          "import_commit": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+          "import_tree": "fc2eaae11b2a9065a3a9fa662392fe4e2db30f1f",
+          "changed_paths": [
+            "ai-integrated/.github/workflows/validate.yml",
+            "ai-integrated/registry/admission-receipts/r39.json",
+            "ai-integrated/registry/leases.json",
+            "ai-integrated/registry/overlays.json"
+          ]
+        }
+      ],
+      "registry_preimage_alignments": [
+        {
+          "registry_commit": "bf472632906dcfbc032620f8ce203fa687e929e5",
+          "commit": "25fdedbaec234e7581d89aee021bc10b6113f493",
+          "parent": "a78fc48486bf0bdc65afbce96fb5e79018711287",
+          "tree": "7458a116208f0ee3b1c5af5f6e02026f7a09ed33",
+          "paths": [
+            "ai-integrated/.github/workflows/validate.yml"
+          ]
+        }
+      ],
+      "preparation_commits": [
+        {
+          "commit": "32217a7e220c0456709b07aff9d7c295a54e8afc",
+          "parent": "ea17e41bd3a2ac847dc3323ddd6c18ef7b7da64c",
+          "tree": "7c51f5bd697e65e46aaf2a917594b9e6fc996264",
+          "paths": [
+            "tools/build_fixed_point.py",
+            "tools/write_r39_composition_receipt.py"
+          ]
+        }
+      ],
+      "root_source_inputs_unchanged_before_composition": true,
+      "imported_subtree_unchanged_by_preparation": true
+    }
+  },
+  "environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.9",
+    "pdftex": "MiKTeX-pdfTeX 4.27 (MiKTeX 26.5)",
+    "bibtex": "MiKTeX-BibTeX 4.2 (MiKTeX 26.5)",
+    "pdfinfo": "pdfinfo version 26.07.0",
+    "source_date_epoch": "1785270512"
+  },
+  "build": {
+    "strategy": "sequential-prime-bibtex-global-state-sweeps",
+    "fixed_point_suffixes": [
+      ".aux",
+      ".bbl",
+      ".idx",
+      ".ind",
+      ".lof",
+      ".lot",
+      ".out",
+      ".toc",
+      ".pdf"
+    ],
+    "stem_selection": "composition_receipt",
+    "stems": [
+      "sets",
+      "categories",
+      "topology",
+      "sheaves",
+      "sites",
+      "algebra",
+      "fields",
+      "artin",
+      "brauer",
+      "derived",
+      "simplicial",
+      "homology",
+      "more-algebra",
+      "smoothing",
+      "modules",
+      "sites-modules",
+      "schemes",
+      "properties",
+      "morphisms",
+      "more-morphisms",
+      "spaces-morphisms",
+      "crystalline",
+      "spaces-cohomology",
+      "spaces-duality",
+      "stacks-limits",
+      "injectives",
+      "cohomology",
+      "sites-cohomology",
+      "gaga",
+      "moduli"
+    ],
+    "chapter_count": 30,
+    "global_fixed_point_sweep": 4,
+    "pdfinfo_readable": 30,
+    "diagnostics": {
+      "fatal_markers": 0,
+      "missing_glyph_markers": 0,
+      "undefined_reference_markers": 0,
+      "external_reference_markers": 4321,
+      "undefined_citation_markers": 0,
+      "multiply_defined_markers": 0,
+      "rerun_required_markers": 0,
+      "destination_warning_markers": 0
+    },
+    "artifact_tuple_set_sha256": "2843FDEDEF21F845DBDED229BBE0307CD5D367EABCB26BAF4522A1837DA1DF13",
+    "worktree_kind": "linked",
+    "primary_worktree_override": false,
+    "machine_wide_tex_mutex": {
+      "schema": "unofficial-ai-integrated-stacks-tex-mutex/v1",
+      "status": "PASS",
+      "name": "Global\\InterlanguageTeXSlotV1",
+      "namespace": "Windows Global",
+      "acquisition_timeout_ms": 300000,
+      "wait_started_utc": "2026-09-05T20:30:39Z",
+      "acquired_utc": "2026-09-05T20:30:41Z",
+      "wait_duration_ms": 1739.662,
+      "wait_result_code": "0x00000000",
+      "wait_result": "acquired",
+      "abandoned_mutex_recovered": false,
+      "ownership_acquired": true,
+      "held_scope": "all TeX/BibTeX passes, TeX/BibTeX version probes, and immediate final log checks",
+      "released_utc": "2026-09-05T20:36:04Z",
+      "held_duration_ms": 323815.208,
+      "release_result": "released_in_finally"
+    }
+  },
+  "artifacts": [
+    {
+      "stem": "sets",
+      "pages": 14,
+      "bytes": 458090,
+      "sha256": "E1D28F55DDA3B9ACDF21ABC62C5C1BB3C55C4715CB40FCF82FA973F6DD8666C8",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 90,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 90,
+        "sha256": "CE236BC59DEE756ACA1E0CC99AABCE56D9D7D47DC424DCE8BFF4585496D5DEB9"
+      }
+    },
+    {
+      "stem": "categories",
+      "pages": 105,
+      "bytes": 1066851,
+      "sha256": "6F0D76EC75F89D9E739B9712CF5A49EEDFAED0F5EE1CEAF3360E47E3FECCCF44",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 91,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 91,
+        "sha256": "8EF775DB7A8ACE6BC8C83DDF4806ED774DDFEE0445DCC45D118ECB3F919F89BC"
+      }
+    },
+    {
+      "stem": "topology",
+      "pages": 66,
+      "bytes": 798745,
+      "sha256": "85935A572DE763E7A7C87FF8C4AD7BAF30642BBD61400D2FD7626F4DF33F6397",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 90,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 90,
+        "sha256": "E0B76591072E0EAE57B7311AA271EC8742D3F3D32093335D7EFBA6F6A6A78C51"
+      }
+    },
+    {
+      "stem": "sheaves",
+      "pages": 54,
+      "bytes": 659059,
+      "sha256": "74C38335AE402D1CC818E48FE0EB322B71856E6363FBCF937610BCCADBFB0E2C",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 88,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 88,
+        "sha256": "4D7DEE6D3912C4FB42489764AF0602A201B83D0CF1AA1C941D4B1F2C88E878F2"
+      }
+    },
+    {
+      "stem": "sites",
+      "pages": 113,
+      "bytes": 1167434,
+      "sha256": "A5DCDC83E24B0D0389CEBD0065D3EEF6EAC384936519712812861C73C2726093",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 91,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 91,
+        "sha256": "7DBA1C5D5183CDC2A982DF162950FFC71F26308B5458CB36D6B1287516C49AA0"
+      }
+    },
+    {
+      "stem": "algebra",
+      "pages": 473,
+      "bytes": 3777907,
+      "sha256": "77C66D7827894AFFA7B23BA2CAA28B2DD6F1424416B415D41D41F6DEFCC6118D",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 100,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 100,
+        "sha256": "67BCEC5F247FF9C5016AB442D7F17EC401164E3DCAE47FB9AB9466F9ABAB7C58"
+      }
+    },
+    {
+      "stem": "fields",
+      "pages": 42,
+      "bytes": 570364,
+      "sha256": "489B34693BD5CDC4E9158C12B343F016322A385428B9F8AA2FC8556C2C6E6838",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 91,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 91,
+        "sha256": "FC4D52F7425F3056C157134150323BAB9C91CF7A774EB6D61C3BA1A7D039174B"
+      }
+    },
+    {
+      "stem": "artin",
+      "pages": 69,
+      "bytes": 910315,
+      "sha256": "52ED99F66CF3E0EFF43AD7E1CF54EDB839522E0043F0625FF85E7FB1CD527A17",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 269,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 269,
+        "sha256": "8F205C75A92B83A7F419C74232183DE7766F504C252699861A9D071D7542A639"
+      }
+    },
+    {
+      "stem": "brauer",
+      "pages": 10,
+      "bytes": 349652,
+      "sha256": "C7C5CE99C71F23C91DE4FF2A0069A4E494C98642AD738CDAB47F985CB8404F0E",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 88,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 88,
+        "sha256": "C2D0636EEF27133C23A5A0BD1CE3636E99D6F1B17C2B886B05F2BF238FD0D735"
+      }
+    },
+    {
+      "stem": "derived",
+      "pages": 130,
+      "bytes": 1248326,
+      "sha256": "D94111B533F162552CBF7DBB9FDD6C4238B39F9A48A48DEAB33898551E8620DB",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 90,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 90,
+        "sha256": "ED22A8425869D293D48C9BF365A0981AD4A379AD635CED98B093A81DDCCD1986"
+      }
+    },
+    {
+      "stem": "simplicial",
+      "pages": 73,
+      "bytes": 834972,
+      "sha256": "3059BBD96FA7E31A1A4B555C2FC875B9486CA187A1C639E364551C25E0F21E45",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 88,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 88,
+        "sha256": "F049BFF8AD86150B8D85B3C83A9AFCE2BCE6D9A1C6334C0B7F5A4AA5D99FABFB"
+      }
+    },
+    {
+      "stem": "homology",
+      "pages": 82,
+      "bytes": 887448,
+      "sha256": "E05F2BE33A5FE9D1C2C2424492CC3D770083E3DBF53FA2832F3B7BF1BE69E898",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 89,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 89,
+        "sha256": "086D5FF508C3F3D2452E33566966459B6FFFB6ABF9DC340175A1AEB94EE522CE"
+      }
+    },
+    {
+      "stem": "more-algebra",
+      "pages": 406,
+      "bytes": 3386887,
+      "sha256": "29D5385FE4C9DED1EE5251E04C8C50513F222922ED836CC1D381B71E17B83155",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 115,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 115,
+        "sha256": "B5EDEB814B00A740A416A470BC71C16B695B4D1F2349539551185331A7813948"
+      }
+    },
+    {
+      "stem": "smoothing",
+      "pages": 37,
+      "bytes": 650788,
+      "sha256": "F914571702AF2E4E704A14A14C4008E76AF56339F6322CDA1BFB1FAB98FE9B4A",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 88,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 88,
+        "sha256": "68415B023EE774DE1AF0D8DE44BA4B6833C0A9E895571E904F3F7D29D3BB19FA"
+      }
+    },
+    {
+      "stem": "modules",
+      "pages": 55,
+      "bytes": 722195,
+      "sha256": "63B851B4062AD02F7D897283BD5496EC55A717299F6161C01248EA60C432BB2C",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 89,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 89,
+        "sha256": "8536CFF3C110E176E753F3A9D3247657B0947BC36F28FAD3E3686E3EE0EEA0D3"
+      }
+    },
+    {
+      "stem": "sites-modules",
+      "pages": 80,
+      "bytes": 911418,
+      "sha256": "0C2288BD868DA4A1437CED081615339F57D283531A28B35000FF0E9F6F1C8F5A",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 88,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 88,
+        "sha256": "C7E086471F64773A27DA177F219EE0A6BE98AFA9193FD9F44663C9555F854307"
+      }
+    },
+    {
+      "stem": "schemes",
+      "pages": 51,
+      "bytes": 724060,
+      "sha256": "77F075C104CDE40889858184722BD43C51CE3DC42377C08046370400CE1A717C",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 89,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 89,
+        "sha256": "26A0E9EF368346862921A0A5EDA8F3CBE7B9ADBF934A9F9B6EB6F77F9ECDA031"
+      }
+    },
+    {
+      "stem": "properties",
+      "pages": 54,
+      "bytes": 765914,
+      "sha256": "19988630F71DD10625118F41C4E5236147F6143848C77B0BF716459AC28386A4",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 114,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 114,
+        "sha256": "7E0AA51D77F45608FEC9A2B47D652F05A12091DEC848996AC07A361870CCE6FF"
+      }
+    },
+    {
+      "stem": "morphisms",
+      "pages": 157,
+      "bytes": 1578610,
+      "sha256": "54DDC1B8CE00EBEE5C5534E7CF0496A4E1563828E3D62514C24F0C2B8B696D85",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 158,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 158,
+        "sha256": "96834CAA70118C473A1487A7D2F0DC37DE23B25B778AC42DF8463AF37B9C6ABE"
+      }
+    },
+    {
+      "stem": "more-morphisms",
+      "pages": 260,
+      "bytes": 2315947,
+      "sha256": "70DB2A863CDC5816291627192AB2131E5CD7C85FC48439D6DBBDF27D15CC808C",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 533,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 533,
+        "sha256": "2F133691B6B9FE59D94394ABDC59DEADBA777C77B5E5E56F52CFF6055498F922"
+      }
+    },
+    {
+      "stem": "spaces-morphisms",
+      "pages": 116,
+      "bytes": 1129534,
+      "sha256": "049135D4DFD75307EF55C5ACB185784B348DCD76F1E61153C184F35A2689E4BA",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 396,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 396,
+        "sha256": "5FCA242274CFF74F663F435551785736F73378BB094A2EB4F31C5940E65D4370"
+      }
+    },
+    {
+      "stem": "crystalline",
+      "pages": 61,
+      "bytes": 872248,
+      "sha256": "44991ABB1A294C8BC03703BD284B8FE393226A853013E564482871379426C14D",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 139,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 139,
+        "sha256": "1EA8D6E568A7731C7AA78E7055350049519AB9507CBC66318DC85191F895C98A"
+      }
+    },
+    {
+      "stem": "spaces-cohomology",
+      "pages": 47,
+      "bytes": 649540,
+      "sha256": "3AADAB9F3AB6D31FDB326036E50CE7DCCF52249B78A284B3A0D98C5558D2EEAA",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 214,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 214,
+        "sha256": "AA5ED1968298B833E1C76112632DA6558E940AF5B2C252E347D80E2A7842C0F6"
+      }
+    },
+    {
+      "stem": "spaces-duality",
+      "pages": 25,
+      "bytes": 562461,
+      "sha256": "28318B1ACBF14C7D64A01B3A4BB7A8DC449B67E65B67561675DC9FE9376895F8",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 173,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 173,
+        "sha256": "4856CD460A320F718DD562AAA65887AD8E39025A3299E6C7DE6825BC2E46B7E9"
+      }
+    },
+    {
+      "stem": "stacks-limits",
+      "pages": 13,
+      "bytes": 349118,
+      "sha256": "F91E418681BD5BBC0B32042FC2A1232EC6F8C637C0B493048FFE2B539873D8B6",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 154,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 154,
+        "sha256": "256FFBC3F5A8D6561EBC44474805A7B4543AD0E987AB9A673F811AD46532CE99"
+      }
+    },
+    {
+      "stem": "injectives",
+      "pages": 31,
+      "bytes": 572198,
+      "sha256": "C033FCE6ECCCF54CB72240416945005FDD2380B767A1C31F409BCFF608203133",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 91,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 91,
+        "sha256": "C919EE5DB471FDE327A8129C82A5B518277F04805FF5AEECDACD429B1D07808A"
+      }
+    },
+    {
+      "stem": "cohomology",
+      "pages": 140,
+      "bytes": 1373198,
+      "sha256": "690B3441A4C077CD61CB7901F0535D343511BA48937000CDC375A60B091CDF0B",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 90,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 90,
+        "sha256": "046F2FFF4276431F84E1451DB0BFD43587DE5EFA9961AB137CEAD1439582A2F9"
+      }
+    },
+    {
+      "stem": "sites-cohomology",
+      "pages": 135,
+      "bytes": 1363974,
+      "sha256": "8306E50E6FA64D8BE41CA28B4E54DB34BA19A0F941A9648D7A4B9CF46DBC577D",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 101,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 101,
+        "sha256": "709EF1EFBBADBCB9A188252CFAC0868D711430BA6CE96E960AB563899855D13E"
+      }
+    },
+    {
+      "stem": "gaga",
+      "pages": 23,
+      "bytes": 490651,
+      "sha256": "3EFD5A1CFB0965BF32E9FFAF560E394D56F8C4ADC30EDDBE2B81344B60A968CA",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 105,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 105,
+        "sha256": "1D54C6FA924B94EBB64F6583FBDB1174A742CF724F861B5492065EECB468309A"
+      }
+    },
+    {
+      "stem": "moduli",
+      "pages": 83,
+      "bytes": 901033,
+      "sha256": "B2AE15C3F8FF331DC8A984A67067E8DC7D284E908BC1EBE74E28B23F22EBD66F",
+      "diagnostics": {
+        "fatal_markers": 0,
+        "missing_glyph_markers": 0,
+        "undefined_reference_markers": 0,
+        "external_reference_markers": 319,
+        "undefined_citation_markers": 0,
+        "multiply_defined_markers": 0,
+        "rerun_required_markers": 0,
+        "destination_warning_markers": 0
+      },
+      "external_references": {
+        "count": 319,
+        "sha256": "334E015B9B4E81717323DC24CB6EA8E738473EA913AA6D7CFAF5F3E70B53A79E"
+      }
+    }
+  ],
+  "pdfs_committed": false,
+  "source_checkpoint": {
+    "schema": "unofficial-stacks-project-ai-drafts-ega-source-checkpoint/v1",
+    "status": "PASS_SOURCE_CHECKPOINT",
+    "receipt": {
+      "path": "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json",
+      "bytes": 44426,
+      "sha256": "95B8D2B14D7C1CB7E9F826F6EBF0A6723DBDB05DC5D06F06F186E21465CC3352",
+      "git_blob": "715024558f8480811dc3d27521d65cdaa893ca45"
+    },
+    "base": {
+      "commit": "57efc9c91e7e52cdb70deb56c0e92f4c93037ac9",
+      "tree": "f77e75e1e89508b648611890c90e2238a5cdf25e"
+    },
+    "content": {
+      "commit": "571648f5c43c36617629c8ae57b28606d966625f",
+      "tree": "12faacf779ad018c4c2729167d1afa1ef6b9d0e5",
+      "parent": "57efc9c91e7e52cdb70deb56c0e92f4c93037ac9"
+    },
+    "source_unit": {
+      "name": "EGA I 6.6.4",
+      "next_source_unit": "EGA I 6.6.5",
+      "label": "lemma-quasi-compact-preserved-base-change",
+      "official_tag": "01K5",
+      "dependencies": [
+        "01K4",
+        "01JS"
+      ]
+    },
+    "root_source_stem": "schemes",
+    "implementation_receipt": {
+      "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+      "bytes": 28005,
+      "sha256": "C55A2320FBF3C6B0D0655CFEA2943119F239085C56AC0D891652B81777AF0C6D",
+      "git_blob": "ccb24674574b69ab3dd05f6ecb64f0d17d7a1796"
+    },
+    "independent_review": {
+      "path": "validation/ega-i-6.6.4-independent-review-2026-08-31.json",
+      "bytes": 2135,
+      "sha256": "D1C84D5B7EEFE1FF4BEDC72A7BB02CCD6A70D3B07BAC889578D4200035EC365C",
+      "git_blob": "f21be6f5ff9a76b8d1ae22e2ac8d4b1e857cfd2a"
+    },
+    "changed_path_count": 10,
+    "changed_paths_tuple_sha256": "0EA5C2310412F53002D5795329ECC000EB7B2E903F40F9D1D28F6A648FEFD6D4",
+    "protected_content_path_count": 129,
+    "protected_content_paths_tuple_sha256": "767D6732172CF8EB892C060E6A41B4AA7A28D339B9B6AE712C901382E8BD6FA7",
+    "protected_input_count": 157,
+    "protected_input_roles": {
+      "agent_ledger": 1,
+      "build_bibliography": 1,
+      "build_checkpoint_consumer": 1,
+      "build_checkpoint_consumer_test": 1,
+      "build_shared_style": 3,
+      "canonical_composition_receipt": 1,
+      "canonical_registry": 13,
+      "canonical_tags": 1,
+      "checkpoint_receipt": 1,
+      "checkpoint_writer": 1,
+      "checkpoint_writer_test": 1,
+      "decision_ledger": 1,
+      "dossier_readme": 1,
+      "dossier_validator": 1,
+      "implementation_receipt": 1,
+      "independent_review": 1,
+      "official_stacks_source_authority": 1,
+      "official_stacks_tag_authority": 1,
+      "package_checkpoint_consumer": 1,
+      "package_checkpoint_consumer_test": 1,
+      "residual_ledger": 1,
+      "root_source": 1,
+      "scope_manifest": 1,
+      "statement_map_ledger": 1,
+      "unchanged_root_tex": 119
+    },
+    "protected_input_tuple_sha256": "40DEC7516C0A2D369111BF7B852180A5DAD2458E72934E35901B01DD69AE9F23",
+    "external_authority_inputs": [
+      {
+        "role": "canonical_french_authority",
+        "path": "source/ega1/ega1-6-fr.tex",
+        "commit": "6b38875842e3723b619d4aeeda9ed260a4f94f7c",
+        "bytes": 57781,
+        "sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+        "lf_lines": "1067-1121",
+        "slice_bytes": 3114,
+        "slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+        "external_recheck": "unavailable_with_receipt_binding"
+      },
+      {
+        "role": "english_discovery_reference",
+        "path": "source/ega1/ega1-6.tex",
+        "commit": "94d5c73ac9263b26043ad0551646b824b1030c9b",
+        "bytes": 55021,
+        "sha256": "990DF9E209D804AAC103CE3B23C5F5F2307CD57B87C3A6F4F6E699AA9227C9FD",
+        "lf_lines": "753-785",
+        "slice_bytes": 3017,
+        "slice_sha256": "F36B6FCC7D2B40F6F174C1A3750B7E9EF13C0B556F0DD31A7BCE2AB24EA0784A",
+        "external_recheck": "unavailable_with_receipt_binding"
+      }
+    ],
+    "canonical_composition": {
+      "path": "validation/composition-current.json",
+      "git_blob": "f2ed2e2b6371943072a248dc192f948973cbe60d",
+      "sha256": "5DFAA8FC81EB0F5CFE94AAC6E3DAFC3BFDDB7516EA4B5FC7DE8AE38906DFC207",
+      "composition_source_commit": "0cf35b6ffdb46a63355f0d9ee3f2fa47a529ffe0",
+      "ancestor_of_tool_base": true
+    },
+    "post_content": {
+      "head_commit": "91cc89df5804b8c1949d8267602fc076649ee49b",
+      "head_tree": "060538ea3323b366e8f445fd79725a63c4241d2f",
+      "changed_paths": [
+        "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json"
+      ],
+      "source_paths_unchanged": true
+    },
+    "checks": [
+      "authoritative_producer_check_only_recomputed_exact_receipt",
+      "dynamic_tools_content_receipt_topology_exact",
+      "canonical_composition_path_blob_and_lineage_exact",
+      "root_ledger_count_and_authority_claims_recomputed",
+      "all_build_critical_inputs_protected_through_final_recheck"
+    ]
+  }
+}

@@ -655,6 +655,9 @@ EGA_SOURCE_POST_BUILD_METADATA_PATHS = frozenset(
     {
         EGA_SOURCE_BUILD_RECEIPT_PATH,
         EGA_SOURCE_VISUAL_QA_PATH,
+        "validation/stacks-errata-a04446e-r39-visual-qa-2026-09-05.json",
+        "validation/stacks-errata-a04446e-r39-reproducibility-2026-09-05.json",
+        "validation/stacks-errata-a04446e-r39-reproducibility-second-2026-09-05.json",
         "README.md",
         "STATUS.md",
         "VALIDATION.md",
