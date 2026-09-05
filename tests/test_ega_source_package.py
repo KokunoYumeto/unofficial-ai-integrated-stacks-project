@@ -1843,7 +1843,16 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                     "--created-utc", "2026-08-31T12:00:00Z",
                 ]
             )
-            result = package.run(args)
+            # GitHub-hosted Linux runners intentionally have the generic account
+            # name ``runner``, which the production sanitizer rejects.  Supply a
+            # deterministic non-generic token in this synthetic repository test;
+            # dedicated sanitizer tests exercise the real account-token logic.
+            with mock.patch.object(
+                package,
+                "local_account_token",
+                return_value=b"ega-source-package-test-account",
+            ):
+                result = package.run(args)
             self.assertEqual(result["status"], "PASS")
             self.assertEqual(result["profile"], package.EGA_SOURCE_PROFILE)
             self.assertEqual(result["release_asset_count"], 6)

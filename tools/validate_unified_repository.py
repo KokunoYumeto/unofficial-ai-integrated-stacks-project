@@ -30,7 +30,7 @@ SOURCE_UNION = "ad58625f60e6816905ff217d21d91b07b2722fcf"
 EGA_EXPORT = "91df7f1c96bd4973264c29b0e121253a05d1d361"
 COMPOSITION_RECEIPT = Path("validation/composition-current.json")
 DEFAULT_BUILD_RECEIPT = Path(
-    "validation/stacks-errata-a04446e-r39-build-2026-08-31.json"
+    "validation/ega-i-6.6.4-fixed-point-build-2026-08-31.json"
 )
 VISUAL_QA_RECEIPT = Path(
     "validation/stacks-errata-a04446e-r39-visual-qa-2026-08-31.json"
@@ -492,21 +492,84 @@ def validate_semantic_replacement_dispositions(
         disposition = dispositions.get(operation_id)
         if disposition is None:
             raise ValueError(f"missing composed replacement {operation_id} in {source}")
+
+        # A disposition is immutable evidence for the cumulative source on
+        # which the structural rewrite was first discharged.  Later overlay
+        # rounds may legitimately edit unrelated loci in the same file, so the
+        # historic whole-file blob need not equal the newest composition base.
+        # Require that exact proof blob to be reachable at this path from the
+        # current base, validate the original proof against it, and then prove
+        # separately below that the unique positive evidence survives in the
+        # current base and at HEAD.
+        proof_source = disposition.get("composition_base_source")
+        proof_blob = (
+            proof_source.get("git_blob")
+            if isinstance(proof_source, dict)
+            else None
+        )
+        if not isinstance(proof_blob, str) or not SHA1_RE.fullmatch(proof_blob):
+            raise ValueError(
+                f"semantic disposition lacks a historic proof blob: {operation_id}"
+            )
+        reachable = git("rev-list", "--objects", base, "--", source)
+        expected_object_line = f"{proof_blob} {source}"
+        if reachable.returncode != 0 or expected_object_line not in {
+            line.strip() for line in reachable.stdout.splitlines()
+        }:
+            raise ValueError(
+                f"semantic disposition proof blob is not reachable at path: "
+                f"{operation_id}"
+            )
+        proof_bytes_result = git_bytes("cat-file", "blob", proof_blob)
+        if proof_bytes_result.returncode != 0:
+            raise ValueError(
+                f"semantic disposition proof blob is unreadable: {operation_id}"
+            )
         composer.validate_semantic_disposition(
             operation,
             disposition,
             composer.git_blob(composer.OFFICIAL_BASELINE, source),
-            composer.git_blob(base, source),
+            proof_bytes_result.stdout,
             base,
         )
+        base_source = composer.git_blob(base, source)
+        evidence_record = disposition.get("evidence")
+        evidence_text = (
+            evidence_record.get("text")
+            if isinstance(evidence_record, dict)
+            else None
+        )
+        if not isinstance(evidence_text, str) or not evidence_text:
+            raise ValueError(
+                f"semantic disposition lacks current-base evidence: {operation_id}"
+            )
+        old = operation["old_text"].encode("utf-8")
+        evidence = evidence_text.encode("utf-8")
+        if base_source.count(old) != 0 or base_source.count(evidence) != 1:
+            raise ValueError(
+                f"semantic disposition does not survive in the current base: "
+                f"{operation_id}"
+            )
         projected = report_sources.get(source)
+        projected_dispositions = (
+            projected.get("semantic_disposition_operation_ids")
+            if isinstance(projected, dict)
+            else None
+        )
+        current_round_count = (
+            projected_dispositions.count(operation_id)
+            if isinstance(projected_dispositions, list)
+            else -1
+        )
         if not isinstance(projected, dict) or (
             projected.get("matches_target_after") is not True
             or projected.get("written") is not False
-            or not isinstance(projected.get("semantic_disposition_operation_ids"), list)
-            or projected["semantic_disposition_operation_ids"].count(operation_id) != 1
+            or not isinstance(projected_dispositions, list)
+            or current_round_count not in (0, 1)
         ):
-            raise ValueError(f"semantic disposition was not applied exactly once: {operation_id}")
+            raise ValueError(
+                f"semantic disposition projection is invalid: {operation_id}"
+            )
         current = composer.git_blob("HEAD", source)
         current_blob = composer.git_blob_id(current)
         if (
@@ -514,11 +577,16 @@ def validate_semantic_replacement_dispositions(
             or composer.sha256(current) != projected.get("composed_sha256")
             or current_blob != projected.get("composed_git_blob")
             or composer.filtered_git_blob_id((ROOT / source).read_bytes(), source) != current_blob
-            or current.count(operation["old_text"].encode("utf-8")) != 0
-            or current.count(disposition["evidence"]["text"].encode("utf-8")) != 1
+            or current.count(old) != 0
+            or current.count(evidence) != 1
         ):
             raise ValueError(f"semantic disposition final source drift: {operation_id}")
-        consumed.append(operation_id)
+        # The projection inventory records dispositions consumed by this
+        # composition round only.  A zero count is correct for an immutable
+        # disposition consumed by an earlier round and carried forward through
+        # the exact historic/current evidence checks above.
+        if current_round_count == 1:
+            consumed.append(operation_id)
     composer.verify_semantic_disposition_consumption(set(reported_ids), consumed)
 
 
@@ -1459,7 +1527,38 @@ def main(argv: list[str] | None = None) -> int:
                 except (UnicodeDecodeError, json.JSONDecodeError) as exc:
                     errors.append(f"invalid independent replay receipt for {overlay_id}: {exc}")
                 else:
-                    if review_data.get("candidate_id") != overlay_id:
+                    review_source = review_data.get("source")
+                    legacy_r39_identity = (
+                        overlay_id == "stacks-errata-a04446e-r39"
+                        and review_candidate_relative
+                        == "replay/FINAL_INDEPENDENT_REVIEW.json"
+                        and review_data.get("schema")
+                        == "stacks-r39-final-independent-review/v1"
+                        and review_data.get("status")
+                        == "PASS_FINAL_CANDIDATE_REVIEW"
+                        and review_data.get("passed") is True
+                        and isinstance(review_source, dict)
+                        and bool(ids)
+                        and review_source.get("stable_units") == len(ids)
+                        and review_source.get("stable_id_range")
+                        == f"{ids[0]}..{ids[-1]}"
+                        and review_source.get("payload_sha256")
+                        == manifest_build_hashes.get(
+                            "payload/sites-cohomology.tex"
+                        )
+                        and review_source.get(
+                            "source_stage_independent_receipt_sha256"
+                        )
+                        == manifest_build_hashes.get(
+                            "replay/SOURCE_INDEPENDENT_VALIDATION.json"
+                        )
+                        and review_data.get("final_stage_sha256")
+                        == manifest_build_hashes.get("replay/FINAL_STAGE.json")
+                    )
+                    if (
+                        review_data.get("candidate_id") != overlay_id
+                        and not legacy_r39_identity
+                    ):
                         errors.append(f"independent replay identity mismatch for {overlay_id}")
                     outcome = review_data.get("outcome")
                     review_passed = review_data.get("passed") is True or (
