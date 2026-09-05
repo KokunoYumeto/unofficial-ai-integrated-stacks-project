@@ -1677,6 +1677,23 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
             package.TEX_MUTEX_HELD_SCOPE,
             fixed_point.TEX_MUTEX_HELD_SCOPE,
         )
+        self.assertEqual(
+            package.EGA_SOURCE_POST_BUILD_METADATA_PATHS,
+            frozenset(
+                {
+                    package.EGA_SOURCE_BUILD_RECEIPT_PATH,
+                    package.EGA_SOURCE_VISUAL_QA_PATH,
+                    "README.md",
+                    "STATUS.md",
+                    "VALIDATION.md",
+                    "ROADMAP.md",
+                    "PROVENANCE.md",
+                    "validation/README.md",
+                    "tools/build_errata_preservation_package.py",
+                    "tests/test_ega_source_package.py",
+                }
+            ),
+        )
         self.assertEqual(self.build_binding["root_source_stem"], "schemes")
         self.assertEqual(
             self.build_binding["checks"],

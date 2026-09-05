@@ -661,6 +661,8 @@ EGA_SOURCE_POST_BUILD_METADATA_PATHS = frozenset(
         "ROADMAP.md",
         "PROVENANCE.md",
         "validation/README.md",
+        "tools/build_errata_preservation_package.py",
+        "tests/test_ega_source_package.py",
     }
 )
 EGA_SOURCE_UNIT = {
