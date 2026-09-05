@@ -1,0 +1,1370 @@
+{
+  "schema": "unofficial-stacks-project-ai-drafts-ega-source-checkpoint/v1",
+  "status": "PASS_SOURCE_CHECKPOINT",
+  "generated_from_content_commit_utc": "2026-09-05T16:01:35+02:00",
+  "base": {
+    "commit": "57efc9c91e7e52cdb70deb56c0e92f4c93037ac9",
+    "tree": "f77e75e1e89508b648611890c90e2238a5cdf25e"
+  },
+  "content": {
+    "commit": "571648f5c43c36617629c8ae57b28606d966625f",
+    "tree": "12faacf779ad018c4c2729167d1afa1ef6b9d0e5",
+    "parent": "57efc9c91e7e52cdb70deb56c0e92f4c93037ac9"
+  },
+  "repository_state_contract": {
+    "content_commit": "571648f5c43c36617629c8ae57b28606d966625f",
+    "content_tree": "12faacf779ad018c4c2729167d1afa1ef6b9d0e5",
+    "required_head_relation": "single_parent_content_then_exact_receipt_only_child",
+    "allowed_changes": [
+      {
+        "path": "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json",
+        "change": "added"
+      }
+    ],
+    "validated": true
+  },
+  "historical_rebind": {
+    "implementation_receipt_asserted_base": "bb6e7ccca41fe00a06815d81e174c5261e7a1ce3",
+    "actual_integration_base": "57efc9c91e7e52cdb70deb56c0e92f4c93037ac9",
+    "historical_base_is_ancestor": true,
+    "eight_preimages_byte_identical_at_both_bases": true
+  },
+  "post_content_metadata_contract": {
+    "allowed_changes": [
+      {
+        "path": "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json",
+        "change": "added"
+      }
+    ],
+    "source_drift": false
+  },
+  "inputs": {
+    "implementation_receipt": {
+      "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+      "bytes": 28005,
+      "sha256": "C55A2320FBF3C6B0D0655CFEA2943119F239085C56AC0D891652B81777AF0C6D",
+      "git_blob": "ccb24674574b69ab3dd05f6ecb64f0d17d7a1796"
+    },
+    "independent_review": {
+      "path": "validation/ega-i-6.6.4-independent-review-2026-08-31.json",
+      "bytes": 2135,
+      "sha256": "D1C84D5B7EEFE1FF4BEDC72A7BB02CCD6A70D3B07BAC889578D4200035EC365C",
+      "git_blob": "f21be6f5ff9a76b8d1ae22e2ac8d4b1e857cfd2a"
+    }
+  },
+  "tooling": {
+    "writer": {
+      "path": "tools/write_ega_source_checkpoint.py",
+      "bytes": 82349,
+      "sha256": "D09B363325E106BE84F5B1BF71214F2FB259FDEE70F062F073084F45D8FDDDD8",
+      "git_blob": "9e234a0d2fa82d3531877f12a858a7c32c0a506a",
+      "committed_at_base": true,
+      "committed_at_content": true,
+      "unchanged": true
+    },
+    "tests": [
+      {
+        "path": "tests/test_ega_source_checkpoint.py",
+        "bytes": 29998,
+        "sha256": "DD9F52678CF0F37A606AC13928B8843C19D02DD85BDA492614AAC59C47F26102",
+        "git_blob": "717e42837aea4b79189a7deb4b6e515ce1c68b3b",
+        "committed_at_base": true,
+        "committed_at_content": true,
+        "unchanged": true
+      }
+    ]
+  },
+  "changed_paths": [
+    {
+      "path": "ega/README.md",
+      "change": "modified",
+      "base": {
+        "bytes": 54683,
+        "sha256": "FB39966F70026C49B92BE66610E8A29D22B0862AAE7A43CFAD280B848EA1F64B",
+        "git_blob": "b6c1777cad82c9563b7512e149e64ba2010a8d2a"
+      },
+      "content": {
+        "bytes": 57369,
+        "sha256": "B0B7D8C17C992FD1E9877FA6F437FB2564942323E19DF1C079DD62582407E979",
+        "git_blob": "828ef296d03d66c66bd3de666a04eb514740b93c"
+      }
+    },
+    {
+      "path": "ega/agent.csv",
+      "change": "modified",
+      "base": {
+        "bytes": 134895,
+        "sha256": "6B46CED2A8F82A74CF44BCDF3A8BB84E64543A343C37A63DF1F69E898AC429DD",
+        "git_blob": "70290dc7bd40589e79f1d1611abd76aa8ab333d2"
+      },
+      "content": {
+        "bytes": 135811,
+        "sha256": "9AD67E86A6312DE3415B8124BC165E8F95EF0C9D59D55342F67A80849D6AB2CA",
+        "git_blob": "dace200b79ba869e1701a49c0845de979c787ba3"
+      }
+    },
+    {
+      "path": "ega/check.py",
+      "change": "modified",
+      "base": {
+        "bytes": 411617,
+        "sha256": "5876A587B652A87B1771495FC0A667BE783C25D8051A41885764135D8A74C3DA",
+        "git_blob": "4bfa226c365931d94b26af1ac3ef34c0d1ca3370"
+      },
+      "content": {
+        "bytes": 426666,
+        "sha256": "33DF997D958B10AE6D9AC435532948724E5BF55F5F974307C8562FED07C9904A",
+        "git_blob": "49d3c4bc495828925d1464fe841c3bf89d1fba72"
+      }
+    },
+    {
+      "path": "ega/dec.csv",
+      "change": "modified",
+      "base": {
+        "bytes": 88154,
+        "sha256": "EB8ABC33A7E16F8F4EEBC0F537EC84BE7EDDBDDD8B3CE12B2FDA9FC7AA70703E",
+        "git_blob": "79f54e5a8c22fa884204dac188587889e91a75ff"
+      },
+      "content": {
+        "bytes": 88716,
+        "sha256": "E1A25BF4A99A3AF0DFA924C601BB7EEF585606EB9E92D430C1D635E7CAC66D26",
+        "git_blob": "c2e003df1eaf140c6c8d5ec57f1acb298b7ddab0"
+      }
+    },
+    {
+      "path": "ega/resid.csv",
+      "change": "modified",
+      "base": {
+        "bytes": 238388,
+        "sha256": "DAE6F852E2B0B4BD622BD3C7C235E5F7FBA139D42011CD3BDF6FB4CD82E18458",
+        "git_blob": "73698e681e014e8ab633f470ce3897399a03c3a4"
+      },
+      "content": {
+        "bytes": 239886,
+        "sha256": "9EF8C07469ABDAEC0B488F162F29987839067D2AC714A883108B0A3E1D990755",
+        "git_blob": "52966331ee17744ea13a9789a25a40aca85b0efc"
+      }
+    },
+    {
+      "path": "ega/scope.json",
+      "change": "modified",
+      "base": {
+        "bytes": 25667,
+        "sha256": "357ECC4839BF7A685A926D8AF56A5BC796E808533EB7892A5A7B8FA6A7344637",
+        "git_blob": "d22a77edc27eaa809229cf6c836148afd32e8901"
+      },
+      "content": {
+        "bytes": 27613,
+        "sha256": "00B73A864EC78D127D1FF9F683C5CDE763CA65D340D5E3B113E08682D6D1F6D6",
+        "git_blob": "dc6cdcc7212328692271b430ecce98a51409c71f"
+      }
+    },
+    {
+      "path": "ega/smap.csv",
+      "change": "modified",
+      "base": {
+        "bytes": 547417,
+        "sha256": "C33EADB6F06627A15FC4CE1CCCFE7E4CC8A4AADE2077D44BEFBC358B0055307C",
+        "git_blob": "9b60762f3852e7f47b313672f2a42f86358db070"
+      },
+      "content": {
+        "bytes": 553166,
+        "sha256": "C94FFE7B4E846AFA8532E65DC485AC5D2ABB416641653682EB82902E79D5C210",
+        "git_blob": "f8385ff76e86e13eb92080f13f47f84bb29f43ce"
+      }
+    },
+    {
+      "path": "schemes.tex",
+      "change": "modified",
+      "base": {
+        "bytes": 188756,
+        "sha256": "3D4162B83C39F85372EB43195961630D97CC981E10DA486B01514F23C85E54E4",
+        "git_blob": "67c046e5769aa7dba6ec3956bc70c1064d652d82"
+      },
+      "content": {
+        "bytes": 189721,
+        "sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233",
+        "git_blob": "8aefb48c9a3fd1a3cc76840e8891831f8b7defb7"
+      }
+    },
+    {
+      "path": "validation/ega-i-6.6.4-independent-review-2026-08-31.json",
+      "change": "added",
+      "base": null,
+      "content": {
+        "bytes": 2135,
+        "sha256": "D1C84D5B7EEFE1FF4BEDC72A7BB02CCD6A70D3B07BAC889578D4200035EC365C",
+        "git_blob": "f21be6f5ff9a76b8d1ae22e2ac8d4b1e857cfd2a"
+      }
+    },
+    {
+      "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+      "change": "added",
+      "base": null,
+      "content": {
+        "bytes": 28005,
+        "sha256": "C55A2320FBF3C6B0D0655CFEA2943119F239085C56AC0D891652B81777AF0C6D",
+        "git_blob": "ccb24674574b69ab3dd05f6ecb64f0d17d7a1796"
+      }
+    }
+  ],
+  "source_unit": {
+    "name": "EGA I 6.6.4",
+    "next_source_unit": "EGA I 6.6.5",
+    "label": "lemma-quasi-compact-preserved-base-change",
+    "official_tag": "01K5",
+    "dependencies": [
+      "01K4",
+      "01JS"
+    ]
+  },
+  "authority": {
+    "preparation_sha256": "1FB6C4DEA3B78A83023E5FAEE07FDD23A3123E1152EEB93FC642B69C64ED5916",
+    "official_stacks_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "french_commit": "6b38875842e3723b619d4aeeda9ed260a4f94f7c",
+    "french_path": "source/ega1/ega1-6-fr.tex",
+    "french_full_bytes": 57781,
+    "french_full_sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+    "french_lf_lines": "1067-1121",
+    "french_slice_bytes": 3114,
+    "french_slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+    "french_receipt": "F37ZW.json",
+    "french_receipt_sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0",
+    "english_role": "discovery_only_not_canonical_authority",
+    "english_commit": "94d5c73ac9263b26043ad0551646b824b1030c9b",
+    "english_path": "source/ega1/ega1-6.tex",
+    "english_full_bytes": 55021,
+    "english_full_sha256": "990DF9E209D804AAC103CE3B23C5F5F2307CD57B87C3A6F4F6E699AA9227C9FD",
+    "english_lf_lines": "753-785",
+    "english_slice_bytes": 3017,
+    "english_slice_sha256": "F36B6FCC7D2B40F6F174C1A3750B7E9EF13C0B556F0DD31A7BCE2AB24EA0784A"
+  },
+  "authority_binding": {
+    "canonical_role": "diplomatic_french_authority",
+    "official_stacks_commit": "a04446e57ec1fbc252a871afcec7752fb2807b14",
+    "canonical_source": {
+      "commit": "6b38875842e3723b619d4aeeda9ed260a4f94f7c",
+      "path": "source/ega1/ega1-6-fr.tex",
+      "bytes": 57781,
+      "sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE"
+    },
+    "canonical_source_receipt": {
+      "name": "F37ZW.json",
+      "sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0"
+    },
+    "canonical_slice": {
+      "lf_lines": "1067-1121",
+      "bytes": 3114,
+      "sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB"
+    },
+    "discovery_source_role": "discovery_only_not_canonical_authority",
+    "authority_and_source_slice_exactly_cross_bound": true
+  },
+  "root_change": {
+    "path": "schemes.tex",
+    "label": "lemma-quasi-compact-preserved-base-change",
+    "official_tag": "01K5",
+    "preimage_block": {
+      "offset": 141160,
+      "bytes": 230,
+      "sha256": "A37612375252BF61767A8175DF9E6C27DD76E17B7717D38A4522C790AF596634"
+    },
+    "postimage_block": {
+      "offset": 141160,
+      "bytes": 1195,
+      "sha256": "CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123"
+    },
+    "proof": {
+      "bytes": 1000,
+      "sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861"
+    },
+    "statement": {
+      "base": {
+        "bytes": 195,
+        "sha256": "17016D97CA44520C854A87F46AE37802445FFE982419097832543D38425E8F46"
+      },
+      "content": {
+        "bytes": 195,
+        "sha256": "17016D97CA44520C854A87F46AE37802445FFE982419097832543D38425E8F46"
+      },
+      "unchanged": true
+    },
+    "outside_block_unchanged": true,
+    "base_file": {
+      "bytes": 188756,
+      "sha256": "3D4162B83C39F85372EB43195961630D97CC981E10DA486B01514F23C85E54E4",
+      "git_blob": "67c046e5769aa7dba6ec3956bc70c1064d652d82"
+    },
+    "content_file": {
+      "bytes": 189721,
+      "sha256": "028A8204A03E736E9F22FF0D7C6444A17D04BFD5CDBBD31F4CDF322BEC55F233",
+      "git_blob": "8aefb48c9a3fd1a3cc76840e8891831f8b7defb7"
+    }
+  },
+  "readme_change": {
+    "path": "ega/README.md",
+    "base_file": {
+      "bytes": 54683,
+      "sha256": "FB39966F70026C49B92BE66610E8A29D22B0862AAE7A43CFAD280B848EA1F64B",
+      "git_blob": "b6c1777cad82c9563b7512e149e64ba2010a8d2a"
+    },
+    "content_file": {
+      "bytes": 57369,
+      "sha256": "B0B7D8C17C992FD1E9877FA6F437FB2564942323E19DF1C079DD62582407E979",
+      "git_blob": "828ef296d03d66c66bd3de666a04eb514740b93c"
+    },
+    "intended_ega_source_branch": {
+      "before_anchor": {
+        "bytes": 118,
+        "sha256": "03C3B6C4104FA7C55E961C3C67AECFDB45DD9E18E0D4DD7477C6658B7EACB915"
+      },
+      "after_anchor": {
+        "bytes": 76,
+        "sha256": "569A8A0BCEA84DECD384982617E89ECC72029F76638906CC7437DB23D8824B35"
+      },
+      "base": {
+        "offset": 1913,
+        "bytes": 51901,
+        "sha256": "833A6DA4BE2B1480737B27B237AC6502012F5C2B99CF30512BE7CD7F82EF1AC8"
+      },
+      "content": {
+        "offset": 1913,
+        "bytes": 54587,
+        "sha256": "8928B459DBD788614347A1E846299F4667D0FCD99F058017F9021807171322C6"
+      },
+      "outside_prefix": {
+        "bytes": 1913,
+        "sha256": "028BC97FBAB2D48A704D45F866E3C278CF33A33005FA7EB9F8BFC95F5EDA122E"
+      },
+      "outside_suffix": {
+        "bytes": 869,
+        "sha256": "09F33C7D5DB228E5D580A683AA9A41B792441E5E1CDAC61A423A9A7F23B76159"
+      },
+      "outside_bytes_unchanged": true
+    },
+    "ega_i_6_6_4_insertion": {
+      "heading": "### Current local implementation: EGA I 6.6.4",
+      "before_anchor": {
+        "bytes": 204,
+        "sha256": "7E949CF40EF6B66E88DF415DC59E48BC40FF788BF52A1C95B341C6911614321F"
+      },
+      "after_anchor": {
+        "bytes": 79,
+        "sha256": "4AFBEF600AB68A2876C2D4D08D0EBFA15B23794AFD1F0FA5E465CA0B4247E476"
+      },
+      "base_branch": {
+        "offset": 23810,
+        "bytes": 44,
+        "sha256": "E22579293EBBBB41A89D5115E7FFB7DA71C994D783262137FF2DC2EB6DF56CD7"
+      },
+      "content_branch": {
+        "offset": 24524,
+        "bytes": 1914,
+        "sha256": "21EF26588EA1906ACA1734440DC88C9AA16199EFD44A9186134573EED2FA7200"
+      },
+      "preimage_occurrences": 0,
+      "postimage_occurrences": 1,
+      "exactly_once_between_stable_anchors": true,
+      "contained_in_intended_ega_source_branch": true
+    }
+  },
+  "ledger_appends": [
+    {
+      "path": "ega/dec.csv",
+      "id_field": "decision_id",
+      "headers": [
+        "decision_id",
+        "subject_id",
+        "action",
+        "state",
+        "evidence",
+        "supersedes",
+        "rationale"
+      ],
+      "row_counts": {
+        "base": 328,
+        "appended": 1,
+        "content": 329
+      },
+      "new_ids": [
+        "D000329"
+      ],
+      "base": {
+        "bytes": 88154,
+        "sha256": "EB8ABC33A7E16F8F4EEBC0F537EC84BE7EDDBDDD8B3CE12B2FDA9FC7AA70703E",
+        "git_blob": "79f54e5a8c22fa884204dac188587889e91a75ff"
+      },
+      "content": {
+        "bytes": 88716,
+        "sha256": "E1A25BF4A99A3AF0DFA924C601BB7EEF585606EB9E92D430C1D635E7CAC66D26",
+        "git_blob": "c2e003df1eaf140c6c8d5ec57f1acb298b7ddab0"
+      },
+      "append": {
+        "bytes": 562,
+        "sha256": "3DD0AAC098383448A7EEDA2F413D2B7F2D75C6BDCF4DD635BA09810619E2FD30"
+      },
+      "prefix_byte_identical": true,
+      "ids_contiguous": true,
+      "supersedes_references_strictly_prior": true
+    },
+    {
+      "path": "ega/smap.csv",
+      "id_field": "edge_id",
+      "headers": [
+        "edge_id",
+        "source_unit",
+        "source_part",
+        "authority_state",
+        "source_receipt",
+        "source_receipt_sha256",
+        "stacks_commit",
+        "stacks_file",
+        "stacks_label",
+        "official_tag",
+        "relation",
+        "review_state",
+        "coverage_claim",
+        "evidence",
+        "decision_id",
+        "notes",
+        "supersedes"
+      ],
+      "row_counts": {
+        "base": 1249,
+        "appended": 10,
+        "content": 1259
+      },
+      "new_ids": [
+        "S001250",
+        "S001251",
+        "S001252",
+        "S001253",
+        "S001254",
+        "S001255",
+        "S001256",
+        "S001257",
+        "S001258",
+        "S001259"
+      ],
+      "base": {
+        "bytes": 547417,
+        "sha256": "C33EADB6F06627A15FC4CE1CCCFE7E4CC8A4AADE2077D44BEFBC358B0055307C",
+        "git_blob": "9b60762f3852e7f47b313672f2a42f86358db070"
+      },
+      "content": {
+        "bytes": 553166,
+        "sha256": "C94FFE7B4E846AFA8532E65DC485AC5D2ABB416641653682EB82902E79D5C210",
+        "git_blob": "f8385ff76e86e13eb92080f13f47f84bb29f43ce"
+      },
+      "append": {
+        "bytes": 5749,
+        "sha256": "0261D7FC8D1419B8E379E57FCE78031E92BAAB815D0F795D2F4B9A26147D2B26"
+      },
+      "prefix_byte_identical": true,
+      "ids_contiguous": true,
+      "supersedes_references_strictly_prior": true
+    },
+    {
+      "path": "ega/resid.csv",
+      "id_field": "residual_id",
+      "headers": [
+        "residual_id",
+        "source_unit",
+        "kind",
+        "status",
+        "evidence",
+        "disposition",
+        "decision_id",
+        "supersedes"
+      ],
+      "row_counts": {
+        "base": 825,
+        "appended": 4,
+        "content": 829
+      },
+      "new_ids": [
+        "R000826",
+        "R000827",
+        "R000828",
+        "R000829"
+      ],
+      "base": {
+        "bytes": 238388,
+        "sha256": "DAE6F852E2B0B4BD622BD3C7C235E5F7FBA139D42011CD3BDF6FB4CD82E18458",
+        "git_blob": "73698e681e014e8ab633f470ce3897399a03c3a4"
+      },
+      "content": {
+        "bytes": 239886,
+        "sha256": "9EF8C07469ABDAEC0B488F162F29987839067D2AC714A883108B0A3E1D990755",
+        "git_blob": "52966331ee17744ea13a9789a25a40aca85b0efc"
+      },
+      "append": {
+        "bytes": 1498,
+        "sha256": "6E8DADEE3EDC5C3A06536994C9B0307B69FF79BEF24E1A6B218301B0E84942EC"
+      },
+      "prefix_byte_identical": true,
+      "ids_contiguous": true,
+      "supersedes_references_strictly_prior": true
+    },
+    {
+      "path": "ega/agent.csv",
+      "id_field": "run_id",
+      "headers": [
+        "run_id",
+        "task_id",
+        "model",
+        "thinking",
+        "scope",
+        "status",
+        "duration_ms",
+        "returned",
+        "owner_check",
+        "disposition",
+        "writes"
+      ],
+      "row_counts": {
+        "base": 256,
+        "appended": 1,
+        "content": 257
+      },
+      "new_ids": [
+        "A000257"
+      ],
+      "base": {
+        "bytes": 134895,
+        "sha256": "6B46CED2A8F82A74CF44BCDF3A8BB84E64543A343C37A63DF1F69E898AC429DD",
+        "git_blob": "70290dc7bd40589e79f1d1611abd76aa8ab333d2"
+      },
+      "content": {
+        "bytes": 135811,
+        "sha256": "9AD67E86A6312DE3415B8124BC165E8F95EF0C9D59D55342F67A80849D6AB2CA",
+        "git_blob": "dace200b79ba869e1701a49c0845de979c787ba3"
+      },
+      "append": {
+        "bytes": 916,
+        "sha256": "79C5C30E290AF22201EB3E0B2E761767AD8D37DC0A91E01B72CF796934C49B42"
+      },
+      "prefix_byte_identical": true,
+      "ids_contiguous": true,
+      "supersedes_references_strictly_prior": true
+    }
+  ],
+  "ledger_semantics": {
+    "row_counts": {
+      "ega/dec.csv": {
+        "base": 328,
+        "appended": 1,
+        "content": 329
+      },
+      "ega/smap.csv": {
+        "base": 1249,
+        "appended": 10,
+        "content": 1259
+      },
+      "ega/resid.csv": {
+        "base": 825,
+        "appended": 4,
+        "content": 829
+      },
+      "ega/agent.csv": {
+        "base": 256,
+        "appended": 1,
+        "content": 257
+      }
+    },
+    "new_decision": {
+      "decision_id": "D000329",
+      "subject_id": "ega:I.6.6.4",
+      "action": "map_quasi_compact_permanence_componentwise_and_complete_01K5_proof",
+      "state": "active"
+    },
+    "new_statement_edges": [
+      {
+        "edge_id": "S001250",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-closed-immersion-quasi-compact",
+        "official_tag": "01K7",
+        "relation": "equivalent",
+        "coverage_claim": "component",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001251",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "topology.tex",
+        "stacks_label": "topology-lemma-Noetherian-quasi-compact",
+        "official_tag": "04ZA",
+        "relation": "split",
+        "coverage_claim": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001252",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-composition-quasi-compact",
+        "official_tag": "01K6",
+        "relation": "equivalent",
+        "coverage_claim": "component",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001253",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-quasi-compact-preserved-base-change",
+        "official_tag": "01K5",
+        "relation": "equivalent",
+        "coverage_claim": "component",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001254",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-quasi-compact-preserved-base-change",
+        "official_tag": "01K5",
+        "relation": "split",
+        "coverage_claim": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001255",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-quasi-compact-permanence",
+        "official_tag": "03GI",
+        "relation": "entailed_by_stronger",
+        "coverage_claim": "component",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001256",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "topology.tex",
+        "stacks_label": "topology-lemma-quasi-compact-locally-Noetherian-Noetherian",
+        "official_tag": "04ZB",
+        "relation": "split",
+        "coverage_claim": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001257",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-definition-quasi-compact",
+        "official_tag": "01K3",
+        "relation": "split",
+        "coverage_claim": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001258",
+        "source_unit": "ega:I.6.6.4:proof",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-lemma-affine-covering-fibre-product",
+        "official_tag": "01JS",
+        "relation": "split",
+        "coverage_claim": "component",
+        "decision_id": "D000329"
+      },
+      {
+        "edge_id": "S001259",
+        "source_unit": "ega:I.6.6.4",
+        "stacks_file": "schemes.tex",
+        "stacks_label": "schemes-definition-quasi-compact",
+        "official_tag": "01K3",
+        "relation": "split",
+        "coverage_claim": "covered_derived",
+        "decision_id": "D000329"
+      }
+    ],
+    "new_residuals": [
+      {
+        "residual_id": "R000826",
+        "source_unit": "ega:I.6.6.4",
+        "kind": "six_part_package_is_componentwise_and_01K5_change_is_proof_completion_only",
+        "status": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "residual_id": "R000827",
+        "source_unit": "ega:I.6.6.4",
+        "kind": "Noetherian_hypotheses_are_topological_not_scheme_theoretic",
+        "status": "covered_derived",
+        "decision_id": "D000329"
+      },
+      {
+        "residual_id": "R000828",
+        "source_unit": "ega:I.6.6.4",
+        "kind": "03GI_weakens_the_separated_hypothesis_to_quasi_separated",
+        "status": "covered_by_stronger",
+        "decision_id": "D000329"
+      },
+      {
+        "residual_id": "R000829",
+        "source_unit": "ega:I.6.6.4",
+        "kind": "following_coproduct_paragraph_has_two_summands_not_an_arbitrary_infinite_family",
+        "status": "covered_derived",
+        "decision_id": "D000329"
+      }
+    ],
+    "new_agent_audit": {
+      "run_id": "A000257",
+      "status": "completed",
+      "writes": [
+        "ega/README.md",
+        "ega/agent.csv",
+        "ega/check.py",
+        "ega/dec.csv",
+        "ega/resid.csv",
+        "ega/scope.json",
+        "ega/smap.csv",
+        "schemes.tex",
+        "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json"
+      ]
+    },
+    "implementation_scope": {
+      "source_unit": "EGA I 6.6.4",
+      "next_source_unit": "EGA I 6.6.5",
+      "proof_completion_tag": "01K5",
+      "decisions": [
+        "D000329"
+      ],
+      "statement_edges": "S001250-S001259",
+      "residuals": "R000826-R000829",
+      "agent_audit": "A000257"
+    },
+    "headers_exact": true,
+    "ids_contiguous": true,
+    "cross_references_exact": true,
+    "official_tag_joins_unique": true,
+    "counts_cross_bound": true
+  },
+  "scope": {
+    "new_reviewed_slice_key": "ega:I.6.6.4",
+    "prior_reviewed_slices_preserved": true,
+    "new_slice": {
+      "receipt": "F37ZW.json",
+      "receipt_sha256": "0A56D886058B8203C34A9CDAA52B2CBF4EF4E6ED871C053CB7ADAA0F766690A0",
+      "path": "ega1/ega1-6-fr.tex",
+      "full_bytes": 57781,
+      "full_sha256": "F95D2C43C1074A1CC6485D74E24F02BF8C5F098ADB571AA024B4B499F5CDE3FE",
+      "lf_line_start": 1067,
+      "lf_line_end": 1121,
+      "slice_bytes": 3114,
+      "slice_sha256": "95A70DD85C4C0D7EE4C64052082F2DF176C163014762D721144CECEB458316BB",
+      "statement_lf_line_start": 1067,
+      "statement_lf_line_end": 1085,
+      "statement_bytes": 993,
+      "statement_sha256": "14F12025ABB9DD9297975B3B12558BF03F38428B31718E3570A3C79B389709AF",
+      "proof_lf_line_start": 1087,
+      "proof_lf_line_end": 1117,
+      "proof_bytes": 1943,
+      "proof_sha256": "D7DC4235D086D176AF20A908AAD61572C690D2C5BB84F27EC7F6DB22111E5D42",
+      "base_change_proof_lf_line_start": 1104,
+      "base_change_proof_lf_line_end": 1117,
+      "base_change_proof_bytes": 810,
+      "base_change_proof_sha256": "294E9925570B8D1BF240DE2D29EFCFB7409B8A4878E8A2E602EA13495D23B345",
+      "binary_sum_lf_line_start": 1119,
+      "binary_sum_lf_line_end": 1121,
+      "binary_sum_bytes": 176,
+      "binary_sum_sha256": "D1DA0EE6876E59C88147AEA8D384FDA25358C74B14726CABB659F2929C738059",
+      "root_proof_completion": {
+        "path": "schemes.tex",
+        "label": "lemma-quasi-compact-preserved-base-change",
+        "official_tag": "01K5",
+        "statement_changed": false,
+        "preimage_bytes": 230,
+        "preimage_sha256": "A37612375252BF61767A8175DF9E6C27DD76E17B7717D38A4522C790AF596634",
+        "postimage_bytes": 1195,
+        "postimage_sha256": "CA7C24394395B46209676363A9C0018C2203A6A9E41768372CE567BB4E850123",
+        "proof_bytes": 1000,
+        "proof_sha256": "0EB645C0B0EBFA0479A4D5A0B55074AA1C588832F33F29DF3FA18A942AA3B861",
+        "dependencies": [
+          "01K4",
+          "01JS"
+        ]
+      }
+    },
+    "statement_snapshot_recomputed": true,
+    "residual_snapshot_recomputed": true
+  },
+  "counts": {
+    "active_statement_edges": 1252,
+    "physical_statement_edges": 1259,
+    "mapped_source_units": 418,
+    "existing_official_tag_edges": 1239,
+    "distinct_existing_official_tags": 350,
+    "local_untagged_edges": 13,
+    "full_statement_equivalences": 61,
+    "active_residuals": 804,
+    "physical_residuals": 829,
+    "open_gaps": 12,
+    "local_mirror_residuals": 13,
+    "decisions": 329,
+    "agent_rows": 257,
+    "issues": 102,
+    "registered_discovery_units": 9585,
+    "quarantined_rows": 0
+  },
+  "unchanged_surfaces": {
+    "other_root_tex": {
+      "root_tex_count": 120,
+      "unchanged_count": 119,
+      "only_changed_path": "schemes.tex",
+      "identity_manifest_sha256": "45FA9C8406754FDB5ABC2BECC045E69B66FD71CBEF3127715E7FE02B3DBCE076",
+      "identities": [
+        {
+          "path": "adequate.tex",
+          "git_blob": "b9f6e5ff7f3d6f42d305dccef4289cec71df77d3"
+        },
+        {
+          "path": "algebra.tex",
+          "git_blob": "dd1b82db7cd6393ab1a301e43cde88fe98a57282"
+        },
+        {
+          "path": "algebraic.tex",
+          "git_blob": "d536595d416684dd5b3e9bdd5f6927c67372cafc"
+        },
+        {
+          "path": "algebraization.tex",
+          "git_blob": "73bcde163d6d3086435f5a0d68545eb851363fac"
+        },
+        {
+          "path": "artin.tex",
+          "git_blob": "9a2acf0351493bec9b05f9e6650cb14de1ec561f"
+        },
+        {
+          "path": "bibliography.tex",
+          "git_blob": "0f456faecb0259718c7cad6dbeb8c99c2129fea2"
+        },
+        {
+          "path": "bootstrap.tex",
+          "git_blob": "d60fd0d64e3e1cfb8fb2afec906849836235f43f"
+        },
+        {
+          "path": "brauer.tex",
+          "git_blob": "0e32fe2edcc0955506ea9eb076d562d30277805b"
+        },
+        {
+          "path": "categories.tex",
+          "git_blob": "c1129aa7054b28cbe04d0dca862515e94a5f8a5a"
+        },
+        {
+          "path": "chapters.tex",
+          "git_blob": "ed13cbcc7e71d74f71545da177eee93d73418c27"
+        },
+        {
+          "path": "chow.tex",
+          "git_blob": "af6918f3abf32243314c407432395312a5ff665e"
+        },
+        {
+          "path": "coding.tex",
+          "git_blob": "f2f4e7c1d2f7ad671384d18fedbb106fe295ebe9"
+        },
+        {
+          "path": "coherent.tex",
+          "git_blob": "e11f2ad8664a7538f5d686afbaab75915afe378c"
+        },
+        {
+          "path": "cohomology.tex",
+          "git_blob": "32194c7debdc308dfb29899762a9c8d175e56e9a"
+        },
+        {
+          "path": "constructions.tex",
+          "git_blob": "adc2a31171fe70db6fd435461c6e1cc3660970e2"
+        },
+        {
+          "path": "conventions.tex",
+          "git_blob": "1a90697441c70dec5691463993b68859329ac015"
+        },
+        {
+          "path": "cotangent.tex",
+          "git_blob": "3c06a64f25b796272de14adb5e27d10e69eb323a"
+        },
+        {
+          "path": "criteria.tex",
+          "git_blob": "376de389418cb55e1c6f9013f77437948342e9c2"
+        },
+        {
+          "path": "crystalline.tex",
+          "git_blob": "c1b26c00e952b1655898b53e9547f23c0b89b468"
+        },
+        {
+          "path": "curves.tex",
+          "git_blob": "851dc6f775ef801accbd21515c53661a32ab71b9"
+        },
+        {
+          "path": "decent-spaces.tex",
+          "git_blob": "fd3f092fd4f5d4543ba11e9d41763ccd377b29c5"
+        },
+        {
+          "path": "defos.tex",
+          "git_blob": "4d705aa63b60e1a9d80f3b64410e136b39df2258"
+        },
+        {
+          "path": "derham.tex",
+          "git_blob": "e78e81e589b825ebdc5ab3a68c8fb2f86bfba319"
+        },
+        {
+          "path": "derived.tex",
+          "git_blob": "f62f8645b22d39a3dd5998256f3a296bcb677d37"
+        },
+        {
+          "path": "descent.tex",
+          "git_blob": "6f2d119aff45ed24419c9d3782dfee572da974bf"
+        },
+        {
+          "path": "desirables.tex",
+          "git_blob": "1b3a4b81db8c528dc308a8bc0a901255aed46c18"
+        },
+        {
+          "path": "dga.tex",
+          "git_blob": "13cdac8bc08ee225c9816c82a0071683362f3266"
+        },
+        {
+          "path": "discriminant.tex",
+          "git_blob": "4f85f71aafcf602e18d0f665bbcb79064d1f8026"
+        },
+        {
+          "path": "divisors.tex",
+          "git_blob": "23601845b0ee76d462ed58bcc218a1d5fa022398"
+        },
+        {
+          "path": "dpa.tex",
+          "git_blob": "a0a8fd281331f20e0c4b651e01d4540de0f72a04"
+        },
+        {
+          "path": "duality.tex",
+          "git_blob": "0bb1636b50e7b498e36fef07770a2a3741768d39"
+        },
+        {
+          "path": "dualizing.tex",
+          "git_blob": "0e0c4c866c108df8ce41fc1b1c6f657efa6250f9"
+        },
+        {
+          "path": "equiv.tex",
+          "git_blob": "9a7ccb0a4dca8e0c748691d5de77e6e615fa37b2"
+        },
+        {
+          "path": "etale-cohomology.tex",
+          "git_blob": "b83318cd482ca40dd27939764a79c6dccf892e13"
+        },
+        {
+          "path": "etale.tex",
+          "git_blob": "6d3929c5a056e93b59e4f374ca2342bba5b414f5"
+        },
+        {
+          "path": "examples-defos.tex",
+          "git_blob": "32bdc332cc52ca17674b52fedf29d084485bac82"
+        },
+        {
+          "path": "examples-stacks.tex",
+          "git_blob": "b4b9d423f13dbbd1c09b1b80c15dea61ecb44a12"
+        },
+        {
+          "path": "examples.tex",
+          "git_blob": "8559215f3dd98a16fabb0fea0f0fe0414d4a4f81"
+        },
+        {
+          "path": "exercises.tex",
+          "git_blob": "7eebd906a1b136b7fe94daaeaa3d84dfce369f53"
+        },
+        {
+          "path": "fdl.tex",
+          "git_blob": "093d8e332ebffa65538b1d12535f84dbf12d7d1e"
+        },
+        {
+          "path": "fields.tex",
+          "git_blob": "8a6a3f54472e9da507a71f052779a356bd0db5f8"
+        },
+        {
+          "path": "flat.tex",
+          "git_blob": "33b73d1a5e9783157a23306b4c71fb76dc082e0d"
+        },
+        {
+          "path": "formal-defos.tex",
+          "git_blob": "efaad491bde83e4ceac6aa0e4fcf4ce6b4d611c6"
+        },
+        {
+          "path": "formal-spaces.tex",
+          "git_blob": "c0db655928396bb469a3a3defb3a68cf97d2d78d"
+        },
+        {
+          "path": "functors.tex",
+          "git_blob": "b9442fded95ed7399de4a558e7e25b19be305db6"
+        },
+        {
+          "path": "gaga.tex",
+          "git_blob": "343d8eb74e4fafc7a876797753500488a8004032"
+        },
+        {
+          "path": "groupoids-quotients.tex",
+          "git_blob": "6039d5688b4f159dc2cba792ab25745aad41fef8"
+        },
+        {
+          "path": "groupoids.tex",
+          "git_blob": "de53855d011502707455bab47f13745f17028105"
+        },
+        {
+          "path": "guide.tex",
+          "git_blob": "e52aa92afe720fe9963c199151b8a0ca5d191d35"
+        },
+        {
+          "path": "homology.tex",
+          "git_blob": "54d6a4d51b25f03eb71bf09ff56288ebd0e43516"
+        },
+        {
+          "path": "hypercovering.tex",
+          "git_blob": "bb867ed9c5f5cc79670bcba69bf52a1f5e1cff53"
+        },
+        {
+          "path": "injectives.tex",
+          "git_blob": "abe50c79d998f134cc07293aa9bd673d3367abb3"
+        },
+        {
+          "path": "intersection.tex",
+          "git_blob": "c27a6a235d2c3a81578625534f1140bd11088c4c"
+        },
+        {
+          "path": "introduction.tex",
+          "git_blob": "a30f90894ad3a8aa5c2de939f9e57cc1216a18ab"
+        },
+        {
+          "path": "limits.tex",
+          "git_blob": "30f0519746dddddd990361b049692150deb957ef"
+        },
+        {
+          "path": "local-cohomology.tex",
+          "git_blob": "5a8ecf3b1137a1c1d8e622aad8ec83e3fbb8ad37"
+        },
+        {
+          "path": "models.tex",
+          "git_blob": "a3e10351302febc6574cbf2b6c7f157c1745adcf"
+        },
+        {
+          "path": "modules.tex",
+          "git_blob": "cdd258216a09be811c166bcbfd23705bbe679415"
+        },
+        {
+          "path": "moduli-curves.tex",
+          "git_blob": "b05a672642887ed6fd06a9241686042138a23c7b"
+        },
+        {
+          "path": "moduli.tex",
+          "git_blob": "894297eb778bd7daf365509a9d761c9e1d1ae6fe"
+        },
+        {
+          "path": "more-algebra.tex",
+          "git_blob": "9db253ad6bf37ba398eccc7cf81a9ff76eaf38f2"
+        },
+        {
+          "path": "more-etale.tex",
+          "git_blob": "1e9b69b2bfbac7c6827477ad24a6265e1fc3410b"
+        },
+        {
+          "path": "more-groupoids.tex",
+          "git_blob": "61e68ef2abd475f6fa098ab741ce128622dadae0"
+        },
+        {
+          "path": "more-morphisms.tex",
+          "git_blob": "9cb82962c6d6198c2ae021a6eb8a03630852fff7"
+        },
+        {
+          "path": "morphisms.tex",
+          "git_blob": "a573bdd92d39290a7ab441fa7a1227a946434276"
+        },
+        {
+          "path": "obsolete.tex",
+          "git_blob": "e7eab28bbbbf8cad8c26cabe16fd3dcc634863a5"
+        },
+        {
+          "path": "perfect.tex",
+          "git_blob": "8522660c9e7aab3ef20ffe9dbe1d89491f7b9d73"
+        },
+        {
+          "path": "pic.tex",
+          "git_blob": "cced0b67e6e75c101c66e4d94d86dbdf321020d4"
+        },
+        {
+          "path": "pione.tex",
+          "git_blob": "7cae9f958e8dd7f413f382cf83a2c00b061906a6"
+        },
+        {
+          "path": "preamble.tex",
+          "git_blob": "1564ada1c30365b78bb708bd58f9f8b1ea0f1cb0"
+        },
+        {
+          "path": "proetale.tex",
+          "git_blob": "495d59c29950ceca1e9443b35f14d6b4f6deee96"
+        },
+        {
+          "path": "properties.tex",
+          "git_blob": "592135cd811050b9ee2b18a3400912b4d4664622"
+        },
+        {
+          "path": "quot.tex",
+          "git_blob": "31d6288cb7b2d664bb7952a1b44f8c61a9d423e8"
+        },
+        {
+          "path": "relative-cycles.tex",
+          "git_blob": "816fa936893661acc7c66cbc5c2e988ce64f5961"
+        },
+        {
+          "path": "resolve.tex",
+          "git_blob": "e012544f3c612e06bc6b10ad6b247694f663b6e5"
+        },
+        {
+          "path": "restricted.tex",
+          "git_blob": "959959b49abaa585db1e0d4a4130c70a3ca72869"
+        },
+        {
+          "path": "sdga.tex",
+          "git_blob": "cffef8e7b197635e04ebbc02b4dbee78b2c1f581"
+        },
+        {
+          "path": "sets.tex",
+          "git_blob": "05676a8dd249abe1d498174115d9d2f6321421cc"
+        },
+        {
+          "path": "sheaves.tex",
+          "git_blob": "334669ceab2e0dc381b639c2b7f87ecf2c0fc3f0"
+        },
+        {
+          "path": "simplicial.tex",
+          "git_blob": "bcec4895b138415bea4febc348ad4e3e9f519b44"
+        },
+        {
+          "path": "sites-cohomology.tex",
+          "git_blob": "6a812f3953e86a14554308cc1ebee150ee0bbc29"
+        },
+        {
+          "path": "sites-modules.tex",
+          "git_blob": "17d423ae65e6e0994e4c11d5c2777fdafa9c8100"
+        },
+        {
+          "path": "sites.tex",
+          "git_blob": "e1bb85bb03b9eb66328d9d164d18c174b2e528c8"
+        },
+        {
+          "path": "smoothing.tex",
+          "git_blob": "8c1d7b7080ae6bd7e0f211d1dc33b39f9811ccfb"
+        },
+        {
+          "path": "spaces-chow.tex",
+          "git_blob": "386efc95127ea46e5e07f75961c3b03bdbb40bfb"
+        },
+        {
+          "path": "spaces-cohomology.tex",
+          "git_blob": "c81a65febf47c11442bd3d3652b853ed10ca994e"
+        },
+        {
+          "path": "spaces-descent.tex",
+          "git_blob": "7e2e7467d592447c130d70c9e2cf308bd22c65f8"
+        },
+        {
+          "path": "spaces-divisors.tex",
+          "git_blob": "cbfe402de9ffb9406f64338b48048b3fda1f9531"
+        },
+        {
+          "path": "spaces-duality.tex",
+          "git_blob": "efbd4b4ba9db377c8a36b0b11f3877bda60a08f7"
+        },
+        {
+          "path": "spaces-flat.tex",
+          "git_blob": "948a4a8ed739f120444d9d34d4ee23f5f3f73ffc"
+        },
+        {
+          "path": "spaces-groupoids.tex",
+          "git_blob": "e65fadf1598af1d9596589c33855c569a161a463"
+        },
+        {
+          "path": "spaces-limits.tex",
+          "git_blob": "d86ad232b0978a73b70bec9b2d1df5c7a35059fc"
+        },
+        {
+          "path": "spaces-more-cohomology.tex",
+          "git_blob": "6b763b416d3846f54b157dfdbdd50591838f95f5"
+        },
+        {
+          "path": "spaces-more-groupoids.tex",
+          "git_blob": "cbc6df99c9f81bb65badfb48cfe5a92eab806606"
+        },
+        {
+          "path": "spaces-more-morphisms.tex",
+          "git_blob": "f04b2158fc68c46796a8b275357c59e5e8a5399d"
+        },
+        {
+          "path": "spaces-morphisms.tex",
+          "git_blob": "5b503c04d90520e8cbdc4ffbee5b6e6c815b8aa6"
+        },
+        {
+          "path": "spaces-over-fields.tex",
+          "git_blob": "b3a1cdb60a5700c009bef07067ec48d11fe41805"
+        },
+        {
+          "path": "spaces-perfect.tex",
+          "git_blob": "3b7c9aaac53434d6632208b615f5430cb4f2e734"
+        },
+        {
+          "path": "spaces-properties.tex",
+          "git_blob": "8e146d14deccedce9f0e48d4797c216af7de9b15"
+        },
+        {
+          "path": "spaces-pushouts.tex",
+          "git_blob": "b1a548f63bad1af540c9e78f3dbe367fd5ebef21"
+        },
+        {
+          "path": "spaces-resolve.tex",
+          "git_blob": "63b15893c4bbb15b8fa5d021a296a48e3c9f796d"
+        },
+        {
+          "path": "spaces-simplicial.tex",
+          "git_blob": "9702d3e86c6d52b27367f6f4e7e3166ea481d409"
+        },
+        {
+          "path": "spaces-topologies.tex",
+          "git_blob": "a0382181b15b3b7eebd3b956aa59bf72a0e764b8"
+        },
+        {
+          "path": "spaces.tex",
+          "git_blob": "49888dd3d86b9509b380f298d32aaf0d29e424fa"
+        },
+        {
+          "path": "stacks-cohomology.tex",
+          "git_blob": "3445efedebede7c80ef6ccb5add852fe4b01bb59"
+        },
+        {
+          "path": "stacks-geometry.tex",
+          "git_blob": "aac91f4fd625b4fcfac7b61dede9e14518b9d404"
+        },
+        {
+          "path": "stacks-introduction.tex",
+          "git_blob": "f1a62eeeecaf368bca91725f617f0188f78a2ec0"
+        },
+        {
+          "path": "stacks-limits.tex",
+          "git_blob": "06f8be6db2162b9cea88c11281ac3b775cf491f5"
+        },
+        {
+          "path": "stacks-more-morphisms.tex",
+          "git_blob": "7f7bea956050472a6e05389d8f1dced8319fa95c"
+        },
+        {
+          "path": "stacks-morphisms.tex",
+          "git_blob": "305f63ea3905c4e16dfd921595b87dd0a12083ee"
+        },
+        {
+          "path": "stacks-perfect.tex",
+          "git_blob": "935bee401f68674eb094c54399b3cb6c959dc252"
+        },
+        {
+          "path": "stacks-properties.tex",
+          "git_blob": "b8cf725668523b1d63163035fdf9752236f28a18"
+        },
+        {
+          "path": "stacks-sheaves.tex",
+          "git_blob": "3481704a77e6fcf307c0b97b181cd0cd5a1ae9c1"
+        },
+        {
+          "path": "stacks.tex",
+          "git_blob": "7a9a9e7e3805dfece00cabd865ead17578221300"
+        },
+        {
+          "path": "topologies.tex",
+          "git_blob": "7f3b1718eba1743e2089f9bc16d2615e267b0ccb"
+        },
+        {
+          "path": "topology.tex",
+          "git_blob": "d206c8bbb4a13b0b3c4ea2a7c3b45687a5d29614"
+        },
+        {
+          "path": "trace.tex",
+          "git_blob": "4b6eef372d7f40358893dee1899d0e26bea89069"
+        },
+        {
+          "path": "varieties.tex",
+          "git_blob": "1cffce04d438f2c2df6df8c99a2e2ec21250941e"
+        },
+        {
+          "path": "weil.tex",
+          "git_blob": "ac007a2e586fb974d22829ed294bde2a12e3680b"
+        }
+      ]
+    },
+    "tags_tree": {
+      "base_git_tree": "42aa2d7882640e08824aeac4d73ede08840dbcdb",
+      "content_git_tree": "42aa2d7882640e08824aeac4d73ede08840dbcdb",
+      "unchanged": true
+    },
+    "tags_file": {
+      "path": "tags/tags",
+      "base": {
+        "bytes": 989923,
+        "sha256": "8902B5633D1B74AB5750FD4246D42E0292D844AC4B87135482D07857C478EF3D",
+        "git_blob": "0058ac1926694efa53a6ec2281e8008e66f3a977"
+      },
+      "content": {
+        "bytes": 989923,
+        "sha256": "8902B5633D1B74AB5750FD4246D42E0292D844AC4B87135482D07857C478EF3D",
+        "git_blob": "0058ac1926694efa53a6ec2281e8008e66f3a977"
+      },
+      "unchanged": true
+    },
+    "registry_tree": {
+      "path": "ai-integrated/registry",
+      "base_git_tree": "82a6af44395c21e85123525b75920d7cf5d484c3",
+      "content_git_tree": "82a6af44395c21e85123525b75920d7cf5d484c3",
+      "unchanged": true
+    },
+    "composition_receipt": {
+      "path": "validation/composition-current.json",
+      "base": {
+        "bytes": 12954,
+        "sha256": "5DFAA8FC81EB0F5CFE94AAC6E3DAFC3BFDDB7516EA4B5FC7DE8AE38906DFC207",
+        "git_blob": "f2ed2e2b6371943072a248dc192f948973cbe60d"
+      },
+      "content": {
+        "bytes": 12954,
+        "sha256": "5DFAA8FC81EB0F5CFE94AAC6E3DAFC3BFDDB7516EA4B5FC7DE8AE38906DFC207",
+        "git_blob": "f2ed2e2b6371943072a248dc192f948973cbe60d"
+      },
+      "unchanged": true
+    }
+  },
+  "checks": [
+    "schema_status",
+    "base_content_topology",
+    "exact_changed_path_diff",
+    "tooling_identities_bound",
+    "actual_base_and_content_commits_and_trees_exact",
+    "content_is_single_parent_child_of_actual_base",
+    "historical_implementation_base_is_ancestor_and_all_eight_preimages_rebind_exactly",
+    "exact_ten_path_base_to_content_delta",
+    "immutable_implementation_and_independent_review_receipts_bound",
+    "unique_01K5_omitted_proof_replaced_230_to_1195_with_1000_byte_proof",
+    "01K5_statement_label_and_official_tag_unchanged",
+    "schemes_full_preimage_postimage_and_outside_block_bytes_exact",
+    "all_other_119_root_tex_blobs_unchanged",
+    "tags_registry_and_composition_receipt_unchanged",
+    "four_ledger_prefixes_and_reserved_append_ranges_exact",
+    "live_counts_recomputed_from_committed_ledgers",
+    "prior_scope_slices_preserved_and_6_6_4_slice_exact",
+    "continuation_is_EGA_I_6_6_5",
+    "source_authority_hashes_bound",
+    "canonical_authority_source_receipt_and_slice_cross_bound_exactly",
+    "README_6_6_4_insertion_unique_anchored_and_outside_branch_unchanged",
+    "four_ledger_headers_rows_IDs_cross_references_and_counts_exact",
+    "no_post_content_source_drift_at_generation"
+  ],
+  "validation_scope": {
+    "source_and_review_checkpoint": "PASS",
+    "tex_pdf_build": "NOT_CLAIMED_HERE",
+    "visual_qa": "NOT_CLAIMED_HERE",
+    "publication": "NOT_CLAIMED_HERE",
+    "anonymous_public_readback": "NOT_CLAIMED_HERE"
+  },
+  "claim": "The commit-bound EGA I 6.6.4 source change, immutable local review, exact ledger appends, and unchanged-source boundaries pass. This receipt does not claim the later TeX/PDF build, visual QA, publication, or public readback gates."
+}
