@@ -1,0 +1,48 @@
+{
+  "schema": "unofficial-stacks-project-ai-drafts-ega-visual-qa/v1",
+  "status": "PASS",
+  "source_unit": {
+    "name": "EGA I 6.6.4",
+    "next_source_unit": "EGA I 6.6.5",
+    "label": "lemma-quasi-compact-preserved-base-change",
+    "official_tag": "01K5",
+    "dependencies": [
+      "01K4",
+      "01JS"
+    ]
+  },
+  "source": {
+    "commit": "91cc89df5804b8c1949d8267602fc076649ee49b",
+    "tree": "060538ea3323b366e8f445fd79725a63c4241d2f"
+  },
+  "checkpoint_receipt": {
+    "path": "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json",
+    "bytes": 44426,
+    "sha256": "95B8D2B14D7C1CB7E9F826F6EBF0A6723DBDB05DC5D06F06F186E21465CC3352",
+    "git_blob": "715024558f8480811dc3d27521d65cdaa893ca45"
+  },
+  "build_receipt": {
+    "path": "validation/ega-i-6.6.4-fixed-point-build-2026-08-31.json",
+    "bytes": 41019,
+    "sha256": "1D286182056118CBB36EDF9B413B25F8D1B6161FE61541F33725E30EC9149FE9",
+    "git_blob": "5c3614c9f652d1d99de85dd50ee2893d205c0118"
+  },
+  "artifact": {
+    "stem": "schemes",
+    "pages": 51,
+    "bytes": 724060,
+    "sha256": "77F075C104CDE40889858184722BD43C51CE3DC42377C08046370400CE1A717C"
+  },
+  "review": {
+    "method": "rendered_pdf_affected_page_review",
+    "affected_pages": [
+      37
+    ],
+    "reviewed_pages": [
+      37
+    ],
+    "affected_pages_all_reviewed": true,
+    "visual_defects": [],
+    "result": "PASS"
+  }
+}
