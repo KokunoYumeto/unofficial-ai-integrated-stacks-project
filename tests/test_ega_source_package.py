@@ -19,6 +19,9 @@ from tools import build_fixed_point as fixed_point
 
 
 ORIGINAL_EGA_SOURCE_AUTHORITY = package.EGA_SOURCE_AUTHORITY
+ORIGINAL_EGA_SOURCE_INPUT_RECEIPT_IDENTITIES = (
+    package.EGA_SOURCE_INPUT_RECEIPT_IDENTITIES
+)
 
 
 def run_git(root: Path, *args: str) -> str:
@@ -266,15 +269,85 @@ def producer_build_receipt(
     return receipt
 
 
+class EgaCsvParserTests(unittest.TestCase):
+    def test_normalizes_only_legacy_omitted_empty_supersedes_cell(self) -> None:
+        fields, rows = package.parse_ega_csv_bytes(
+            b"edge_id,value,supersedes\nS000001,kept\n",
+            path="ega/smap.csv",
+            expected_fieldnames=("edge_id", "value", "supersedes"),
+        )
+        self.assertEqual(fields, ("edge_id", "value", "supersedes"))
+        self.assertEqual(
+            rows,
+            [{"edge_id": "S000001", "value": "kept", "supersedes": ""}],
+        )
+
+    def test_rejects_more_than_the_legacy_trailing_empty_cell(self) -> None:
+        with self.assertRaisesRegex(package.PackageError, "ragged CSV row"):
+            package.parse_ega_csv_bytes(
+                b"item,value,supersedes\nA000001\n",
+                path="ega/synthetic.csv",
+                expected_fieldnames=("item", "value", "supersedes"),
+            )
+
+    def test_rejects_omitted_supersedes_outside_exact_frozen_prefix(self) -> None:
+        cases = (
+            (
+                "ega/synthetic.csv",
+                b"edge_id,value,supersedes\nS000001,kept\n",
+            ),
+            (
+                "ega/smap.csv",
+                b"edge_id,value,supersedes\nS000336,kept\n",
+            ),
+            (
+                "ega/resid.csv",
+                b"residual_id,value,supersedes\nR000172,kept\n",
+            ),
+            (
+                "ega/smap.csv",
+                b"edge_id,value,supersedes\nS000002,kept\n",
+            ),
+        )
+        for path, raw in cases:
+            with self.subTest(path=path, raw=raw), self.assertRaisesRegex(
+                package.PackageError, "ragged CSV row"
+            ):
+                package.parse_ega_csv_bytes(
+                    raw,
+                    path=path,
+                    expected_fieldnames=tuple(
+                        raw.split(b"\n", 1)[0].decode("ascii").split(",")
+                    ),
+                )
+
+    def test_rejects_extra_csv_cells(self) -> None:
+        with self.assertRaisesRegex(package.PackageError, "ragged CSV row"):
+            package.parse_ega_csv_bytes(
+                b"item,value,supersedes\nA000001,kept,,extra\n",
+                path="ega/synthetic.csv",
+                expected_fieldnames=("item", "value", "supersedes"),
+            )
+
+
 class EgaSourcePackageProfileTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls._original_source_authority = package.EGA_SOURCE_AUTHORITY
+        cls._original_input_receipt_identities = (
+            package.EGA_SOURCE_INPUT_RECEIPT_IDENTITIES
+        )
         cls.addClassCleanup(
             setattr,
             package,
             "EGA_SOURCE_AUTHORITY",
             cls._original_source_authority,
+        )
+        cls.addClassCleanup(
+            setattr,
+            package,
+            "EGA_SOURCE_INPUT_RECEIPT_IDENTITIES",
+            cls._original_input_receipt_identities,
         )
         cls._temporary = tempfile.TemporaryDirectory()
         cls.root = Path(cls._temporary.name)
@@ -329,10 +402,18 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
             official_tag = (
                 f"T{((max(active_index, 1) - 1) % 349):03d}" if tagged else ""
             )
+            if official_tag == "T348":
+                official_tag = "01JS"
+            source_unit_number = ((max(active_index, 1) - 1) % 417) + 1
+            source_unit = (
+                "ega:I.6.6.4:proof"
+                if source_unit_number == 417
+                else f"ega:base.{source_unit_number}"
+            )
             smap_rows.append(
                 {
                     "edge_id": f"S{number:06d}",
-                    "source_unit": f"ega:base.{((max(active_index, 1) - 1) % 417) + 1}",
+                    "source_unit": source_unit,
                     "source_part": "baseline",
                     "authority_state": "french_admitted",
                     "source_receipt": "baseline.json",
@@ -406,7 +487,33 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
         for path, rows in ledger_base_rows.items():
             contract = package.EGA_SOURCE_LEDGER_CONTRACTS[path]
             write(cls.root, path, csv_bytes(contract["fieldnames"], rows))
-        write(cls.root, "ega/README.md", b"# EGA baseline\n")
+        cls.readme_prefix = (
+            b"# EGA baseline\n\n"
+            + package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR
+            + b"Synthetic EGA source branch preface.\n"
+            + package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR
+        )
+        cls.readme_suffix = (
+            package.EGA_SOURCE_README_SECTION_AFTER_ANCHOR
+            + b"Synthetic EGA source branch continuation.\n"
+            + package.EGA_SOURCE_README_OUTER_AFTER_ANCHOR
+            + b"Synthetic README suffix.\n"
+        )
+        cls.base_readme = (
+            cls.readme_prefix
+            + package.EGA_SOURCE_README_BASE_SECTION
+            + cls.readme_suffix
+        )
+        cls.content_readme_section = (
+            package.EGA_SOURCE_README_INSERTION_HEADING
+            + b"\nSynthetic reviewed implementation detail.\n\n"
+            + package.EGA_SOURCE_README_PUBLISHED_HEADING
+            + b"\n"
+        )
+        cls.content_readme = (
+            cls.readme_prefix + cls.content_readme_section + cls.readme_suffix
+        )
+        write(cls.root, "ega/README.md", cls.base_readme)
         write(cls.root, "ega/check.py", b"# baseline checker\n")
         write(cls.root, "ega/scope.json", b'{"reviewed_source_slices": {}}\n')
         write(
@@ -644,7 +751,7 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
         preimages = [path_identity(path) for path in package.EGA_SOURCE_IMPLEMENTATION_SURFACES]
 
         write(cls.root, "schemes.tex", cls.prefix + cls.content_block + cls.suffix)
-        write(cls.root, "ega/README.md", b"# EGA baseline\n\nEGA I 6.6.4 integrated.\n")
+        write(cls.root, "ega/README.md", cls.content_readme)
         write(cls.root, "ega/check.py", b"# baseline checker\n# 6.6.4\n")
         source_slice = {
             "receipt": package.EGA_SOURCE_AUTHORITY["french_receipt"],
@@ -656,12 +763,32 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
             "lf_line_end": 1121,
             "slice_bytes": package.EGA_SOURCE_AUTHORITY["french_slice_bytes"],
             "slice_sha256": package.EGA_SOURCE_AUTHORITY["french_slice_sha256"],
+            "statement_lf_line_start": 1067,
+            "statement_lf_line_end": 1085,
+            "statement_bytes": 993,
+            "statement_sha256": "1" * 64,
+            "proof_lf_line_start": 1087,
+            "proof_lf_line_end": 1117,
+            "proof_bytes": 1_943,
+            "proof_sha256": "2" * 64,
+            "base_change_proof_lf_line_start": 1104,
+            "base_change_proof_lf_line_end": 1117,
+            "base_change_proof_bytes": 810,
+            "base_change_proof_sha256": "3" * 64,
+            "binary_sum_lf_line_start": 1119,
+            "binary_sum_lf_line_end": 1121,
+            "binary_sum_bytes": 176,
+            "binary_sum_sha256": "4" * 64,
             "root_proof_completion": {
                 "path": package.EGA_SOURCE_ROOT_PATH,
                 "label": package.EGA_SOURCE_UNIT["label"],
                 "official_tag": package.EGA_SOURCE_UNIT["official_tag"],
                 "statement_changed": False,
                 "dependencies": package.EGA_SOURCE_UNIT["dependencies"],
+                "preimage_bytes": len(cls.base_block),
+                "preimage_sha256": sha(cls.base_block),
+                "postimage_bytes": len(cls.content_block),
+                "postimage_sha256": sha(cls.content_block),
                 "proof_bytes": len(cls.content_proof),
                 "proof_sha256": sha(cls.content_proof),
             }
@@ -687,24 +814,36 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                 "status": "completed", "duration_ms": "1",
                 "returned": "D000329 S001250-S001259 R000826-R000829",
                 "owner_check": "bounded", "disposition": "accepted",
-                "writes": "|".join(package.EGA_SOURCE_EXPECTED_WRITE_BOUNDARY),
+                "writes": "|".join(package.EGA_SOURCE_FROZEN_AGENT_WRITES),
             }],
         }
         for number in range(1250, 1260):
-            is_root = number == 1253
+            is_root = number in {1253, 1254}
+            is_direct_root = number == 1253
+            is_proof = number == 1258
             appended_rows["ega/smap.csv"].append({
-                "edge_id": f"S{number:06d}", "source_unit": "ega:I.6.6.4",
+                "edge_id": f"S{number:06d}",
+                "source_unit": "ega:I.6.6.4:proof" if is_proof else "ega:I.6.6.4",
                 "source_part": f"component {number}", "authority_state": "french_admitted",
                 "source_receipt": "F37ZW.json", "source_receipt_sha256": "B" * 64,
                 "stacks_commit": package.EGA_SOURCE_AUTHORITY["official_stacks_commit"],
                 "stacks_file": "schemes.tex",
                 "stacks_label": (
                     f"schemes-{package.EGA_SOURCE_UNIT['label']}" if is_root
+                    else "schemes-lemma-affine-covering-fibre-product" if is_proof
                     else f"baseline-{number}"
                 ),
-                "official_tag": package.EGA_SOURCE_UNIT["official_tag"] if is_root else "T000",
-                "relation": "split", "review_state": "reviewed_existing",
-                "coverage_claim": "component", "evidence": "01K4 01JS",
+                "official_tag": (
+                    package.EGA_SOURCE_UNIT["official_tag"] if is_root
+                    else "01JS" if is_proof else "T000"
+                ),
+                "relation": "equivalent" if is_direct_root else "split",
+                "review_state": "reviewed_existing",
+                "coverage_claim": (
+                    "component" if is_direct_root or is_proof
+                    else "covered_derived"
+                ),
+                "evidence": "01K4 01JS",
                 "decision_id": "D000329", "notes": "", "supersedes": "",
             })
         for number in range(826, 830):
@@ -713,6 +852,7 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                 "kind": "bounded", "status": "covered_derived", "evidence": "D000329",
                 "disposition": "integrated", "decision_id": "D000329", "supersedes": "",
             })
+        cls.appended_rows = copy.deepcopy(appended_rows)
         ledger_append_bytes: dict[str, bytes] = {}
         for path, new_rows in appended_rows.items():
             contract = package.EGA_SOURCE_LEDGER_CONTRACTS[path]
@@ -739,7 +879,9 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
         implementation = {
             "schema": package.EGA_SOURCE_INPUT_RECEIPT_SCHEMAS["implementation_receipt"][0],
             "status": package.EGA_SOURCE_INPUT_RECEIPT_SCHEMAS["implementation_receipt"][1],
+            "updated_utc": "2026-08-31T00:00:00Z",
             "base_commit": cls.historical_commit,
+            "branch": "codex/test-ega-source",
             "write_boundary": list(package.EGA_SOURCE_EXPECTED_WRITE_BOUNDARY),
             "scope": {
                 "source_unit": package.EGA_SOURCE_UNIT["name"],
@@ -753,6 +895,15 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
             "counts": package.EGA_SOURCE_COUNTS,
             "authority": package.EGA_SOURCE_AUTHORITY,
             "source_slice": source_slice,
+            "validation": {"status": "PASS"},
+            "completed": ["bounded synthetic implementation"],
+            "remaining": ["build", "visual QA", "publication"],
+            "next_executable_action": "run source checkpoint writer",
+            "exclusions": ["publication"],
+            "root_change": {"proof_only": True},
+            "local_checks": {"status": "PASS"},
+            "validation_attempts": [{"status": "PASS"}],
+            "claim": "Synthetic local implementation receipt for validator tests.",
         }
         implementation_bytes = (json.dumps(implementation, indent=2) + "\n").encode()
         write(cls.root, cls.implementation_path, implementation_bytes)
@@ -770,6 +921,9 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                 },
                 "build_performed": False, "visual_review_performed": False,
                 "publication_performed": False,
+                "findings": [],
+                "receipt_wording_correction": {"applied": True},
+                "reviewer": {"kind": "independent-test"},
                 "source_unit": package.EGA_SOURCE_UNIT["name"],
                 "next_source_unit": package.EGA_SOURCE_UNIT["next_source_unit"],
                 "root_source": {
@@ -784,6 +938,13 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
         )
         cls.content_commit = commit_all(cls.root, "content")
         cls.content_tree = run_git(cls.root, "rev-parse", "HEAD^{tree}")
+        package.EGA_SOURCE_INPUT_RECEIPT_IDENTITIES = {
+            role: package.git_blob_identity(cls.root, cls.content_commit, path)
+            for role, path in (
+                ("implementation_receipt", cls.implementation_path),
+                ("independent_review", cls.review_path),
+            )
+        }
 
         cls.checkpoint_path = package.EGA_SOURCE_CHECKPOINT_PATH
 
@@ -879,6 +1040,37 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
         )
         composition_content = package.git_blob_identity(
             cls.root, cls.content_commit, "validation/composition-current.json"
+        )
+        def byte_identity(raw: bytes) -> dict[str, object]:
+            return {"bytes": len(raw), "sha256": sha(raw)}
+
+        base_outer_start = (
+            cls.base_readme.index(package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR)
+            + len(package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR)
+        )
+        content_outer_start = (
+            cls.content_readme.index(package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR)
+            + len(package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR)
+        )
+        base_outer_end = cls.base_readme.index(
+            package.EGA_SOURCE_README_OUTER_AFTER_ANCHOR
+        )
+        content_outer_end = cls.content_readme.index(
+            package.EGA_SOURCE_README_OUTER_AFTER_ANCHOR
+        )
+        base_section_start = (
+            cls.base_readme.index(package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR)
+            + len(package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR)
+        )
+        content_section_start = (
+            cls.content_readme.index(package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR)
+            + len(package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR)
+        )
+        base_section_end = cls.base_readme.index(
+            package.EGA_SOURCE_README_SECTION_AFTER_ANCHOR
+        )
+        content_section_end = cls.content_readme.index(
+            package.EGA_SOURCE_README_SECTION_AFTER_ANCHOR
         )
         offset = len(cls.prefix)
         cls.checkpoint = {
@@ -1041,9 +1233,59 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                 "content_file": bare(package.git_blob_identity(
                     cls.root, cls.content_commit, "ega/README.md"
                 )),
-                "intended_ega_source_branch": {"outside_bytes_unchanged": True},
+                "intended_ega_source_branch": {
+                    "before_anchor": byte_identity(
+                        package.EGA_SOURCE_README_OUTER_BEFORE_ANCHOR
+                    ),
+                    "after_anchor": byte_identity(
+                        package.EGA_SOURCE_README_OUTER_AFTER_ANCHOR
+                    ),
+                    "base": {
+                        "offset": base_outer_start,
+                        **byte_identity(
+                            cls.base_readme[base_outer_start:base_outer_end]
+                        ),
+                    },
+                    "content": {
+                        "offset": content_outer_start,
+                        **byte_identity(
+                            cls.content_readme[content_outer_start:content_outer_end]
+                        ),
+                    },
+                    "outside_prefix": byte_identity(
+                        cls.base_readme[:base_outer_start]
+                    ),
+                    "outside_suffix": byte_identity(
+                        cls.base_readme[base_outer_end:]
+                    ),
+                    "outside_bytes_unchanged": True,
+                },
                 "ega_i_6_6_4_insertion": {
-                    "preimage_occurrences": 0, "postimage_occurrences": 1,
+                    "heading": package.EGA_SOURCE_README_INSERTION_HEADING.decode(
+                        "ascii"
+                    ).strip(),
+                    "before_anchor": byte_identity(
+                        package.EGA_SOURCE_README_SECTION_BEFORE_ANCHOR
+                    ),
+                    "after_anchor": byte_identity(
+                        package.EGA_SOURCE_README_SECTION_AFTER_ANCHOR
+                    ),
+                    "base_branch": {
+                        "offset": base_section_start,
+                        **byte_identity(
+                            cls.base_readme[base_section_start:base_section_end]
+                        ),
+                    },
+                    "content_branch": {
+                        "offset": content_section_start,
+                        **byte_identity(
+                            cls.content_readme[
+                                content_section_start:content_section_end
+                            ]
+                        ),
+                    },
+                    "preimage_occurrences": 0,
+                    "postimage_occurrences": 1,
                     "exactly_once_between_stable_anchors": True,
                     "contained_in_intended_ega_source_branch": True,
                 },
@@ -1057,6 +1299,37 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                     }
                     for path, contract in package.EGA_SOURCE_LEDGER_CONTRACTS.items()
                 },
+                "new_decision": {
+                    field: appended_rows["ega/dec.csv"][0][field]
+                    for field in ("decision_id", "subject_id", "action", "state")
+                },
+                "new_statement_edges": [
+                    {
+                        field: row[field]
+                        for field in (
+                            "edge_id", "source_unit", "stacks_file",
+                            "stacks_label", "official_tag", "relation",
+                            "coverage_claim", "decision_id",
+                        )
+                    }
+                    for row in appended_rows["ega/smap.csv"]
+                ],
+                "new_residuals": [
+                    {
+                        field: row[field]
+                        for field in (
+                            "residual_id", "source_unit", "kind", "status",
+                            "decision_id",
+                        )
+                    }
+                    for row in appended_rows["ega/resid.csv"]
+                ],
+                "new_agent_audit": {
+                    "run_id": appended_rows["ega/agent.csv"][0]["run_id"],
+                    "status": appended_rows["ega/agent.csv"][0]["status"],
+                    "writes": appended_rows["ega/agent.csv"][0]["writes"].split("|"),
+                },
+                "implementation_scope": package.EGA_SOURCE_IMPLEMENTATION_SCOPE,
                 "headers_exact": True, "ids_contiguous": True,
                 "cross_references_exact": True, "official_tag_joins_unique": True,
                 "counts_cross_bound": True,
@@ -1803,6 +2076,30 @@ class EgaSourcePackageProfileTests(unittest.TestCase):
                 build_commit=self.build_commit, release_commit=self.release_commit,
                 build_source_checkpoint=self.build_binding,
             )
+
+    def test_dual_01k5_mapping_dependencies_and_agent_order_are_exact(self) -> None:
+        mutations = {
+            "derived mapping relation": lambda rows: rows["ega/smap.csv"][4].update(
+                relation="equivalent"
+            ),
+            "direct proof dependency": lambda rows: rows["ega/smap.csv"][3].update(
+                evidence="01K4"
+            ),
+            "proof edge identity": lambda rows: rows["ega/smap.csv"][8].update(
+                official_tag="T000"
+            ),
+            "agent write order": lambda rows: rows["ega/agent.csv"][0].update(
+                writes="|".join(reversed(package.EGA_SOURCE_FROZEN_AGENT_WRITES))
+            ),
+        }
+        for label, mutate in mutations.items():
+            rows = copy.deepcopy(self.appended_rows)
+            mutate(rows)
+            with self.subTest(label=label), self.assertRaisesRegex(
+                package.PackageError,
+                "(?:01K5 dependencies|agent append)",
+            ):
+                package.validate_ega_ledger_cross_references(rows)
 
     def test_authority_counts_and_history_are_exact(self) -> None:
         mutations = (
@@ -2748,6 +3045,53 @@ class ZipWindowsCanonicalSafetyTests(unittest.TestCase):
 class PackageModuleGlobalIsolationTests(unittest.TestCase):
     def test_synthetic_authority_is_restored_after_fixture_class(self) -> None:
         self.assertIs(package.EGA_SOURCE_AUTHORITY, ORIGINAL_EGA_SOURCE_AUTHORITY)
+        self.assertIs(
+            package.EGA_SOURCE_INPUT_RECEIPT_IDENTITIES,
+            ORIGINAL_EGA_SOURCE_INPUT_RECEIPT_IDENTITIES,
+        )
+
+
+class ProductionEgaSourceCheckpointBindingTests(unittest.TestCase):
+    def test_committed_ega_6_6_4_checkpoint_passes_release_binding(self) -> None:
+        repository = Path(__file__).resolve().parents[1]
+        release_commit = "1c84d1145f935391472f59ac2c98f63c8929a4c1"
+        release_tree = run_git(repository, "rev-parse", f"{release_commit}^{{tree}}")
+        paths = {
+            "checkpoint": package.EGA_SOURCE_CHECKPOINT_PATH,
+            "build": package.EGA_SOURCE_BUILD_RECEIPT_PATH,
+            "visual": package.EGA_SOURCE_VISUAL_QA_PATH,
+        }
+
+        def load(role: str) -> object:
+            return package.strict_json_loads(
+                package.git_bytes(
+                    repository,
+                    "show",
+                    f"{release_commit}:{paths[role]}",
+                ),
+                role=f"production EGA source {role}",
+            )
+
+        result = package.validate_release_source_binding(
+            repository,
+            release_commit=release_commit,
+            release_tree=release_tree,
+            build_receipt=load("build"),
+            profile=package.EGA_SOURCE_PROFILE,
+            checkpoint_receipt=load("checkpoint"),
+            checkpoint_receipt_identity=package.git_blob_identity(
+                repository, release_commit, paths["checkpoint"]
+            ),
+            build_receipt_identity=package.git_blob_identity(
+                repository, release_commit, paths["build"]
+            ),
+            visual_qa_receipt=load("visual"),
+            visual_qa_receipt_identity=package.git_blob_identity(
+                repository, release_commit, paths["visual"]
+            ),
+        )
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["profile"], package.EGA_SOURCE_PROFILE)
 
 
 if __name__ == "__main__":

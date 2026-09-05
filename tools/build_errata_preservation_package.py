@@ -368,6 +368,32 @@ EGA_SOURCE_VISUAL_QA_PATH = (
 EGA_SOURCE_VISUAL_QA_SCHEMA = (
     "unofficial-stacks-project-ai-drafts-ega-visual-qa/v1"
 )
+EGA_SOURCE_README_OUTER_BEFORE_ANCHOR = (
+    b"  historical checkpoint, not presented as the current edition or as a "
+    b"release\n"
+    b"  of this integrated Stacks repository.\n"
+)
+EGA_SOURCE_README_OUTER_AFTER_ANCHOR = (
+    b"receipt; the 5.4 and 5.5 rows use F33 plus direct authority evidence rather\n"
+)
+EGA_SOURCE_README_SECTION_BEFORE_ANCHOR = (
+    b"- `../reports/qsrc.csv` and `../reports/qa`: short flat manifest and immutable\n"
+    b"  direct-authority crops for source-error evidence; these are not edition\n"
+    b"  outputs or three-surface visual certifications.\n\n"
+)
+EGA_SOURCE_README_SECTION_AFTER_ANCHOR = (
+    b"The latest sealed semantic-only slice closes EGA I \xc2\xa76.6.3 and is "
+    b"bound to the\n"
+)
+EGA_SOURCE_README_BASE_SECTION = (
+    b"### Current reviewed frontier: EGA I 6.6.3\n\n"
+)
+EGA_SOURCE_README_INSERTION_HEADING = (
+    b"### Current local implementation: EGA I 6.6.4\n"
+)
+EGA_SOURCE_README_PUBLISHED_HEADING = (
+    b"### Latest published reviewed frontier: EGA I 6.6.3\n"
+)
 EGA_SOURCE_DOSSIER_PATHS = frozenset(
     {
         "ega/README.md",
@@ -399,6 +425,20 @@ EGA_SOURCE_INPUT_RECEIPT_SCHEMAS = {
         "unofficial-stacks-project-ai-drafts-ega-independent-review/v1",
         "PASS_LOCAL_REVIEW_ONLY",
     ),
+}
+EGA_SOURCE_INPUT_RECEIPT_IDENTITIES = {
+    "implementation_receipt": {
+        "path": "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json",
+        "bytes": 28_005,
+        "sha256": "C55A2320FBF3C6B0D0655CFEA2943119F239085C56AC0D891652B81777AF0C6D",
+        "git_blob": "ccb24674574b69ab3dd05f6ecb64f0d17d7a1796",
+    },
+    "independent_review": {
+        "path": "validation/ega-i-6.6.4-independent-review-2026-08-31.json",
+        "bytes": 2_135,
+        "sha256": "D1C84D5B7EEFE1FF4BEDC72A7BB02CCD6A70D3B07BAC889578D4200035EC365C",
+        "git_blob": "f21be6f5ff9a76b8d1ae22e2ac8d4b1e857cfd2a",
+    },
 }
 EGA_SOURCE_CHECKPOINT_KEYS = frozenset(
     {
@@ -455,17 +495,28 @@ EGA_SOURCE_CHECKPOINT_CHECKS = (
 )
 EGA_SOURCE_IMPLEMENTATION_RECEIPT_KEYS = frozenset(
     {
+        "append_bindings",
+        "authority",
         "schema",
         "status",
         "base_commit",
-        "write_boundary",
-        "scope",
-        "preimages",
-        "postimages",
-        "append_bindings",
+        "branch",
+        "claim",
+        "completed",
         "counts",
-        "authority",
+        "exclusions",
+        "local_checks",
+        "next_executable_action",
+        "postimages",
+        "preimages",
+        "remaining",
+        "root_change",
+        "scope",
         "source_slice",
+        "updated_utc",
+        "validation",
+        "validation_attempts",
+        "write_boundary",
     }
 )
 EGA_SOURCE_IMPLEMENTATION_SCOPE = {
@@ -479,20 +530,31 @@ EGA_SOURCE_IMPLEMENTATION_SCOPE = {
 }
 EGA_SOURCE_REVIEW_RECEIPT_KEYS = frozenset(
     {
-        "schema",
-        "status",
         "base_commit",
-        "implementation_receipt",
         "build_performed",
-        "visual_review_performed",
-        "publication_performed",
-        "source_unit",
+        "findings",
+        "implementation_receipt",
         "next_source_unit",
+        "publication_performed",
+        "receipt_wording_correction",
+        "reviewer",
         "root_source",
+        "schema",
+        "source_unit",
+        "status",
+        "visual_review_performed",
     }
 )
 EGA_SOURCE_SLICE_KEYS = frozenset(
     {
+        "base_change_proof_bytes",
+        "base_change_proof_lf_line_end",
+        "base_change_proof_lf_line_start",
+        "base_change_proof_sha256",
+        "binary_sum_bytes",
+        "binary_sum_lf_line_end",
+        "binary_sum_lf_line_start",
+        "binary_sum_sha256",
         "receipt",
         "receipt_sha256",
         "path",
@@ -502,7 +564,15 @@ EGA_SOURCE_SLICE_KEYS = frozenset(
         "lf_line_end",
         "slice_bytes",
         "slice_sha256",
+        "proof_bytes",
+        "proof_lf_line_end",
+        "proof_lf_line_start",
+        "proof_sha256",
         "root_proof_completion",
+        "statement_bytes",
+        "statement_lf_line_end",
+        "statement_lf_line_start",
+        "statement_sha256",
     }
 )
 EGA_SOURCE_IMPLEMENTATION_SURFACES = (
@@ -517,6 +587,17 @@ EGA_SOURCE_IMPLEMENTATION_SURFACES = (
 )
 EGA_SOURCE_EXPECTED_WRITE_BOUNDARY = (
     *EGA_SOURCE_IMPLEMENTATION_SURFACES,
+    EGA_SOURCE_INPUT_RECEIPT_PATHS["implementation_receipt"],
+)
+EGA_SOURCE_FROZEN_AGENT_WRITES = (
+    "ega/README.md",
+    "ega/agent.csv",
+    "ega/check.py",
+    "ega/dec.csv",
+    "ega/resid.csv",
+    "ega/scope.json",
+    "ega/smap.csv",
+    EGA_SOURCE_ROOT_PATH,
     EGA_SOURCE_INPUT_RECEIPT_PATHS["implementation_receipt"],
 )
 EGA_SOURCE_POST_CONTENT_TOOLING_PATHS = frozenset(
@@ -1803,8 +1884,29 @@ def parse_ega_csv_bytes(
         raise PackageError(f"EGA ledger {path} has an invalid CSV header")
     if expected_fieldnames is not None and fieldnames != tuple(expected_fieldnames):
         raise PackageError(f"EGA ledger {path} CSV schema changed")
+    legacy_omitted_supersedes = {
+        "ega/smap.csv": ("edge_id", "S", 335),
+        "ega/resid.csv": ("residual_id", "R", 171),
+    }
     rows: list[dict[str, str]] = []
     for index, raw_row in enumerate(reader, start=1):
+        # The immutable early smap/resid prefixes omitted the final empty
+        # ``supersedes`` cell.  Normalize only those exact contiguous frozen
+        # rows; every later, differently named, or otherwise ragged row fails.
+        legacy = legacy_omitted_supersedes.get(path)
+        if (
+            legacy is not None
+            and fieldnames[-1] == "supersedes"
+            and raw_row.get("supersedes") is None
+            and None not in raw_row
+            and all(
+                isinstance(raw_row.get(field), str)
+                for field in fieldnames[:-1]
+            )
+            and index <= legacy[2]
+            and raw_row.get(legacy[0]) == f"{legacy[1]}{index:06d}"
+        ):
+            raw_row["supersedes"] = ""
         if set(raw_row) != set(fieldnames) or any(
             not isinstance(raw_row.get(field), str) for field in fieldnames
         ):
@@ -1925,22 +2027,51 @@ def validate_ega_ledger_cross_references(
         and row.get("stacks_label")
         == f"schemes-{EGA_SOURCE_UNIT['label']}"
     ]
-    joined_smap_evidence = " ".join(
-        " ".join(str(value) for value in row.values()) for row in smap_rows
+    tagged_root_by_id = {
+        str(row.get("edge_id")): row for row in tagged_root_rows
+    }
+    direct_root = tagged_root_by_id.get("S001253", {})
+    derived_product = tagged_root_by_id.get("S001254", {})
+    proof_edge = next(
+        (row for row in smap_rows if row.get("edge_id") == "S001258"),
+        {},
     )
-    if len(tagged_root_rows) != 1 or any(
-        dependency not in joined_smap_evidence
-        for dependency in EGA_SOURCE_UNIT["dependencies"]
+    if (
+        set(tagged_root_by_id) != {"S001253", "S001254"}
+        or direct_root.get("source_unit") != source_key
+        or direct_root.get("relation") != "equivalent"
+        or direct_root.get("coverage_claim") != "component"
+        or direct_root.get("review_state") != "reviewed_existing"
+        or any(
+            dependency not in direct_root.get("evidence", "")
+            for dependency in EGA_SOURCE_UNIT["dependencies"]
+        )
+        or derived_product.get("source_unit") != source_key
+        or derived_product.get("relation") != "split"
+        or derived_product.get("coverage_claim") != "covered_derived"
+        or derived_product.get("review_state") != "reviewed_existing"
+        or proof_edge.get("source_unit") != f"{source_key}:proof"
+        or proof_edge.get("stacks_file") != EGA_SOURCE_ROOT_PATH
+        or proof_edge.get("stacks_label")
+        != "schemes-lemma-affine-covering-fibre-product"
+        or proof_edge.get("official_tag") != "01JS"
+        or proof_edge.get("relation") != "split"
+        or proof_edge.get("coverage_claim") != "component"
+        or proof_edge.get("review_state") != "reviewed_existing"
+        or any(
+            dependency not in proof_edge.get("evidence", "")
+            for dependency in EGA_SOURCE_UNIT["dependencies"]
+        )
     ):
         raise PackageError("EGA source statement append is not bound to 01K5 dependencies")
     if len(agent_rows) != 1:
         raise PackageError("EGA source agent append is not singular")
     agent = agent_rows[0]
+    agent_writes = tuple(agent.get("writes", "").split("|"))
     if (
         EGA_SOURCE_UNIT["name"] not in agent.get("scope", "")
         or agent.get("status") != "completed"
-        or tuple(agent.get("writes", "").split("|"))
-        != EGA_SOURCE_EXPECTED_WRITE_BOUNDARY
+        or agent_writes != EGA_SOURCE_FROZEN_AGENT_WRITES
         or any(
             identifier not in agent.get("returned", "")
             for identifier in (decision_id, "S001250", "S001259", "R000826", "R000829")
@@ -2242,6 +2373,12 @@ def validate_ega_source_checkpoint_receipt(
             include_path=True,
         )
         normalized_inputs[role]["path"] = path
+        if not strict_json_equal(
+            normalized_inputs[role], EGA_SOURCE_INPUT_RECEIPT_IDENTITIES[role]
+        ):
+            raise PackageError(
+                f"EGA source {role} is not the immutable reviewed receipt"
+            )
         raw_input = git_bytes(
             repository,
             "cat-file",
@@ -2334,6 +2471,8 @@ def validate_ega_source_checkpoint_receipt(
         != {
             "path", "label", "official_tag", "statement_changed",
             "dependencies", "proof_bytes", "proof_sha256",
+            "preimage_bytes", "preimage_sha256", "postimage_bytes",
+            "postimage_sha256",
         }
         or root_completion_input.get("path") != EGA_SOURCE_ROOT_PATH
         or root_completion_input.get("label") != EGA_SOURCE_UNIT["label"]
@@ -2743,42 +2882,215 @@ def validate_ega_source_checkpoint_receipt(
         }
         for path, contract in EGA_SOURCE_LEDGER_CONTRACTS.items()
     }
+    decision_fields = ("decision_id", "subject_id", "action", "state")
+    statement_fields = (
+        "edge_id", "source_unit", "stacks_file", "stacks_label",
+        "official_tag", "relation", "coverage_claim", "decision_id",
+    )
+    residual_fields = (
+        "residual_id", "source_unit", "kind", "status", "decision_id",
+    )
+    decision_row = appended_ledger_rows["ega/dec.csv"][0]
+    agent_row = appended_ledger_rows["ega/agent.csv"][0]
+    expected_ledger_semantics = {
+        "row_counts": expected_row_counts,
+        "new_decision": {
+            field: decision_row[field] for field in decision_fields
+        },
+        "new_statement_edges": [
+            {field: row[field] for field in statement_fields}
+            for row in appended_ledger_rows["ega/smap.csv"]
+        ],
+        "new_residuals": [
+            {field: row[field] for field in residual_fields}
+            for row in appended_ledger_rows["ega/resid.csv"]
+        ],
+        "new_agent_audit": {
+            "run_id": agent_row["run_id"],
+            "status": agent_row["status"],
+            "writes": agent_row["writes"].split("|"),
+        },
+        "implementation_scope": EGA_SOURCE_IMPLEMENTATION_SCOPE,
+        "headers_exact": True,
+        "ids_contiguous": True,
+        "cross_references_exact": True,
+        "official_tag_joins_unique": True,
+        "counts_cross_bound": True,
+    }
     if (
         not isinstance(ledger_semantics, Mapping)
-        or set(ledger_semantics)
-        != {
-            "row_counts", "headers_exact", "ids_contiguous",
-            "cross_references_exact", "official_tag_joins_unique",
-            "counts_cross_bound",
-        }
-        or not strict_json_equal(
-            ledger_semantics.get("row_counts"), expected_row_counts
-        )
-        or any(
-            ledger_semantics.get(flag) is not True
-            for flag in (
-                "headers_exact", "ids_contiguous", "cross_references_exact",
-                "official_tag_joins_unique", "counts_cross_bound",
-            )
-        )
+        or not strict_json_equal(ledger_semantics, expected_ledger_semantics)
     ):
         raise PackageError("EGA source checkpoint ledger semantics are incomplete")
 
     readme_change = receipt.get("readme_change")
     readme_row = changed_by_path["ega/README.md"]
+    if not isinstance(readme_change, Mapping) or set(readme_change) != {
+        "path", "base_file", "content_file", "intended_ega_source_branch",
+        "ega_i_6_6_4_insertion",
+    }:
+        raise PackageError("EGA source README placement evidence is incomplete")
+    base_readme = git_bytes(repository, "show", f"{base_commit}:ega/README.md")
+    content_readme = git_bytes(
+        repository, "show", f"{content_commit}:ega/README.md"
+    )
+
+    def byte_identity(raw: bytes) -> dict[str, Any]:
+        return {"bytes": len(raw), "sha256": sha256_bytes(raw)}
+
+    def unique_declared_anchor(
+        raw: bytes, value: Any, expected: bytes, *, role: str
+    ) -> tuple[int, bytes]:
+        if not strict_json_equal(value, byte_identity(expected)):
+            raise PackageError(f"EGA source README {role} identity is invalid")
+        if raw.count(expected) != 1:
+            raise PackageError(f"EGA source README {role} is not a unique anchor")
+        return raw.index(expected), expected
+
+    outer = readme_change.get("intended_ega_source_branch")
+    insertion = readme_change.get("ega_i_6_6_4_insertion")
+    if (
+        not isinstance(outer, Mapping)
+        or set(outer) != {
+            "before_anchor", "after_anchor", "base", "content",
+            "outside_prefix", "outside_suffix", "outside_bytes_unchanged",
+        }
+        or not isinstance(insertion, Mapping)
+        or set(insertion) != {
+            "heading", "before_anchor", "after_anchor", "base_branch",
+            "content_branch", "preimage_occurrences", "postimage_occurrences",
+            "exactly_once_between_stable_anchors",
+            "contained_in_intended_ega_source_branch",
+        }
+    ):
+        raise PackageError("EGA source README placement evidence is incomplete")
+    base_outer_before, outer_before = unique_declared_anchor(
+        base_readme,
+        outer.get("before_anchor"),
+        EGA_SOURCE_README_OUTER_BEFORE_ANCHOR,
+        role="outer-before",
+    )
+    content_outer_before, content_outer_before_raw = unique_declared_anchor(
+        content_readme,
+        outer.get("before_anchor"),
+        EGA_SOURCE_README_OUTER_BEFORE_ANCHOR,
+        role="outer-before postimage",
+    )
+    base_outer_after, outer_after = unique_declared_anchor(
+        base_readme,
+        outer.get("after_anchor"),
+        EGA_SOURCE_README_OUTER_AFTER_ANCHOR,
+        role="outer-after",
+    )
+    content_outer_after, content_outer_after_raw = unique_declared_anchor(
+        content_readme,
+        outer.get("after_anchor"),
+        EGA_SOURCE_README_OUTER_AFTER_ANCHOR,
+        role="outer-after postimage",
+    )
+    if (
+        outer_before != content_outer_before_raw
+        or outer_after != content_outer_after_raw
+    ):
+        raise PackageError("EGA source README stable outer anchors changed")
+    base_outer_start = base_outer_before + len(outer_before)
+    content_outer_start = content_outer_before + len(outer_before)
+    base_outer_slice = base_readme[base_outer_start:base_outer_after]
+    content_outer_slice = content_readme[content_outer_start:content_outer_after]
+
+    base_section_before, section_before = unique_declared_anchor(
+        base_readme,
+        insertion.get("before_anchor"),
+        EGA_SOURCE_README_SECTION_BEFORE_ANCHOR,
+        role="section-before",
+    )
+    content_section_before, content_section_before_raw = unique_declared_anchor(
+        content_readme,
+        insertion.get("before_anchor"),
+        EGA_SOURCE_README_SECTION_BEFORE_ANCHOR,
+        role="section-before postimage",
+    )
+    base_section_after, section_after = unique_declared_anchor(
+        base_readme,
+        insertion.get("after_anchor"),
+        EGA_SOURCE_README_SECTION_AFTER_ANCHOR,
+        role="section-after",
+    )
+    content_section_after, content_section_after_raw = unique_declared_anchor(
+        content_readme,
+        insertion.get("after_anchor"),
+        EGA_SOURCE_README_SECTION_AFTER_ANCHOR,
+        role="section-after postimage",
+    )
+    if (
+        section_before != content_section_before_raw
+        or section_after != content_section_after_raw
+    ):
+        raise PackageError("EGA source README stable section anchors changed")
+    base_section_start = base_section_before + len(section_before)
+    content_section_start = content_section_before + len(section_before)
+    base_section = base_readme[base_section_start:base_section_after]
+    content_section = content_readme[content_section_start:content_section_after]
+    heading_raw = EGA_SOURCE_README_INSERTION_HEADING
+    heading = heading_raw.decode("ascii").strip()
     expected_readme_change = {
         "path": "ega/README.md",
         "base_file": readme_row["base"],
         "content_file": readme_row["content"],
-        "intended_ega_source_branch": {"outside_bytes_unchanged": True},
+        "intended_ega_source_branch": {
+            "before_anchor": byte_identity(outer_before),
+            "after_anchor": byte_identity(outer_after),
+            "base": {
+                "offset": base_outer_start,
+                **byte_identity(base_outer_slice),
+            },
+            "content": {
+                "offset": content_outer_start,
+                **byte_identity(content_outer_slice),
+            },
+            "outside_prefix": byte_identity(base_readme[:base_outer_start]),
+            "outside_suffix": byte_identity(base_readme[base_outer_after:]),
+            "outside_bytes_unchanged": True,
+        },
         "ega_i_6_6_4_insertion": {
-            "preimage_occurrences": 0,
-            "postimage_occurrences": 1,
-            "exactly_once_between_stable_anchors": True,
-            "contained_in_intended_ega_source_branch": True,
+            "heading": heading,
+            "before_anchor": byte_identity(section_before),
+            "after_anchor": byte_identity(section_after),
+            "base_branch": {
+                "offset": base_section_start,
+                **byte_identity(base_section),
+            },
+            "content_branch": {
+                "offset": content_section_start,
+                **byte_identity(content_section),
+            },
+            "preimage_occurrences": base_readme.count(heading_raw),
+            "postimage_occurrences": content_readme.count(heading_raw),
+            "exactly_once_between_stable_anchors": (
+                content_section.count(heading_raw) == 1
+                and content_section.startswith(heading_raw)
+            ),
+            "contained_in_intended_ega_source_branch": (
+                base_outer_start
+                <= base_section_start
+                < base_section_after
+                <= base_outer_after
+                and content_outer_start
+                <= content_section_start
+                < content_section_after
+                <= content_outer_after
+            ),
         },
     }
-    if not strict_json_equal(readme_change, expected_readme_change):
+    if (
+        base_readme[:base_outer_start] != content_readme[:content_outer_start]
+        or base_readme[base_outer_after:] != content_readme[content_outer_after:]
+        or base_section != EGA_SOURCE_README_BASE_SECTION
+        or not content_section.endswith(
+            EGA_SOURCE_README_PUBLISHED_HEADING + b"\n"
+        )
+        or not strict_json_equal(readme_change, expected_readme_change)
+    ):
         raise PackageError("EGA source README placement evidence is incomplete")
 
     unchanged = receipt.get("unchanged_surfaces")
