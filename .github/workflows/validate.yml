@@ -40,3 +40,25 @@ jobs:
         run: |
           python tools/generate_changes_from_upstream.py --check
           python -m unittest tests.test_changes_from_upstream tests.test_semantic_composition tests.test_build_fixed_point_mutex
+
+  ega-checkpoint-tooling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify EGA checkpoint, build binding, and preservation tooling
+        shell: bash
+        run: |
+          python -m unittest \
+            tests.test_ega_source_checkpoint \
+            tests.test_ega_source_build_binding \
+            tests.test_ega_source_package

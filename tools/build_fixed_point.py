@@ -4,8 +4,11 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
+import io
 import json
+import math
 import os
 import platform
 import re
@@ -13,7 +16,9 @@ import shlex
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -76,9 +81,110 @@ COMPOSITION_PREPARATION_PATHS = frozenset(
 )
 
 DEFAULT_COMPOSITION_RECEIPT = Path("validation/composition-current.json")
+EGA_SOURCE_CHECKPOINT_SCHEMA = (
+    "unofficial-stacks-project-ai-drafts-ega-source-checkpoint/v1"
+)
+EGA_SOURCE_CHECKPOINT_STATUS = "PASS_SOURCE_CHECKPOINT"
+EGA_SOURCE_CHECKPOINT_PATH = (
+    "validation/ega-i-6.6.4-source-checkpoint-2026-08-31.json"
+)
+EGA_SOURCE_CHECKPOINT_WRITER = "tools/write_ega_source_checkpoint.py"
+EGA_SOURCE_CHECKPOINT_WRITER_TEST = "tests/test_ega_source_checkpoint.py"
+EGA_SOURCE_BUILD_BINDING_TEST = "tests/test_ega_source_build_binding.py"
+EGA_SOURCE_PACKAGE_TOOL = "tools/build_errata_preservation_package.py"
+EGA_SOURCE_PACKAGE_TEST = "tests/test_ega_source_package.py"
+EGA_IMPLEMENTATION_RECEIPT_PATH = (
+    "validation/ega-i-6.6.4-semantic-checkpoint-2026-08-31.json"
+)
+EGA_IMPLEMENTATION_RECEIPT_SCHEMA = (
+    "unofficial-ai-integrated-stacks-ega-semantic-implementation/v1"
+)
+EGA_IMPLEMENTATION_RECEIPT_STATUS = "PASS_LOCAL_IMPLEMENTATION_ONLY"
+EGA_INDEPENDENT_REVIEW_PATH = (
+    "validation/ega-i-6.6.4-independent-review-2026-08-31.json"
+)
+EGA_INDEPENDENT_REVIEW_SCHEMA = (
+    "unofficial-stacks-project-ai-drafts-ega-independent-review/v1"
+)
+EGA_INDEPENDENT_REVIEW_STATUS = "PASS_LOCAL_REVIEW_ONLY"
+EGA_HEAD_RELATION = "single_parent_content_then_exact_receipt_only_child"
+EGA_EXTERNAL_DISCOVERY_ROLE = "discovery_only_not_canonical_authority"
+EGA_LEDGER_CONTRACTS = (
+    ("ega/dec.csv", "decision_id", "D", "decisions"),
+    ("ega/smap.csv", "edge_id", "S", "physical_statement_edges"),
+    ("ega/resid.csv", "residual_id", "R", "physical_residuals"),
+    ("ega/agent.csv", "run_id", "A", "agent_rows"),
+)
+EGA_LEDGER_HEADERS = {
+    "ega/dec.csv": (
+        "decision_id", "subject_id", "action", "state", "evidence",
+        "supersedes", "rationale",
+    ),
+    "ega/smap.csv": (
+        "edge_id", "source_unit", "source_part", "authority_state",
+        "source_receipt", "source_receipt_sha256", "stacks_commit",
+        "stacks_file", "stacks_label", "official_tag", "relation",
+        "review_state", "coverage_claim", "evidence", "decision_id",
+        "notes", "supersedes",
+    ),
+    "ega/resid.csv": (
+        "residual_id", "source_unit", "kind", "status", "evidence",
+        "disposition", "decision_id", "supersedes",
+    ),
+    "ega/agent.csv": (
+        "run_id", "task_id", "model", "thinking", "scope", "status",
+        "duration_ms", "returned", "owner_check", "disposition", "writes",
+    ),
+}
+EGA_COUNT_KEYS = frozenset(
+    {
+        "active_statement_edges", "physical_statement_edges",
+        "mapped_source_units", "existing_official_tag_edges",
+        "distinct_existing_official_tags", "local_untagged_edges",
+        "full_statement_equivalences", "active_residuals",
+        "physical_residuals", "open_gaps", "local_mirror_residuals",
+        "decisions", "agent_rows", "issues", "registered_discovery_units",
+        "quarantined_rows",
+    }
+)
+EGA_PRECONTENT_TOOL_ROLES = (
+    (EGA_SOURCE_CHECKPOINT_WRITER, "checkpoint_writer"),
+    (EGA_SOURCE_CHECKPOINT_WRITER_TEST, "checkpoint_writer_test"),
+    ("tools/build_fixed_point.py", "build_checkpoint_consumer"),
+    (EGA_SOURCE_BUILD_BINDING_TEST, "build_checkpoint_consumer_test"),
+    (EGA_SOURCE_PACKAGE_TOOL, "package_checkpoint_consumer"),
+    (EGA_SOURCE_PACKAGE_TEST, "package_checkpoint_consumer_test"),
+)
+EGA_NON_WORKTREE_PROTECTED_ROLES = frozenset(
+    {"official_stacks_source_authority", "official_stacks_tag_authority"}
+)
+EGA_SHARED_BUILD_SUFFIXES = frozenset({".bst", ".cfg", ".cls", ".def", ".sty"})
+EGA_CHECKPOINT_KEYS = frozenset(
+    {
+        "schema", "status", "generated_from_content_commit_utc", "base", "content",
+        "repository_state_contract", "historical_rebind",
+        "post_content_metadata_contract", "inputs", "tooling", "changed_paths",
+        "source_unit", "authority", "authority_binding", "root_change",
+        "readme_change", "ledger_appends", "ledger_semantics", "scope", "counts",
+        "unchanged_surfaces", "checks", "validation_scope", "claim",
+    }
+)
+EGA_CHANGED_PATH_ROLES = {
+    "schemes.tex": "root_source",
+    "ega/README.md": "dossier_readme",
+    "ega/check.py": "dossier_validator",
+    "ega/scope.json": "scope_manifest",
+    "ega/dec.csv": "decision_ledger",
+    "ega/smap.csv": "statement_map_ledger",
+    "ega/resid.csv": "residual_ledger",
+    "ega/agent.csv": "agent_ledger",
+    EGA_IMPLEMENTATION_RECEIPT_PATH: "implementation_receipt",
+    EGA_INDEPENDENT_REVIEW_PATH: "independent_review",
+}
 STEM_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_-]*$")
 SHA1_PATTERN = re.compile(r"^[0-9a-f]{40}$")
 SHA256_PATTERN = re.compile(r"^[0-9A-Fa-f]{64}$")
+LINE_RANGE_PATTERN = re.compile(r"^(\d+)-(\d+)$")
 COMPOSITION_SCHEMA_V3 = "unofficial-ai-integrated-stacks-composition/v3"
 COMPOSITION_SCHEMA_V4 = "unofficial-ai-integrated-stacks-composition/v4"
 COMPOSITION_MODE_V3 = (
@@ -450,7 +556,10 @@ def worktree_kind(source: Path) -> str:
 
 
 def require_clean_build_tree(
-    source: Path, stems: tuple[str, ...], composition_receipt: Path
+    source: Path,
+    stems: tuple[str, ...],
+    composition_receipt: Path,
+    source_checkpoint_paths: tuple[str, ...] = (),
 ) -> None:
     """Verify only the bounded root inputs that can affect this build."""
     receipt_path = composition_receipt
@@ -469,11 +578,12 @@ def require_clean_build_tree(
         "chapters.tex",
         "my.bib",
         *(f"{stem}.tex" for stem in stems),
+        *source_checkpoint_paths,
     }
-    shared_suffixes = {".bst", ".cfg", ".cls", ".def", ".sty"}
     root_files = tuple(path for path in source.iterdir() if path.is_file())
     critical_paths.update(
-        path.name for path in root_files if path.suffix.lower() in shared_suffixes
+        path.name for path in root_files
+        if path.suffix.lower() in EGA_SHARED_BUILD_SUFFIXES
     )
 
     for relative in sorted(critical_paths):
@@ -573,6 +683,238 @@ def require_clean_path(source: Path, relative: str) -> None:
         raise RuntimeError(f"could not verify affected source cleanliness: {detail}")
 
 
+def strict_json_loads(text: str, label: str) -> object:
+    """Decode standards-compliant JSON while rejecting duplicates/non-finite values."""
+
+    def object_pairs(pairs: list[tuple[str, object]]) -> dict[str, object]:
+        result: dict[str, object] = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate object key {key!r}")
+            result[key] = value
+        return result
+
+    def finite_float(value: str) -> float:
+        parsed = float(value)
+        if not math.isfinite(parsed):
+            raise ValueError(f"non-finite number {value!r}")
+        return parsed
+
+    try:
+        return json.loads(
+            text,
+            object_pairs_hook=object_pairs,
+            parse_float=finite_float,
+            parse_constant=lambda value: (_ for _ in ()).throw(
+                ValueError(f"non-standard constant {value!r}")
+            ),
+        )
+    except (json.JSONDecodeError, ValueError) as exc:
+        raise RuntimeError(f"invalid strict JSON in {label}: {exc}") from exc
+
+
+def working_file_identity(source: Path, relative: str) -> dict[str, object]:
+    require_safe_posix_path(relative, "working-file path")
+    candidate = source / relative
+    resolved = candidate.resolve()
+    try:
+        resolved.relative_to(source)
+    except ValueError as exc:
+        raise RuntimeError(f"working-file path escapes the source tree: {relative}") from exc
+    if candidate.is_symlink() or not resolved.is_file():
+        raise RuntimeError(f"required working file is not a regular file: {relative}")
+    return {
+        "path": relative,
+        "bytes": resolved.stat().st_size,
+        "sha256": sha256(resolved),
+    }
+
+
+def committed_file_identity(
+    source: Path, commit: str, relative: str
+) -> dict[str, object] | None:
+    require_safe_posix_path(relative, "committed-file path")
+    record = git_optional(source, "ls-tree", commit, "--", relative)
+    if record is None or not record:
+        return None
+    fields = record.split(None, 3)
+    if (
+        len(fields) != 4
+        or fields[0] not in {"100644", "100755"}
+        or fields[1] != "blob"
+        or not SHA1_PATTERN.fullmatch(fields[2])
+        or fields[3] != relative
+    ):
+        raise RuntimeError(f"invalid committed-file identity for {relative}")
+    blob = fields[2]
+    try:
+        byte_count = int(git(source, "cat-file", "-s", blob))
+    except ValueError as exc:
+        raise RuntimeError(f"invalid committed-file byte count for {relative}") from exc
+    return {
+        "path": relative,
+        "bytes": byte_count,
+        "sha256": git_blob_sha256(source, blob),
+        "git_blob": blob,
+    }
+
+
+def require_declared_file_identity(
+    source: Path, commit: str, raw: object, label: str
+) -> dict[str, object]:
+    if not isinstance(raw, dict) or set(raw) != {
+        "path", "bytes", "sha256", "git_blob"
+    }:
+        raise RuntimeError(f"{label} must bind path/bytes/sha256/git_blob exactly")
+    relative = require_safe_posix_path(raw.get("path"), f"{label} path")
+    if (
+        type(raw.get("bytes")) is not int
+        or raw["bytes"] < 0
+        or not isinstance(raw.get("sha256"), str)
+        or not SHA256_PATTERN.fullmatch(raw["sha256"])
+        or not isinstance(raw.get("git_blob"), str)
+        or not SHA1_PATTERN.fullmatch(raw["git_blob"])
+    ):
+        raise RuntimeError(f"{label} has an invalid declared identity")
+    normalized = {
+        "path": relative,
+        "bytes": raw["bytes"],
+        "sha256": raw["sha256"].upper(),
+        "git_blob": raw["git_blob"].lower(),
+    }
+    observed = committed_file_identity(source, commit, relative)
+    if observed != normalized:
+        raise RuntimeError(f"{label} does not match committed bytes: {relative}")
+    return normalized
+
+
+def require_declared_blob_identity(
+    source: Path, blob: str, raw: object, label: str
+) -> dict[str, object]:
+    if not isinstance(raw, dict) or set(raw) != {"bytes", "sha256", "git_blob"}:
+        raise RuntimeError(f"{label} must bind bytes/sha256/git_blob exactly")
+    if (
+        type(raw.get("bytes")) is not int
+        or raw["bytes"] < 0
+        or not isinstance(raw.get("sha256"), str)
+        or not SHA256_PATTERN.fullmatch(raw["sha256"])
+        or not isinstance(raw.get("git_blob"), str)
+        or not SHA1_PATTERN.fullmatch(raw["git_blob"])
+    ):
+        raise RuntimeError(f"{label} has an invalid declared identity")
+    normalized = {
+        "bytes": raw["bytes"],
+        "sha256": raw["sha256"].upper(),
+        "git_blob": raw["git_blob"].lower(),
+    }
+    if (
+        normalized["git_blob"] != blob
+        or int(git(source, "cat-file", "-s", blob)) != normalized["bytes"]
+        or git_blob_sha256(source, blob) != normalized["sha256"]
+    ):
+        raise RuntimeError(f"{label} does not match its Git blob")
+    return normalized
+
+
+def git_blob_bytes(source: Path, blob: str) -> bytes:
+    completed = subprocess.run(
+        ["git", "-C", str(source), "cat-file", "blob", blob],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+    )
+    if completed.returncode:
+        detail = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"could not read protected Git blob {blob}: {detail}")
+    return completed.stdout
+
+
+def parse_json_blob(
+    source: Path, identity: dict[str, object], label: str
+) -> dict[str, object]:
+    try:
+        text = git_blob_bytes(source, str(identity["git_blob"])).decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise RuntimeError(f"{label} is not UTF-8: {exc}") from exc
+    value = strict_json_loads(text, label)
+    if not isinstance(value, dict):
+        raise RuntimeError(f"{label} must contain a JSON object")
+    return value
+
+
+def require_bytes_sha_identity(raw: object, label: str) -> dict[str, object]:
+    if not isinstance(raw, dict) or set(raw) != {"bytes", "sha256"}:
+        raise RuntimeError(f"{label} must bind bytes/sha256 exactly")
+    if (
+        type(raw.get("bytes")) is not int
+        or raw["bytes"] < 1
+        or not isinstance(raw.get("sha256"), str)
+        or not SHA256_PATTERN.fullmatch(raw["sha256"])
+    ):
+        raise RuntimeError(f"{label} has an invalid bytes/SHA identity")
+    return {"bytes": raw["bytes"], "sha256": raw["sha256"].upper()}
+
+
+def require_raw_identity(raw: bytes, identity: dict[str, object], label: str) -> None:
+    if (
+        len(raw) != identity["bytes"]
+        or hashlib.sha256(raw).hexdigest().upper() != identity["sha256"]
+    ):
+        raise RuntimeError(f"{label} does not match recomputed Git bytes")
+
+
+def canonical_tuple_sha256(rows: list[dict[str, object]]) -> str:
+    raw = (json.dumps(
+        rows, sort_keys=True, separators=(",", ":"), allow_nan=False
+    ) + "\n").encode("utf-8")
+    return hashlib.sha256(raw).hexdigest().upper()
+
+
+def protected_input(
+    role: str, commit: str, identity: dict[str, object]
+) -> dict[str, object]:
+    return {
+        "role": role,
+        "path": identity["path"],
+        "commit": commit,
+        "git_blob": identity["git_blob"],
+        "bytes": identity["bytes"],
+        "sha256": identity["sha256"],
+    }
+
+
+def committed_tree_identity(source: Path, commit: str, relative: str, label: str) -> str:
+    require_safe_posix_path(relative, f"{label} path")
+    value = git_optional(source, "rev-parse", f"{commit}:{relative}")
+    if value is None or not SHA1_PATTERN.fullmatch(value):
+        raise RuntimeError(f"{label} is not a committed Git tree: {relative}")
+    if git_optional(source, "cat-file", "-t", value) != "tree":
+        raise RuntimeError(f"{label} is not a Git tree: {relative}")
+    return value
+
+
+def committed_regular_files(
+    source: Path, commit: str, relative: str
+) -> tuple[dict[str, object], ...]:
+    result: list[dict[str, object]] = []
+    for row in git(source, "ls-tree", "-r", commit, "--", relative).splitlines():
+        metadata, separator, path = row.partition("\t")
+        fields = metadata.split()
+        if (
+            separator != "\t"
+            or len(fields) != 3
+            or fields[0] not in {"100644", "100755"}
+            or fields[1] != "blob"
+            or not SHA1_PATTERN.fullmatch(fields[2])
+        ):
+            raise RuntimeError(f"protected tree contains a non-regular entry: {row!r}")
+        identity = committed_file_identity(source, commit, path)
+        if identity is None:
+            raise RuntimeError(f"protected tree entry disappeared: {path}")
+        result.append(identity)
+    return tuple(result)
+
+
 def git_blob_sha256(source: Path, blob: str) -> str:
     completed = subprocess.run(
         ["git", "-C", str(source), "cat-file", "blob", blob],
@@ -605,6 +947,210 @@ def require_safe_posix_path(value: object, label: str) -> str:
     ):
         raise RuntimeError(f"invalid {label}: {value!r}")
     return value
+
+
+def parse_csv_blob(
+    source: Path, blob: str, path: str
+) -> tuple[tuple[str, ...], list[dict[str, str | None]]]:
+    try:
+        text = git_blob_bytes(source, blob).decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise RuntimeError(f"ledger is not UTF-8: {path}") from exc
+    reader = csv.DictReader(io.StringIO(text, newline=""))
+    if reader.fieldnames is None:
+        raise RuntimeError(f"ledger has no header: {path}")
+    rows = list(reader)
+    if any(None in row for row in rows):
+        raise RuntimeError(f"ledger has malformed extra fields: {path}")
+    return tuple(reader.fieldnames), rows
+
+
+def active_ledger_rows(
+    rows: list[dict[str, str | None]], id_field: str, prefix: str
+) -> tuple[list[dict[str, str | None]], set[str]]:
+    identifiers = [row.get(id_field) for row in rows]
+    expected = [f"{prefix}{index:06d}" for index in range(1, len(rows) + 1)]
+    if identifiers != expected:
+        raise RuntimeError(f"{id_field} inventory is not unique, ordered, and contiguous")
+    superseded: set[str] = set()
+    pattern = re.compile(rf"\b{re.escape(prefix)}\d{{6}}\b")
+    for position, row in enumerate(rows, start=1):
+        references = pattern.findall(row.get("supersedes") or "")
+        if any(int(item[1:]) >= position for item in references):
+            raise RuntimeError(f"{id_field} supersedes reference is not strictly prior")
+        superseded.update(references)
+    if not superseded <= set(expected):
+        raise RuntimeError(f"{id_field} contains an unknown supersedes reference")
+    return [row for row in rows if row.get(id_field) not in superseded], superseded
+
+
+def recompute_ega_counts(
+    source: Path, content_commit: str
+) -> tuple[dict[str, int], dict[str, list[dict[str, str | None]]]]:
+    rows_by_path: dict[str, list[dict[str, str | None]]] = {}
+    for path, _, _, _ in EGA_LEDGER_CONTRACTS:
+        identity = committed_file_identity(source, content_commit, path)
+        if identity is None:
+            raise RuntimeError(f"missing EGA ledger at content commit: {path}")
+        headers, rows = parse_csv_blob(source, str(identity["git_blob"]), path)
+        if headers != EGA_LEDGER_HEADERS[path]:
+            raise RuntimeError(f"EGA ledger header differs from its producer contract: {path}")
+        rows_by_path[path] = rows
+    for path in ("ega/issues.csv", "ega/units.csv"):
+        identity = committed_file_identity(source, content_commit, path)
+        if identity is None:
+            raise RuntimeError(f"missing EGA count input: {path}")
+        _, rows_by_path[path] = parse_csv_blob(source, str(identity["git_blob"]), path)
+
+    smap = rows_by_path["ega/smap.csv"]
+    resid = rows_by_path["ega/resid.csv"]
+    active_smap, _ = active_ledger_rows(smap, "edge_id", "S")
+    active_resid, _ = active_ledger_rows(resid, "residual_id", "R")
+    active_ledger_rows(rows_by_path["ega/dec.csv"], "decision_id", "D")
+    active_ledger_rows(rows_by_path["ega/agent.csv"], "run_id", "A")
+    counts = {
+        "active_statement_edges": len(active_smap),
+        "physical_statement_edges": len(smap),
+        "mapped_source_units": len({row.get("source_unit") for row in active_smap}),
+        "existing_official_tag_edges": sum(bool(row.get("official_tag")) for row in active_smap),
+        "distinct_existing_official_tags": len(
+            {row.get("official_tag") for row in active_smap if row.get("official_tag")}
+        ),
+        "local_untagged_edges": sum(not row.get("official_tag") for row in active_smap),
+        "full_statement_equivalences": sum(
+            row.get("relation") == "equivalent"
+            and row.get("coverage_claim") == "full_statement"
+            for row in active_smap
+        ),
+        "active_residuals": len(active_resid),
+        "physical_residuals": len(resid),
+        "open_gaps": sum(row.get("status") == "open_gap" for row in active_resid),
+        "local_mirror_residuals": sum(
+            row.get("status") == "integrated_local_mirror" for row in active_resid
+        ),
+        "decisions": len(rows_by_path["ega/dec.csv"]),
+        "agent_rows": len(rows_by_path["ega/agent.csv"]),
+        "issues": len(rows_by_path["ega/issues.csv"]),
+        "registered_discovery_units": len(rows_by_path["ega/units.csv"]),
+        "quarantined_rows": sum(
+            "quarantin" in (row.get("review_state") or "").lower() for row in smap
+        ) + sum(
+            "quarantin" in (row.get("status") or "").lower() for row in resid
+        ),
+    }
+    return counts, rows_by_path
+
+
+def validate_external_authority_inputs(
+    source: Path, raw: object, implementation: dict[str, object]
+) -> tuple[tuple[dict[str, object], ...], dict[str, object]]:
+    expected_keys = {
+        "preparation_sha256", "official_stacks_commit", "french_commit",
+        "french_path", "french_full_bytes", "french_full_sha256",
+        "french_lf_lines", "french_slice_bytes", "french_slice_sha256",
+        "french_receipt", "french_receipt_sha256", "english_role",
+        "english_commit", "english_path", "english_full_bytes",
+        "english_full_sha256", "english_lf_lines", "english_slice_bytes",
+        "english_slice_sha256",
+    }
+    if not isinstance(raw, dict) or set(raw) != expected_keys:
+        raise RuntimeError("source checkpoint has an invalid authority binding")
+    if implementation.get("authority") != raw:
+        raise RuntimeError("checkpoint authority differs from immutable implementation receipt")
+    if raw.get("english_role") != EGA_EXTERNAL_DISCOVERY_ROLE:
+        raise RuntimeError("English authority role is not discovery-only")
+    for digest_key in (
+        "preparation_sha256", "french_full_sha256", "french_slice_sha256",
+        "french_receipt_sha256", "english_full_sha256", "english_slice_sha256",
+    ):
+        if not isinstance(raw.get(digest_key), str) or not SHA256_PATTERN.fullmatch(raw[digest_key]):
+            raise RuntimeError(f"authority digest is invalid: {digest_key}")
+    official = require_commit_object(
+        source, raw.get("official_stacks_commit"), "official Stacks authority"
+    )
+    if not isinstance(raw.get("french_receipt"), str) or not raw["french_receipt"]:
+        raise RuntimeError("French authority receipt name is invalid")
+
+    external: list[dict[str, object]] = []
+    for prefix, role in (
+        ("french", "canonical_french_authority"),
+        ("english", "english_discovery_reference"),
+    ):
+        commit = raw.get(f"{prefix}_commit")
+        path = raw.get(f"{prefix}_path")
+        byte_count = raw.get(f"{prefix}_full_bytes")
+        digest = raw.get(f"{prefix}_full_sha256")
+        line_range = raw.get(f"{prefix}_lf_lines")
+        slice_bytes = raw.get(f"{prefix}_slice_bytes")
+        slice_sha = raw.get(f"{prefix}_slice_sha256")
+        match = LINE_RANGE_PATTERN.fullmatch(line_range) if isinstance(line_range, str) else None
+        if (
+            not isinstance(commit, str) or not SHA1_PATTERN.fullmatch(commit)
+            or not isinstance(path, str) or not RELATIVE_PAYLOAD_PATTERN.fullmatch(path)
+            or type(byte_count) is not int or byte_count < 1
+            or not isinstance(digest, str) or not SHA256_PATTERN.fullmatch(digest)
+            or type(slice_bytes) is not int or slice_bytes < 1
+            or not isinstance(slice_sha, str) or not SHA256_PATTERN.fullmatch(slice_sha)
+            or match is None or int(match.group(1)) < 1
+            or int(match.group(2)) < int(match.group(1))
+        ):
+            raise RuntimeError(f"{prefix} authority identity is invalid")
+        candidate = source / path
+        recheck = "unavailable_with_receipt_binding"
+        if candidate.exists():
+            observed = working_file_identity(source, path)
+            if observed["bytes"] != byte_count or observed["sha256"] != digest.upper():
+                raise RuntimeError(f"available {prefix} authority file differs from its receipt")
+            normalized = candidate.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+            lines = normalized.splitlines(keepends=True)
+            selected = b"".join(lines[int(match.group(1)) - 1 : int(match.group(2))])
+            if (
+                len(selected) != slice_bytes
+                or hashlib.sha256(selected).hexdigest().upper() != slice_sha.upper()
+            ):
+                raise RuntimeError(f"available {prefix} authority slice differs from its receipt")
+            recheck = "verified_working_file_and_lf_slice"
+        external.append(
+            {
+                "role": role, "path": path, "commit": commit,
+                "bytes": byte_count, "sha256": digest.upper(),
+                "lf_lines": line_range, "slice_bytes": slice_bytes,
+                "slice_sha256": slice_sha.upper(), "external_recheck": recheck,
+            }
+        )
+    if any(
+        external[0][key] == external[1][key]
+        for key in ("commit", "path", "sha256", "slice_sha256")
+    ):
+        raise RuntimeError("canonical French and English discovery roles are not distinct")
+    source_slice = implementation.get("source_slice")
+    if not isinstance(source_slice, dict) or (
+        source_slice.get("receipt") != raw["french_receipt"]
+        or source_slice.get("receipt_sha256") != raw["french_receipt_sha256"]
+        or source_slice.get("full_bytes") != raw["french_full_bytes"]
+        or source_slice.get("full_sha256") != raw["french_full_sha256"]
+        or source_slice.get("slice_bytes") != raw["french_slice_bytes"]
+        or source_slice.get("slice_sha256") != raw["french_slice_sha256"]
+    ):
+        raise RuntimeError("French authority is not cross-bound to the immutable source slice")
+    expected_binding = {
+        "canonical_role": "diplomatic_french_authority",
+        "official_stacks_commit": official,
+        "canonical_source": {
+            "commit": raw["french_commit"], "path": raw["french_path"],
+            "bytes": raw["french_full_bytes"], "sha256": raw["french_full_sha256"],
+        },
+        "canonical_source_receipt": {
+            "name": raw["french_receipt"], "sha256": raw["french_receipt_sha256"],
+        },
+        "canonical_slice": {
+            "lf_lines": raw["french_lf_lines"], "bytes": raw["french_slice_bytes"],
+            "sha256": raw["french_slice_sha256"],
+        },
+        "discovery_source_role": raw["english_role"],
+        "authority_and_source_slice_exactly_cross_bound": True,
+    }
+    return tuple(external), expected_binding
 
 
 def run_bound_verifier(
@@ -643,10 +1189,9 @@ def run_bound_verifier(
     if completed.returncode:
         detail = completed.stderr.strip() or completed.stdout.strip()
         raise RuntimeError(f"receipt-bound verifier failed: {detail}")
-    try:
-        report = json.loads(completed.stdout)
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"receipt-bound verifier returned invalid JSON: {exc}") from exc
+    report = strict_json_loads(
+        completed.stdout, f"receipt-bound verifier report {expected_path}"
+    )
     if (
         not isinstance(report, dict)
         or report.get("schema") != expected_schema
@@ -658,6 +1203,14 @@ def run_bound_verifier(
 
 def positive_int(value: object) -> bool:
     return type(value) is int and value > 0
+
+
+def nonnegative_int(value: object) -> bool:
+    return type(value) is int and value >= 0
+
+
+def exact_int(value: object, expected: int) -> bool:
+    return type(value) is int and value == expected
 
 
 def require_commit_object(source: Path, commit: object, label: str) -> str:
@@ -715,6 +1268,606 @@ def committed_path_changes(
             raise RuntimeError(f"invalid committed change record for {path!r}")
         changes[path] = (header[0][1:], *header[1:])
     return changes
+
+
+def load_source_checkpoint(
+    source: Path,
+    requested_path: Path,
+    composition_requested_path: Path,
+    composition_binding: dict[str, object],
+) -> tuple[
+    dict[str, object],
+    tuple[str, ...],
+    tuple[dict[str, object], ...],
+]:
+    """Validate an EGA source checkpoint under tools -> content -> receipt."""
+    checkpoint_path = requested_path
+    if not checkpoint_path.is_absolute():
+        checkpoint_path = source / checkpoint_path
+    checkpoint_path = checkpoint_path.resolve()
+    try:
+        logical_path = checkpoint_path.relative_to(source).as_posix()
+    except ValueError as exc:
+        raise RuntimeError("source checkpoint must be inside the source worktree") from exc
+    require_safe_posix_path(logical_path, "source-checkpoint path")
+    if not checkpoint_path.is_file():
+        raise RuntimeError(f"source checkpoint is missing: {logical_path}")
+    if git_optional(source, "ls-files", "--error-unmatch", "--", logical_path) != logical_path:
+        raise RuntimeError(f"source checkpoint is not tracked: {logical_path}")
+    require_clean_path(source, logical_path)
+    try:
+        checkpoint_text = checkpoint_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise RuntimeError(f"cannot read source checkpoint {logical_path}: {exc}") from exc
+    checkpoint = strict_json_loads(checkpoint_text, logical_path)
+    if not isinstance(checkpoint, dict) or set(checkpoint) != EGA_CHECKPOINT_KEYS:
+        raise RuntimeError("source checkpoint does not match the exact producer schema")
+    if (
+        checkpoint.get("schema") != EGA_SOURCE_CHECKPOINT_SCHEMA
+        or checkpoint.get("status") != EGA_SOURCE_CHECKPOINT_STATUS
+    ):
+        raise RuntimeError("source checkpoint schema or status is invalid")
+
+    base = checkpoint.get("base")
+    content = checkpoint.get("content")
+    if not isinstance(base, dict) or set(base) != {"commit", "tree"}:
+        raise RuntimeError("source checkpoint has an invalid base binding")
+    if not isinstance(content, dict) or set(content) != {"commit", "tree", "parent"}:
+        raise RuntimeError("source checkpoint has an invalid content binding")
+    base_commit = require_commit_object(source, base.get("commit"), "EGA tool/base")
+    base_tree = require_tree_identity(source, base_commit, base.get("tree"), "EGA tool/base")
+    content_commit = require_commit_object(source, content.get("commit"), "EGA content")
+    content_tree = require_tree_identity(
+        source, content_commit, content.get("tree"), "EGA content"
+    )
+    if content.get("parent") != base_commit:
+        raise RuntimeError("EGA content parent does not equal the tool/base commit")
+    require_single_parent(source, content_commit, "EGA content", base_commit)
+    head_commit = git(source, "rev-parse", "HEAD")
+    head_tree = git(source, "rev-parse", "HEAD^{tree}")
+    require_single_parent(source, head_commit, "EGA checkpoint receipt", content_commit)
+    post_changes = committed_path_changes(source, content_commit, head_commit)
+    if list(post_changes) != [logical_path] or post_changes[logical_path][4] != "A":
+        raise RuntimeError("post-content commit is not the exact checkpoint-receipt addition")
+
+    checkpoint_head_identity = committed_file_identity(source, head_commit, logical_path)
+    checkpoint_working_identity = working_file_identity(source, logical_path)
+    if checkpoint_head_identity is None or any(
+        checkpoint_head_identity[key] != checkpoint_working_identity[key]
+        for key in ("bytes", "sha256")
+    ):
+        raise RuntimeError("source checkpoint working bytes differ from HEAD")
+
+    # Prove every executable in the validation chain was committed before the
+    # mathematical content, then remained byte-identical through content/HEAD.
+    tool_identities: dict[str, dict[str, object]] = {}
+    for path, _ in EGA_PRECONTENT_TOOL_ROLES:
+        base_identity = committed_file_identity(source, base_commit, path)
+        content_identity = committed_file_identity(source, content_commit, path)
+        head_identity = committed_file_identity(source, head_commit, path)
+        if base_identity is None or base_identity != content_identity or base_identity != head_identity:
+            raise RuntimeError(f"pre-content tool identity changed across topology: {path}")
+        require_clean_path(source, path)
+        working = working_file_identity(source, path)
+        if any(working[key] != base_identity[key] for key in ("bytes", "sha256")):
+            raise RuntimeError(f"pre-content tool working bytes changed: {path}")
+        tool_identities[path] = base_identity
+
+    tooling = checkpoint.get("tooling")
+    if not isinstance(tooling, dict) or set(tooling) != {"writer", "tests"}:
+        raise RuntimeError("source checkpoint lacks exact writer/test tooling roles")
+    declared_tools = [tooling.get("writer"), *(tooling.get("tests") or [])]
+    if len(declared_tools) != 2:
+        raise RuntimeError("source checkpoint must bind one writer and one writer test")
+    for raw, expected_path in zip(
+        declared_tools, (EGA_SOURCE_CHECKPOINT_WRITER, EGA_SOURCE_CHECKPOINT_WRITER_TEST)
+    ):
+        if not isinstance(raw, dict) or set(raw) != {
+            "path", "bytes", "sha256", "git_blob", "committed_at_base",
+            "committed_at_content", "unchanged",
+        }:
+            raise RuntimeError("source checkpoint tooling identity has invalid fields")
+        if (
+            raw.get("path") != expected_path
+            or raw.get("committed_at_base") is not True
+            or raw.get("committed_at_content") is not True
+            or raw.get("unchanged") is not True
+        ):
+            raise RuntimeError("source checkpoint tooling role/topology is invalid")
+        declared = require_declared_file_identity(
+            source,
+            base_commit,
+            {key: raw[key] for key in ("path", "bytes", "sha256", "git_blob")},
+            f"checkpoint tooling {expected_path}",
+        )
+        if declared != tool_identities[expected_path]:
+            raise RuntimeError(f"checkpoint tooling identity mismatch: {expected_path}")
+
+    # The committed producer is the authority for its complete EGA-specific
+    # semantic schema. Its check-only mode recomputes root, README, ledger,
+    # authority, scope, topology, and canonical receipt bytes from Git.
+    producer = subprocess.run(
+        [
+            sys.executable,
+            str(source / EGA_SOURCE_CHECKPOINT_WRITER),
+            "--repo", str(source),
+            "--output", logical_path,
+            "--check-only",
+        ],
+        cwd=source,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+    )
+    if producer.returncode:
+        detail = producer.stderr.strip() or producer.stdout.strip()
+        raise RuntimeError(f"authoritative EGA checkpoint recomputation failed: {detail}")
+    producer_report = strict_json_loads(producer.stdout, "EGA checkpoint CLI result")
+    expected_checkpoint_identity = {
+        "bytes": checkpoint_head_identity["bytes"],
+        "sha256": checkpoint_head_identity["sha256"],
+    }
+    if (
+        not isinstance(producer_report, dict)
+        or set(producer_report) != {
+            "schema", "status", "checkpoint_schema", "checkpoint_status", "output",
+            "checkpoint", "check_only", "existing_checkpoint",
+        }
+        or producer_report.get("schema")
+        != "unofficial-stacks-project-ai-drafts-ega-source-checkpoint-cli-result/v1"
+        or producer_report.get("status") != "PASS_SOURCE_CHECKPOINT_VERIFIED"
+        or producer_report.get("checkpoint_schema") != EGA_SOURCE_CHECKPOINT_SCHEMA
+        or producer_report.get("checkpoint_status") != EGA_SOURCE_CHECKPOINT_STATUS
+        or producer_report.get("output") != logical_path
+        or producer_report.get("checkpoint") != expected_checkpoint_identity
+        or producer_report.get("check_only") is not True
+        or not isinstance(producer_report.get("existing_checkpoint"), dict)
+        or producer_report["existing_checkpoint"].get("checked_in_blob_compared") is not True
+        or {key: producer_report["existing_checkpoint"].get(key) for key in ("bytes", "sha256")}
+        != expected_checkpoint_identity
+    ):
+        raise RuntimeError("authoritative EGA checkpoint verifier report is not exact")
+
+    raw_changes = checkpoint.get("changed_paths")
+    actual_changes = committed_path_changes(source, base_commit, content_commit)
+    if not isinstance(raw_changes, list) or len(raw_changes) != len(EGA_CHANGED_PATH_ROLES):
+        raise RuntimeError("source checkpoint changed-path inventory is incomplete")
+    normalized_changes: list[dict[str, object]] = []
+    for raw in raw_changes:
+        if not isinstance(raw, dict) or set(raw) != {"path", "change", "base", "content"}:
+            raise RuntimeError("source checkpoint changed-path row is malformed")
+        path = require_safe_posix_path(raw.get("path"), "EGA changed path")
+        actual = actual_changes.get(path)
+        if path not in EGA_CHANGED_PATH_ROLES or actual is None or actual[4] not in {"A", "M"}:
+            raise RuntimeError(f"unexpected EGA changed path: {path}")
+        change = "added" if actual[4] == "A" else "modified"
+        if raw.get("change") != change:
+            raise RuntimeError(f"EGA changed-path class mismatch: {path}")
+        if change == "added":
+            if raw.get("base") is not None or actual[2] != "0" * 40:
+                raise RuntimeError(f"added EGA path has a base identity: {path}")
+            base_identity = None
+        else:
+            base_identity = require_declared_blob_identity(
+                source, actual[2], raw.get("base"), f"EGA base {path}"
+            )
+        content_identity = require_declared_blob_identity(
+            source, actual[3], raw.get("content"), f"EGA content {path}"
+        )
+        normalized_changes.append(
+            {"path": path, "change": change, "base": base_identity, "content": content_identity}
+        )
+    if (
+        [row["path"] for row in normalized_changes] != sorted(EGA_CHANGED_PATH_ROLES)
+        or set(actual_changes) != set(EGA_CHANGED_PATH_ROLES)
+    ):
+        raise RuntimeError("source checkpoint changed paths are not exact and ordered")
+    changed_by_path = {str(row["path"]): row for row in normalized_changes}
+
+    inputs = checkpoint.get("inputs")
+    if not isinstance(inputs, dict) or set(inputs) != {
+        "implementation_receipt", "independent_review"
+    }:
+        raise RuntimeError("source checkpoint implementation/review roles are invalid")
+    implementation = require_declared_file_identity(
+        source, content_commit, inputs.get("implementation_receipt"),
+        "EGA implementation receipt",
+    )
+    review = require_declared_file_identity(
+        source, content_commit, inputs.get("independent_review"), "EGA independent review"
+    )
+    if implementation["path"] != EGA_IMPLEMENTATION_RECEIPT_PATH or review["path"] != EGA_INDEPENDENT_REVIEW_PATH:
+        raise RuntimeError("source checkpoint receipt canonical paths are invalid")
+    implementation_json = parse_json_blob(source, implementation, "EGA implementation receipt")
+    review_json = parse_json_blob(source, review, "EGA independent review")
+    if (
+        implementation_json.get("schema") != EGA_IMPLEMENTATION_RECEIPT_SCHEMA
+        or implementation_json.get("status") != EGA_IMPLEMENTATION_RECEIPT_STATUS
+        or review_json.get("schema") != EGA_INDEPENDENT_REVIEW_SCHEMA
+        or review_json.get("status") != EGA_INDEPENDENT_REVIEW_STATUS
+    ):
+        raise RuntimeError("immutable EGA receipt schema/status is invalid")
+    if review_json.get("implementation_receipt") != {
+        key: implementation[key] for key in ("path", "bytes", "sha256")
+    }:
+        raise RuntimeError("independent review does not bind the implementation receipt")
+
+    source_unit = checkpoint.get("source_unit")
+    if (
+        not isinstance(source_unit, dict)
+        or set(source_unit) != {"name", "next_source_unit", "label", "official_tag", "dependencies"}
+        or not all(isinstance(source_unit.get(key), str) and source_unit[key] for key in (
+            "name", "next_source_unit", "label", "official_tag"
+        ))
+        or not isinstance(source_unit.get("dependencies"), list)
+        or not source_unit["dependencies"]
+        or not all(isinstance(item, str) and item for item in source_unit["dependencies"])
+        or len(set(source_unit["dependencies"])) != len(source_unit["dependencies"])
+    ):
+        raise RuntimeError("source checkpoint source-unit roles are invalid")
+    root_change = checkpoint.get("root_change")
+    if not isinstance(root_change, dict) or root_change.get("path") != "schemes.tex":
+        raise RuntimeError("EGA source checkpoint must bind schemes.tex as its root source")
+
+    recomputed_counts, _ = recompute_ega_counts(source, content_commit)
+    counts = checkpoint.get("counts")
+    if (
+        not isinstance(counts, dict)
+        or set(counts) != EGA_COUNT_KEYS
+        or any(type(value) is not int or value < 0 for value in counts.values())
+        or counts != recomputed_counts
+        or implementation_json.get("counts") != recomputed_counts
+    ):
+        raise RuntimeError("EGA counts do not match recomputed committed ledgers")
+    external_authorities, expected_authority_binding = validate_external_authority_inputs(
+        source, checkpoint.get("authority"), implementation_json
+    )
+    if checkpoint.get("authority_binding") != expected_authority_binding:
+        raise RuntimeError("EGA authority claim differs from recomputed authority binding")
+
+    unchanged = checkpoint.get("unchanged_surfaces")
+    if not isinstance(unchanged, dict) or set(unchanged) != {
+        "other_root_tex", "tags_tree", "tags_file", "registry_tree", "composition_receipt"
+    }:
+        raise RuntimeError("source checkpoint unchanged-surface schema is invalid")
+    composition_record = unchanged.get("composition_receipt")
+    if not isinstance(composition_record, dict) or set(composition_record) != {
+        "path", "base", "content", "unchanged"
+    } or composition_record.get("unchanged") is not True:
+        raise RuntimeError("source checkpoint composition-receipt binding is invalid")
+    composition_path = composition_requested_path
+    if not composition_path.is_absolute():
+        composition_path = source / composition_path
+    try:
+        composition_logical = composition_path.resolve().relative_to(source).as_posix()
+    except ValueError as exc:
+        raise RuntimeError("composition receipt must be inside the source worktree") from exc
+    if composition_logical != "validation/composition-current.json" or composition_record.get("path") != composition_logical:
+        raise RuntimeError("checkpoint build must consume canonical composition-current.json")
+    composition_base_identity = require_declared_file_identity(
+        source, base_commit,
+        {"path": composition_logical, **composition_record["base"]},
+        "checkpoint canonical composition receipt at base",
+    )
+    composition_content_identity = require_declared_file_identity(
+        source, content_commit,
+        {"path": composition_logical, **composition_record["content"]},
+        "checkpoint canonical composition receipt at content",
+    )
+    if composition_base_identity != composition_content_identity:
+        raise RuntimeError("canonical composition receipt changed across EGA content")
+    if (
+        composition_binding.get("receipt") != composition_logical
+        or composition_binding.get("receipt_git_blob") != composition_content_identity["git_blob"]
+        or composition_binding.get("receipt_sha256") != composition_content_identity["sha256"]
+    ):
+        raise RuntimeError("consumed composition receipt differs from checkpoint binding")
+    composition_source = require_commit_object(
+        source, composition_binding.get("composition_source_commit"),
+        "checkpoint-bound composition source",
+    )
+    require_ancestor(source, composition_source, "composition-to-EGA-tools", base_commit)
+
+    registry = unchanged.get("registry_tree")
+    if not isinstance(registry, dict) or registry.get("path") != "ai-integrated/registry":
+        raise RuntimeError("source checkpoint canonical registry role is invalid")
+    registry_path = "ai-integrated/registry"
+    if (
+        registry.get("base_git_tree") != committed_tree_identity(
+            source, base_commit, registry_path, "EGA registry base"
+        )
+        or registry.get("content_git_tree") != committed_tree_identity(
+            source, content_commit, registry_path, "EGA registry content"
+        )
+        or registry.get("base_git_tree") != registry.get("content_git_tree")
+        or registry.get("unchanged") is not True
+    ):
+        raise RuntimeError("canonical registry changed across EGA content")
+
+    protected_inputs: list[dict[str, object]] = []
+    protected_content: list[dict[str, object]] = []
+    for row in normalized_changes:
+        identity = {"path": row["path"], **row["content"]}
+        protected_content.append(identity)
+        protected_inputs.append(
+            protected_input(EGA_CHANGED_PATH_ROLES[str(row["path"])], content_commit, identity)
+        )
+    root_names = git(source, "ls-tree", "--name-only", content_commit).splitlines()
+    other_root_tex = sorted(
+        path for path in root_names if Path(path).parent.as_posix() == "."
+        and path.endswith(".tex") and path != "schemes.tex"
+    )
+    for path in other_root_tex:
+        identity = committed_file_identity(source, content_commit, path)
+        if identity is None:
+            raise RuntimeError(f"unchanged root TeX input is absent: {path}")
+        protected_content.append(identity)
+        protected_inputs.append(protected_input("unchanged_root_tex", content_commit, identity))
+    for path, role in EGA_PRECONTENT_TOOL_ROLES:
+        protected_inputs.append(protected_input(role, base_commit, tool_identities[path]))
+    protected_inputs.append(
+        protected_input("checkpoint_receipt", head_commit, checkpoint_head_identity)
+    )
+    tags_identity = committed_file_identity(source, content_commit, "tags/tags")
+    if tags_identity is None:
+        raise RuntimeError("canonical tags file is absent")
+    protected_inputs.append(protected_input("canonical_tags", content_commit, tags_identity))
+    protected_inputs.append(
+        protected_input("canonical_composition_receipt", content_commit, composition_content_identity)
+    )
+    for identity in committed_regular_files(source, content_commit, registry_path):
+        protected_inputs.append(protected_input("canonical_registry", content_commit, identity))
+
+    build_critical = ["my.bib"] + sorted(
+        path for path in root_names
+        if Path(path).parent.as_posix() == "."
+        and Path(path).suffix.lower() in EGA_SHARED_BUILD_SUFFIXES
+    )
+    for path in build_critical:
+        identity = committed_file_identity(source, content_commit, path)
+        if identity is None:
+            raise RuntimeError(f"build-critical protected input is absent: {path}")
+        role = "build_bibliography" if path == "my.bib" else "build_shared_style"
+        protected_inputs.append(protected_input(role, content_commit, identity))
+
+    official_commit = str(checkpoint["authority"]["official_stacks_commit"])
+    for path, role in (
+        ("schemes.tex", "official_stacks_source_authority"),
+        ("tags/tags", "official_stacks_tag_authority"),
+    ):
+        identity = committed_file_identity(source, official_commit, path)
+        if identity is None:
+            raise RuntimeError(f"official Stacks authority input is absent: {path}")
+        protected_inputs.append(protected_input(role, official_commit, identity))
+
+    protected_content.sort(key=lambda row: str(row["path"]))
+    protected_inputs.sort(key=lambda row: (str(row["role"]), str(row["path"]), str(row["commit"])))
+    keys = [(row["commit"], row["path"]) for row in protected_inputs]
+    if len(keys) != len(set(keys)):
+        raise RuntimeError("protected input inventory contains a duplicate path at one commit")
+    clean_paths: set[str] = set()
+    for row in protected_inputs:
+        expected = {key: row[key] for key in ("path", "bytes", "sha256", "git_blob")}
+        if committed_file_identity(source, str(row["commit"]), str(row["path"])) != expected:
+            raise RuntimeError(f"protected input Git identity changed: {row['path']}")
+        if row["role"] not in EGA_NON_WORKTREE_PROTECTED_ROLES:
+            if committed_file_identity(source, head_commit, str(row["path"])) != expected:
+                raise RuntimeError(f"protected input differs at build HEAD: {row['path']}")
+            require_clean_path(source, str(row["path"]))
+            working = working_file_identity(source, str(row["path"]))
+            if any(working[key] != row[key] for key in ("bytes", "sha256")):
+                raise RuntimeError(f"protected input working bytes differ: {row['path']}")
+            clean_paths.add(str(row["path"]))
+
+    role_counts = dict(sorted(Counter(str(row["role"]) for row in protected_inputs).items()))
+    binding = {
+        "schema": EGA_SOURCE_CHECKPOINT_SCHEMA,
+        "status": EGA_SOURCE_CHECKPOINT_STATUS,
+        "receipt": {**checkpoint_working_identity, "git_blob": checkpoint_head_identity["git_blob"]},
+        "base": {"commit": base_commit, "tree": base_tree},
+        "content": {"commit": content_commit, "tree": content_tree, "parent": base_commit},
+        "source_unit": source_unit,
+        "root_source_stem": "schemes",
+        "implementation_receipt": implementation,
+        "independent_review": review,
+        "changed_path_count": len(normalized_changes),
+        "changed_paths_tuple_sha256": canonical_tuple_sha256(normalized_changes),
+        "protected_content_path_count": len(protected_content),
+        "protected_content_paths_tuple_sha256": canonical_tuple_sha256(protected_content),
+        "protected_input_count": len(protected_inputs),
+        "protected_input_roles": role_counts,
+        "protected_input_tuple_sha256": canonical_tuple_sha256(protected_inputs),
+        "external_authority_inputs": list(external_authorities),
+        "canonical_composition": {
+            "path": composition_logical,
+            "git_blob": composition_content_identity["git_blob"],
+            "sha256": composition_content_identity["sha256"],
+            "composition_source_commit": composition_source,
+            "ancestor_of_tool_base": True,
+        },
+        "post_content": {
+            "head_commit": head_commit, "head_tree": head_tree,
+            "changed_paths": [logical_path], "source_paths_unchanged": True,
+        },
+        "checks": [
+            "authoritative_producer_check_only_recomputed_exact_receipt",
+            "dynamic_tools_content_receipt_topology_exact",
+            "canonical_composition_path_blob_and_lineage_exact",
+            "root_ledger_count_and_authority_claims_recomputed",
+            "all_build_critical_inputs_protected_through_final_recheck",
+        ],
+    }
+    return binding, tuple(sorted(clean_paths)), tuple(protected_inputs)
+
+
+def require_source_checkpoint_unchanged(
+    source: Path,
+    binding: dict[str, object],
+    protected_inputs: tuple[dict[str, object], ...],
+) -> None:
+    post_content = binding.get("post_content")
+    current_commit, current_tree = capture_source_revision(source)
+    if not isinstance(post_content, dict) or (
+        current_commit != post_content.get("head_commit")
+        or current_tree != post_content.get("head_tree")
+    ):
+        raise RuntimeError("source HEAD changed during checkpoint-bound build")
+    if (
+        len(protected_inputs) != binding.get("protected_input_count")
+        or canonical_tuple_sha256(list(protected_inputs)) != binding.get("protected_input_tuple_sha256")
+        or dict(sorted(Counter(str(row.get("role")) for row in protected_inputs).items()))
+        != binding.get("protected_input_roles")
+    ):
+        raise RuntimeError("typed protected-input inventory changed during build")
+    for row in protected_inputs:
+        if not isinstance(row, dict) or set(row) != {
+            "role", "path", "commit", "git_blob", "bytes", "sha256"
+        }:
+            raise RuntimeError("typed protected-input row is malformed")
+        expected = {key: row[key] for key in ("path", "bytes", "sha256", "git_blob")}
+        if committed_file_identity(source, str(row["commit"]), str(row["path"])) != expected:
+            raise RuntimeError(f"protected input Git object changed during build: {row['path']}")
+        if row["role"] not in EGA_NON_WORKTREE_PROTECTED_ROLES:
+            require_clean_path(source, str(row["path"]))
+            working = working_file_identity(source, str(row["path"]))
+            if (
+                committed_file_identity(source, str(post_content["head_commit"]), str(row["path"]))
+                != expected
+                or any(working[key] != row[key] for key in ("bytes", "sha256"))
+            ):
+                raise RuntimeError(
+                    f"protected input changed during checkpoint-bound build: {row['path']}"
+                )
+    external = binding.get("external_authority_inputs")
+    if not isinstance(external, list):
+        raise RuntimeError("external authority inventory is malformed")
+    for row in external:
+        if not isinstance(row, dict):
+            raise RuntimeError("external authority row is malformed")
+        candidate = source / str(row.get("path"))
+        if candidate.exists():
+            observed = working_file_identity(source, str(row["path"]))
+            if observed["bytes"] != row.get("bytes") or observed["sha256"] != row.get("sha256"):
+                raise RuntimeError(f"external authority changed during build: {row['path']}")
+
+
+def require_source_checkpoint_build_stem(
+    binding: dict[str, object] | None, stems: tuple[str, ...]
+) -> None:
+    if binding is not None and binding.get("root_source_stem") not in stems:
+        raise RuntimeError("checkpoint-bound EGA build must include the schemes stem")
+
+
+def require_canonical_source_checkpoint_argument(
+    source: Path, requested_path: Path | None
+) -> None:
+    """Fail closed when the canonical EGA checkpoint is present at build HEAD."""
+    tracked = committed_file_identity(source, git(source, "rev-parse", "HEAD"), EGA_SOURCE_CHECKPOINT_PATH)
+    if tracked is not None and requested_path is None:
+        raise RuntimeError(
+            "canonical tracked EGA source checkpoint exists; --source-checkpoint is required"
+        )
+    if requested_path is None:
+        return
+    resolved = requested_path if requested_path.is_absolute() else source / requested_path
+    try:
+        logical = resolved.resolve().relative_to(source).as_posix()
+    except ValueError as exc:
+        raise RuntimeError("source checkpoint must be inside the source worktree") from exc
+    if logical != EGA_SOURCE_CHECKPOINT_PATH:
+        raise RuntimeError(
+            f"--source-checkpoint must name canonical {EGA_SOURCE_CHECKPOINT_PATH}"
+        )
+
+
+def capture_source_revision(source: Path) -> tuple[str, str]:
+    """Capture one coherent HEAD commit/tree pair and reject a moving ref."""
+    commit = git(source, "rev-parse", "--verify", "HEAD^{commit}")
+    if not SHA1_PATTERN.fullmatch(commit):
+        raise RuntimeError("source HEAD did not resolve to a commit")
+    tree = git(source, "rev-parse", "--verify", f"{commit}^{{tree}}")
+    if not SHA1_PATTERN.fullmatch(tree):
+        raise RuntimeError("source HEAD commit did not resolve to a tree")
+
+    rechecked_commit = git(source, "rev-parse", "--verify", "HEAD^{commit}")
+    rechecked_tree = git(
+        source, "rev-parse", "--verify", f"{rechecked_commit}^{{tree}}"
+    )
+    if rechecked_commit != commit or rechecked_tree != tree:
+        raise RuntimeError(
+            "source HEAD/tree changed while capturing a revision snapshot"
+        )
+    return commit, tree
+
+
+def require_source_revision_unchanged(
+    source: Path, initial_commit: str, initial_tree: str
+) -> None:
+    current_commit, current_tree = capture_source_revision(source)
+    if current_commit != initial_commit or current_tree != initial_tree:
+        raise RuntimeError(
+            "source HEAD/tree changed during build; refusing an unbound receipt"
+        )
+
+
+def publish_build_receipt(
+    source: Path,
+    output: Path,
+    output_relative: str,
+    receipt: dict[str, object],
+    initial_commit: str,
+    initial_tree: str,
+    requested_source_checkpoint: Path | None,
+    source_checkpoint_binding: dict[str, object] | None,
+    source_checkpoint_protected_inputs: tuple[dict[str, object], ...],
+) -> None:
+    """Stage a receipt, run final gates, then atomically expose PASS bytes."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    raw = (json.dumps(receipt, indent=2, allow_nan=False) + "\n").encode("utf-8")
+    descriptor = -1
+    temporary_path: Path | None = None
+    try:
+        descriptor, temporary_name = tempfile.mkstemp(
+            dir=output.parent,
+            prefix=f".{output.name}.",
+            suffix=".tmp",
+        )
+        temporary_path = Path(temporary_name)
+        with os.fdopen(descriptor, "wb") as handle:
+            descriptor = -1
+            handle.write(raw)
+            handle.flush()
+            os.fsync(handle.fileno())
+        if temporary_path.read_bytes() != raw:
+            raise RuntimeError("staged build receipt failed exact-byte readback")
+
+        if git_optional(
+            source, "ls-files", "--error-unmatch", "--", output_relative
+        ) is not None:
+            raise RuntimeError(
+                f"refusing to overwrite tracked build receipt: {output_relative}"
+            )
+        if source_checkpoint_binding is not None:
+            require_source_checkpoint_unchanged(
+                source,
+                source_checkpoint_binding,
+                source_checkpoint_protected_inputs,
+            )
+        require_canonical_source_checkpoint_argument(
+            source, requested_source_checkpoint
+        )
+        require_source_revision_unchanged(source, initial_commit, initial_tree)
+
+        os.replace(temporary_path, output)
+        temporary_path = None
+    finally:
+        if descriptor >= 0:
+            os.close(descriptor)
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
 
 
 def validate_import_preparation_topology(
@@ -981,9 +2134,9 @@ def load_bound_registry_json(
     ):
         raise RuntimeError(f"imported registry {name} identity mismatch")
     try:
-        state = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise RuntimeError(f"invalid imported registry {name}: {exc}") from exc
+        state = strict_json_loads(path.read_text(encoding="utf-8"), f"imported registry {name}")
+    except OSError as exc:
+        raise RuntimeError(f"cannot read imported registry {name}: {exc}") from exc
     if not isinstance(state, dict):
         raise RuntimeError(f"imported registry {name} must contain a JSON object")
     return relative, head_blob, expected_sha.upper(), state
@@ -1005,9 +2158,11 @@ def load_composition_receipt(
     require_clean_path(source, logical_path)
     receipt_blob = git(source, "rev-parse", f"HEAD:{logical_path}")
     try:
-        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise RuntimeError(f"invalid composition receipt {logical_path}: {exc}") from exc
+        receipt = strict_json_loads(
+            receipt_path.read_text(encoding="utf-8"), f"composition receipt {logical_path}"
+        )
+    except OSError as exc:
+        raise RuntimeError(f"cannot read composition receipt {logical_path}: {exc}") from exc
     if not isinstance(receipt, dict):
         raise RuntimeError("composition receipt must contain a JSON object")
     composition_schema = receipt.get("schema")
@@ -1245,14 +2400,10 @@ def load_composition_receipt(
     previous_overlay_text = git_optional(
         source, "show", f"{previous_registry}:registry/overlays.json"
     )
-    try:
-        previous_overlay_registry = (
-            json.loads(previous_overlay_text)
-            if previous_overlay_text is not None
-            else None
-        )
-    except json.JSONDecodeError as exc:
-        raise RuntimeError(f"invalid previous overlay registry: {exc}") from exc
+    previous_overlay_registry = (
+        strict_json_loads(previous_overlay_text, "previous overlay registry")
+        if previous_overlay_text is not None else None
+    )
     previous_entries = (
         previous_overlay_registry.get("registered_entries")
         if isinstance(previous_overlay_registry, dict)
@@ -1266,14 +2417,10 @@ def load_composition_receipt(
         previous_lease_text = git_optional(
             source, "show", f"{previous_registry}:registry/leases.json"
         )
-        try:
-            previous_lease_registry = (
-                json.loads(previous_lease_text)
-                if previous_lease_text is not None
-                else None
-            )
-        except json.JSONDecodeError as exc:
-            raise RuntimeError(f"invalid previous lease registry: {exc}") from exc
+        previous_lease_registry = (
+            strict_json_loads(previous_lease_text, "previous lease registry")
+            if previous_lease_text is not None else None
+        )
         raw_previous_events = (
             previous_lease_registry.get("events")
             if isinstance(previous_lease_registry, dict)
@@ -1796,15 +2943,11 @@ def load_composition_receipt(
             manifest_text = git_optional(
                 source, "show", f"{admission}:{manifest_path}"
             )
-            try:
-                manifest = (
-                    json.loads(manifest_text) if manifest_text is not None else None
-                )
-            except json.JSONDecodeError as exc:
-                raise RuntimeError(
-                    f"invalid embedded candidate manifest for "
-                    f"{overlay.get('id')!r}: {exc}"
-                ) from exc
+            manifest = (
+                strict_json_loads(
+                    manifest_text, f"embedded candidate manifest {overlay.get('id')!r}"
+                ) if manifest_text is not None else None
+            )
             if (
                 not isinstance(manifest, dict)
                 or manifest.get("candidate_id") != overlay.get("id")
@@ -2154,12 +3297,11 @@ def load_composition_receipt(
                     f"candidate manifest binding mismatch: {overlay.get('id')!r}"
                 )
             manifest_text = git_optional(source, "show", f"{candidate}:{manifest_path}")
-            try:
-                manifest = json.loads(manifest_text) if manifest_text is not None else None
-            except json.JSONDecodeError as exc:
-                raise RuntimeError(
-                    f"invalid candidate manifest for {overlay.get('id')!r}: {exc}"
-                ) from exc
+            manifest = (
+                strict_json_loads(
+                    manifest_text, f"candidate manifest {overlay.get('id')!r}"
+                ) if manifest_text is not None else None
+            )
             if (
                 not isinstance(manifest, dict)
                 or manifest.get("candidate_id") != overlay.get("id")
@@ -2284,16 +3426,14 @@ def load_composition_receipt(
                 "show",
                 f"{candidate}:{candidate_path}/{composition_relative}",
             )
-            try:
-                composition_rows = [
-                    json.loads(line)
-                    for line in (composition_text or "").splitlines()
-                    if line.strip()
-                ]
-            except json.JSONDecodeError as exc:
-                raise RuntimeError(
-                    f"invalid registered-insertion contract: {exc}"
-                ) from exc
+            composition_rows = [
+                strict_json_loads(
+                    line,
+                    f"registered-insertion contract {overlay.get('id')!r} line {number}",
+                )
+                for number, line in enumerate((composition_text or "").splitlines(), start=1)
+                if line.strip()
+            ]
             if (
                 len(composition_rows) != operation_count
                 or operation_count != 1
@@ -2366,14 +3506,11 @@ def load_composition_receipt(
         admission_registry = git_optional(
             source, "show", f"{admission}:registry/overlays.json"
         )
-        try:
-            admission_state = (
-                json.loads(admission_registry) if admission_registry is not None else None
-            )
-        except json.JSONDecodeError as exc:
-            raise RuntimeError(
-                f"invalid admission registry for {overlay.get('id')!r}: {exc}"
-            ) from exc
+        admission_state = (
+            strict_json_loads(
+                admission_registry, f"admission registry {overlay.get('id')!r}"
+            ) if admission_registry is not None else None
+        )
         admission_entries = (
             admission_state.get("registered_entries")
             if isinstance(admission_state, dict)
@@ -2395,16 +3532,12 @@ def load_composition_receipt(
             admission_lease_text = git_optional(
                 source, "show", f"{admission}:registry/leases.json"
             )
-            try:
-                admission_lease_registry = (
-                    json.loads(admission_lease_text)
-                    if admission_lease_text is not None
-                    else None
-                )
-            except json.JSONDecodeError as exc:
-                raise RuntimeError(
-                    f"invalid admission lease registry for {overlay.get('id')!r}: {exc}"
-                ) from exc
+            admission_lease_registry = (
+                strict_json_loads(
+                    admission_lease_text,
+                    f"admission lease registry {overlay.get('id')!r}",
+                ) if admission_lease_text is not None else None
+            )
             admission_lease_events = (
                 admission_lease_registry.get("events")
                 if isinstance(admission_lease_registry, dict)
@@ -2418,7 +3551,11 @@ def load_composition_receipt(
         candidate_commits.append(candidate)
         admission_commits.append(admission)
         normalized_new_overlays.append(normalized_overlay)
-    if new_operation_total != composition.get("new_operations"):
+    composition_new_operations = composition.get("new_operations")
+    if (
+        not nonnegative_int(composition_new_operations)
+        or new_operation_total != composition_new_operations
+    ):
         raise RuntimeError("new-overlay operation total does not match composition receipt")
     if registry_suffix[-1].get("id") != registry.get("last_admitted_overlay"):
         raise RuntimeError("new-overlay transition does not end at the admitted cutoff")
@@ -2472,16 +3609,20 @@ def load_composition_receipt(
             != composition.get("frozen_contract")
             or not isinstance(canonical, dict)
             or not isinstance(derived_evidence, dict)
+            or not positive_int(canonical.get("composed_bytes"))
+            or not positive_int(derived_evidence.get("composed_bytes"))
             or canonical.get("composed_bytes") != derived_evidence.get("composed_bytes")
             or canonical.get("composed_sha256") != derived_evidence.get("composed_sha256")
             or canonical.get("composed_blob") != derived_evidence.get("composed_git_blob")
             or canonical.get("context_sha256") != derived_evidence.get("context_sha256")
+            or not nonnegative_int(canonical.get("rebased_byte_offset"))
+            or not nonnegative_int(derived_evidence.get("rebased_byte_offset"))
             or canonical.get("rebased_byte_offset")
             != derived_evidence.get("rebased_byte_offset")
             or canonical.get("prefix_unchanged") is not True
             or canonical.get("suffix_unchanged") is not True
-            or canonical.get("payload_occurrences_after") != 1
-            or canonical.get("label_occurrences_after") != 1
+            or not exact_int(canonical.get("payload_occurrences_after"), 1)
+            or not exact_int(canonical.get("label_occurrences_after"), 1)
         ):
             raise RuntimeError("registered-insertion verifier report does not close composition")
         errata_arguments = (
@@ -2510,8 +3651,8 @@ def load_composition_receipt(
             or errata_report.get("check_revision") != errata_arguments[-1]
             or errata_report.get("existing_rounds") != [18, 19]
             or errata_report.get("target_rounds") != [18, 19, 20, 21]
-            or errata_report.get("operations") != 120
-            or errata_report.get("new_operations") != 43
+            or not exact_int(errata_report.get("operations"), 120)
+            or not exact_int(errata_report.get("new_operations"), 43)
         ):
             raise RuntimeError("historical errata verifier report mismatch")
         verifier_reports = {
@@ -2823,6 +3964,14 @@ def main() -> int:
         help="source-relative composition receipt (default: %(default)s)",
     )
     parser.add_argument(
+        "--source-checkpoint",
+        type=Path,
+        help=(
+            "optional source-relative EGA source checkpoint; when supplied the "
+            "build is bound to its tools -> content -> receipt topology"
+        ),
+    )
+    parser.add_argument(
         "--allow-primary-worktree",
         action="store_true",
         help="allow generated-file mutation in the repository's primary worktree",
@@ -2843,9 +3992,25 @@ def main() -> int:
             "refusing to mutate generated files in the primary worktree; "
             "use a linked disposable worktree or pass --allow-primary-worktree explicitly"
         )
+    initial_source_commit, initial_source_tree = capture_source_revision(source)
+    require_canonical_source_checkpoint_argument(source, args.source_checkpoint)
     composition_binding, required_stems, affected_stems = load_composition_receipt(
         source, args.composition_receipt
     )
+    source_checkpoint_binding: dict[str, object] | None = None
+    source_checkpoint_paths: tuple[str, ...] = ()
+    source_checkpoint_protected_inputs: tuple[dict[str, object], ...] = ()
+    if args.source_checkpoint is not None:
+        (
+            source_checkpoint_binding,
+            source_checkpoint_paths,
+            source_checkpoint_protected_inputs,
+        ) = load_source_checkpoint(
+            source,
+            args.source_checkpoint,
+            args.composition_receipt,
+            composition_binding,
+        )
     output = args.output
     if not output.is_absolute():
         output = source / output
@@ -2867,7 +4032,9 @@ def main() -> int:
     else:
         stems = required_stems
         selection_mode = "composition_receipt"
-    require_clean_build_tree(source, stems, args.composition_receipt)
+    require_clean_build_tree(
+        source, stems, args.composition_receipt, source_checkpoint_paths
+    )
     reference_labels = external_reference_labels(source)
     missing_affected = [stem for stem in affected_stems if stem not in stems]
     if missing_affected:
@@ -2875,6 +4042,7 @@ def main() -> int:
             "build stem selection omits affected source stems: "
             + ", ".join(missing_affected)
         )
+    require_source_checkpoint_build_stem(source_checkpoint_binding, stems)
     full_profile = stems == required_stems
     if args.max_sweeps < 2:
         parser.error("--max-sweeps must be at least 2")
@@ -2992,7 +4160,17 @@ def main() -> int:
             "bibtex": version_line("bibtex", env, source, tex_mutex),
             "pdfinfo": version_line("pdfinfo", env, source),
         }
+        if source_checkpoint_binding is not None:
+            require_source_checkpoint_unchanged(
+                source,
+                source_checkpoint_binding,
+                source_checkpoint_protected_inputs,
+            )
     tex_mutex_details = tex_mutex.receipt_details()
+    require_source_revision_unchanged(
+        source, initial_source_commit, initial_source_tree
+    )
+    require_canonical_source_checkpoint_argument(source, args.source_checkpoint)
 
     builder_path = "tools/build_fixed_point.py"
     builder_blob = git(source, "rev-parse", f"HEAD:{builder_path}")
@@ -3015,8 +4193,8 @@ def main() -> int:
         "status": "PASS" if full_profile else "PASS_PARTIAL",
         "created_utc": utc_timestamp(),
         "source": {
-            "commit": git(source, "rev-parse", "HEAD"),
-            "tree": git(source, "rev-parse", "HEAD^{tree}"),
+            "commit": initial_source_commit,
+            "tree": initial_source_tree,
         },
         "builder": {
             "path": builder_path,
@@ -3047,8 +4225,24 @@ def main() -> int:
         "artifacts": artifacts,
         "pdfs_committed": False,
     }
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    if source_checkpoint_binding is not None:
+        receipt["source_checkpoint"] = source_checkpoint_binding
+        require_source_checkpoint_unchanged(
+            source,
+            source_checkpoint_binding,
+            source_checkpoint_protected_inputs,
+        )
+    publish_build_receipt(
+        source,
+        output,
+        output_relative,
+        receipt,
+        initial_source_commit,
+        initial_source_tree,
+        args.source_checkpoint,
+        source_checkpoint_binding,
+        source_checkpoint_protected_inputs,
+    )
     print(
         f"{receipt['status']}: {len(stems)} PDFs reached a fixed point "
         f"on sweep {fixed_sweep}"
